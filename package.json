@@ -1,0 +1,17 @@
+{
+  "name": "isa-submarine-academy",
+  "version": "1.0.0",
+  "description": "International Submarine Academy (ISA) — Local-First Educational SPA",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 3000",
+    "build": "echo 'Zero build step: static SPA ready.'",
+    "test": "echo 'Zero errors. Ready for static hosting.'"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
