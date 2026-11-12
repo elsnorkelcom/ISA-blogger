@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#006c49", "secondary": "#ffb784", "error": "#ffb4ab", "surface-container-high": "#1f2b35", "on-primary-container": "#006444", "tertiary-container": "#ffc36f", "primary-container": "#38e8a6", "on-tertiary": "#452b00", "tertiary-fixed-dim": "#ffb952", "on-surface-variant": "#bacabf", "secondary-container": "#8a4400", "tertiary": "#ffe6c9", "surface-bright": "#2e3b45", "on-primary-fixed": "#002113", "on-error-container": "#ffdad6", "on-primary-fixed-variant": "#005236", "on-tertiary-fixed-variant": "#633f00", "on-background": "#d7e4f1", "surface": "#08151e", "surface-tint": "#2be19f", "outline-variant": "#3c4a41", "on-secondary-fixed-variant": "#713700", "surface-container-highest": "#2a3640", "on-error": "#690005", "secondary-fixed": "#ffdcc6", "surface-container-low": "#101d26", "primary-fixed-dim": "#2be19f", "on-primary": "#003824", "primary-fixed": "#56feba", "surface-dim": "#08151e", "outline": "#85948a", "secondary-fixed-dim": "#ffb784", "on-tertiary-container": "#794e00", "tertiary-fixed": "#ffddb3", "on-secondary-container": "#ffc095", "on-surface": "#d7e4f1", "surface-container-lowest": "#040f18", "on-tertiary-fixed": "#291800", "error-container": "#93000a", "surface-container": "#14212a", "on-secondary": "#4f2500", "surface-variant": "#2a3640", "background": "#08151e", "primary": "#92ffca", "inverse-on-surface": "#25323c", "on-secondary-fixed": "#301400", "inverse-surface": "#d7e4f1" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "3rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-md": "1rem", "space-xl": "2.5rem" }, "fontFamily": { "telemetry-lg": [ "Space Mono" ], "telemetry-sm": [ "Space Mono" ], "headline-sm": [ "Space Grotesk" ], "body-md": [ "Chivo" ], "display-hero-mobile": [ "Space Grotesk" ], "headline-lg": [ "Space Grotesk" ], "label-caps": [ "Space Mono" ], "display-hero": [ "Space Grotesk" ], "body-sm": [ "Chivo" ], "body-lg": [ "Chivo" ], "headline-md": [ "Space Grotesk" ], "headline-lg-mobile": [ "Space Grotesk" ] }, "fontSize": { "telemetry-lg": [ "1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" } ], "telemetry-sm": [ "0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" } ], "headline-sm": [ "1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" } ], "body-md": [ "1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" } ], "display-hero-mobile": [ "2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-lg": [ "2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-caps": [ "0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" } ], "display-hero": [ "4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" } ], "body-sm": [ "0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" } ], "body-lg": [ "1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" } ], "headline-md": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" } ], "headline-lg-mobile": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" } ] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}body.ops-night{--ops-hue:0deg;filter:sepia(0.85) hue-rotate(310deg) saturate(3.5) contrast(1.15);}</style></head><body class="bg-surface font-body-md text-on-surface pt-safe pb-safe flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><main class="flex flex-col relative w-full px-gutter-mobile bg-surface flex-1"><div class="flex flex-col w-full pb-10" id="crypto-terminal-root" style="
+  --isa-bg-dark: #08151e;
+  --isa-bg-night: #180505;
+  --isa-panel-dark: #04121f;
+  --isa-panel-night: #240808;
+  --isa-panel-high-dark: #14212a;
+  --isa-panel-high-night: #360c0c;
+  --isa-accent-day: #38e8a6;
+  --isa-accent-night: #ff5252;
+  --isa-text-day: #d7e4f1;
+  --isa-text-night: #ffd6d6;
+  --isa-muted-day: #85948a;
+  --isa-muted-night: #a86c6c;
+  --active-accent: var(--isa-accent-day);
+  --active-panel: var(--isa-panel-dark);
+  --active-panel-high: var(--isa-panel-high-dark);
+  --active-text: var(--isa-text-day);
+  --active-muted: var(--isa-muted-day);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+">
+<!-- TOP MILITARY TELEMETRY BAR & OPERATIONAL SWITCHES -->
+<header class="w-full rounded-b-xl px-3 py-3 mb-4 transition-colors duration-500 shadow-md flex flex-col gap-2.5" style="background-color: var(--active-panel); color: var(--active-text);">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2.5 h-2.5 rounded-full animate-ping" style="background-color: var(--active-accent);"></span>
+<span class="font-telemetry-sm text-telemetry-sm tracking-widest uppercase font-bold" style="color: var(--active-accent);">
+          TOP SECRET // ISA CRYPTO-CORE V4.2
+        </span>
+</div>
+<div class="flex items-center gap-1.5">
+<!-- LANG SWITCHER -->
+<button aria-label="Toggle Language (ES / EN)" class="min-h-[48px] px-3 rounded-lg font-telemetry-sm text-telemetry-sm flex items-center justify-center font-bold tracking-wider active:scale-95 transition-all shadow-sm" id="toggle-lang-btn" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">
+<span class="material-symbols-outlined text-[16px] mr-1">translate</span>
+<span id="lang-indicator">ES</span>
+</button>
+<!-- NIGHT OPS SWITCHER -->
+<button aria-label="Toggle Night Ops Mode" class="min-h-[48px] px-3 rounded-lg font-telemetry-sm text-telemetry-sm flex items-center justify-center font-bold tracking-wider active:scale-95 transition-all shadow-sm" id="toggle-ops-btn" style="background-color: var(--active-panel-high); color: var(--active-accent);" type="button">
+<span class="material-symbols-outlined text-[18px] mr-1" id="ops-mode-icon">nightlight</span>
+<span data-i18n="ops_day" id="ops-mode-label">DAY OPS</span>
+</button>
+</div>
+</div>
+<!-- TACTICAL TELEMETRY SUB-STRIP -->
+<div class="grid grid-cols-2 gap-2 pt-2 rounded-lg p-2 font-telemetry-sm text-telemetry-sm" style="background-color: var(--active-panel-high); color: var(--active-muted);">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[14px]">explore</span>
+<span class="truncate">LAT: 12.0601° S // PERU TRENCH</span>
+</div>
+<div class="flex items-center justify-end gap-1.5 truncate">
+<span class="material-symbols-outlined text-[14px]" style="color: var(--active-accent);">verified_user</span>
+<span class="font-bold" style="color: var(--active-accent);">HYDRO-STATUS: SECURE</span>
+</div>
+</div>
+</header>
+<!-- CREST & COMMAND AUTHORITY HEADER -->
+<div class="flex flex-col items-center text-center my-2 px-2">
+<div class="relative w-28 h-28 mb-3 flex items-center justify-center rounded-full p-1.5 shadow-xl transition-all duration-300" style="background-color: var(--active-panel);">
+<div class="absolute inset-0 rounded-full animate-pulse opacity-40" style="background-color: var(--active-accent); filter: blur(8px);"></div>
+<img alt="International Submarine Academy Official Seal" class="relative z-10 w-full h-full object-contain rounded-full select-none pointer-events-none drop-shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvRNl4oZJfSJRbbJxe0vvzlIh1mdmvPatVR8dJ4LyHjHdzga6CXrWQ0gwa5knGSaSI0Rtgkx-VhFIrUdFEKfouQllukia8JzUr-pXt4NGO2gB9JFVLHwNjAq-M64-DwTuLVTgObmu6hXd6QxVrazqVbU5G5uyt5AL_c0bAAyUo7N_L94wTXcqm9vXjvAD6CRWpuf2ZwrQEdmq4jqfd5pA_oPrR-DvnX-_CjKEOkGZ9jVuwNQpgZ3Za"/>
+</div>
+<span class="font-label-caps text-label-caps tracking-widest uppercase mb-1" data-i18n="authority_label" style="color: var(--active-accent);">
+      DIVISIÓN DE CIFRADO TÁCTICO SUBACUÁTICO
+    </span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tight text-on-surface uppercase" data-i18n="terminal_title">
+      TERMINAL DE ACCESO NAVAL
+    </h1>
+<div class="w-16 h-1 rounded-full my-2" style="background-color: var(--active-accent);"></div>
+</div>
+<!-- CIPHER TELETYPE STATUS SCREEN -->
+<div class="w-full rounded-xl p-4 my-3 relative overflow-hidden shadow-lg transition-colors duration-500" style="background-color: var(--active-panel); color: var(--active-text);">
+<div class="flex items-center justify-between pb-2 mb-2 font-telemetry-sm text-telemetry-sm" style="color: var(--active-muted);">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]" style="color: var(--active-accent);">terminal</span>
+<span>CONSOLE_LOG // PTY_91</span>
+</div>
+<span class="font-mono text-[11px] animate-pulse" id="live-time-ticker">00:00:00 ZULU</span>
+</div>
+<!-- TERMINAL PROMPT MESSAGE -->
+<p class="font-telemetry-lg text-telemetry-lg leading-snug tracking-wide uppercase font-bold" data-i18n="prompt_text" id="terminal-prompt" style="color: var(--active-accent);">
+      SYSTEM LOCKED. ENTER MILITARY CLEARANCE ACCESS KEY:
+    </p>
+<!-- LIVE CODE BUFFER DISPLAY -->
+<div class="mt-3 flex items-center justify-between rounded-lg p-3 shadow-inner" style="background-color: var(--active-panel-high);">
+<div class="flex items-center gap-2 overflow-x-auto">
+<span class="material-symbols-outlined text-secondary" style="font-size: 20px;">key</span>
+<span class="font-telemetry-lg text-telemetry-lg tracking-widest font-mono select-none" id="access-key-buffer" style="color: var(--active-text);">
+          _
+        </span>
+</div>
+<button aria-label="Clear Key Input" class="min-h-[48px] px-3 rounded flex items-center gap-1 font-telemetry-sm text-telemetry-sm active:scale-95 transition-transform" id="clear-buffer-btn" style="background-color: var(--active-panel); color: var(--active-muted);" type="button">
+<span class="material-symbols-outlined text-[16px]">backspace</span>
+<span data-i18n="btn_clr">CLR</span>
+</button>
+</div>
+</div>
+<!-- REAL-TIME CIPHER STREAM MATRIX (VISIBLE DURING DECRYPTION) -->
+<div class="hidden w-full rounded-xl p-3 my-2 shadow-lg transition-all" id="decryption-stream-container" style="background-color: var(--active-panel-high);">
+<div class="flex items-center justify-between font-telemetry-sm text-telemetry-sm mb-1" style="color: var(--active-accent);">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] animate-spin">sync</span>
+<span data-i18n="decrypting_label">DESENCRIPTANDO MATRIZ CUÁNTICA...</span>
+</span>
+<span class="font-mono" id="stream-cycle-percent">00%</span>
+</div>
+<div class="font-telemetry-sm text-telemetry-sm font-mono tracking-widest break-all select-none p-2 rounded" id="stream-cipher-output" style="background-color: var(--active-panel); color: var(--active-accent); min-height: 44px;">
+      0x4F ##%&amp; 9A 11 0xC3 AB79 0x90 FF_CIPHER
+    </div>
+</div>
+<!-- STATUS FEEDBACK BANNERS (ALERT SYSTEM) -->
+<!-- SUCCESS BANNER -->
+<div class="hidden w-full rounded-xl p-4 my-2 shadow-xl animate-bounce-once" id="banner-success" style="background-color: #003824; color: #92ffca;">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[32px] shrink-0" style="color: #38e8a6;">verified</span>
+<div class="flex flex-col">
+<span class="font-telemetry-lg text-telemetry-lg font-bold tracking-wider" data-i18n="granted_title">
+          ACCESS GRANTED // CLEARANCE LEVEL 05 VERIFIED
+        </span>
+<span class="font-body-sm text-body-sm mt-1 text-[#bacabf]" data-i18n="granted_desc">
+          Sesión segura concedida. Bienvenido/a al Núcleo de Operaciones Submarinas ISA. Registro acústico validado.
+        </span>
+<div class="mt-2 font-telemetry-sm text-telemetry-sm text-[#38e8a6] flex items-center gap-1 font-mono">
+<span>&gt;&gt; TOKEN: ISA-AUTH-VALID-8921-X</span>
+</div>
+</div>
+</div>
+</div>
+<!-- FAILURE BANNER -->
+<div class="hidden w-full rounded-xl p-4 my-2 shadow-xl animate-pulse" id="banner-failure" style="background-color: #49000a; color: #ffb4ab;">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[32px] shrink-0 text-[#ffb4ab]">gpp_bad</span>
+<div class="flex flex-col">
+<span class="font-telemetry-lg text-telemetry-lg font-bold tracking-wider uppercase text-[#ffdad6]" data-i18n="denied_title">
+          ACCESS DENIED // CIPHER MISMATCH — SECURITY AUDIT LOGGED
+        </span>
+<span class="font-body-sm text-body-sm mt-1 text-[#ffb4ab]" data-i18n="denied_desc">
+          Firma criptográfica inválida. Intento reportado a la red de contramedidas de la Flota.
+        </span>
+<div class="mt-2 font-telemetry-sm text-telemetry-sm font-mono text-[#ffdad6] flex items-center justify-between">
+<span data-i18n="attempts_left">INTENTOS RESTANTES:</span>
+<span class="font-bold text-lg" id="attempts-counter-val">03 / 03</span>
+</div>
+</div>
+</div>
+</div>
+<!-- QUICK PRESET TEST TRIGGERS -->
+<div class="w-full my-2">
+<div class="flex items-center justify-between font-label-caps text-label-caps uppercase mb-2 px-1" style="color: var(--active-muted);">
+<span data-i18n="preset_label">MODO DE PRUEBA RÁPIDA // PRESETS DE EVALUACIÓN:</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="min-h-[48px] rounded-lg p-2 font-telemetry-sm text-telemetry-sm flex items-center justify-center gap-1 font-bold active:scale-95 transition-transform shadow-sm" id="quick-key-valid" style="background-color: var(--active-panel-high); color: var(--active-accent);" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>DEMO: "SUB-2025"</span>
+</button>
+<button class="min-h-[48px] rounded-lg p-2 font-telemetry-sm text-telemetry-sm flex items-center justify-center gap-1 font-bold active:scale-95 transition-transform shadow-sm" id="quick-key-invalid" style="background-color: var(--active-panel-high); color: var(--isa-accent-night);" type="button">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+<span>TEST: "XYZ-999"</span>
+</button>
+</div>
+</div>
+<!-- MECHANICAL MILITARY CIPHER KEYPAD -->
+<div class="w-full rounded-xl p-3 my-3 shadow-lg transition-colors duration-500" style="background-color: var(--active-panel);">
+<div class="flex items-center justify-between mb-3 px-1">
+<span class="font-label-caps text-label-caps tracking-wider uppercase font-bold" data-i18n="keypad_title" style="color: var(--active-muted);">
+        TECLADO CIFRADOR TÁCTIL MK-IX
+      </span>
+<span class="font-telemetry-sm text-telemetry-sm uppercase font-mono" style="color: var(--active-accent);">
+        [READY]
+      </span>
+</div>
+<!-- MECHANICAL GRID (TOUCH TARGETS 48PX+) -->
+<div class="grid grid-cols-4 gap-2">
+<!-- ROW 1 -->
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="S" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">S</button>
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="U" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">U</button>
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="B" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">B</button>
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="-" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">-</button>
+<!-- ROW 2 -->
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="A" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">A</button>
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="T" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">T</button>
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="O" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">O</button>
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="X" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">X</button>
+<!-- ROW 3 -->
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="1" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">1</button>
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="2" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">2</button>
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="0" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">0</button>
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="5" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">5</button>
+<!-- ROW 4 -->
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="4" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">4</button>
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="9" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">9</button>
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="Y" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">Y</button>
+<button class="key-pad-btn min-h-[52px] rounded-lg font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center shadow active:scale-95 transition-all" data-val="Z" style="background-color: var(--active-panel-high); color: var(--active-text);" type="button">Z</button>
+</div>
+<!-- PRIMARY ACTION TRIGGER: DECRYPT -->
+<div class="mt-3">
+<button class="w-full min-h-[52px] rounded-xl font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center gap-2 uppercase tracking-widest active:scale-98 transition-all shadow-lg" id="trigger-decrypt-btn" style="background-color: var(--active-accent); color: #05080c;" type="button">
+<span class="material-symbols-outlined text-[24px]">lock_open</span>
+<span data-i18n="btn_decrypt">DECRYPT // VALIDAR</span>
+</button>
+</div>
+</div>
+<!-- EDUCATIONAL DISCLAIMER -->
+<div class="w-full rounded-xl p-4 my-2 transition-colors duration-500 shadow-sm" style="background-color: var(--active-panel-high); color: var(--active-text);">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">school</span>
+<div>
+<p class="font-label-caps text-label-caps uppercase font-bold tracking-wider mb-1" data-i18n="edu_title" style="color: var(--secondary);">
+          RECONOCIMIENTO SIMBÓLICO // AVISO ACADÉMICO
+        </p>
+<p class="font-body-md text-body-md leading-relaxed" data-i18n="edu_body" style="color: var(--active-muted);">
+          SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION. Esta plataforma emula estaciones de control criptográficas históricas con fines de divulgación naval, investigación de patrimonio y pedagogía STEM+A.
+        </p>
+</div>
+</div>
+</div>
+<!-- PRIVACY SOVEREIGNTY BLOCK -->
+<div class="w-full rounded-xl p-4 my-2 transition-colors duration-500 shadow-sm" style="background-color: var(--active-panel); color: var(--active-text);">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[22px] shrink-0 mt-0.5" style="color: var(--active-accent);">shield</span>
+<div>
+<p class="font-label-caps text-label-caps uppercase font-bold tracking-wider mb-1" data-i18n="privacy_title" style="color: var(--active-accent);">
+          SOBERANÍA Y PRIVACIDAD DE DATOS
+        </p>
+<p class="font-body-sm text-body-sm leading-relaxed" data-i18n="privacy_body" style="color: var(--active-muted);">
+          Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required. Cifrado estrictamente en el dispositivo.
+        </p>
+</div>
+</div>
+</div>
+<!-- FOOTER CIPHER HASH -->
+<div class="text-center py-3 font-telemetry-sm text-telemetry-sm tracking-widest uppercase opacity-60" style="color: var(--active-muted);">
+    [ ISA-MIL-SPEC-810H // SHA256-DEEP-OCEAN ]
+  </div>
+</div>
+<script>
+(function() {
+  // DOM ELEMENT HOOKS
+  var root = document.getElementById('crypto-terminal-root');
+  var bufferEl = document.getElementById('access-key-buffer');
+  var streamContainer = document.getElementById('decryption-stream-container');
+  var streamOutput = document.getElementById('stream-cipher-output');
+  var streamPercent = document.getElementById('stream-cycle-percent');
+  var bannerSuccess = document.getElementById('banner-success');
+  var bannerFailure = document.getElementById('banner-failure');
+  var attemptsCounter = document.getElementById('attempts-counter-val');
+  var langBtn = document.getElementById('toggle-lang-btn');
+  var opsBtn = document.getElementById('toggle-ops-btn');
+  var langIndicator = document.getElementById('lang-indicator');
+  var opsModeLabel = document.getElementById('ops-mode-label');
+  var opsModeIcon = document.getElementById('ops-mode-icon');
+  var timeTicker = document.getElementById('live-time-ticker');
+
+  // STATE
+  var currentInput = "";
+  var attemptsRemaining = 3;
+  var isDecrypting = false;
+  var currentLang = localStorage.getItem('isa_lang') || 'ES';
+  var currentTheme = localStorage.getItem('isa_theme') || 'day';
+
+  // VALID AUTHORIZED KEYS
+  var AUTHORIZED_KEYS = ['SUB-2025', 'ABTAO-42', 'ISA-DEEP'];
+
+  // I18N DICTIONARY
+  var I18N = {
+    ES: {
+      ops_day: "OPS DÍA",
+      ops_night: "OPS NOCHE",
+      authority_label: "DIVISIÓN DE CIFRADO TÁCTICO SUBACUÁTICO",
+      terminal_title: "TERMINAL DE ACCESO NAVAL",
+      prompt_text: "INGRESAR CLAVE DE ACCESO MILITAR CLASIFICADA:",
+      btn_clr: "BORRAR",
+      decrypting_label: "DESENCRIPTANDO MATRIZ CUÁNTICA...",
+      granted_title: "ACCESO CONCEDIDO // NIVEL 05 VERIFICADO",
+      granted_desc: "Sesión criptográfica segura validada. Bienvenido/a al Núcleo de Operaciones Submarinas ISA.",
+      denied_title: "ACCESO DENEGADO // DISCORDANCIA DE CIFRADO",
+      denied_desc: "Firma de clave inválida. Evento auditado en el registro de seguridad de la red naval.",
+      attempts_left: "INTENTOS RESTANTES:",
+      preset_label: "MODO DE PRUEBA RÁPIDA // PRESETS DE EVALUACIÓN:",
+      keypad_title: "TECLADO CIFRADOR TÁCTIL MK-IX",
+      btn_decrypt: "DECRYPT // VALIDAR",
+      edu_title: "RECONOCIMIENTO SIMBÓLICO // AVISO ACADÉMICO",
+      edu_body: "SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION. Esta plataforma emula estaciones de control criptográficas históricas con fines de divulgación naval, investigación de patrimonio y pedagogía STEM+A.",
+      privacy_title: "SOBERANÍA Y PRIVACIDAD DE DATOS",
+      privacy_body: "Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required. Cifrado estrictamente en el dispositivo."
+    },
+    EN: {
+      ops_day: "DAY OPS",
+      ops_night: "NIGHT OPS",
+      authority_label: "UNDERWATER TACTICAL CIPHER DIVISION",
+      terminal_title: "MILITARY ACCESS TERMINAL",
+      prompt_text: "SYSTEM LOCKED. ENTER MILITARY CLEARANCE ACCESS KEY:",
+      btn_clr: "CLR",
+      decrypting_label: "DECRYPTING QUANTUM STREAM MATRIX...",
+      granted_title: "ACCESS GRANTED // CLEARANCE LEVEL 05 VERIFIED",
+      granted_desc: "Cryptographic session confirmed. Welcome to the ISA Subsurface Operations Core.",
+      denied_title: "ACCESS DENIED // CIPHER MISMATCH — SECURITY AUDIT LOGGED",
+      denied_desc: "Invalid cryptographic signature. Intrusion alert dispatched to fleet counter-defense.",
+      attempts_left: "ATTEMPTS REMAINING:",
+      preset_label: "QUICK TEST SUITE // DEMO PRESET TRIGGERS:",
+      keypad_title: "TACTILE CIPHER KEYPAD MK-IX",
+      btn_decrypt: "DECRYPT // VALIDATE",
+      edu_title: "SYMBOLIC RECOGNITION // ACADEMIC NOTICE",
+      edu_body: "SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION. Emulates vintage naval decryption apparatus for heritage preservation, naval history, and STEM+A educational outreach.",
+      privacy_title: "PRIVACY SOVEREIGNTY MATRIX",
+      privacy_body: "Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required. All operations run client-side."
+    }
+  };
+
+  // APPLY THEME
+  function applyTheme(theme) {
+    currentTheme = theme;
+    localStorage.setItem('isa_theme', theme);
+    if (theme === 'night') {
+      root.style.setProperty('--active-accent', 'var(--isa-accent-night)');
+      root.style.setProperty('--active-panel', 'var(--isa-panel-night)');
+      root.style.setProperty('--active-panel-high', 'var(--isa-panel-high-night)');
+      root.style.setProperty('--active-text', 'var(--isa-text-night)');
+      root.style.setProperty('--active-muted', 'var(--isa-muted-night)');
+      opsModeIcon.textContent = 'light_mode';
+      opsModeLabel.textContent = currentLang === 'ES' ? 'OPS NOCHE' : 'NIGHT OPS';
+      document.body.classList.add('ops-night');
+    } else {
+      root.style.setProperty('--active-accent', 'var(--isa-accent-day)');
+      root.style.setProperty('--active-panel', 'var(--isa-panel-dark)');
+      root.style.setProperty('--active-panel-high', 'var(--isa-panel-high-dark)');
+      root.style.setProperty('--active-text', 'var(--isa-text-day)');
+      root.style.setProperty('--active-muted', 'var(--isa-muted-day)');
+      opsModeIcon.textContent = 'nightlight';
+      opsModeLabel.textContent = currentLang === 'ES' ? 'OPS DÍA' : 'DAY OPS';
+      document.body.classList.remove('ops-night');
+    }
+  }
+
+  // APPLY LANGUAGE
+  function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('isa_lang', lang);
+    langIndicator.textContent = lang;
+
+    var dict = I18N[lang] || I18N.ES;
+    var targets = root.querySelectorAll('[data-i18n]');
+    targets.forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (dict[key]) {
+        el.textContent = dict[key];
+      }
+    });
+
+    if (currentTheme === 'night') {
+      opsModeLabel.textContent = lang === 'ES' ? 'OPS NOCHE' : 'NIGHT OPS';
+    } else {
+      opsModeLabel.textContent = lang === 'ES' ? 'OPS DÍA' : 'DAY OPS';
+    }
+  }
+
+  // UPDATE BUFFER DISPLAY
+  function updateBufferDisplay() {
+    if (currentInput.length === 0) {
+      bufferEl.textContent = "_";
+    } else {
+      bufferEl.textContent = currentInput + "_";
+    }
+  }
+
+  // SOUND EMULATION (SYNTH WEBAUDIO BIP/TONE)
+  function playTeletypeSound(isSuccess, isBeep) {
+    try {
+      var AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContext) return;
+      var ctx = new AudioContext();
+      var osc = ctx.createOscillator();
+      var gain = ctx.createGain();
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      if (isSuccess) {
+        osc.frequency.setValueAtTime(440, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.25);
+        gain.gain.setValueAtTime(0.12, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.3);
+      } else if (isBeep) {
+        osc.frequency.setValueAtTime(600, ctx.currentTime);
+        gain.gain.setValueAtTime(0.04, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.05);
+      } else {
+        // ERROR BUZZ
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(160, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(90, ctx.currentTime + 0.35);
+        gain.gain.setValueAtTime(0.2, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.35);
+      }
+    } catch (e) {
+      // AudioContext unavailable or restricted
+    }
+  }
+
+  // EXECUTE CIPHER DECRYPTION ANIMATION
+  function executeDecryption(key) {
+    if (isDecrypting) return;
+    isDecrypting = true;
+    bannerSuccess.classList.add('hidden');
+    bannerFailure.classList.add('hidden');
+    streamContainer.classList.remove('hidden');
+
+    var glyphs = ['0x4F', '#%&', '9A', '11', '0xC3', 'AB79', '0x90', 'FF', '%%', '><', '0101', 'HEX_9', 'SUB', '88'];
+    var elapsed = 0;
+    var duration = 1200; // 1.2s specification
+    var intervalTime = 60;
+
+    var matrixInterval = setInterval(function() {
+      elapsed += intervalTime;
+      var randomTokens = [];
+      for (var i = 0; i < 7; i++) {
+        randomTokens.push(glyphs[Math.floor(Math.random() * glyphs.length)]);
+      }
+      streamOutput.textContent = randomTokens.join(' ');
+      var percent = Math.min(100, Math.floor((elapsed / duration) * 100));
+      streamPercent.textContent = (percent < 10 ? '0' : '') + percent + '%';
+      playTeletypeSound(false, true);
+
+      if (elapsed >= duration) {
+        clearInterval(matrixInterval);
+        finalizeDecryption(key);
+      }
+    }, intervalTime);
+  }
+
+  // FINALIZE RESULT
+  function finalizeDecryption(key) {
+    streamContainer.classList.add('hidden');
+    isDecrypting = false;
+
+    var sanitized = key.trim().toUpperCase();
+    var isMatch = AUTHORIZED_KEYS.indexOf(sanitized) !== -1;
+
+    if (isMatch) {
+      bannerSuccess.classList.remove('hidden');
+      bannerFailure.classList.add('hidden');
+      playTeletypeSound(true, false);
+    } else {
+      bannerFailure.classList.remove('hidden');
+      bannerSuccess.classList.add('hidden');
+      if (attemptsRemaining > 1) {
+        attemptsRemaining--;
+      } else {
+        attemptsRemaining = 0;
+      }
+      attemptsCounter.textContent = "0" + attemptsRemaining + " / 03";
+      playTeletypeSound(false, false);
+    }
+  }
+
+  // EVENT LISTENERS: KEYPAD
+  var keyPadButtons = root.querySelectorAll('.key-pad-btn');
+  keyPadButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      if (isDecrypting) return;
+      var val = this.getAttribute('data-val');
+      if (currentInput.length < 14) {
+        currentInput += val;
+        updateBufferDisplay();
+        playTeletypeSound(false, true);
+      }
+    });
+  });
+
+  // CLEAR BUTTON
+  var clearBtn = document.getElementById('clear-buffer-btn');
+  clearBtn.addEventListener('click', function() {
+    if (isDecrypting) return;
+    currentInput = "";
+    updateBufferDisplay();
+    bannerSuccess.classList.add('hidden');
+    bannerFailure.classList.add('hidden');
+  });
+
+  // DECRYPT ACTION TRIGGER
+  var decryptBtn = document.getElementById('trigger-decrypt-btn');
+  decryptBtn.addEventListener('click', function() {
+    if (currentInput.length === 0) return;
+    executeDecryption(currentInput);
+  });
+
+  // QUICK TEST PRESET BUTTONS
+  var quickValid = document.getElementById('quick-key-valid');
+  quickValid.addEventListener('click', function() {
+    currentInput = "SUB-2025";
+    updateBufferDisplay();
+    executeDecryption(currentInput);
+  });
+
+  var quickInvalid = document.getElementById('quick-key-invalid');
+  quickInvalid.addEventListener('click', function() {
+    currentInput = "XYZ-999";
+    updateBufferDisplay();
+    executeDecryption(currentInput);
+  });
+
+  // OPS MODE TOGGLE
+  opsBtn.addEventListener('click', function() {
+    var nextTheme = currentTheme === 'day' ? 'night' : 'day';
+    applyTheme(nextTheme);
+  });
+
+  // LANG TOGGLE
+  langBtn.addEventListener('click', function() {
+    var nextLang = currentLang === 'ES' ? 'EN' : 'ES';
+    applyLanguage(nextLang);
+  });
+
+  // CLOCK TICKER
+  setInterval(function() {
+    var d = new Date();
+    var h = String(d.getUTCHours()).padStart(2, '0');
+    var m = String(d.getUTCMinutes()).padStart(2, '0');
+    var s = String(d.getUTCSeconds()).padStart(2, '0');
+    timeTicker.textContent = h + ":" + m + ":" + s + " ZULU";
+  }, 1000);
+
+  // INIT
+  applyTheme(currentTheme);
+  applyLanguage(currentLang);
+  updateBufferDisplay();
+})();
+</script></main></body></html>

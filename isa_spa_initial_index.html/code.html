@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="day">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ISA — International Submarine Academy</title>
+  
+  <!-- Tipografía Táctica: Space Grotesk + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       ISA TOKENS & DUAL LIGHTING PALETTE (Day Ops / Night Ops)
+       ========================================================================== */
+    :root {
+      /* Day Ops (Radar Esmeralda) */
+      --isa-bg-dark: #08151e;
+      --isa-surface-day: #101d26;
+      --isa-surface-card-day: #162734;
+      --isa-surface-bright: #2e3b45;
+      --isa-accent-day: #38e8a6;
+      --isa-accent-day-glow: rgba(56, 232, 166, 0.25);
+      --isa-text-day: #e6edf3;
+      --isa-text-muted-day: #8b9bb4;
+      --isa-border-day: rgba(56, 232, 166, 0.25);
+
+      /* Night Ops (Linterna Roja de Batalla Submarina) */
+      --isa-bg-night: #050a0d;
+      --isa-surface-night: #0e0506;
+      --isa-surface-card-night: #18080a;
+      --isa-accent-night: #FF3B30;
+      --isa-accent-night-glow: rgba(255, 59, 48, 0.28);
+      --isa-text-night: #FFB3B3;
+      --isa-text-muted-night: #FF6B6B;
+      --isa-border-night: rgba(255, 59, 48, 0.35);
+
+      /* Mapeo Activo Semántico Dinámico */
+      --bg-current: var(--isa-bg-dark);
+      --surface-current: var(--isa-surface-day);
+      --surface-card-current: var(--isa-surface-card-day);
+      --surface-bright-current: var(--isa-surface-bright);
+      --accent-current: var(--isa-accent-day);
+      --glow-current: var(--isa-accent-day-glow);
+      --text-current: var(--isa-text-day);
+      --text-muted-current: var(--isa-text-muted-day);
+      --border-current: var(--isa-border-day);
+
+      /* Tipografía y Ergonomía */
+      --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-telemetry: 'JetBrains Mono', monospace;
+      --min-touch-target: 48px;
+
+      --transition-theme: background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+                          border-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+                          color 0.35s ease,
+                          box-shadow 0.45s ease;
+    }
+
+    /* Linterna Roja Activada */
+    [data-theme="night"] {
+      --bg-current: var(--isa-bg-night);
+      --surface-current: var(--isa-surface-night);
+      --surface-card-current: var(--isa-surface-card-night);
+      --surface-bright-current: #2a0b0e;
+      --accent-current: var(--isa-accent-night);
+      --glow-current: var(--isa-accent-night-glow);
+      --text-current: var(--isa-text-night);
+      --text-muted-current: var(--isa-text-muted-night);
+      --border-current: var(--isa-border-night);
+    }
+
+    /* Reset & Base Táctica */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-current);
+      color: var(--text-current);
+      font-family: var(--font-display);
+      font-size: 16px;
+      line-height: 1.6;
+      transition: var(--transition-theme);
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Fondo Radar Sutil */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: 
+        radial-gradient(var(--border-current) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+      background-size: 24px 24px, 100% 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    #app-root {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      max-width: 480px;
+      margin: 0 auto;
+      width: 100%;
+      background: var(--bg-current);
+      border-left: 1px solid var(--border-current);
+      border-right: 1px solid var(--border-current);
+      min-height: 100vh;
+      transition: var(--transition-theme);
+    }
+
+    /* Top App Bar */
+    .isa-header {
+      position: sticky;
+      top: 0;
+      background: var(--surface-current);
+      border-bottom: 1px solid var(--border-current);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      transition: var(--transition-theme);
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-current);
+      box-shadow: 0 0 10px var(--glow-current);
+      object-fit: contain;
+      background: #000;
+    }
+
+    .brand-meta h1 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-current);
+      line-height: 1.2;
+    }
+
+    .brand-meta span {
+      font-family: var(--font-telemetry);
+      font-size: 12px;
+      color: var(--text-muted-current);
+      display: block;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tactical-btn {
+      min-width: var(--min-touch-target);
+      min-height: var(--min-touch-target);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      background: var(--surface-card-current);
+      border: 1px solid var(--border-current);
+      color: var(--text-current);
+      font-family: var(--font-telemetry);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: var(--transition-theme);
+    }
+
+    .tactical-btn:hover {
+      border-color: var(--accent-current);
+      box-shadow: 0 0 12px var(--glow-current);
+    }
+
+    .tactical-btn.primary {
+      background: var(--accent-current);
+      color: var(--bg-current);
+      font-weight: 700;
+    }
+
+    /* Container de Vistas */
+    .isa-viewport {
+      flex: 1;
+      padding: 16px 16px 90px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Tarjetas Tácticas */
+    .tactical-card {
+      background: var(--surface-card-current);
+      border: 1px solid var(--border-current);
+      border-radius: 6px;
+      padding: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      position: relative;
+      transition: var(--transition-theme);
+    }
+
+    .card-header-badge {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-family: var(--font-telemetry);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tag-chip {
+      padding: 3px 8px;
+      border-radius: 3px;
+      background: rgba(56, 232, 166, 0.12);
+      color: var(--accent-current);
+      border: 1px solid var(--border-current);
+    }
+
+    [data-theme="night"] .tag-chip {
+      background: rgba(255, 59, 48, 0.15);
+    }
+
+    /* Bottom Navigation Bar (5 Pestañas Persistentes) */
+    .isa-bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      background: var(--surface-current);
+      border-top: 1px solid var(--border-current);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      transition: var(--transition-theme);
+    }
+
+    .nav-tab {
+      min-height: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted-current);
+      font-family: var(--font-telemetry);
+      font-size: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition-theme);
+    }
+
+    .nav-tab.active {
+      color: var(--accent-current);
+      background: rgba(56, 232, 166, 0.06);
+      box-shadow: inset 0 3px 0 var(--accent-current);
+    }
+
+    [data-theme="night"] .nav-tab.active {
+      background: rgba(255, 59, 48, 0.08);
+      box-shadow: inset 0 3px 0 var(--accent-current);
+    }
+
+    .nav-icon {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    /* Mandatory Institutional Waiver Banners */
+    .legal-waiver {
+      font-family: var(--font-telemetry);
+      font-size: 12px;
+      color: var(--text-muted-current);
+      text-align: center;
+      padding: 12px;
+      border-top: 1px dashed var(--border-current);
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+    /* Grilla 5x5 */
+    .grid-matrix {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .grid-cell {
+      min-height: 52px;
+      aspect-ratio: 1;
+      background: var(--surface-current);
+      border: 1px solid var(--border-current);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-family: var(--font-telemetry);
+      font-size: 12px;
+      transition: var(--transition-theme);
+    }
+
+    .grid-cell.completed {
+      background: var(--surface-card-current);
+      border-color: var(--accent-current);
+      color: var(--accent-current);
+      box-shadow: 0 0 8px var(--glow-current);
+    }
+
+    .grid-cell.available {
+      border-style: dashed;
+      color: var(--text-current);
+    }
+
+    .grid-cell.locked {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    /* Modal Elena Intercom */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 15, 24, 0.88);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .elena-modal {
+      background: var(--surface-card-current);
+      border: 2px solid var(--accent-current);
+      box-shadow: 0 0 25px var(--glow-current);
+      border-radius: 8px;
+      max-width: 420px;
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* Helper Utilities */
+    .flex-between { display: flex; justify-content: space-between; align-items: center; }
+    .text-mono { font-family: var(--font-telemetry); }
+    .text-accent { color: var(--accent-current); }
+    .text-muted { color: var(--text-muted-current); }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <div id="app-root">
+    <!-- Top Header -->
+    <header class="isa-header">
+      <div class="brand-group">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeoyeUvqB3I5c8k3cHlI_u9aqiuTgKqwj-ZVwEYu-m1hu-JSYneRq73YtAzSRGrzdE-yRec1U3QJ0bdZxRVNd337bRGDuPP6YhbzaSbo_nnIH5Kfw3xtvt5n2CqWtQD7z6UpaxZrOFRDVkp9WwwPZNMYkO-8KtzJ8qWkqRrxRuxUR0NNL93jiSBmOUdfziJTM0O0O6My8QMLz1uvmLUkUJQHzRODADdkRtZUKaCtFsGwjfro5TleUA" alt="ISA Emblem" class="brand-logo" onerror="this.src='https://placehold.co/40x40/08151e/38e8a6?text=ISA'">
+        <div class="brand-meta">
+          <h1>ISA TELEMETRÍA</h1>
+          <span id="callsign-badge">EXP · LUNAR FISH #884</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Bilingual Toggle -->
+        <button id="lang-toggle-btn" class="tactical-btn" aria-label="Cambiar Idioma" title="Conmutador ES / EN">
+          <span id="lang-label">ES</span>
+        </button>
+        <!-- Night Ops Toggle -->
+        <button id="night-ops-btn" class="tactical-btn" aria-label="Alternar Linterna Roja" title="Modo Linterna Roja">
+          <span id="mode-icon">⚡</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Dynamic Main Viewport -->
+    <main id="router-view" class="isa-viewport">
+      <!-- Se inyecta dinámicamente mediante main.js -->
+    </main>
+
+    <!-- Mandatory Institutional Disclaimers -->
+    <footer class="legal-waiver">
+      <p data-i18n="legal_recognition">RECONOCIMIENTO SIMBÓLICO — NO ES UNA CERTIFICACIÓN ACADÉMICA / SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION</p>
+      <p data-i18n="legal_privacy" style="margin-top: 4px;">Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required.</p>
+      <p data-i18n="legal_fiction" style="margin-top: 4px; opacity: 0.8;">Todo lo que ves es ficción. Los museos y su contexto histórico son reales.</p>
+    </footer>
+
+    <!-- Fixed Bottom Tab Navigation (5 Pestañas) -->
+    <nav class="isa-bottom-nav">
+      <button class="nav-tab active" data-route="/home">
+        <span class="nav-icon">🧭</span>
+        <span data-i18n="nav_home">Inicio</span>
+      </button>
+      <button class="nav-tab" data-route="/map">
+        <span class="nav-icon">🗺️</span>
+        <span data-i18n="nav_map">Grilla</span>
+      </button>
+      <button class="nav-tab" data-route="/badges">
+        <span class="nav-icon">🎖️</span>
+        <span data-i18n="nav_badges">Insignias</span>
+      </button>
+      <button class="nav-tab" data-route="/museums">
+        <span class="nav-icon">⚓</span>
+        <span data-i18n="nav_museums">Museos</span>
+      </button>
+      <button class="nav-tab" data-route="/profile">
+        <span class="nav-icon">👤</span>
+        <span data-i18n="nav_profile">Perfil</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Elena Intercom Modal Overlay -->
+  <div id="elena-intercom-modal" class="modal-overlay">
+    <div class="elena-modal">
+      <div class="flex-between">
+        <span class="tag-chip">INTERCOM // JEFA ELENA</span>
+        <span class="text-mono text-muted" style="font-size: 12px;">CANAL MÁQUINAS</span>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <div style="width: 64px; height: 64px; border-radius: 4px; border: 1px solid var(--accent-current); overflow: hidden; background: #000; flex-shrink: 0;">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrAQAnXcsK_AGern1l9uWZdjlHd2mxPns7lxmNb9LEsaLHpvL8MoobFSYM1G0yfnGT5B1tYpwHph9clcu_WJQT4vB-L_PULwtf_JUqDUfVG5EHISWgZwpMZ1JTFnaf_NkmnVM3uKxEBiiInuHRAmPgZk1ld1NC7SG1ha0M3sOOuQcrRRB5W8DN739mKoCMIU7nAfMX42wgYYXqlYD9BbOYVeWnePHT8Lz95WWIrmYgoN" alt="Elena" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.2) sepia(0.2);" onerror="this.src='https://placehold.co/64x64/101d26/38e8a6?text=ELENA'">
+        </div>
+        <div>
+          <h4 style="font-size: 15px; font-weight: 700; color: var(--accent-current);">Jefa Elena</h4>
+          <p class="text-muted" style="font-size: 13px;" data-i18n="elena_hint">«Tranquilo explorador. Si bajamos la presión o enfriamos el comburente, el diésel no alcanza el punto de ignición. Revisa las dos condiciones elementales.»</p>
+        </div>
+      </div>
+      <button id="close-elena-btn" class="tactical-btn primary" style="width: 100%;" data-i18n="elena_retry">
+        ENTENDIDO · REINTENTAR ANÁLISIS
+      </button>
+    </div>
+  </div>
+
+  <!-- Main ES Module Bootstrapper -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

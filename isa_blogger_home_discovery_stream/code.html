@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Chivo:wght@400;500&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary": "#003824", "on-tertiary-fixed": "#291800", "surface-bright": "#2e3b45", "primary-container": "#38e8a6", "secondary-fixed": "#ffdcc6", "outline-variant": "#3c4a41", "secondary-container": "#8a4400", "surface-container": "#14212a", "secondary-fixed-dim": "#ffb784", "on-primary-fixed-variant": "#005236", "on-secondary": "#4f2500", "on-primary-container": "#006444", "on-primary-fixed": "#002113", "inverse-on-surface": "#25323c", "inverse-primary": "#006c49", "secondary": "#ffb784", "on-surface-variant": "#bacabf", "background": "#08151e", "on-secondary-container": "#ffc095", "primary-fixed": "#56feba", "primary-fixed-dim": "#2be19f", "surface-dim": "#08151e", "primary": "#92ffca", "surface-variant": "#2a3640", "surface-container-high": "#1f2b35", "on-tertiary-container": "#794e00", "on-tertiary-fixed-variant": "#633f00", "tertiary-fixed": "#ffddb3", "on-secondary-fixed-variant": "#713700", "surface": "#08151e", "surface-container-lowest": "#040f18", "on-secondary-fixed": "#301400", "error-container": "#93000a", "on-surface": "#d7e4f1", "tertiary": "#ffe6c9", "tertiary-fixed-dim": "#ffb952", "surface-container-low": "#101d26", "on-tertiary": "#452b00", "outline": "#85948a", "surface-tint": "#2be19f", "surface-container-highest": "#2a3640", "on-background": "#d7e4f1", "error": "#ffb4ab", "on-error-container": "#ffdad6", "inverse-surface": "#d7e4f1", "on-error": "#690005", "tertiary-container": "#ffc36f" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "margin": "3rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter-mobile": "1rem", "margin-mobile": "1.25rem", "space-sm": "0.5rem" }, "fontFamily": { "display-hero-mobile": [ "Space Grotesk" ], "headline-sm": [ "Space Grotesk" ], "body-lg": [ "Chivo" ], "telemetry-lg": [ "Space Mono" ], "headline-lg-mobile": [ "Space Grotesk" ], "body-sm": [ "Chivo" ], "headline-lg": [ "Space Grotesk" ], "label-caps": [ "Space Mono" ], "headline-md": [ "Space Grotesk" ], "body-md": [ "Chivo" ], "telemetry-sm": [ "Space Mono" ], "display-hero": [ "Space Grotesk" ] }, "fontSize": { "display-hero-mobile": [ "2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-sm": [ "1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" } ], "body-lg": [ "1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" } ], "telemetry-lg": [ "1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" } ], "headline-lg-mobile": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-sm": [ "0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" } ], "headline-lg": [ "2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-caps": [ "0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" } ], "headline-md": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" } ], "body-md": [ "1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" } ], "telemetry-sm": [ "0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" } ], "display-hero": [ "4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" } ] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.scanline-overlay{background:linear-gradient(rgba(18,28,38,0) 50%,rgba(4,15,24,0.3) 50%),linear-gradient(90deg,rgba(255,0,0,0.02),rgba(0,255,0,0.01),rgba(0,0,255,0.02));background-size:100% 3px,4px 100%;pointer-events:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased flex flex-col min-h-screen relative selection:bg-primary selection:text-on-primary"><div class="fixed inset-0 scanline-overlay z-40"></div><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_12px_rgba(0,0,0,0.4)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="relative flex items-center justify-center w-9 h-9 rounded bg-surface-container-high"><span class="material-symbols-outlined text-primary text-[20px]">radar</span><span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-label-caps text-label-caps text-secondary tracking-widest">ISA // BLOGGER ARCHIVE</span><span class="font-telemetry-sm text-telemetry-sm text-primary">•--•</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate tracking-tight">Hydro Telemetry Stream</h1></div></div><div class="flex items-center gap-space-xs"><button aria-label="Quick Terminal Dispatcher" class="w-11 h-11 flex items-center justify-center rounded text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">terminal</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full space-y-space-lg px-margin-mobile">
+<!-- Tactical Status Ribbon / Telemetry Beacon -->
+<div class="relative w-full overflow-hidden rounded bg-surface-container-lowest p-space-sm shadow-md">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest truncate">HYDROPHONE ARRAY: ACTIVE // LEVEL 4 ARCHIVE STREAM</span>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant opacity-70">DEP: -412M</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold">[ONLINE]</span>
+</div>
+</div>
+</div>
+<!-- Blogger Label Matrix Cloud Filter -->
+<section class="flex flex-col w-full space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">label</span>
+<span class="font-label-caps text-label-caps text-on-surface tracking-wider">TACTICAL BLOGGER LABELS</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">4 CATEGORIES // 14 NODES</span>
+</div>
+<!-- Scrollable Label Pills with Category Grouping -->
+<div class="flex flex-col gap-2 bg-surface-container p-space-sm rounded-lg shadow-sm">
+<!-- Seasons -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+<span class="font-label-caps text-label-caps text-secondary font-bold shrink-0 pr-1">SEASON:</span>
+<button class="px-2.5 py-1 rounded bg-primary text-on-primary font-telemetry-sm text-telemetry-sm shrink-0 shadow-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary"></span>
+          STEEL 04
+        </button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface hover:text-primary font-telemetry-sm text-telemetry-sm shrink-0 transition-colors">
+          COPPER 02
+        </button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface hover:text-primary font-telemetry-sm text-telemetry-sm shrink-0 transition-colors">
+          BRONZE 01
+        </button>
+</div>
+<!-- Museums & Field Stations -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+<span class="font-label-caps text-label-caps text-secondary font-bold shrink-0 pr-1">MUSEUM:</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface hover:text-primary font-telemetry-sm text-telemetry-sm shrink-0 flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[12px] text-primary">anchor</span>
+          U-995 LABOE
+        </button>
+<button class="px-2.5 py-1 rounded bg-surface-container-highest text-primary font-telemetry-sm text-telemetry-sm shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-primary">navigation</span>
+          USS BOWFIN (SS-287)
+        </button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface hover:text-primary font-telemetry-sm text-telemetry-sm shrink-0 transition-colors">
+          HMS ALLIANCE (P417)
+        </button>
+</div>
+<!-- STEM+A Curriculum & Standards -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+<span class="font-label-caps text-label-caps text-secondary font-bold shrink-0 pr-1">CORRELATION:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-telemetry-sm text-telemetry-sm shrink-0">
+          TIMSS-PHYS-4B
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-secondary-fixed font-telemetry-sm text-telemetry-sm shrink-0">
+          GSA-ARCHIVAL-R5
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-telemetry-sm text-telemetry-sm shrink-0">
+          STEM+A ACOUSTICS
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-telemetry-sm text-telemetry-sm shrink-0">
+          METALLURGY
+        </span>
+</div>
+</div>
+</section>
+<!-- Morse Code Tactical Divider (. - . .   /   . - -   /   - . - .) -->
+<div class="flex items-center justify-center gap-2 py-1 select-none opacity-40">
+<div class="w-1.5 h-1 bg-secondary rounded-full"></div>
+<div class="w-6 h-1 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-1 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-1 bg-secondary rounded-full"></div>
+<div class="w-8 h-[1px] bg-outline-variant mx-1"></div>
+<div class="w-1.5 h-1 bg-primary rounded-full"></div>
+<div class="w-6 h-1 bg-primary rounded-full"></div>
+<div class="w-6 h-1 bg-primary rounded-full"></div>
+<div class="w-8 h-[1px] bg-outline-variant mx-1"></div>
+<div class="w-6 h-1 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-1 bg-secondary rounded-full"></div>
+<div class="w-6 h-1 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-1 bg-secondary rounded-full"></div>
+</div>
+<!-- Featured Vertical Transmedia Documentary Episode Card (9:16 Aspect) -->
+<article class="relative flex flex-col w-full rounded-xl bg-surface-container-lowest overflow-hidden shadow-xl">
+<!-- Header Teletype Status Ribbon -->
+<div class="flex items-center justify-between px-space-md py-space-xs bg-surface-container-high">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[14px]">cell_tower</span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest">TRANSMISSION RECV</span>
+</div>
+<div class="flex items-center gap-1 font-telemetry-sm text-telemetry-sm text-secondary">
+<span>TELEX:</span>
+<span class="text-on-surface" id="teletype-ticker">NEW DISPATCH TRANSMITTED</span>
+</div>
+</div>
+<!-- 9:16 Poster Media Frame with Overlays -->
+<div class="relative w-full aspect-[9/16] max-h-[520px] bg-surface-container-lowest overflow-hidden">
+<!-- Image Asset Placeholder with Detailed Atmospheric Prompt -->
+<img class="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-105" data-alt="Cinematic underwater portrait of submarine ballast tank pressure hull with green emergency phosphor lighting and atmospheric particulates floating in deep sea brine. A naval diver in historical rebreather equipment inspects heavy rivets of USS Bowfin in shadowy blue-green murk, cinematic hyper-realistic documentary photography in steel and teal palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt6d6TCl0IcLmut4R9swzhRCUu4leldNPTMUMU-t1Z2XIW5g5RG0xsoeHsGiM4Ptutrb_RwfpaBjRB99ENR006wpRBYtb454B-zOU7bO5fUUxd-AxfMRDdnnBfgF2qTT9ccOk-36_4jtvOEbSbzFgK1k73Hq4OXxO0BJPyTKe-9TrYQ8KTP7146Ky3yinxKNtG2w0BegKOS6KLNEOzvnIUM52l9YDqsZu2dWiT1l4"/>
+<!-- High Contrast Vignette Scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+<!-- Top Overlay Badges -->
+<div class="absolute top-space-md left-space-md right-space-md flex items-center justify-between">
+<span class="px-2.5 py-1 rounded bg-primary text-on-primary font-label-caps text-label-caps tracking-widest font-bold shadow-md">
+          PUBLIC DISCOVERY POST
+        </span>
+<div class="px-2 py-1 rounded bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-telemetry-sm text-telemetry-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">schedule</span>
+<span>28:44 RUNTIME</span>
+</div>
+</div>
+<!-- Live Oscilloscope Mini-Overlay Graphic -->
+<div class="absolute top-16 right-space-md w-28 bg-surface-container-lowest/85 backdrop-blur-md rounded p-1.5 flex flex-col gap-1 shadow-md">
+<div class="flex justify-between items-center text-on-surface-variant font-label-caps text-label-caps">
+<span>HYDRO-SIG</span>
+<span class="text-primary font-bold">LIVE</span>
+</div>
+<svg class="w-full h-6 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 100 24">
+<path d="M0,12 Q10,2 20,12 T40,12 T60,22 T75,4 T85,16 T100,12"></path>
+</svg>
+</div>
+<!-- Card Core Information (Bottom Anchored) -->
+<div class="absolute bottom-0 left-0 right-0 p-space-md flex flex-col space-y-space-sm bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/95 to-transparent pt-12">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-telemetry-sm text-telemetry-sm">
+            DOC // S04-EP02
+          </span>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm">
+            USS BOWFIN HERITAGE
+          </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+            4K TELEMETRY
+          </span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface leading-snug">
+          Steel Cavitation: The Acoustic Resonance of Bowfin
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Declassified hydrophone logs from 1944 meet 21st-century acoustic imaging. Explore the hydrodynamic mechanics of torpedo launch tubes and structural vibration harmonics with naval engineers.
+        </p>
+<!-- CTA Launcher Trigger -->
+<div class="pt-space-xs flex items-center gap-space-sm">
+<button class="flex-1 py-3 px-4 rounded bg-primary text-on-primary font-telemetry-lg text-telemetry-lg flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-all" id="btn-launch-ep">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span>ENGAGE DISPATCH</span>
+</button>
+<button aria-label="Archive Blueprint Dossier" class="w-12 h-12 rounded bg-surface-container-high text-primary flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[22px]">bookmark_add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Section Title: Secondary Archive Stream -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-secondary tracking-widest">EXPEDITION LOGS</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Sub-Aquatic Feed</h3>
+</div>
+<div class="flex items-center gap-1 font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span>SORT:</span>
+<span class="text-primary cursor-pointer hover:underline">MOST RECENT</span>
+</div>
+</div>
+<!-- Secondary Feed Posts (Cards) -->
+<div class="flex flex-col space-y-space-md">
+<!-- Mission Post Item 1: U-995 -->
+<article class="flex flex-col rounded-lg bg-surface-container overflow-hidden shadow-sm">
+<div class="relative w-full h-44 bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Interior command compartment of Type VII-C submarine U-995 at Laboe with illuminated brass manometer dials, pressure valves, depth gauge dial, and aged periscope optics in moody warm shadows and sea green light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2ZxzN7TqOIDFWMeTzgIdvN7A_PUJiMZdPBNOXHlZVRlyakfAsr3LqhMZHB82Cx6Mod4b_WSMsQYvthJnPBL3rzntPxqBMw5I3xlAxfl_134jqtGirwNLZ3DtXnEAvwXHd_kdwV0qd4nCXbQljX-YQz3pzpcGypESUDIjd6QRj0zjPd_DSzn39yubgmav-xCUBaBWPLZcd4TZSHIXxcuTBiWH5zhaWfZTGb-nmXnU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur-md text-secondary font-label-caps text-label-caps">
+            LABOE FIELD STUDY
+          </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur-md text-primary font-telemetry-sm text-telemetry-sm">
+            TIMSS-MATH-08
+          </span>
+</div>
+<div class="absolute bottom-2 right-2 px-2 py-1 rounded bg-surface-container-lowest/90 text-on-surface font-telemetry-sm text-telemetry-sm">
+          PHOTO LOG // 14 PLATES
+        </div>
+</div>
+<div class="p-space-md flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<span>LOG-REF: #995-DK-202</span>
+<span>POSTED 3H AGO</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium hover:text-primary transition-colors">
+          Type VIIC Trim Calculations: Restoring U-995's Ballast Manifold
+        </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Cadet analysis of the high-pressure blow ballast system preserved on the Baltic coast. Includes high-resolution scans of original Krupp Germaniawerft shipyard schematics.
+        </p>
+<div class="pt-2 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">SECT: METALLURGY</span>
+</div>
+<button class="px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-primary font-telemetry-sm text-telemetry-sm flex items-center gap-1">
+<span>READ TELEGRAM</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Mission Post Item 2: HMS Alliance Oral History & Soundscape -->
+<article class="flex flex-col rounded-lg bg-surface-container overflow-hidden shadow-sm">
+<div class="relative w-full h-44 bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Gosport Royal Navy Submarine Museum showing HMS Alliance hull dry-docked under dramatic coastal twilight sky with acoustic sensor microphones placed near the bow sonar dome for audio restoration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA08qXW6O6Yux7MZ4DodFE1knuN9BiRLm37ebrZPwg527VGezj85-MMnlvgeSAzqKZYKI6H77fFAxFnMxYNX4Vmj7V6i-Q9csOWx52tAxKuuDiq6SqUUjvwCGIGLhZKNbWOBM4nlo4rkL1BLWY8C9sOQ_SDobwigA3KSqwgYZuAnZe49_CqTwQXGrwIXeCRcCiaMAYiT-SpOZ98luWzN2SC1fBKir6Np1diKjq__CA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-caps text-label-caps">
+            ORAL HERITAGE AUDIO
+          </span>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm">
+            HMS ALLIANCE
+          </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<span>LOG-REF: #AL-417-AUDIO</span>
+<span>POSTED 1D AGO</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium hover:text-primary transition-colors">
+          The Snort Mast Drone: Sub-Surface Breathing Acoustics
+        </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Chief Engine Room Artificer recordings from the 1968 South Atlantic transit. Experience recreated binaural cabin engine noise matched with structural dampening calculations.
+        </p>
+<!-- Mini Audio Oscilloscope Bar -->
+<div class="my-2 p-2 rounded bg-surface-container-lowest flex items-center justify-between gap-space-sm">
+<button class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div class="flex-1 flex items-center gap-1 h-5 overflow-hidden">
+<span class="w-1 bg-primary h-2 rounded-full animate-pulse"></span>
+<span class="w-1 bg-primary h-4 rounded-full"></span>
+<span class="w-1 bg-primary h-5 rounded-full"></span>
+<span class="w-1 bg-primary h-3 rounded-full"></span>
+<span class="w-1 bg-primary h-5 rounded-full"></span>
+<span class="w-1 bg-outline-variant h-2 rounded-full"></span>
+<span class="w-1 bg-outline-variant h-1 rounded-full"></span>
+<span class="w-1 bg-outline-variant h-3 rounded-full"></span>
+<span class="w-1 bg-outline-variant h-2 rounded-full"></span>
+<span class="w-1 bg-outline-variant h-4 rounded-full"></span>
+<span class="w-1 bg-outline-variant h-1 rounded-full"></span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant shrink-0">03:12</span>
+</div>
+<div class="pt-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">DISCIPLINE: STEM+ARTS SOUND</span>
+</div>
+<button class="px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-primary font-telemetry-sm text-telemetry-sm flex items-center gap-1">
+<span>LISTEN &amp; DECODE</span>
+<span class="material-symbols-outlined text-[14px]">headphones</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Mission Post Item 3: TIMSS & GSA STEM Expedition -->
+<article class="flex flex-col rounded-lg bg-surface-container overflow-hidden shadow-sm">
+<div class="p-space-md flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[14px]">school</span>
+<span class="font-label-caps text-label-caps">CADET CURRICULUM</span>
+</div>
+<span>GSA VETTED</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium hover:text-primary transition-colors">
+          Buoyancy vs. Hull Compression: Deep Basin Experiment 04
+        </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          An interactive laboratory worksheet comparing HY-80 steel displacement against titanium sphere pressure tolerances. Aligned with TIMSS Grade 8 physical sciences framework.
+        </p>
+<div class="flex flex-wrap items-center gap-1.5 pt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-telemetry-sm text-telemetry-sm">
+            #STEEL-CURRICULUM
+          </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-secondary font-telemetry-sm text-telemetry-sm">
+            #TIMSS-2026
+          </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+            #LAB-MODULE
+          </span>
+</div>
+<div class="pt-3 flex items-center justify-between">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">32 CADETS RESPONDED</span>
+<button class="px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-primary font-telemetry-sm text-telemetry-sm flex items-center gap-1">
+<span>DOWNLOAD MODULE</span>
+<span class="material-symbols-outlined text-[14px]">sim_card_download</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Morse Code Footer Anchor Divider (. . .   /   - - -   /   . . .) -->
+<div class="flex items-center justify-center gap-1.5 py-4 select-none opacity-40">
+<div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+<div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+<div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+<div class="w-4 h-[1px] bg-outline-variant mx-1"></div>
+<div class="w-4 h-1 bg-primary rounded-full"></div>
+<div class="w-4 h-1 bg-primary rounded-full"></div>
+<div class="w-4 h-1 bg-primary rounded-full"></div>
+<div class="w-4 h-[1px] bg-outline-variant mx-1"></div>
+<div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+<div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+<div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+</div>
+<!-- End of Feed Disclaimer / Institutional Archive Statement -->
+<div class="rounded-lg bg-surface-container-lowest p-space-md text-center flex flex-col items-center space-y-1 mb-4 shadow-sm">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-caps text-label-caps tracking-widest">ISA DECLASSIFIED PUBLIC DISCOVERY LAYER</span>
+</div>
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant max-w-xs">
+      Strictly non-commercial maritime heritage repository. Zero sponsored tracking. Certified educational artifact archival standards.
+    </p>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary pt-1">SEC_ID // 0048-B-REV2</span>
+</div>
+</div>
+<!-- Inline Micro-Interaction Script -->
+<script>
+  (function initDiscoveryMicroInteractions() {
+    const launchBtn = document.getElementById('btn-launch-ep');
+    if (launchBtn) {
+      launchBtn.addEventListener('click', () => {
+        const originalText = launchBtn.innerHTML;
+        launchBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[20px] animate-spin">refresh</span>
+          <span>INITIALIZING STREAM...</span>
+        `;
+        setTimeout(() => {
+          launchBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[20px]">check_circle</span>
+            <span>FEED LOCKED // 4K STREAM READY</span>
+          `;
+          launchBtn.classList.remove('bg-primary', 'text-on-primary');
+          launchBtn.classList.add('bg-primary-container', 'text-on-primary-container');
+        }, 1200);
+      });
+    }
+
+    // Teletype Ticker Variation
+    const teletypeEl = document.getElementById('teletype-ticker');
+    if (teletypeEl) {
+      const messages = [
+        "NEW DISPATCH TRANSMITTED",
+        "HYDROPHONE FEED VERIFIED",
+        "DEEP BASIN TELEMETRY READY",
+        "ACOUSTIC ARCHIVE STREAMING"
+      ];
+      let msgIdx = 0;
+      setInterval(() => {
+        msgIdx = (msgIdx + 1) % messages.length;
+        teletypeEl.textContent = messages[msgIdx];
+      }, 5000);
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.4)]" data-active-classes="text-primary font-bold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="home-stream" href="#"><span class="material-symbols-outlined text-[20px]">waves</span><span class="font-label-caps text-label-caps mt-1 scale-95">STREAM</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="mission-map" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span class="font-label-caps text-label-caps mt-1 scale-95">MAP</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="5x5-grid" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-caps text-label-caps mt-1 scale-95">5X5 GRID</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="museums" href="#"><span class="material-symbols-outlined text-[20px]">museum</span><span class="font-label-caps text-label-caps mt-1 scale-95">MUSEUMS</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="cadet-dossier" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span class="font-label-caps text-label-caps mt-1 scale-95">DOSSIER</span></a></div></nav></body></html>

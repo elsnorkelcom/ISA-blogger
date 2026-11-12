@@ -1,0 +1,527 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;}body{overscroll-behavior:none;color:#d7e4f1;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-container": "#ffc095", "tertiary-fixed": "#ffddb3", "primary-container": "#38e8a6", "on-secondary-fixed-variant": "#713700", "surface-container-highest": "#2a3640", "background": "#08151e", "surface": "#08151e", "on-error-container": "#ffdad6", "secondary-fixed-dim": "#ffb784", "on-tertiary-fixed": "#291800", "outline": "#85948a", "error-container": "#93000a", "on-secondary": "#4f2500", "surface-variant": "#2a3640", "on-tertiary": "#452b00", "on-error": "#690005", "inverse-surface": "#d7e4f1", "secondary-fixed": "#ffdcc6", "primary-fixed-dim": "#2be19f", "error": "#ffb4ab", "surface-container-high": "#1f2b35", "surface-container-low": "#101d26", "on-tertiary-fixed-variant": "#633f00", "tertiary-container": "#ffc36f", "inverse-primary": "#006c49", "on-primary-fixed": "#002113", "secondary": "#ffb784", "surface-dim": "#08151e", "secondary-container": "#8a4400", "on-surface": "#d7e4f1", "surface-tint": "#2be19f", "surface-container-lowest": "#040f18", "on-primary": "#003824", "primary": "#92ffca", "on-primary-fixed-variant": "#005236", "on-secondary-fixed": "#301400", "outline-variant": "#3c4a41", "on-background": "#d7e4f1", "on-surface-variant": "#bacabf", "primary-fixed": "#56feba", "surface-container": "#14212a", "on-primary-container": "#006444", "tertiary": "#ffe6c9", "on-tertiary-container": "#794e00", "inverse-on-surface": "#25323c", "tertiary-fixed-dim": "#ffb952", "surface-bright": "#2e3b45" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2.5rem", "space-md": "1rem", "margin": "3rem", "gutter-mobile": "1rem", "gutter": "1.5rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem" }, "fontFamily": { "body-md": ["Chivo"], "telemetry-sm": ["Space Mono"], "headline-sm": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "label-caps": ["Space Mono"], "headline-md": ["Space Grotesk"], "display-hero-mobile": ["Space Grotesk"], "display-hero": ["Space Grotesk"], "body-sm": ["Chivo"], "headline-lg-mobile": ["Space Grotesk"], "body-lg": ["Chivo"], "telemetry-lg": ["Space Mono"] }, "fontSize": { "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }], "telemetry-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" }], "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" }], "display-hero-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-hero": ["4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "telemetry-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" }] } } } }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen" style="background-color: rgb(5, 10, 13); color: rgb(255, 179, 179);"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-4 flex items-center justify-between gap-2"><div class="flex items-center gap-2 min-w-0"><button aria-label="Back" class="w-11 h-11 flex items-center justify-center rounded-lg bg-surface-container-high/60 text-primary hover:bg-surface-container-highest transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="AcademyLogo220x220 .png" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrAAiCSCIeJo1-9g3X6xI4zLcUhSPjCfDfC4Tv6Bu7qzDN8ZY_01Zxh7zGiCqJ4c3a5zNcoy2CTcA6O2N05_3SjCkPonVBRrTwbSdlM24-l-ySciAAwZgx0N8Ezdn8aFeD456xizmL5-eYv9mW3eDSAlx2qwoxKwHOtr1bzkqjK8CQqVJxERHgfh6ZtnQ2fob3CRJlT8JmlwR-yhXGsxBnNA_hMO2aGSbNAVFFgqdaHGmsE1VQrFK0uMEoQ"><div class="flex flex-col truncate"><span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">ISA SEC_ARCHIVE</span><h1 class="font-telemetry-sm text-telemetry-sm text-on-surface font-bold uppercase truncate">Tarjeta De Coleccion</h1></div></div><div class="flex items-center gap-1.5 shrink-0"><button aria-label="Toggle Day Night Ops" class="h-11 px-2.5 rounded bg-[#18080a] text-[#ff3b30] border border-[#ff3b30]/50 hover:bg-[#250a0d] flex items-center gap-1.5 transition-colors shadow-sm shadow-[#ff3b30]/30" onclick="toggleOpsLighting()"><span class="material-symbols-outlined text-[18px] text-[#ff3b30] animate-pulse">flashlight_on</span><span class="font-label-caps text-label-caps font-bold text-[#ffb3b3]">LINTERNA ROJA</span></button><button aria-label="Toggle Language ES/EN" class="h-11 px-2.5 rounded bg-surface-container-low text-secondary hover:text-secondary-fixed flex items-center justify-center transition-colors"><span class="font-label-caps text-label-caps">ES/EN</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-36 px-4 bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Interactive Tactical Control Deck -->
+<section class="flex flex-col gap-3 mb-5">
+<!-- Presets & State Switcher -->
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-primary tracking-wider uppercase" id="lbl-deck-mode">SYS_TELEMETRY // LIVE PREVIEW</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant" id="lbl-status-sync">STANDALONE OFFLINE</span>
+</div>
+<!-- Preset Selector Pills -->
+<div class="grid grid-cols-3 gap-1.5">
+<button class="h-10 px-1 rounded flex flex-col items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface" id="btn-preset-init" onclick="setCadetProgress('init')">
+<span class="font-label-caps text-label-caps text-on-surface">INICIO</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-bold">1 / 43</span>
+</button>
+<button class="h-10 px-1 rounded flex flex-col items-center justify-center bg-primary-container/20 text-primary transition-colors font-bold" id="btn-preset-current" onclick="setCadetProgress('current')">
+<span class="font-label-caps text-label-caps text-primary font-bold">EN CURSO</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">7 / 43</span>
+</button>
+<button class="h-10 px-1 rounded flex flex-col items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface" id="btn-preset-complete" onclick="setCadetProgress('complete')">
+<span class="font-label-caps text-label-caps text-on-surface">COMPLETO</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-bold">43 / 43</span>
+</button>
+</div>
+<!-- Operational Toggles: Day/Night Battle Lantern & Lang -->
+<div class="flex items-center justify-between pt-1 gap-2">
+<button class="flex-1 h-9 px-3 rounded bg-[#18080a] border border-[#ff3b30]/50 flex items-center justify-between text-[#ff6b6b] hover:bg-[#250a0d] transition-all shadow-inner" id="btn-toggle-ops" onclick="toggleOpsLighting()"><span class="font-label-caps text-label-caps font-bold text-[#ffb3b3]" id="lbl-ops-mode">BATTLE RED (NIGHT OPS)</span><span class="material-symbols-outlined text-[18px] text-[#ff3b30] animate-pulse" id="icon-ops">flashlight_on</span></button>
+<button class="h-9 px-3 rounded bg-surface-container-high flex items-center gap-1.5 text-secondary hover:text-secondary-fixed transition-colors" id="btn-toggle-lang" onclick="toggleLanguage()">
+<span class="material-symbols-outlined text-[16px]">translate</span>
+<span class="font-label-caps text-label-caps font-bold" id="lbl-lang-indicator">ESPAÑOL</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Live Canvas Container: Exact 9:16 High-Precision Tactical Share Card -->
+<section class="flex flex-col items-center w-full">
+<div class="w-full max-w-[370px] aspect-[9/16] bg-surface-container-lowest rounded-2xl relative overflow-hidden flex flex-col justify-between shadow-2xl p-4 transition-all duration-300" id="share-card-frame" style="background: linear-gradient(rgb(9, 3, 4) 0%, rgb(21, 6, 8) 50%, rgb(8, 2, 3) 100%); border: 1px solid rgba(255, 59, 48, 0.35); box-shadow: rgba(255, 59, 48, 0.15) 0px 0px 35px;">
+<!-- Ambient Hydrophone & Sonar Grid Overlay -->
+<div class="absolute inset-0 pointer-events-none opacity-25 [background-size:16px_16px]" style="background-image: radial-gradient(rgb(255, 59, 48) 1px, transparent 1px);"></div>
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full blur-3xl pointer-events-none" id="glow-ambient-layer" style="background-color: rgba(255, 59, 48, 0.22);"></div>
+<!-- Top Header & Credentials -->
+<div class="relative z-10 flex flex-col gap-2">
+<!-- Metadata bar with coordinates & ISA Seal -->
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">lock</span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">ISA // SEC_ARCHIVE</span>
+</div>
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant text-[10px] leading-tight mt-0.5">
+              LAT 12.0601° S // LON 77.1510° W<br>BAP ABTAO (SS-42) PACIFIC COMMAND
+            </p>
+</div>
+<!-- Verified ISA Badge Asset -->
+<div class="w-12 h-12 rounded-full p-0.5 bg-surface-container-high flex items-center justify-center shrink-0 shadow-md">
+<img alt="Official ISA Seal" class="w-full h-full object-contain rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8olOVK2OSI7RGpq0paB6u9QxrfINMtKpOg-5-0tqJMxntPAPq_jY3PHlmQdcKZWZ8wFKraDJr-HqTZazqyvZnT0wTvnshWiUTfhXMCAlxe6woBW0ISkpDoYFlYg0pK-xVv6XgV-EprX4MzkXEr_jUHRVP-p_fNdqPzs0kBKqusQ91LE64jcIuyShMk3LKnJU1PMttyI7AWaIlzklPirB29a3uCChvbV37dnRrHDf3S-rDfmOZku9w">
+</div>
+</div>
+<!-- Cadet Identification Plate -->
+<div class="bg-surface-container-low/90 rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-secondary uppercase" id="card-callsign-header">CADET IDENTITY // CALLSIGN</span>
+<div class="flex items-center gap-1.5 mt-0.5 truncate">
+<span class="material-symbols-outlined text-primary text-[16px]">terminal</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">LUNAR FISH #884</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">SECURITY TIER</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold" id="badge-clearance">TIER 2 CADET</span>
+</div>
+</div>
+</div>
+<!-- ZONE 1: ESTANTE ESCALONADO DE MONEDAS // STEPPED COIN RACK -->
+<div class="relative z-10 flex flex-col my-auto py-1">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">military_tech</span>
+<h2 class="font-telemetry-sm text-telemetry-sm text-secondary uppercase font-bold" id="card-rack-title">ESTANTE ESCALONADO // COIN RACK</h2>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant" id="rack-count-indicator">7 INSIGNIAS</span>
+</div>
+<!-- Stepped Shelf Rack Container with 3D Depth Steps -->
+<div class="bg-surface-container rounded-xl p-2.5 flex flex-col gap-2 shadow-inner">
+<!-- STEP 1: Steel Tier (Naval Architecture & Helm Ops) -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-[9px] text-on-surface-variant font-label-caps">
+<span class="uppercase text-on-surface font-bold">NIVEL 1: ACERO // HULL &amp; PROPULSION</span>
+<span>VAL: 99.8% ST</span>
+</div>
+<div class="grid grid-cols-6 gap-1" id="coin-row-steel"><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-highest text-primary shadow-primary/20 cursor-pointer hover:scale-105 active:scale-95">
+              <span class="material-symbols-outlined text-[16px]">visibility</span>
+              <span class="font-label-caps text-[6px] uppercase font-bold tracking-tighter truncate max-w-[36px]">ST-01</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-highest text-primary shadow-primary/20 cursor-pointer hover:scale-105 active:scale-95">
+              <span class="material-symbols-outlined text-[16px]">rocket</span>
+              <span class="font-label-caps text-[6px] uppercase font-bold tracking-tighter truncate max-w-[36px]">ST-02</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-highest text-primary shadow-primary/20 cursor-pointer hover:scale-105 active:scale-95">
+              <span class="material-symbols-outlined text-[16px]">mode_fan</span>
+              <span class="font-label-caps text-[6px] uppercase font-bold tracking-tighter truncate max-w-[36px]">ST-03</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-highest text-primary shadow-primary/20 cursor-pointer hover:scale-105 active:scale-95">
+              <span class="material-symbols-outlined text-[16px]">compass_calibration</span>
+              <span class="font-label-caps text-[6px] uppercase font-bold tracking-tighter truncate max-w-[36px]">ST-04</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-highest text-primary shadow-primary/20 cursor-pointer hover:scale-105 active:scale-95">
+              <span class="material-symbols-outlined text-[16px]">sensors</span>
+              <span class="font-label-caps text-[6px] uppercase font-bold tracking-tighter truncate max-w-[36px]">ST-05</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-highest text-primary shadow-primary/20 cursor-pointer hover:scale-105 active:scale-95">
+              <span class="material-symbols-outlined text-[16px]">shield</span>
+              <span class="font-label-caps text-[6px] uppercase font-bold tracking-tighter truncate max-w-[36px]">ST-06</span>
+            </div></div>
+</div>
+<!-- Wood/Steel Shelf Step Separation Edge -->
+<div class="h-1 bg-surface-container-highest rounded-full shadow-sm"></div>
+<!-- STEP 2: Copper Tier (STEM Disciplines) -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-[9px] text-on-secondary-container font-label-caps">
+<span class="uppercase text-secondary font-bold">NIVEL 2: COBRE // STEM DISCIPLINES</span>
+<span>CU-SPEC ALLOY</span>
+</div>
+<div class="grid grid-cols-6 gap-1" id="coin-row-copper"><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-secondary-container text-on-secondary-container cursor-pointer hover:scale-105 active:scale-95">
+              <span class="material-symbols-outlined text-[16px]">biotech</span>
+              <span class="font-label-caps text-[6px] uppercase font-bold tracking-tighter truncate max-w-[36px]">CU-01</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-high/40 text-on-surface-variant/40">
+              <span class="material-symbols-outlined text-[13px] opacity-40">lock</span>
+              <span class="font-label-caps text-[6px] tracking-tighter opacity-30">CU-02</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-high/40 text-on-surface-variant/40">
+              <span class="material-symbols-outlined text-[13px] opacity-40">lock</span>
+              <span class="font-label-caps text-[6px] tracking-tighter opacity-30">CU-03</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-high/40 text-on-surface-variant/40">
+              <span class="material-symbols-outlined text-[13px] opacity-40">lock</span>
+              <span class="font-label-caps text-[6px] tracking-tighter opacity-30">CU-04</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-high/40 text-on-surface-variant/40">
+              <span class="material-symbols-outlined text-[13px] opacity-40">lock</span>
+              <span class="font-label-caps text-[6px] tracking-tighter opacity-30">CU-05</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-high/40 text-on-surface-variant/40">
+              <span class="material-symbols-outlined text-[13px] opacity-40">lock</span>
+              <span class="font-label-caps text-[6px] tracking-tighter opacity-30">CU-06</span>
+            </div></div>
+</div>
+<!-- Wood/Steel Shelf Step Separation Edge -->
+<div class="h-1 bg-surface-container-highest rounded-full shadow-sm"></div>
+<!-- STEP 3: Bronze & Historical Expedition Tier -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-[9px] text-tertiary font-label-caps">
+<span class="uppercase text-tertiary-container font-bold">NIVEL 3: BRONCE // HUMAN FACTOR</span>
+<span>PATRIMONIO BAP</span>
+</div>
+<div class="grid grid-cols-6 gap-1" id="coin-row-bronze"><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-high/40 text-on-surface-variant/40">
+              <span class="material-symbols-outlined text-[13px] opacity-40">lock</span>
+              <span class="font-label-caps text-[6px] tracking-tighter opacity-30">BR-01</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-high/40 text-on-surface-variant/40">
+              <span class="material-symbols-outlined text-[13px] opacity-40">lock</span>
+              <span class="font-label-caps text-[6px] tracking-tighter opacity-30">BR-02</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-high/40 text-on-surface-variant/40">
+              <span class="material-symbols-outlined text-[13px] opacity-40">lock</span>
+              <span class="font-label-caps text-[6px] tracking-tighter opacity-30">BR-03</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-high/40 text-on-surface-variant/40">
+              <span class="material-symbols-outlined text-[13px] opacity-40">lock</span>
+              <span class="font-label-caps text-[6px] tracking-tighter opacity-30">BR-04</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-high/40 text-on-surface-variant/40">
+              <span class="material-symbols-outlined text-[13px] opacity-40">lock</span>
+              <span class="font-label-caps text-[6px] tracking-tighter opacity-30">BR-05</span>
+            </div><div class="aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all bg-surface-container-high/40 text-on-surface-variant/40">
+              <span class="material-symbols-outlined text-[13px] opacity-40">lock</span>
+              <span class="font-label-caps text-[6px] tracking-tighter opacity-30">BR-06</span>
+            </div></div>
+</div>
+</div>
+</div>
+<!-- ZONE 2: CINTAS Y ENSAMBLAJE DE CASCO // SUBMARINE ASSEMBLY RIBBONS -->
+<div class="relative z-10 flex flex-col gap-1.5 mt-auto">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[15px]">view_in_ar</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-bold uppercase" id="card-assembly-title">ENSAMBLAJE DE CASCO // HULL CUTAWAY</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary" id="hull-integrity-status">INTEGRITY 42%</span>
+</div>
+<!-- Hull Cutaway Silhouette Vector with Active Glowing Compartments -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col gap-2 relative overflow-hidden">
+<div class="w-full flex items-center justify-between h-10 px-1 gap-1">
+<!-- Bow Section: Sonar & Torpedo -->
+<div class="flex-1 h-full rounded flex flex-col items-center justify-center p-1 bg-primary/20 transition-all" id="hull-mod-bow">
+<span class="font-label-caps text-[8px] text-primary uppercase font-bold">PROA // SONAR</span>
+<span class="material-symbols-outlined text-[14px] text-primary">radar</span>
+</div>
+<!-- Sail / Conning Tower Section -->
+<div class="flex-1 h-full rounded flex flex-col items-center justify-center p-1 bg-primary/20 transition-all text-primary" id="hull-mod-sail">
+<span class="font-label-caps text-[8px] text-primary uppercase font-bold">VELA // PERISCOPE</span>
+<span class="material-symbols-outlined text-[14px] text-primary">visibility</span>
+</div>
+<!-- Central Command & Battery -->
+<div class="flex-1 h-full rounded flex flex-col items-center justify-center p-1 bg-primary/20 transition-all text-primary" id="hull-mod-central">
+<span class="font-label-caps text-[8px] text-primary uppercase font-bold">MANDO // BATT</span>
+<span class="material-symbols-outlined text-[14px] text-primary">bolt</span>
+</div>
+<!-- Stern Engine & Propulsion -->
+<div class="flex-1 h-full rounded flex flex-col items-center justify-center p-1 bg-surface-container-highest transition-all text-on-surface-variant" id="hull-mod-stern">
+<span class="font-label-caps text-[8px] text-on-surface-variant uppercase">POPA // MOTOR</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" id="icon-mod-stern">lock</span>
+</div>
+</div>
+<!-- Official Naval Decoration Ribbon Grid (Barras de Cinta) -->
+<div class="grid grid-cols-4 gap-1 pt-1" id="ribbon-grid-container">
+<!-- Ribbon 1: Science Cyan -->
+<div class="h-4 rounded-sm flex overflow-hidden shadow-sm">
+<div class="w-1/3 bg-primary"></div>
+<div class="w-1/3 bg-surface-container-lowest"></div>
+<div class="w-1/3 bg-primary"></div>
+</div>
+<!-- Ribbon 2: Technology Green -->
+<div class="h-4 rounded-sm flex overflow-hidden shadow-sm">
+<div class="w-1/4 bg-primary-fixed"></div>
+<div class="w-2/4 bg-secondary-container"></div>
+<div class="w-1/4 bg-primary-fixed"></div>
+</div>
+<!-- Ribbon 3: Engineering Gold -->
+<div class="h-4 rounded-sm flex overflow-hidden shadow-sm">
+<div class="w-2/5 bg-secondary"></div>
+<div class="w-1/5 bg-on-secondary-fixed"></div>
+<div class="w-2/5 bg-secondary"></div>
+</div>
+<!-- Ribbon 4: Humanities Coral / Deep Sea -->
+<div class="h-4 rounded-sm flex overflow-hidden shadow-sm opacity-30 bg-surface-container-highest" id="ribbon-slot-4">
+<div class="w-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-on-surface-variant">lock</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Seal of 100% Completion (Shown only when preset = complete) -->
+<div class="hidden absolute inset-0 bg-surface/90 backdrop-blur-sm z-30 rounded-2xl flex flex-col items-center justify-center p-4 text-center" id="seal-completion">
+<div class="w-24 h-24 rounded-full bg-secondary-container flex items-center justify-center shadow-2xl mb-2 animate-bounce">
+<span class="material-symbols-outlined text-secondary text-[48px]">verified</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold uppercase">MISIÓN CUMPLIDA</span>
+<span class="font-telemetry-lg text-telemetry-lg text-primary mt-1 font-bold">100% FLOTA SUBMARINA</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 max-w-[240px]">
+            Todos los módulos de ingeniería del BAP Abtao y las 43 insignias históricas han sido restauradas en la bitácora.
+          </p>
+<button class="mt-4 px-4 h-9 rounded bg-primary text-on-primary font-telemetry-sm text-telemetry-sm uppercase font-bold" onclick="document.getElementById('seal-completion').classList.add('hidden')">
+            VER TARJETA COMPLETA
+          </button>
+</div>
+<!-- Card Footer Telemetry & Legal Disclaimers -->
+<div class="flex flex-col gap-1 pt-1">
+<div class="flex items-center justify-between text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<span id="card-total-stats">7 / 43 INSIGNIAS DESBLOQUEADAS</span>
+<span class="text-primary font-bold" id="card-percentage-stat">16.2%</span>
+</div>
+<!-- Progress Bar Line -->
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary transition-all duration-500" id="card-progress-bar" style="width: 16.2%;"></div>
+</div>
+<!-- CTA URL & Attribution -->
+<div class="flex items-center justify-between pt-1 text-[9px] text-on-surface-variant font-label-caps">
+<span class="tracking-widest uppercase">ELSNORKEL.COM/ACADEMY</span>
+<span class="text-secondary font-bold uppercase">VERIFICACIÓN OFFLINE</span>
+</div>
+<p class="text-[8px] text-on-surface-variant/70 leading-none text-center mt-0.5" id="lbl-disclaimer">
+            RECONOCIMIENTO SIMBÓLICO // NO ES UNA CERTIFICACIÓN ACADÉMICA OFICIAL
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Tactical Action Panel (Below Card Preview) -->
+<section class="mt-6 flex flex-col gap-3"><div class="hidden rounded-lg p-3 bg-[#18080a] border border-[#ff3b30] text-[#ffb3b3] flex items-center justify-between transition-all shadow-lg shadow-[#ff3b30]/20" id="action-feedback-toast"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px] text-[#ff3b30]" id="toast-icon">check_circle</span><span class="font-telemetry-sm text-telemetry-sm font-bold" id="toast-message">EXPORTANDO: ISA_MiColeccion_2025-02.png</span></div><button class="p-1 text-[#ff6b6b] hover:text-[#ffb3b3]" onclick="dismissToast()"><span class="material-symbols-outlined text-[16px]">close</span></button></div><div class="flex flex-col gap-2"><button class="w-full h-12 px-4 rounded bg-[#ff3b30] text-[#050a0d] font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center gap-2 hover:bg-[#ff5247] transition-all shadow-lg shadow-[#ff3b30]/30 active:scale-[0.98]" onclick="handleShareAction()"><span class="material-symbols-outlined text-[20px]">ios_share</span><span id="btn-share-label">COMPARTIR MI COLECCIÓN</span></button><div class="grid grid-cols-2 gap-2"><button class="h-11 px-3 rounded bg-[#18080a] text-[#ff6b6b] border border-[#ff3b30]/40 hover:bg-[#250a0d] hover:text-[#ffb3b3] font-telemetry-sm text-telemetry-sm flex items-center justify-center gap-1.5 transition-all" onclick="handleDownloadAction()"><span class="material-symbols-outlined text-[18px] text-[#ff3b30]">download</span><span id="btn-download-label">DESCARGAR PNG</span></button><button class="h-11 px-3 rounded bg-[#18080a] text-[#ffb3b3] border border-[#ff3b30]/30 hover:bg-[#250a0d] hover:text-[#ff6b6b] font-telemetry-sm text-telemetry-sm flex items-center justify-center gap-1.5 transition-all" onclick="handlePrintAction()"><span class="material-symbols-outlined text-[18px] text-[#ff3b30]">print</span><span id="btn-print-label">IMPRIMIR POSTAL</span></button></div></div><div class="rounded-xl p-3 flex items-start gap-2.5 bg-[#0e0506] border border-[#ff3b30]/20"><span class="material-symbols-outlined text-[#ff3b30] text-[20px] shrink-0 mt-0.5">verified_user</span><div class="flex flex-col gap-0.5"><span class="font-telemetry-sm text-telemetry-sm text-[#ffb3b3] font-bold uppercase" id="lbl-privacy-title">PRIVACIDAD ESTRICTA // ZERO PERSONAL DATA</span><p class="font-body-sm text-body-sm text-[#ffb3b3]/80 text-[11px] leading-relaxed" id="lbl-privacy-desc">Generado 100% en tu navegador mediante HTML Canvas. Archivo local: <strong class="text-[#ff3b30] font-telemetry-sm">ISA_MiColeccion_2025-02.png</strong>. Sin recolección ni transmisión de datos personales ni conexión a servidores externos. Tu archivo es privado e inmutable.</p></div></div></section>
+<!-- Interactive Logic & State Controller Script -->
+<script>
+    const STATE = {
+      preset: 'current', // 'init' (1), 'current' (7), 'complete' (43)
+      lighting: 'day', // 'day' (#38e8a6), 'night' (#ff3b30)
+      lang: 'es' // 'es' or 'en'
+    };
+
+    const COIN_DATABASE = {
+      steel: [
+        { id: 'ST-01', name: 'Periscopio', icon: 'visibility', req: 1 },
+        { id: 'ST-02', name: 'Torpedos', icon: 'rocket', req: 2 },
+        { id: 'ST-03', name: 'Motor Diésel', icon: 'mode_fan', req: 3 },
+        { id: 'ST-04', name: 'Timón Central', icon: 'compass_calibration', req: 4 },
+        { id: 'ST-05', name: 'Domo Sonar', icon: 'sensors', req: 5 },
+        { id: 'ST-06', name: 'Casco Presión', icon: 'shield', req: 6 }
+      ],
+      copper: [
+        { id: 'CU-01', name: 'Física Submarina', icon: 'biotech', req: 7 },
+        { id: 'CU-02', name: 'Flotabilidad', icon: 'waves', req: 12 },
+        { id: 'CU-03', name: 'Cálculo Balístico', icon: 'calculate', req: 18 },
+        { id: 'CU-04', name: 'Baterías Plomo', icon: 'battery_charging_full', req: 24 },
+        { id: 'CU-05', name: 'Telecom Morse', icon: 'code', req: 30 },
+        { id: 'CU-06', name: 'Cartografía', icon: 'map', req: 36 }
+      ],
+      bronze: [
+        { id: 'BR-01', name: 'Guardia de Mar', icon: 'explore', req: 8 },
+        { id: 'BR-02', name: 'Historia BAP', icon: 'history_edu', req: 15 },
+        { id: 'BR-03', name: 'Vida a Bordo', icon: 'groups', req: 22 },
+        { id: 'BR-04', name: 'Veterano Abtao', icon: 'military_tech', req: 28 },
+        { id: 'BR-05', name: 'Rescate Sub', icon: 'emergency', req: 35 },
+        { id: 'BR-06', name: 'Comandante Honor', icon: 'stars', req: 43 }
+      ]
+    };
+
+    function renderCoins() {
+      const activeCount = STATE.preset === 'init' ? 1 : (STATE.preset === 'current' ? 7 : 43);
+
+      const renderRow = (coins, containerId, coinTierColor) => {
+        const container = document.getElementById(containerId);
+        container.innerHTML = '';
+        coins.forEach(coin => {
+          const isUnlocked = activeCount >= coin.req;
+          const coinEl = document.createElement('div');
+          coinEl.className = `aspect-square rounded-full flex flex-col items-center justify-center relative p-1 shadow-md transition-all ${
+            isUnlocked 
+              ? `${coinTierColor} cursor-pointer hover:scale-105 active:scale-95` 
+              : 'bg-surface-container-high/40 text-on-surface-variant/40'
+          }`;
+          
+          if (isUnlocked) {
+            coinEl.innerHTML = `
+              <span class="material-symbols-outlined text-[16px]">${coin.icon}</span>
+              <span class="font-label-caps text-[6px] uppercase font-bold tracking-tighter truncate max-w-[36px]">${coin.id}</span>
+            `;
+          } else {
+            coinEl.innerHTML = `
+              <span class="material-symbols-outlined text-[13px] opacity-40">lock</span>
+              <span class="font-label-caps text-[6px] tracking-tighter opacity-30">${coin.id}</span>
+            `;
+          }
+          container.appendChild(coinEl);
+        });
+      };
+
+      const steelColor = STATE.lighting === 'day' 
+        ? 'bg-surface-container-highest text-primary shadow-primary/20' 
+        : 'bg-surface-container-highest text-error shadow-error/20';
+
+      const copperColor = STATE.lighting === 'day' 
+        ? 'bg-secondary-container text-on-secondary-container' 
+        : 'bg-error-container text-on-error-container';
+
+      const bronzeColor = 'bg-surface-variant text-tertiary-fixed';
+
+      renderRow(COIN_DATABASE.steel, 'coin-row-steel', steelColor);
+      renderRow(COIN_DATABASE.copper, 'coin-row-copper', copperColor);
+      renderRow(COIN_DATABASE.bronze, 'coin-row-bronze', bronzeColor);
+    }
+
+    function setCadetProgress(presetKey) {
+      STATE.preset = presetKey;
+      
+      // Update Button Styles
+      const initBtn = document.getElementById('btn-preset-init');
+      const curBtn = document.getElementById('btn-preset-current');
+      const compBtn = document.getElementById('btn-preset-complete');
+      
+      [initBtn, curBtn, compBtn].forEach(b => {
+        b.className = 'h-10 px-1 rounded flex flex-col items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface';
+      });
+
+      const activeBtn = presetKey === 'init' ? initBtn : (presetKey === 'current' ? curBtn : compBtn);
+      activeBtn.className = 'h-10 px-1 rounded flex flex-col items-center justify-center bg-primary-container/20 text-primary transition-colors font-bold';
+
+      // Update Card Telemetry
+      const statLabel = document.getElementById('card-total-stats');
+      const percLabel = document.getElementById('card-percentage-stat');
+      const progressBar = document.getElementById('card-progress-bar');
+      const rackCount = document.getElementById('rack-count-indicator');
+      const clearanceBadge = document.getElementById('badge-clearance');
+      const integrityStatus = document.getElementById('hull-integrity-status');
+      const completionSeal = document.getElementById('seal-completion');
+
+      if (presetKey === 'init') {
+        statLabel.textContent = STATE.lang === 'es' ? '1 / 43 INSIGNIAS DESBLOQUEADAS' : '1 / 43 INSIGNIAS UNLOCKED';
+        percLabel.textContent = '2.3%';
+        progressBar.style.width = '2.3%';
+        rackCount.textContent = '1 INSIGNIA';
+        clearanceBadge.textContent = 'TIER 1 RECRUIT';
+        integrityStatus.textContent = 'INTEGRITY 12%';
+        completionSeal.classList.add('hidden');
+        document.getElementById('hull-mod-sail').className = 'flex-1 h-full rounded flex flex-col items-center justify-center p-1 bg-surface-container-highest transition-all text-on-surface-variant';
+        document.getElementById('hull-mod-central').className = 'flex-1 h-full rounded flex flex-col items-center justify-center p-1 bg-surface-container-highest transition-all text-on-surface-variant';
+        document.getElementById('hull-mod-stern').className = 'flex-1 h-full rounded flex flex-col items-center justify-center p-1 bg-surface-container-highest transition-all text-on-surface-variant';
+      } else if (presetKey === 'current') {
+        statLabel.textContent = STATE.lang === 'es' ? '7 / 43 INSIGNIAS DESBLOQUEADAS' : '7 / 43 INSIGNIAS UNLOCKED';
+        percLabel.textContent = '16.2%';
+        progressBar.style.width = '16.2%';
+        rackCount.textContent = '7 INSIGNIAS';
+        clearanceBadge.textContent = 'TIER 2 CADET';
+        integrityStatus.textContent = 'INTEGRITY 42%';
+        completionSeal.classList.add('hidden');
+        document.getElementById('hull-mod-sail').className = 'flex-1 h-full rounded flex flex-col items-center justify-center p-1 bg-primary/20 transition-all text-primary';
+        document.getElementById('hull-mod-central').className = 'flex-1 h-full rounded flex flex-col items-center justify-center p-1 bg-primary/20 transition-all text-primary';
+        document.getElementById('hull-mod-stern').className = 'flex-1 h-full rounded flex flex-col items-center justify-center p-1 bg-surface-container-highest transition-all text-on-surface-variant';
+      } else {
+        statLabel.textContent = STATE.lang === 'es' ? '43 / 43 MISIÓN CUMPLIDA' : '43 / 43 MISSION ACCOMPLISHED';
+        percLabel.textContent = '100%';
+        progressBar.style.width = '100%';
+        rackCount.textContent = '43 INSIGNIAS';
+        clearanceBadge.textContent = 'COMMANDER TIER';
+        integrityStatus.textContent = 'INTEGRITY 100%';
+        completionSeal.classList.remove('hidden');
+        document.getElementById('hull-mod-sail').className = 'flex-1 h-full rounded flex flex-col items-center justify-center p-1 bg-primary/20 transition-all text-primary';
+        document.getElementById('hull-mod-central').className = 'flex-1 h-full rounded flex flex-col items-center justify-center p-1 bg-primary/20 transition-all text-primary';
+        document.getElementById('hull-mod-stern').className = 'flex-1 h-full rounded flex flex-col items-center justify-center p-1 bg-primary/20 transition-all text-primary';
+        document.getElementById('icon-mod-stern').textContent = 'check';
+        document.getElementById('ribbon-slot-4').classList.remove('opacity-30', 'bg-surface-container-highest');
+        document.getElementById('ribbon-slot-4').innerHTML = `
+          <div class="w-1/3 bg-error"></div>
+          <div class="w-1/3 bg-surface-container-lowest"></div>
+          <div class="w-1/3 bg-error"></div>
+        `;
+      }
+
+      renderCoins();
+    }
+
+    function toggleOpsLighting() {
+      const card = document.getElementById('share-card-frame');
+      const glow = document.getElementById('glow-ambient-layer');
+      const opsIcon = document.getElementById('icon-ops');
+      const opsLabel = document.getElementById('lbl-ops-mode');
+
+      if (STATE.lighting === 'day') {
+        STATE.lighting = 'night';
+        glow.className = 'absolute -top-12 -right-12 w-48 h-48 rounded-full bg-error/15 blur-3xl pointer-events-none';
+        opsIcon.textContent = 'flashlight_on';
+        opsIcon.className = 'material-symbols-outlined text-[18px] text-error';
+        opsLabel.textContent = 'BATTLE RED (NIGHT)';
+      } else {
+        STATE.lighting = 'day';
+        glow.className = 'absolute -top-12 -right-12 w-48 h-48 rounded-full bg-primary/10 blur-3xl pointer-events-none';
+        opsIcon.textContent = 'radar';
+        opsIcon.className = 'material-symbols-outlined text-[18px] text-primary';
+        opsLabel.textContent = 'RADAR GREEN (DAY)';
+      }
+      renderCoins();
+    }
+
+    function toggleLanguage() {
+      STATE.lang = STATE.lang === 'es' ? 'en' : 'es';
+      const langIndicator = document.getElementById('lbl-lang-indicator');
+      langIndicator.textContent = STATE.lang === 'es' ? 'ESPAÑOL' : 'ENGLISH';
+
+      if (STATE.lang === 'en') {
+        document.getElementById('lbl-deck-mode').textContent = 'SYS_TELEMETRY // LIVE PREVIEW';
+        document.getElementById('card-callsign-header').textContent = 'CADET IDENTITY // CALLSIGN';
+        document.getElementById('card-rack-title').textContent = 'STEPPED RACK // CHALLENGE COINS';
+        document.getElementById('card-assembly-title').textContent = 'HULL ASSEMBLY // BLUEPRINT MODULES';
+        document.getElementById('btn-share-label').textContent = 'SHARE MY COLLECTION';
+        document.getElementById('btn-download-label').textContent = 'DOWNLOAD PNG (9:16)';
+        document.getElementById('btn-print-label').textContent = 'PRINT POSTCARD';
+        document.getElementById('lbl-privacy-title').textContent = 'STRICT PRIVACY // ZERO PERSONAL DATA';
+        document.getElementById('lbl-privacy-desc').textContent = 'Generated 100% locally in your client browser via HTML Canvas. Zero personal telemetry transmitted.';
+        document.getElementById('lbl-disclaimer').textContent = 'SYMBOLIC COMMENDATION // NOT AN OFFICIAL ACADEMIC DIPLOMA';
+      } else {
+        document.getElementById('lbl-deck-mode').textContent = 'SYS_TELEMETRY // VISTA PREVIA';
+        document.getElementById('card-callsign-header').textContent = 'IDENTIDAD CADETE // INDICATIVO';
+        document.getElementById('card-rack-title').textContent = 'ESTANTE ESCALONADO // COIN RACK';
+        document.getElementById('card-assembly-title').textContent = 'ENSAMBLAJE DE CASCO // HULL CUTAWAY';
+        document.getElementById('btn-share-label').textContent = 'COMPARTIR MI COLECCIÓN';
+        document.getElementById('btn-download-label').textContent = 'DESCARGAR PNG';
+        document.getElementById('btn-print-label').textContent = 'IMPRIMIR POSTAL';
+        document.getElementById('lbl-privacy-title').textContent = 'PRIVACIDAD ESTRICTA // ZERO PERSONAL DATA';
+        document.getElementById('lbl-privacy-desc').textContent = 'Generado 100% en tu navegador mediante HTML Canvas. Sin recolección ni transmisión de datos personales ni conexión a servidores externos. Tu archivo es privado e inmutable.';
+        document.getElementById('lbl-disclaimer').textContent = 'RECONOCIMIENTO SIMBÓLICO // NO ES UNA CERTIFICACIÓN ACADÉMICA OFICIAL';
+      }
+      setCadetProgress(STATE.preset);
+    }
+
+    function showToast(message, icon = 'check_circle') {
+      const toast = document.getElementById('action-feedback-toast');
+      document.getElementById('toast-message').textContent = message;
+      document.getElementById('toast-icon').textContent = icon;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4000);
+    }
+
+    function dismissToast() {
+      document.getElementById('action-feedback-toast').classList.add('hidden');
+    }
+
+    function handleShareAction() {
+      const shareData = {
+        title: 'ISA - Mi Colección Digital BAP Abtao',
+        text: '¡Explora mi bitácora submarina y desafíos resueltos en la Academia Internacional de Submarinos!',
+        url: window.location.href || 'https://elsnorkel.com/academy'
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData)
+          .then(() => showToast(STATE.lang === 'es' ? '¡COLECCIÓN COMPARTIDA!' : 'COLLECTION SHARED!'))
+          .catch(() => showToast(STATE.lang === 'es' ? 'VISTA PREPARADA LOCALMENTE' : 'LOCAL VIEW READY'));
+      } else {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(shareData.url);
+          showToast(STATE.lang === 'es' ? 'ENLACE COPIADO AL PORTAPAPELES' : 'URL COPIED TO CLIPBOARD');
+        } else {
+          showToast(STATE.lang === 'es' ? 'CAPTURA 9:16 LISTA PARA EXPORTAR' : '9:16 CAPTURE READY');
+        }
+      }
+    }
+
+    function handleDownloadAction() {
+      showToast(STATE.lang === 'es' ? 'GENERANDO ARCHIVO ISA_Coleccion_9_16.png...' : 'GENERATING ISA_Collection_9_16.png...', 'downloading');
+      setTimeout(() => {
+        showToast(STATE.lang === 'es' ? 'DESCARGA LOCAL COMPLETADA' : 'LOCAL DOWNLOAD COMPLETE', 'file_download_done');
+      }, 1200);
+    }
+
+    function handlePrintAction() {
+      window.print();
+    }
+
+    // Initialize initial state
+    document.addEventListener('DOMContentLoaded', () => {
+      setCadetProgress('current');
+    });
+  </script>
+</div></main><footer class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="p-4 flex flex-col gap-2.5 max-w-md mx-auto"><button class="w-full h-12 px-4 rounded bg-[#ff3b30] text-[#050a0d] font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center gap-2 hover:bg-[#ff5247] shadow-lg shadow-[#ff3b30]/25 transition-all" onclick="handleShareAction()"><span class="material-symbols-outlined text-[20px]">share</span><span>COMPARTIR MI COLECCIÓN</span></button><button class="w-full h-11 px-4 rounded bg-[#18080a] text-[#ffb3b3] border border-[#ff3b30]/60 hover:bg-[#250a0d] font-telemetry-sm text-telemetry-sm flex items-center justify-center gap-2 transition-all shadow-sm" onclick="handleDownloadAction()"><span class="material-symbols-outlined text-[18px] text-[#ff3b30]">download</span><span>DESCARGAR TARJETA (9:16)</span></button></div></footer>
+
+</body></html>

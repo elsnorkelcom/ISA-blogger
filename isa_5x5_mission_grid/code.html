@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#bacabf", "surface-bright": "#2e3b45", "secondary": "#ffb784", "on-secondary-fixed-variant": "#713700", "on-tertiary-fixed-variant": "#633f00", "surface-container": "#14212a", "on-error-container": "#ffdad6", "secondary-fixed": "#ffdcc6", "on-secondary-container": "#ffc095", "on-primary": "#003824", "on-primary-fixed": "#002113", "tertiary-fixed": "#ffddb3", "outline": "#85948a", "inverse-on-surface": "#25323c", "primary-fixed-dim": "#2be19f", "secondary-fixed-dim": "#ffb784", "on-secondary-fixed": "#301400", "surface-dim": "#08151e", "on-surface": "#d7e4f1", "tertiary": "#ffe6c9", "on-tertiary": "#452b00", "on-primary-fixed-variant": "#005236", "surface-tint": "#2be19f", "error": "#ffb4ab", "error-container": "#93000a", "on-background": "#d7e4f1", "on-tertiary-fixed": "#291800", "primary-fixed": "#56feba", "surface-container-high": "#1f2b35", "primary": "#92ffca", "surface-container-lowest": "#040f18", "inverse-primary": "#006c49", "secondary-container": "#8a4400", "surface-container-highest": "#2a3640", "primary-container": "#38e8a6", "surface-container-low": "#101d26", "on-primary-container": "#006444", "on-error": "#690005", "surface": "#08151e", "tertiary-container": "#ffc36f", "outline-variant": "#3c4a41", "on-tertiary-container": "#794e00", "surface-variant": "#2a3640", "inverse-surface": "#d7e4f1", "on-secondary": "#4f2500", "tertiary-fixed-dim": "#ffb952", "background": "#08151e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-xl": "2.5rem", "margin": "3rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-mobile": "1.25rem", "space-xs": "0.25rem", "gutter": "1.5rem", "gutter-mobile": "1rem" }, "fontFamily": { "label-caps": ["Space Mono"], "body-md": ["Chivo"], "display-hero-mobile": ["Space Grotesk"], "body-sm": ["Chivo"], "display-hero": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "telemetry-sm": ["Space Mono"], "headline-lg": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "body-lg": ["Chivo"], "telemetry-lg": ["Space Mono"] }, "fontSize": { "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-hero": ["4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "telemetry-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" }], "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "telemetry-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="ISA Insignia Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrD4Tu4tJ-mEG21Mx7u-R5kxTigAGIQzDY7uKANz1Tp9_w_dPPLPQJlzbdvPnFC28xHGeQ3ZzcTJGdjLQcH_j4WbJxjkzKva3_b-TIBdj1yeQJSQnP0BrC9FGWZwizDrnkZsgaKeTjuH8pTwEHMXFhnrJzxgaw4TOxgBdLbResERzOQNqJrsozEdf-xLHMwLxgSkkkL91ZEIvMVAV1vZA_WciL1wgcuVcoy7Fi68aFY"/><div class="flex flex-col min-w-0"><span class="font-label-caps text-label-caps text-primary tracking-widest leading-none">ISA COMMAND</span><div class="flex items-center gap-1.5 mt-0.5"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Isa   Mission Grid</h1></div></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="hidden sm:flex flex-col items-end"><span class="font-telemetry-sm text-telemetry-sm text-secondary">STATUS</span><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">ACTIVE // DEPTH RUN</span></div><div class="flex items-center bg-surface-container-high/60 px-2 py-1 rounded-sm gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span><span class="font-telemetry-sm text-telemetry-sm text-primary tracking-wider">SYS:LOCKED</span></div><div class="relative flex items-center justify-center p-0.5 rounded-full bg-surface-container-highest"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUeOe9zZyvUADlVNHfdrtXPzIwhSdnaGPVMPTzax1tVY-6_Ti-DEP0Fwr6QtrpgHgY0TuEasHmP6yKhWhaxeM2FKrBLLbGYe6fMytch6x0JGEV5bjw06UvhVYfr17PyE3aWjRAh65W5qCLJ54i0yzrOfGpgTi0RS-wIiqZb1wYFYUlMlOWZQM0zvIU67FNaYYeNtQT8FuKAWRFdQ23ulT8NnRNrHHt5vOH2qSHf8Q"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></div></div></div><div class="h-0.5 w-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/30 via-outline-variant/20 to-transparent flex items-center justify-center"><div class="flex items-center gap-1 text-[8px] font-telemetry-sm text-outline tracking-widest opacity-60 px-4"><span class="w-3 h-px bg-outline/40"></span><span>· · ·   — — —   · · ·</span><span class="w-3 h-px bg-outline/40"></span></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- Scanline & Atmospheric Tactical Backdrop FX -->
+<div class="px-gutter-mobile pt-space-md flex flex-col gap-space-md">
+<!-- Mandatory Archival Top Warning Banner -->
+<div class="bg-surface-container-low p-space-sm rounded-lg shadow-sm flex flex-col gap-1 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase">SYSTEM NOTICE // ISA-OP-DIR</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">CLASS: ARCHIVE-UNRESTRICTED</span>
+</div>
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface uppercase tracking-tight">
+        "MISSIONS ARE INDEPENDENT ENTRY POINTS. COMPLETING THE FULL GRID IS NOT REQUIRED."
+      </p>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm italic">
+<span class="material-symbols-outlined text-[14px] text-primary-container">info</span>
+<span>Everything you see is fiction. But there is much to discover.</span>
+</div>
+</div>
+<!-- Section Header & Sector Telemetry Banner -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-md flex flex-col gap-space-sm relative">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary-container text-[18px]">view_module</span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest">TACTICAL MATRIX ARCHIVE</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">
+            5×5 MISSION GRID
+          </h2>
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant mt-0.5">
+            5 CADET ROLES × 5 STEM+A DISCIPLINES
+          </p>
+</div>
+<div class="bg-surface-container-high px-2.5 py-1.5 rounded flex flex-col items-end shadow-sm">
+<span class="font-label-caps text-label-caps text-outline">MATRIX PROGRESS</span>
+<span class="font-telemetry-lg text-telemetry-lg text-primary-container font-bold">07 / 25</span>
+</div>
+</div>
+<!-- Live Telemetry Badges Strip -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="bg-surface-container-lowest px-2 py-1.5 rounded flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[14px]">satellite_alt</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-outline truncate">GRID SECTOR</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface truncate">OMEGA-25 · BALTIC</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest px-2 py-1.5 rounded flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[14px]">my_location</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-outline truncate">ACOUSTIC FIX</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface truncate">54.4°N · 10.2°E</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Legend Bar / Status Key (Tactile Submarine Pill Indicators) -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between gap-1 overflow-x-auto">
+<div class="flex items-center gap-1.5 shrink-0 px-2 py-1 rounded bg-surface-container">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-label-caps text-label-caps text-primary uppercase">Available</span>
+</div>
+<div class="flex items-center gap-1.5 shrink-0 px-2 py-1 rounded bg-surface-container">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase">In Progress</span>
+</div>
+<div class="flex items-center gap-1.5 shrink-0 px-2 py-1 rounded bg-surface-container">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Complete</span>
+</div>
+<div class="flex items-center gap-1.5 shrink-0 px-2 py-1 rounded bg-surface-container">
+<span class="material-symbols-outlined text-[13px] text-outline">lock</span>
+<span class="font-label-caps text-label-caps text-outline uppercase">Locked</span>
+</div>
+</div>
+<!-- Filter & View Switcher Bar -->
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-1.5 overflow-x-auto py-0.5">
+<button class="px-3 py-1 rounded bg-primary-container text-on-primary font-telemetry-sm text-telemetry-sm shadow-sm transition-colors" id="btn-filter-all" type="button">
+          ALL (25)
+        </button>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface-variant font-telemetry-sm text-telemetry-sm hover:text-on-surface transition-colors" id="btn-filter-avail" type="button">
+          READY (6)
+        </button>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface-variant font-telemetry-sm text-telemetry-sm hover:text-on-surface transition-colors" id="btn-filter-comp" type="button">
+          ARCHIVED (7)
+        </button>
+</div>
+<a class="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-secondary hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[14px]">map</span>
+<span class="font-label-caps text-label-caps">SEASON MAP</span>
+</a>
+</div>
+<!-- Tactical 5x5 Matrix Bulkhead Viewport -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-md flex flex-col gap-space-xs relative overflow-hidden">
+<!-- Matrix Header Notice -->
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-caps text-label-caps text-outline">HORIZON: HORIZONTAL DISCIPLINE TRACKS</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary-container">TAP CELL FOR DOSSIER</span>
+</div>
+<!-- Horizontally Scrollable 5x5 Grid Frame for Clean Mobile Ergonomics -->
+<div class="w-full overflow-x-auto pb-space-xs">
+<div class="min-w-[340px] flex flex-col gap-1.5">
+<!-- Column Headers: 5 STEM+A Disciplines -->
+<div class="grid grid-cols-6 gap-1 items-center text-center">
+<div class="font-label-caps text-label-caps text-outline text-left pl-1">ROLE \ DOMAIN</div>
+<div class="bg-surface-container px-1 py-1 rounded flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-primary">SCI</span>
+<span class="text-[9px] font-telemetry-sm text-outline truncate w-full">Science</span>
+</div>
+<div class="bg-surface-container px-1 py-1 rounded flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-primary">TECH</span>
+<span class="text-[9px] font-telemetry-sm text-outline truncate w-full">Tech</span>
+</div>
+<div class="bg-surface-container px-1 py-1 rounded flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-primary">ENG</span>
+<span class="text-[9px] font-telemetry-sm text-outline truncate w-full">Eng</span>
+</div>
+<div class="bg-surface-container px-1 py-1 rounded flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-primary">MATH</span>
+<span class="text-[9px] font-telemetry-sm text-outline truncate w-full">Math</span>
+</div>
+<div class="bg-surface-container px-1 py-1 rounded flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-primary">ARTS</span>
+<span class="text-[9px] font-telemetry-sm text-outline truncate w-full">Arts</span>
+</div>
+</div>
+<!-- ROW 1: MACHINIST -->
+<div class="grid grid-cols-6 gap-1 items-center">
+<div class="bg-surface-container-low p-1 rounded flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface truncate">MACHINIST</span>
+<span class="text-[8px] font-telemetry-sm text-outline truncate">Diesel / Shaft</span>
+</div>
+<!-- SC-01: Completed -->
+<button class="grid-cell h-14 bg-surface-container rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-container-high transition-all" data-code="SC-01" data-desc="Acoustic signature suppression and cooling water enthalpy analysis." data-domain="Thermodynamics &amp; Heat" data-name="Diesel Thermodynamics" data-reward="850 XP · Bronze Pin" data-status="Completed" data-vessel="U-995 · Laboe" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">SC-01</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-caps text-[8px] text-secondary">DONE</span>
+</button>
+<!-- TE-01: Available -->
+<button class="grid-cell h-14 bg-surface-container-high rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-bright transition-all" data-code="TE-01" data-desc="Deep hydrostatic pressure endurance on ceramic stern tube packing glands." data-domain="Material Science &amp; Wear" data-name="Shaft Seal Metallurgy" data-reward="900 XP · Tech Crest" data-status="Available" data-vessel="HMS Ocelot · Chatham" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-primary">TE-01</span>
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-[8px] text-primary">READY</span>
+</button>
+<!-- EN-01: In Progress -->
+<button class="grid-cell h-14 bg-surface-container rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-container-high transition-all" data-code="EN-01" data-desc="Water ram impulse dampening and quiet weapon impulse sequencing." data-domain="Fluid Mechanics &amp; Flow" data-name="Torpedo Ejection Pneumatics" data-reward="1,100 XP · Torpedo Star" data-status="In Progress" data-vessel="USS Bowfin · Pearl Harbor" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary-fixed-dim">EN-01</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim animate-spin">progress_activity</span>
+<span class="font-label-caps text-[8px] text-tertiary-fixed-dim">IN RUN</span>
+</button>
+<!-- MA-01: Locked -->
+<button class="grid-cell h-14 bg-surface-container-lowest opacity-50 rounded p-1 flex flex-col justify-between items-center text-center" data-code="MA-01" data-desc="Blade cavitation frequency algorithms and pitch efficiency models." data-domain="Vector Trigonometry" data-name="Propeller RPM Harmonics" data-reward="1,200 XP" data-status="Locked" data-vessel="Redoutable · Cherbourg" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">MA-01</span>
+<span class="material-symbols-outlined text-[14px] text-outline">lock</span>
+<span class="font-label-caps text-[8px] text-outline">LOCKED</span>
+</button>
+<!-- AR-01: Completed -->
+<button class="grid-cell h-14 bg-surface-container rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-container-high transition-all" data-code="AR-01" data-desc="Stoker watch endurance letters and 130°F heat exhaustion logs." data-domain="Human Factors &amp; Memoir" data-name="Engine Room Oral Histories" data-reward="750 XP · Quill Medal" data-status="Completed" data-vessel="HMS Alliance · Gosport" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">AR-01</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-caps text-[8px] text-secondary">DONE</span>
+</button>
+</div>
+<!-- ROW 2: ELECTRICIAN -->
+<div class="grid grid-cols-6 gap-1 items-center">
+<div class="bg-surface-container-low p-1 rounded flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface truncate">ELECTRICIAN</span>
+<span class="text-[8px] font-telemetry-sm text-outline truncate">Batteries / DC</span>
+</div>
+<!-- SC-02: Completed -->
+<button class="grid-cell h-14 bg-surface-container rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-container-high transition-all" data-code="SC-02" data-desc="Specific gravity curves, sulfuric stratification, and outgassing limits." data-domain="Electrochemistry" data-name="Lead-Acid Electrolyte Chem" data-reward="900 XP · Battery Bar" data-status="Completed" data-vessel="U-2540 Wilhelm Bauer" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">SC-02</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-caps text-[8px] text-secondary">DONE</span>
+</button>
+<!-- TE-02: Available -->
+<button class="grid-cell h-14 bg-surface-container-high rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-bright transition-all" data-code="TE-02" data-desc="Arc suppression breakers and 400-volt bus isolation diagnostics." data-domain="Circuit Topology" data-name="Main DC Switchboard Shunts" data-reward="950 XP · Copper Wire" data-status="Available" data-vessel="USS Pampanito · SF" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-primary">TE-02</span>
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-[8px] text-primary">READY</span>
+</button>
+<!-- EN-02: Locked -->
+<button class="grid-cell h-14 bg-surface-container-lowest opacity-50 rounded p-1 flex flex-col justify-between items-center text-center" data-code="EN-02" data-desc="Smooth rheostat speed scaling and double-armature motor syncing." data-domain="Electromechanical Control" data-name="Ward-Leonard Propulsion" data-reward="1,150 XP" data-status="Locked" data-vessel="ORP Orzeł · Gdynia" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">EN-02</span>
+<span class="material-symbols-outlined text-[14px] text-outline">lock</span>
+<span class="font-label-caps text-[8px] text-outline">LOCKED</span>
+</button>
+<!-- MA-02: Completed -->
+<button class="grid-cell h-14 bg-surface-container rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-container-high transition-all" data-code="MA-02" data-desc="Ampere-hour depreciation formulas during sustained silent crawl." data-domain="Exponential Functions" data-name="Peukert Discharge Curve" data-reward="1,000 XP · Math Laurel" data-status="Completed" data-vessel="B-39 · San Diego" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">MA-02</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-caps text-[8px] text-secondary">DONE</span>
+</button>
+<!-- AR-02: Locked -->
+<button class="grid-cell h-14 bg-surface-container-lowest opacity-50 rounded p-1 flex flex-col justify-between items-center text-center" data-code="AR-02" data-desc="Rhodopsin recovery logs and scotopic circadian adjustments." data-domain="Sensory Anthropology" data-name="Red-Light Conning Culture" data-reward="800 XP" data-status="Locked" data-vessel="HMS Courageous" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">AR-02</span>
+<span class="material-symbols-outlined text-[14px] text-outline">lock</span>
+<span class="font-label-caps text-[8px] text-outline">LOCKED</span>
+</button>
+</div>
+<!-- ROW 3: ELECTRONICS & ACOUSTICS (Focal Row) -->
+<div class="grid grid-cols-6 gap-1 items-center">
+<div class="bg-surface-container-low p-1 rounded flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-primary truncate">ELECTRONICS</span>
+<span class="text-[8px] font-telemetry-sm text-outline truncate">Sonar / Periscope</span>
+</div>
+<!-- SC-03: Completed -->
+<button class="grid-cell h-14 bg-surface-container rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-container-high transition-all" data-code="SC-03" data-desc="SOFAR ducting and bathythermograph sound bending gradients." data-domain="Oceanographic Acoustics" data-name="Thermocline Sound Channels" data-reward="1,200 XP · Sonar Badge" data-status="Completed" data-vessel="USS Nautilus · Groton" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">SC-03</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-caps text-[8px] text-secondary">DONE</span>
+</button>
+<!-- TE-03: ACTIVE / SELECTED TARGET CELL -->
+<button class="grid-cell h-14 bg-primary-container/20 rounded p-1 flex flex-col justify-between items-center text-center shadow-[0_0_12px_rgba(56,232,166,0.4)]" data-code="TE-03" data-desc="Dual prismatic head alignment, collimation prisms, and zero-fog nitrogen purging." data-domain="Knowing &amp; Applying Optics" data-name="Steel 04 — Periscope Refraction" data-reward="1,000 XP + Steel Insignia" data-status="Available" data-vessel="U-995 · Laboe Naval Memorial" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">TE-03</span>
+<span class="material-symbols-outlined text-[18px] text-primary-container animate-pulse">radar</span>
+<span class="font-label-caps text-[8px] text-primary font-bold">ACTIVE</span>
+</button>
+<!-- EN-03: Available -->
+<button class="grid-cell h-14 bg-surface-container-high rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-bright transition-all" data-code="EN-03" data-desc="Carbon transducer array calibration and cavitation bearing fixes." data-domain="Acoustic Transducers" data-name="Piezo Hydrophone Array" data-reward="950 XP · Hydro Star" data-status="Available" data-vessel="Vesikko · Suomenlinna" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-primary">EN-03</span>
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-[8px] text-primary">READY</span>
+</button>
+<!-- MA-03: In Progress -->
+<button class="grid-cell h-14 bg-surface-container rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-container-high transition-all" data-code="MA-03" data-desc="Passive bearing-rate curves and synthetic range triangulation." data-domain="TMA Trigonometry" data-name="Doppler Target Motion Analysis" data-reward="1,300 XP · Crosshair" data-status="In Progress" data-vessel="S-61 Delfin · Torrevieja" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary-fixed-dim">MA-03</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim animate-spin">progress_activity</span>
+<span class="font-label-caps text-[8px] text-tertiary-fixed-dim">IN RUN</span>
+</button>
+<!-- AR-03: Locked -->
+<button class="grid-cell h-14 bg-surface-container-lowest opacity-50 rounded p-1 flex flex-col justify-between items-center text-center" data-code="AR-03" data-desc="Auditory frequency rhythms and hydro-acoustic classification logs." data-domain="Acoustic Linguistics" data-name="Morse Code &amp; Hydrophone Art" data-reward="900 XP" data-status="Locked" data-vessel="Submarine K-77" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">AR-03</span>
+<span class="material-symbols-outlined text-[14px] text-outline">lock</span>
+<span class="font-label-caps text-[8px] text-outline">LOCKED</span>
+</button>
+</div>
+<!-- ROW 4: NAVAL ARCHITECTURE -->
+<div class="grid grid-cols-6 gap-1 items-center">
+<div class="bg-surface-container-low p-1 rounded flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface truncate">NAVAL ARCH</span>
+<span class="text-[8px] font-telemetry-sm text-outline truncate">Ballast / Hull</span>
+</div>
+<!-- SC-04: Available -->
+<button class="grid-cell h-14 bg-surface-container-high rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-bright transition-all" data-code="SC-04" data-desc="Salinity-density equilibrium calculations during fresh river inflow." data-domain="Hydrostatic Physics" data-name="Archimedes Hydrostatic Buoyancy" data-reward="1,050 XP · Anchor Pin" data-status="Available" data-vessel="Le Redoutable · Cherbourg" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-primary">SC-04</span>
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-[8px] text-primary">READY</span>
+</button>
+<!-- TE-04: Completed -->
+<button class="grid-cell h-14 bg-surface-container rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-container-high transition-all" data-code="TE-04" data-desc="Hydraulic rams and angular bubble leveling in steep snap-dives." data-domain="Hydraulic Feedback" data-name="Telemotor Diving Planes" data-reward="1,000 XP · Hydro Plane" data-status="Completed" data-vessel="USS Becuna · Philadelphia" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">TE-04</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-caps text-[8px] text-secondary">DONE</span>
+</button>
+<!-- EN-04: Locked -->
+<button class="grid-cell h-14 bg-surface-container-lowest opacity-50 rounded p-1 flex flex-col justify-between items-center text-center" data-code="EN-04" data-desc="High-yield steel annealing and deep crush depth tolerances." data-domain="Stress Metallurgy" data-name="HY-80 Pressure Hull Welding" data-reward="1,400 XP" data-status="Locked" data-vessel="USS Albacore · Portsmouth" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">EN-04</span>
+<span class="material-symbols-outlined text-[14px] text-outline">lock</span>
+<span class="font-label-caps text-[8px] text-outline">LOCKED</span>
+</button>
+<!-- MA-04: Available -->
+<button class="grid-cell h-14 bg-surface-container-high rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-bright transition-all" data-code="MA-04" data-desc="Free surface water effect and righting lever arm stability vectors." data-domain="Center of Gravity Math" data-name="Metacentric Height Calculus" data-reward="1,100 XP · Scale Insignia" data-status="Available" data-vessel="HMS Alliance · Gosport" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-primary">MA-04</span>
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-[8px] text-primary">READY</span>
+</button>
+<!-- AR-04: Locked -->
+<button class="grid-cell h-14 bg-surface-container-lowest opacity-50 rounded p-1 flex flex-col justify-between items-center text-center" data-code="AR-04" data-desc="Countershading experiments in Atlantic green and Arctic slate." data-domain="Visual Design &amp; Optics" data-name="Submarine Hull Camouflage" data-reward="850 XP" data-status="Locked" data-vessel="U-505 · Chicago" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">AR-04</span>
+<span class="material-symbols-outlined text-[14px] text-outline">lock</span>
+<span class="font-label-caps text-[8px] text-outline">LOCKED</span>
+</button>
+</div>
+<!-- ROW 5: LOGISTICS & DAMAGE CONTROL -->
+<div class="grid grid-cols-6 gap-1 items-center">
+<div class="bg-surface-container-low p-1 rounded flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface truncate">LOGISTICS</span>
+<span class="text-[8px] font-telemetry-sm text-outline truncate">O2 / Scrubbers</span>
+</div>
+<!-- SC-05: Locked -->
+<button class="grid-cell h-14 bg-surface-container-lowest opacity-50 rounded p-1 flex flex-col justify-between items-center text-center" data-code="SC-05" data-desc="Oxygen regeneration candles and exothermic chlorate reactions." data-domain="Chemical Generation" data-name="Potassium Superoxide O2" data-reward="1,000 XP" data-status="Locked" data-vessel="HMS Courageous" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">SC-05</span>
+<span class="material-symbols-outlined text-[14px] text-outline">lock</span>
+<span class="font-label-caps text-[8px] text-outline">LOCKED</span>
+</button>
+<!-- TE-05: Locked -->
+<button class="grid-cell h-14 bg-surface-container-lowest opacity-50 rounded p-1 flex flex-col justify-between items-center text-center" data-code="TE-05" data-desc="Lithium hydroxide absorbent canisters and CO2 saturation alarms." data-domain="Gas Chromatography" data-name="CO2 Scrubber Sorbents" data-reward="950 XP" data-status="Locked" data-vessel="U-995 · Laboe" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">TE-05</span>
+<span class="material-symbols-outlined text-[14px] text-outline">lock</span>
+<span class="font-label-caps text-[8px] text-outline">LOCKED</span>
+</button>
+<!-- EN-05: Completed -->
+<button class="grid-cell h-14 bg-surface-container rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-container-high transition-all" data-code="EN-05" data-desc="K-brace carpentry under emergency hull breach pressure." data-domain="Rapid Structural Bracing" data-name="Shoring Wooden Bulkheads" data-reward="1,050 XP · Shoring Axe" data-status="Completed" data-vessel="USS Pampanito · SF" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">EN-05</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-caps text-[8px] text-secondary">DONE</span>
+</button>
+<!-- MA-05: Locked -->
+<button class="grid-cell h-14 bg-surface-container-lowest opacity-50 rounded p-1 flex flex-col justify-between items-center text-center" data-code="MA-05" data-desc="Deep 90-day metabolic ration rationing and potable water distillation." data-domain="Nutritional Math" data-name="Ration Calorimetry Algorithms" data-reward="850 XP" data-status="Locked" data-vessel="U-2540 Wilhelm Bauer" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">MA-05</span>
+<span class="material-symbols-outlined text-[14px] text-outline">lock</span>
+<span class="font-label-caps text-[8px] text-outline">LOCKED</span>
+</button>
+<!-- AR-05: Available -->
+<button class="grid-cell h-14 bg-surface-container-high rounded p-1 flex flex-col justify-between items-center text-center hover:bg-surface-bright transition-all" data-code="AR-05" data-desc="Standardized naval shorthand, log keeping discipline, and deck diary ink." data-domain="Naval Archival Heritage" data-name="Patrol Log Calligraphy" data-reward="900 XP · Scribe Badge" data-status="Available" data-vessel="HMS Alliance · Gosport" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-primary">AR-05</span>
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-[8px] text-primary">READY</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Mission Inspection Dossier Card (Linked directly to active cell) -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-lg flex flex-col gap-space-sm relative overflow-hidden" id="mission-dossier">
+<!-- Top Tactical Header of Dossier -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest font-bold" id="dossier-code">CELL TE-03 // ACTIVE RETICLE</span>
+</div>
+<span class="bg-primary-container/20 text-primary-container font-telemetry-sm text-telemetry-sm px-2 py-0.5 rounded font-bold" id="dossier-status">
+          STATUS: READY FOR ENGAGE
+        </span>
+</div>
+<!-- Vessel Image & Briefing Meta Box -->
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container-lowest">
+<div class="w-full h-full bg-cover bg-center" data-alt="Technical cutaway and tactical photo of submarine periscope optics assembly inside the control room of historic submarine U-995 at Laboe, with phosphor green radar overlays, brass optical dials, collimator lenses, and authentic naval archival gauges." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPEM4wKB7UvuChvmTDlQKPI1UDtme7d9cTI9zXuIQPBztuAANiz7uQW2dKkaD0NQGUoJzc4PxYgbK48zCwZuy0dOCq4wSGRc52szdO-vDzKOXc__-JZPfFxjK8xGAxpYPovTKbhL2tFiAqWCAIKOWjC4qet_J7UJja33BOlzotYyr56mGHoF7Etd1_kkmEjFc_ZVHbA-di7u7pm4oAN4osLqYTyc19ps-Xcp9KYM4')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/60 to-transparent"></div>
+<div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-end justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-secondary uppercase">AUTHENTIC VESSEL</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="dossier-vessel">U-995 · Laboe Naval Memorial</h4>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-high/80 backdrop-blur-md px-2 py-1 rounded">
+<span class="material-symbols-outlined text-primary-container text-[14px]">school</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary">TIMSS STEM+A</span>
+</div>
+</div>
+</div>
+<!-- Mission Title & Educational Domain -->
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold leading-tight" id="dossier-title">
+          Steel 04 — Periscope Refraction
+        </h3>
+<p class="font-telemetry-sm text-telemetry-sm text-primary-fixed-dim" id="dossier-domain">
+          CURRICULUM: Knowing &amp; Applying Optics · Focal Convergence
+        </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" id="dossier-desc">
+          Dual prismatic head alignment, collimation prisms, and zero-fog nitrogen purging. Analyze Snell's law across water-air boundaries while running deep at periscope depth.
+        </p>
+</div>
+<!-- Reward & XP Strip -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">military_tech</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline">CADET CLEARANCE REWARD</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold" id="dossier-reward">1,000 XP + Steel Insignia</span>
+</div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">TIME: ~18 MIN</span>
+</div>
+<!-- Tactical Action Engage Reticle Trigger -->
+<div class="pt-space-xs flex flex-col gap-2">
+<button class="w-full py-3.5 px-4 rounded bg-primary-container text-on-primary font-telemetry-lg text-telemetry-lg tracking-wider font-bold shadow-md hover:bg-primary transition-all flex items-center justify-center gap-2 active:scale-[0.98]" id="btn-engage-mission" type="button">
+<span class="material-symbols-outlined text-[20px]">center_focus_strong</span>
+<span>ENGAGE MISSION RETICLE &gt;</span>
+</button>
+<div class="flex items-center justify-center gap-1.5 text-center">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">RETICLE LOCKED · NO PRE-REQUISITES ENFORCED</span>
+</div>
+</div>
+</div>
+<!-- Archival Curatorial Explanatory Card -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">menu_book</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Naval Archival Notice</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Each cell in the 5×5 grid represents an independent scientific entry point into naval history and museum archives. Cadets may chart any tactical course across disciplines without completing prerequisites. Complete any path at your own pace.
+      </p>
+<div class="flex items-center justify-between pt-space-xs text-outline font-telemetry-sm text-telemetry-sm">
+<span>CURATOR: ISA ARCHIVES</span>
+<span>SECURITY: NATO UNRESTRICTED</span>
+</div>
+</div>
+</div>
+<!-- Inline Micro-Interaction Script for Grid Selection -->
+<script>
+    (function initGridMatrix() {
+      const cells = document.querySelectorAll('.grid-cell');
+      const dCode = document.getElementById('dossier-code');
+      const dStatus = document.getElementById('dossier-status');
+      const dTitle = document.getElementById('dossier-title');
+      const dVessel = document.getElementById('dossier-vessel');
+      const dDomain = document.getElementById('dossier-domain');
+      const dReward = document.getElementById('dossier-reward');
+      const dDesc = document.getElementById('dossier-desc');
+      const engageBtn = document.getElementById('btn-engage-mission');
+
+      cells.forEach(cell => {
+        cell.addEventListener('click', () => {
+          const code = cell.getAttribute('data-code');
+          const name = cell.getAttribute('data-name');
+          const vessel = cell.getAttribute('data-vessel');
+          const status = cell.getAttribute('data-status');
+          const domain = cell.getAttribute('data-domain');
+          const reward = cell.getAttribute('data-reward');
+          const desc = cell.getAttribute('data-desc');
+
+          // Highlight selection
+          cells.forEach(c => {
+            c.classList.remove('ring-2', 'ring-primary-container', 'shadow-[0_0_12px_rgba(56,232,166,0.4)]');
+          });
+          cell.classList.add('ring-2', 'ring-primary-container', 'shadow-[0_0_12px_rgba(56,232,166,0.4)]');
+
+          // Update dossier panel
+          if (dCode) dCode.textContent = `CELL ${code} // ARCHIVAL DOSSIER`;
+          if (dStatus) {
+            dStatus.textContent = `STATUS: ${status.toUpperCase()}`;
+            if (status === 'Locked') {
+              dStatus.className = 'bg-surface-container-highest text-outline font-telemetry-sm text-telemetry-sm px-2 py-0.5 rounded font-bold';
+            } else if (status === 'Completed') {
+              dStatus.className = 'bg-secondary-container/40 text-secondary font-telemetry-sm text-telemetry-sm px-2 py-0.5 rounded font-bold';
+            } else if (status === 'In Progress') {
+              dStatus.className = 'bg-surface-bright text-tertiary-fixed-dim font-telemetry-sm text-telemetry-sm px-2 py-0.5 rounded font-bold';
+            } else {
+              dStatus.className = 'bg-primary-container/20 text-primary-container font-telemetry-sm text-telemetry-sm px-2 py-0.5 rounded font-bold';
+            }
+          }
+          if (dTitle) dTitle.textContent = name;
+          if (dVessel) dVessel.textContent = vessel;
+          if (dDomain) dDomain.textContent = `CURRICULUM: ${domain}`;
+          if (dReward) dReward.textContent = reward;
+          if (dDesc) dDesc.textContent = desc;
+
+          if (engageBtn) {
+            if (status === 'Locked') {
+              engageBtn.textContent = 'RESTRICTED ARCHIVE CELL';
+              engageBtn.classList.add('opacity-50', 'pointer-events-none');
+            } else if (status === 'Completed') {
+              engageBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">history</span><span>REPLAY LOG &gt;</span>';
+              engageBtn.classList.remove('opacity-50', 'pointer-events-none');
+            } else {
+              engageBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">center_focus_strong</span><span>ENGAGE MISSION RETICLE &gt;</span>';
+              engageBtn.classList.remove('opacity-50', 'pointer-events-none');
+            }
+          }
+
+          // Smooth scroll dossier into view if needed
+          const dossier = document.getElementById('mission-dossier');
+          if (dossier) {
+            dossier.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        });
+      });
+
+      // Quick filter logic
+      const btnAll = document.getElementById('btn-filter-all');
+      const btnAvail = document.getElementById('btn-filter-avail');
+      const btnComp = document.getElementById('btn-filter-comp');
+
+      function clearFilterStyles() {
+        [btnAll, btnAvail, btnComp].forEach(btn => {
+          if (btn) {
+            btn.className = 'px-3 py-1 rounded bg-surface-container text-on-surface-variant font-telemetry-sm text-telemetry-sm hover:text-on-surface transition-colors';
+          }
+        });
+      }
+
+      if (btnAll) {
+        btnAll.addEventListener('click', () => {
+          clearFilterStyles();
+          btnAll.className = 'px-3 py-1 rounded bg-primary-container text-on-primary font-telemetry-sm text-telemetry-sm shadow-sm transition-colors';
+          cells.forEach(c => c.style.opacity = '1');
+        });
+      }
+
+      if (btnAvail) {
+        btnAvail.addEventListener('click', () => {
+          clearFilterStyles();
+          btnAvail.className = 'px-3 py-1 rounded bg-primary-container text-on-primary font-telemetry-sm text-telemetry-sm shadow-sm transition-colors';
+          cells.forEach(c => {
+            const status = c.getAttribute('data-status');
+            c.style.opacity = (status === 'Available' || status === 'In Progress') ? '1' : '0.25';
+          });
+        });
+      }
+
+      if (btnComp) {
+        btnComp.addEventListener('click', () => {
+          clearFilterStyles();
+          btnComp.className = 'px-3 py-1 rounded bg-primary-container text-on-primary font-telemetry-sm text-telemetry-sm shadow-sm transition-colors';
+          cells.forEach(c => {
+            const status = c.getAttribute('data-status');
+            c.style.opacity = (status === 'Completed') ? '1' : '0.25';
+          });
+        });
+      }
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(4,18,31,0.8)]" data-active-classes="text-primary font-headline-sm relative after:content-[''] after:absolute after:bottom-1 after:w-5 after:h-0.5 after:bg-primary-container after:shadow-[0_0_8px_rgba(56,232,166,0.6)]"><div class="h-16 px-space-sm grid grid-cols-4 items-center"><a class="flex flex-col items-center justify-center h-full min-h-[44px] min-w-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="isa-season-map" href="#"><span class="material-symbols-outlined text-[24px]">radar</span><span class="font-label-caps text-label-caps uppercase mt-1 tracking-wider">Radar</span></a><a class="flex flex-col items-center justify-center h-full min-h-[44px] min-w-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="isa-mission-grid" href="#"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-caps text-label-caps uppercase mt-1 tracking-wider">Missions</span></a><a class="flex flex-col items-center justify-center h-full min-h-[44px] min-w-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="museum-telemetry" href="#"><span class="material-symbols-outlined text-[24px]">anchor</span><span class="font-label-caps text-label-caps uppercase mt-1 tracking-wider">Museums</span></a><a class="flex flex-col items-center justify-center h-full min-h-[44px] min-w-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="cadet-dossier-profile" href="#"><span class="material-symbols-outlined text-[24px]">badge</span><span class="font-label-caps text-label-caps uppercase mt-1 tracking-wider">Profile</span></a></div></nav></body></html>

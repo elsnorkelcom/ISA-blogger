@@ -1,0 +1,543 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#bacabf", "surface-bright": "#2e3b45", "secondary": "#ffb784", "on-secondary-fixed-variant": "#713700", "on-tertiary-fixed-variant": "#633f00", "surface-container": "#14212a", "on-error-container": "#ffdad6", "secondary-fixed": "#ffdcc6", "on-secondary-container": "#ffc095", "on-primary": "#003824", "on-primary-fixed": "#002113", "tertiary-fixed": "#ffddb3", "outline": "#85948a", "inverse-on-surface": "#25323c", "primary-fixed-dim": "#2be19f", "secondary-fixed-dim": "#ffb784", "on-secondary-fixed": "#301400", "surface-dim": "#08151e", "on-surface": "#d7e4f1", "tertiary": "#ffe6c9", "on-tertiary": "#452b00", "on-primary-fixed-variant": "#005236", "surface-tint": "#2be19f", "error": "#ffb4ab", "error-container": "#93000a", "on-background": "#d7e4f1", "on-tertiary-fixed": "#291800", "primary-fixed": "#56feba", "surface-container-high": "#1f2b35", "primary": "#92ffca", "surface-container-lowest": "#040f18", "inverse-primary": "#006c49", "secondary-container": "#8a4400", "surface-container-highest": "#2a3640", "primary-container": "#38e8a6", "surface-container-low": "#101d26", "on-primary-container": "#006444", "on-error": "#690005", "surface": "#08151e", "tertiary-container": "#ffc36f", "outline-variant": "#3c4a41", "on-tertiary-container": "#794e00", "surface-variant": "#2a3640", "inverse-surface": "#d7e4f1", "on-secondary": "#4f2500", "tertiary-fixed-dim": "#ffb952", "background": "#08151e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-xl": "2.5rem", "margin": "3rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-mobile": "1.25rem", "space-xs": "0.25rem", "gutter": "1.5rem", "gutter-mobile": "1rem" }, "fontFamily": { "label-caps": ["Space Mono"], "body-md": ["Chivo"], "display-hero-mobile": ["Space Grotesk"], "body-sm": ["Chivo"], "display-hero": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "telemetry-sm": ["Space Mono"], "headline-lg": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "body-lg": ["Chivo"], "telemetry-lg": ["Space Mono"] }, "fontSize": { "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-hero": ["4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "telemetry-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" }], "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "telemetry-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button class="w-11 h-11 flex items-center justify-center rounded-sm bg-surface-container text-on-surface hover:text-primary transition-colors flex-shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="ISA Insignia Logo" class="h-7 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrD4Tu4tJ-mEG21Mx7u-R5kxTigAGIQzDY7uKANz1Tp9_w_dPPLPQJlzbdvPnFC28xHGeQ3ZzcTJGdjLQcH_j4WbJxjkzKva3_b-TIBdj1yeQJSQnP0BrC9FGWZwizDrnkZsgaKeTjuH8pTwEHMXFhnrJzxgaw4TOxgBdLbResERzOQNqJrsozEdf-xLHMwLxgSkkkL91ZEIvMVAV1vZA_WciL1wgcuVcoy7Fi68aFY"><div class="flex flex-col min-w-0"><span class="font-label-caps text-label-caps text-secondary tracking-widest leading-none">CLASSIFIED ARCHIVE</span><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Hydrophone Audio Log Detail</h1></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="flex items-center bg-surface-container-high/60 px-2 py-1 rounded-sm gap-1.5"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-medium">HUD://</span><span class="font-telemetry-sm text-telemetry-sm text-primary font-bold tracking-widest">REC</span><span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUeOe9zZyvUADlVNHfdrtXPzIwhSdnaGPVMPTzax1tVY-6_Ti-DEP0Fwr6QtrpgHgY0TuEasHmP6yKhWhaxeM2FKrBLLbGYe6fMytch6x0JGEV5bjw06UvhVYfr17PyE3aWjRAh65W5qCLJ54i0yzrOfGpgTi0RS-wIiqZb1wYFYUlMlOWZQM0zvIU67FNaYYeNtQT8FuKAWRFdQ23ulT8NnRNrHHt5vOH2qSHf8Q"></div></div><div class="h-0.5 w-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary/30 via-outline-variant/20 to-transparent flex items-center justify-center"><div class="flex items-center gap-1 text-[8px] font-telemetry-sm text-outline tracking-widest opacity-60 px-4"><span class="w-3 h-px bg-outline/40"></span><span>— · — · &nbsp; · — — ·</span><span class="w-3 h-px bg-outline/40"></span></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface" id="credential-app-root">
+<!-- Submarine Atmospheric Background Overlays (Sonar Grid & Scanlines) -->
+<div class="fixed inset-0 pointer-events-none z-0 opacity-20">
+<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="tactical-grid" patternUnits="userSpaceOnUse" width="40">
+<path class="text-outline-variant" d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+<circle class="text-primary/40" cx="20" cy="20" fill="currentColor" r="0.75"></circle>
+</pattern>
+</defs>
+<rect fill="url(#tactical-grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<!-- Operational Mode & Language Tactical Bar -->
+<aside aria-label="System status bar" class="relative z-10 px-margin-mobile pt-space-sm pb-space-sm bg-surface-container-lowest/90 backdrop-blur-md flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<img alt="Academy Insignia" class="w-8 h-8 rounded-sm object-contain bg-surface-container-high p-0.5 flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUbs4MNMF7EuBK3Mk-68Oz7Axwe7buJJ_uoToI89-OqGorBCvS4TYPoQWUWk59bjbHyOBn2dmS80IlWLfWV-f_Yvpgm_WyZXGPqVyV2ism_8t_0PeMk0IZY2txtf5srPq3BH_0ZH5lo5VxYI64wxHsdoGbQhIFQPR0qliEzdDb0iFlPeaXy9cQttIIhBBqTF7rZVqqteve85eNX4T96qjob-1P0xY-mI9HbhbVkVb9kvXx14jhK2sj">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse" id="status-beacon"></span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary tracking-widest truncate" id="sector-indicator">SEC: CU-SCI-MAQ // BAP ABTAO</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant truncate">LOCAL-FIRST DECENTRALIZED TELEMETRY</span>
+</div>
+</div>
+<!-- Toggles: Language & Night Ops -->
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button aria-label="Toggle language" class="px-2 py-1.5 min-h-[44px] min-w-[44px] rounded-sm bg-surface-container-high text-on-surface hover:text-primary active:scale-95 transition-all flex items-center justify-center font-telemetry-sm text-telemetry-sm font-bold tracking-wider" id="lang-toggle-btn" title="Toggle ES/EN">
+<span id="lang-display">ES</span>
+</button>
+<button aria-label="Toggle Night Ops submarine red lighting" class="px-2 py-1.5 min-h-[44px] min-w-[44px] rounded-sm bg-surface-container-high text-on-surface hover:text-secondary active:scale-95 transition-all flex items-center justify-center" id="nightops-toggle-btn" title="Night Ops Emergency Mode">
+<span class="material-symbols-outlined text-[18px]" id="ops-icon">emergency</span>
+</button>
+</div>
+</aside>
+<!-- ============================================================== -->
+<!-- STATE 1: SOLVED CHALLENGE HUD VIEW (Transition Trigger)       -->
+<!-- ============================================================== -->
+<section class="relative z-10 px-margin-mobile py-space-md flex flex-col gap-space-md transition-all duration-700 ease-out" id="hud-solved-view">
+<!-- Status & Protocol Badge Header -->
+<div class="bg-surface-container-low rounded-lg p-space-md shadow-lg flex flex-col gap-space-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-primary/5 pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-telemetry-sm text-telemetry-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+<span data-en="CHALLENGE COMPLETED" data-es="DESAFÍO COMPLETADO">DESAFÍO COMPLETADO</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">NODE: 04 // MAQ-42</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight" data-en="Combustion &amp; Exhaust Pressure Protocol Cleared" data-es="Protocolo de Combustión y Presión de Escape Superado">
+        Protocolo de Combustión y Presión de Escape Superado
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant" data-en="You have successfully calibrated the air-diesel ratio at 60 meters immersion in BAP Abtao (SS-42) engine room." data-es="Has calibrado exitosamente la relación aire-diésel bajo 60 metros de inmersión en la sala de máquinas del BAP Abtao (SS-42).">
+        Has calibrado exitosamente la relación aire-diésel bajo 60 metros de inmersión en la sala de máquinas del BAP Abtao (SS-42).
+      </p>
+</div>
+<!-- Telemetry Diagnostic Summary Matrix -->
+<div class="bg-surface-container rounded-lg p-space-md flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-caps text-label-caps tracking-widest" data-en="MACHINERY CRITICAL TELEMETRY" data-es="TELEMETRÍA CRÍTICA DE MÁQUINAS">TELEMETRÍA CRÍTICA DE MÁQUINAS</span>
+<span class="font-telemetry-sm text-telemetry-sm">100% RESOLVED</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="bg-surface-container-lowest p-space-sm rounded flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant" data-en="SNORKEL PRESSURE" data-es="PRESIÓN SNORKEL">PRESIÓN SNORKEL</span>
+<span class="font-telemetry-lg text-telemetry-lg text-primary">1.042 bar</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant/80">ΔP: NOMINAL</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant" data-en="N2/CO FILTRATION" data-es="FILTRACIÓN N2/CO">FILTRACIÓN N2/CO</span>
+<span class="font-telemetry-lg text-telemetry-lg text-primary">0.003 ppm</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary">SEAL VALIDATED</span>
+</div>
+</div>
+<!-- Verified Question Readout -->
+<div class="bg-surface-container-high/60 rounded p-space-sm flex items-start gap-space-sm mt-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-secondary" data-en="VERIFIED ANSWER IN CONTROL COMPARTMENT" data-es="RESPUESTA VERIFICADA EN SALA DE CONTROL">RESPUESTA VERIFICADA EN SALA DE CONTROL</span>
+<p class="font-body-sm text-body-sm text-on-surface italic" data-en="«Backpressure valve calibrated at 4.2 PSI to prevent exhaust reversal during periscope depth operations.»" data-es="«Válvula de contrapresión regulada a 4.2 PSI para evitar retroceso de gases en inmersión de periscopio.»">
+            «Válvula de contrapresión regulada a 4.2 PSI para evitar retroceso de gases en inmersión de periscopio.»
+          </p>
+</div>
+</div>
+</div>
+<!-- Transition Call-To-Action Box -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col items-center text-center gap-space-md shadow-xl relative overflow-hidden">
+<!-- Sonar Ring Background Effect on Card -->
+<div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+<div class="w-48 h-48 rounded-full border border-primary animate-ping"></div>
+<div class="w-32 h-32 rounded-full border border-primary"></div>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-container/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">lock_open</span>
+</div>
+<div class="flex flex-col gap-1 max-w-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface" data-en="Circuit Ready for Closure" data-es="Cierre de Circuito Listo">
+          Cierre de Circuito Listo
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant" data-en="The challenge is solved. The insignia is revealed. The circuit is closed." data-es="El desafío se resuelve. La insignia se revela. El circuito se cierra.">
+          El desafío se resuelve. La insignia se revela. El circuito se cierra.
+        </p>
+</div>
+<!-- Action Button 48px+ Touch Target -->
+<button class="w-full min-h-[52px] px-space-lg rounded-sm bg-primary-container text-on-primary-container font-telemetry-lg text-telemetry-lg flex items-center justify-center gap-space-sm shadow-[0_0_16px_rgba(56,232,166,0.4)] hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer" id="trigger-transition-btn">
+<span class="material-symbols-outlined text-[20px]">radar</span>
+<span class="font-bold tracking-wider" data-en="CONTINUE TO INSIGNIA" data-es="CONTINUAR A LA INSIGNIA">CONTINUAR A LA INSIGNIA</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant/70">LOCAL INTEGRITY SIGNATURE // NOT A VERIFIABLE CREDENTIAL YET</span>
+</div>
+</section>
+<!-- ============================================================== -->
+<!-- TRANSITION OVERLAY (Cryptographic Decryption & Radar Sweep)    -->
+<!-- ============================================================== -->
+<div class="hidden relative z-20 px-margin-mobile py-space-xl flex-col items-center justify-center text-center min-h-[500px]" id="unlock-orchestrator">
+<!-- Concentric Sweeping Radar Graphic -->
+<div class="relative w-64 h-64 flex items-center justify-center">
+<!-- Pulsing Rings -->
+<div class="absolute inset-0 rounded-full border border-primary/20 animate-ping"></div>
+<div class="absolute w-52 h-52 rounded-full border border-primary/30"></div>
+<div class="absolute w-36 h-36 rounded-full border border-primary/50"></div>
+<div class="absolute w-20 h-20 rounded-full border border-secondary/60"></div>
+<!-- Radial Sweep Arm -->
+<div class="absolute inset-0 rounded-full border border-primary/10 flex items-center justify-center animate-spin" style="animation-duration: 2.2s; animation-timing-function: linear;">
+<div class="w-1/2 h-0.5 bg-gradient-to-r from-transparent to-primary absolute right-0"></div>
+</div>
+<!-- Central Decrypting Seed -->
+<div class="relative z-10 w-24 h-24 rounded-full bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_0_24px_rgba(56,232,166,0.5)]">
+<span class="material-symbols-outlined text-secondary text-[36px] animate-bounce">military_tech</span>
+<span class="font-telemetry-sm text-[10px] text-primary" id="decrypt-percentage">0%</span>
+</div>
+</div>
+<!-- Cryptographic Stream Log -->
+<div class="mt-space-lg flex flex-col items-center gap-space-xs max-w-xs">
+<span class="font-label-caps text-label-caps text-secondary tracking-widest" data-en="SYNCHRONIZING LOCAL HASH" data-es="SINCRONIZANDO HASH LOCAL">SINCRONIZANDO HASH LOCAL</span>
+<p class="font-telemetry-sm text-telemetry-sm text-primary font-mono bg-surface-container-lowest px-3 py-1.5 rounded truncate w-full text-center" id="crypto-stream">
+        GENERATING_PROOF...
+      </p>
+<span class="font-body-sm text-body-sm text-on-surface-variant" data-en="Minting Physical-Digital Copper Coin on Decentralized Ledger..." data-es="Acuñando Cobre Físico-Digital en Registro Descentralizado...">
+        Acuñando Cobre Físico-Digital en Registro Descentralizado...
+      </span>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- STATE 2: REWARD SCREEN & CREDENTIAL PRESENTATION               -->
+<!-- ============================================================== -->
+<section class="hidden relative z-10 px-margin-mobile py-space-md flex-col gap-space-md transition-all duration-700 ease-out" id="reward-credential-view">
+<!-- Hero Medallion Container -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col items-center text-center shadow-2xl relative overflow-hidden">
+<!-- Glow Aura -->
+<div class="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-secondary/10 blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-primary/10 blur-2xl pointer-events-none"></div>
+<!-- Season & Classification Header Chips -->
+<div class="w-full flex items-center justify-between mb-space-sm">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest font-telemetry-sm text-telemetry-sm text-secondary font-bold" data-en="SEASON 02: COPPER" data-es="TEMPORADA 02: COBRE">
+          TEMPORADA 02: COBRE
+        </span>
+<div class="flex items-center gap-1.5 font-telemetry-sm text-telemetry-sm text-primary">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>AUTÉNTICA // OFFLINE</span>
+</div>
+</div>
+<!-- 3D Shaded Metallic Copper Coin / Ribbon Medallion -->
+<div class="relative my-space-sm group cursor-pointer" id="coin-interactive-wrap">
+<!-- Ambient Radial Glow -->
+<div class="absolute -inset-4 rounded-full bg-gradient-to-tr from-secondary/30 via-primary-container/20 to-secondary-container/40 blur-xl opacity-75 animate-pulse"></div>
+<!-- The Metallic Copper Medallion Frame -->
+<div class="relative w-44 h-44 rounded-full p-2 bg-gradient-to-br from-[#ffdcc6] via-[#c87533] to-[#4f2500] shadow-[0_12px_32px_rgba(0,0,0,0.7)] flex items-center justify-center transform active:scale-95 transition-transform duration-300">
+<!-- Inner Bevel Rim -->
+<div class="w-full h-full rounded-full p-1.5 bg-gradient-to-tl from-[#8a4400] via-[#ffb784] to-[#301400] flex items-center justify-center">
+<!-- Coin Face with Radial Brushed Texture -->
+<div class="w-full h-full rounded-full bg-gradient-to-b from-[#8a4400] via-[#5c2d00] to-[#251000] flex flex-col items-center justify-center p-3 relative overflow-hidden text-center">
+<!-- Circumferential Arch Inscription -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
+<svg class="w-full h-full" viewBox="0 0 160 160">
+<path d="M 20,80 A 60,60 0 1,1 140,80" fill="none" id="arch-top"></path>
+<path d="M 140,80 A 60,60 0 1,1 20,80" fill="none" id="arch-bottom"></path>
+<text fill="#ffdcc6" font-family="Space Mono" font-size="8.5" letter-spacing="2">
+<textPath href="#arch-top" startOffset="50%" text-anchor="middle">BAP ABTAO · SS-42</textPath>
+</text>
+<text fill="#ffdcc6" font-family="Space Mono" font-size="7" letter-spacing="1.5">
+<textPath href="#arch-bottom" startOffset="50%" text-anchor="middle">★ CALLAO · PERÚ ★</textPath>
+</text>
+</svg>
+</div>
+<!-- Central Insignia: Machinist Piston / Engine Spoke & Wave Icon -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#ffdcc6]/20 to-black/60 flex items-center justify-center shadow-inner mb-1">
+<span class="material-symbols-outlined text-[#ffdcc6] text-[32px] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style="font-variation-settings: 'FILL' 1;">
+                    precision_manufacturing
+                  </span>
+</div>
+<span class="font-telemetry-sm text-[10px] text-[#ffdcc6] tracking-widest font-bold">CU-SCI-MAQ</span>
+<span class="font-label-caps text-[8px] text-[#ffb784] tracking-tighter">MACHINIST</span>
+</div>
+<!-- Shiny Specular Reflection Sweep -->
+<div class="absolute -inset-full bg-gradient-to-r from-transparent via-white/15 to-transparent transform -rotate-45 pointer-events-none"></div>
+</div>
+</div>
+</div>
+<!-- Ribbon Hanger Indicator -->
+<div class="w-16 h-4 mx-auto -mt-2 bg-gradient-to-b from-secondary-container to-surface-container-lowest rounded-b flex items-center justify-center shadow-md">
+<div class="w-8 h-1 bg-primary rounded-full"></div>
+</div>
+</div>
+<!-- Credential Titles -->
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold tracking-tight mt-space-xs" data-en="Ribbon Science · Machinist" data-es="Cinta Ciencia · Maquinista">
+        Cinta Ciencia · Maquinista
+      </h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-mono">CODE: CU-SCI-MAQ</span>
+<span class="text-outline-variant">•</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-mono">MUSEUM: BAP ABTAO</span>
+</div>
+<!-- Validation Glow Notice -->
+<div class="mt-space-sm px-3 py-1.5 rounded bg-surface-container flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold" data-en="VALIDATION RADAR: ACTIVE (RADAR GREEN)" data-es="RADAR DE VALIDACIÓN: ACTIVO (RADAR VERDE)" id="radar-validation-label">
+          RADAR DE VALIDACIÓN: ACTIVO (RADAR VERDE)
+        </span>
+</div>
+</div>
+<!-- Metadata Details Card -->
+<div class="bg-surface-container rounded-lg p-space-md flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-caps text-label-caps tracking-widest" data-en="OFFICIAL INSIGNIA RECORD" data-es="EXPEDIENTE DE INSIGNIA OFICIAL">EXPEDIENTE DE INSIGNIA OFICIAL</span>
+</div>
+<!-- Key Value Fields -->
+<div class="flex flex-col gap-space-xs divide-y divide-transparent">
+<div class="flex flex-col py-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant" data-en="HISTORIC MUSEUM LOCATION" data-es="UBICACIÓN MUSEO HISTÓRICO">UBICACIÓN MUSEO HISTÓRICO</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">BAP Abtao (SS-42) · Callao, Perú</span>
+</div>
+<div class="flex flex-col py-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant" data-en="CIVIL ENGINEERING TRANSLATION" data-es="TRANSLACIÓN A INGENIERÍA CIVIL">TRANSLACIÓN A INGENIERÍA CIVIL</span>
+<p class="font-body-md text-body-md text-on-surface" data-en="Civil Engineering Translation: Diesel combustion efficiency, industrial safety ventilation in confined spaces, and zero-leak exhaust filtration." data-es="Aplicación Civil: Eficiencia de combustión diésel, ventilación de seguridad industrial en espacios confinados y filtración de gases sin fugas.">
+            Aplicación Civil: Eficiencia de combustión diésel, ventilación de seguridad industrial en espacios confinados y filtración de gases sin fugas.
+          </p>
+</div>
+<div class="flex flex-col py-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant" data-en="LOCAL INTEGRITY SIGNATURE // NOT A VERIFIABLE CREDENTIAL YET" data-es="FIRMA DE INTEGRIDAD LOCAL // AÚN NO ES CREDENCIAL VERIFICABLE">FIRMA DE INTEGRIDAD LOCAL // AÚN NO ES CREDENCIAL VERIFICABLE</span>
+<div class="flex items-center justify-between bg-surface-container-lowest p-2 rounded mt-1 font-mono text-primary text-telemetry-sm font-bold">
+<span class="truncate">#8A4F-CU-SCI-MAQ-2025</span>
+<button aria-label="Copy Hash" class="text-on-surface-variant hover:text-primary p-1" onclick="navigator.clipboard.writeText('#8A4F-CU-SCI-MAQ-2025')" title="Copy Hash">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Mandatory Disclaimers & Privacy Notice (Prominently Framed) -->
+<div class="bg-surface-container-high rounded-lg p-space-md flex flex-col gap-space-sm shadow-md">
+<!-- Mandatory Symbolic Recognition Disclaimer -->
+<div class="bg-surface-container-lowest p-space-sm rounded flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0 mt-0.5">info</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-secondary font-bold tracking-widest" data-en="SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION" data-es="RECONOCIMIENTO SIMBÓLICO — NO CONSTITUYE CERTIFICACIÓN ACADÉMICA">
+            RECONOCIMIENTO SIMBÓLICO — NO CONSTITUYE CERTIFICACIÓN ACADÉMICA
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5" data-en="This badge represents playful and heritage accreditation of technical telemetry resolution within the BAP Abtao STEM+A program." data-es="Esta insignia representa la acreditación lúdica y patrimonial de resolución de telemetría técnica dentro del programa BAP Abtao STEM+A.">
+            Esta insignia representa la acreditación lúdica y patrimonial de resolución de telemetría técnica dentro del programa BAP Abtao STEM+A.
+          </p>
+</div>
+</div>
+<!-- Local-First Privacy Notice -->
+<div class="bg-surface-container-lowest p-space-sm rounded flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px] flex-shrink-0 mt-0.5">shield_lock</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary font-bold tracking-widest" data-en="PRIVACY BY DESIGN (LOCAL-FIRST)" data-es="PRIVACIDAD POR DISEÑO (LOCAL-FIRST)">
+            PRIVACIDAD POR DISEÑO (LOCAL-FIRST)
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5" data-en="Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required." data-es="Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required.">
+            Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required.
+          </p>
+</div>
+</div>
+</div>
+<!-- Action Command Buttons (All minimum 48px touch targets, high contrast) -->
+<div class="flex flex-col gap-space-sm pt-space-xs pb-space-lg">
+<!-- Primary: Advance to next mission -->
+<button class="w-full min-h-[50px] px-space-md rounded-sm bg-primary-container text-on-primary-container font-telemetry-lg text-telemetry-lg flex items-center justify-center gap-space-sm shadow-md hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer" id="btn-next-mission">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+<span class="font-bold tracking-wider" data-en="[ CONTINUE TO NEXT MISSION → ]" data-es="[ CONTINUAR A LA PRÓXIMA MISIÓN → ]">
+          [ CONTINUAR A LA PRÓXIMA MISIÓN → ]
+        </span>
+</button>
+<!-- Secondary: Badge Registry -->
+<button class="w-full min-h-[48px] px-space-md rounded-sm bg-surface-container-high text-secondary hover:text-secondary-fixed font-telemetry-lg text-telemetry-lg flex items-center justify-center gap-space-sm shadow-sm active:scale-[0.98] transition-all cursor-pointer" id="btn-badge-registry">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+<span class="font-bold tracking-wider" data-en="[ VIEW IN BADGE REGISTRY ]" data-es="[ VER EN BADGE REGISTRY ]">
+          [ VER EN BADGE REGISTRY ]
+        </span>
+</button>
+<!-- Tertiary: Share Achievement (Cryptographic, Privacy Preserving) -->
+<button class="w-full min-h-[48px] px-space-md rounded-sm bg-surface-container text-on-surface-variant hover:text-primary font-telemetry-lg text-telemetry-lg flex items-center justify-center gap-space-sm shadow-sm active:scale-[0.98] transition-all cursor-pointer" id="btn-share-credential">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+<span class="font-bold tracking-wider" data-en="[ SHARE ACHIEVEMENT (QR / BEACON) ]" data-es="[ COMPARTIR LOGRO (QR / TRANSMITIR) ]">
+          [ COMPARTIR LOGRO (QR / TRANSMITIR) ]
+        </span>
+</button>
+</div>
+</section>
+<!-- Share Modal Sheet (Privacy Preserving QR / Transmission) -->
+<div class="fixed inset-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md hidden items-center justify-center p-margin-mobile" id="share-modal">
+<div class="bg-surface-container-low max-w-sm w-full rounded-xl p-space-md flex flex-col gap-space-md shadow-2xl relative">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-secondary tracking-widest" data-en="LOCAL CRYPTOGRAPHIC TRANSMISSION" data-es="TRANSMISIÓN CRIPTOGRÁFICA LOCAL">TRANSMISIÓN CRIPTOGRÁFICA LOCAL</span>
+<button aria-label="Close modal" class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface hover:text-error" id="close-share-btn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center gap-space-sm py-space-xs">
+<!-- SVG Generated QR Simulation with Cryptographic Corners -->
+<div class="w-48 h-48 bg-surface-container-lowest p-3 rounded-lg shadow-inner flex items-center justify-center relative">
+<svg class="w-full h-full text-primary" fill="currentColor" viewBox="0 0 120 120">
+<!-- QR Corner Markers -->
+<rect fill="none" height="30" stroke="currentColor" stroke-width="4" width="30" x="10" y="10"></rect>
+<rect height="14" width="14" x="18" y="18"></rect>
+<rect fill="none" height="30" stroke="currentColor" stroke-width="4" width="30" x="80" y="10"></rect>
+<rect height="14" width="14" x="88" y="18"></rect>
+<rect fill="none" height="30" stroke="currentColor" stroke-width="4" width="30" x="10" y="80"></rect>
+<rect height="14" width="14" x="18" y="88"></rect>
+<!-- Data Bits Pattern -->
+<rect height="6" width="6" x="48" y="12"></rect>
+<rect height="12" width="6" x="58" y="12"></rect>
+<rect height="6" width="16" x="48" y="24"></rect>
+<rect height="8" width="8" x="12" y="48"></rect>
+<rect height="6" width="14" x="26" y="52"></rect>
+<rect fill-opacity="0.3" height="24" width="24" x="48" y="48"></rect>
+<circle cx="60" cy="60" fill="#ffb784" r="6"></circle>
+<rect height="8" width="12" x="80" y="48"></rect>
+<rect height="18" width="8" x="100" y="52"></rect>
+<rect height="16" width="8" x="48" y="80"></rect>
+<rect height="8" width="16" x="62" y="88"></rect>
+<rect height="6" width="20" x="88" y="84"></rect>
+<rect height="12" width="14" x="94" y="96"></rect>
+</svg>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-mono tracking-widest">PAYLOAD: SHA256 // #8A4F-CU-SCI-MAQ</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant" data-en="Zero personal data transmitted. Mathematical proof of completing cell CU-SCI-MAQ only." data-es="Cero datos personales transmitidos. Solo prueba matemática de haber completado la celda CU-SCI-MAQ.">
+          Cero datos personales transmitidos. Solo prueba matemática de haber completado la celda CU-SCI-MAQ.
+        </p>
+</div>
+<button class="w-full min-h-[48px] rounded-sm bg-primary-container text-on-primary-container font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center gap-2" id="copy-credential-link">
+<span class="material-symbols-outlined text-[18px]">link</span>
+<span data-en="COPY CRYPTOGRAPHIC LINK" data-es="COPIAR ENLACE CRIPTOGRÁFICO">COPIAR ENLACE CRIPTOGRÁFICO</span>
+</button>
+</div>
+</div>
+<!-- Client-side Interactive Logic & Language/Theme State Handling -->
+<script>
+    (function initCredentialTransition() {
+      // Elements
+      const hudSolvedView = document.getElementById('hud-solved-view');
+      const orchestrator = document.getElementById('unlock-orchestrator');
+      const rewardView = document.getElementById('reward-credential-view');
+      const triggerBtn = document.getElementById('trigger-transition-btn');
+      const cryptoStream = document.getElementById('crypto-stream');
+      const decryptPercentage = document.getElementById('decrypt-percentage');
+      const nextMissionBtn = document.getElementById('btn-next-mission');
+      const registryBtn = document.getElementById('btn-badge-registry');
+      const shareBtn = document.getElementById('btn-share-credential');
+      const shareModal = document.getElementById('share-modal');
+      const closeShareBtn = document.getElementById('close-share-btn');
+      const copyLinkBtn = document.getElementById('copy-credential-link');
+      
+      const langToggleBtn = document.getElementById('lang-toggle-btn');
+      const langDisplay = document.getElementById('lang-display');
+      const nightOpsBtn = document.getElementById('nightops-toggle-btn');
+      const opsIcon = document.getElementById('ops-icon');
+      const statusBeacon = document.getElementById('status-beacon');
+      const radarValidationLabel = document.getElementById('radar-validation-label');
+      const appRoot = document.getElementById('credential-app-root');
+
+      // State Management
+      let currentLang = localStorage.getItem('isa_lang') || 'ES';
+      let nightOpsActive = localStorage.getItem('isa_nightops') === 'true';
+
+      function updateLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('isa_lang', lang);
+        langDisplay.textContent = lang;
+
+        const translatableElements = document.querySelectorAll('[data-es]');
+        translatableElements.forEach(el => {
+          if (lang === 'EN') {
+            if (el.getAttribute('data-en')) el.textContent = el.getAttribute('data-en');
+          } else {
+            if (el.getAttribute('data-es')) el.textContent = el.getAttribute('data-es');
+          }
+        });
+      }
+
+      function updateNightOps(active) {
+        nightOpsActive = active;
+        localStorage.setItem('isa_nightops', active ? 'true' : 'false');
+
+        if (active) {
+          appRoot.style.setProperty('--isa-accent', '#FF3B30');
+          opsIcon.classList.add('text-error');
+          statusBeacon.classList.remove('bg-primary-container');
+          statusBeacon.classList.add('bg-error');
+          if (radarValidationLabel) {
+            radarValidationLabel.textContent = currentLang === 'ES' 
+              ? 'RADAR DE VALIDACIÓN: ACTIVO (ALERTA ROJO TÁCTICO SS-42)' 
+              : 'VALIDATION RADAR: ACTIVE (SS-42 TACTICAL RED ALERT)';
+            radarValidationLabel.classList.remove('text-primary');
+            radarValidationLabel.classList.add('text-error');
+          }
+        } else {
+          appRoot.style.removeProperty('--isa-accent');
+          opsIcon.classList.remove('text-error');
+          statusBeacon.classList.remove('bg-error');
+          statusBeacon.classList.add('bg-primary-container');
+          if (radarValidationLabel) {
+            radarValidationLabel.textContent = currentLang === 'ES' 
+              ? 'RADAR DE VALIDACIÓN: ACTIVO (RADAR VERDE)' 
+              : 'VALIDATION RADAR: ACTIVE (RADAR GREEN)';
+            radarValidationLabel.classList.remove('text-error');
+            radarValidationLabel.classList.add('text-primary');
+          }
+        }
+      }
+
+      // Initialize defaults
+      updateLanguage(currentLang);
+      updateNightOps(nightOpsActive);
+
+      // Language Switcher
+      langToggleBtn.addEventListener('click', () => {
+        const nextLang = currentLang === 'ES' ? 'EN' : 'ES';
+        updateLanguage(nextLang);
+      });
+
+      // Night Ops Switcher
+      nightOpsBtn.addEventListener('click', () => {
+        updateNightOps(!nightOpsActive);
+      });
+
+      // Interactive Transition Trigger ("CONTINUAR A LA INSIGNIA")
+      triggerBtn.addEventListener('click', () => {
+        // Step 1: Smoothly fade HUD Solved View
+        hudSolvedView.classList.add('opacity-0', 'scale-95');
+        setTimeout(() => {
+          hudSolvedView.classList.add('hidden');
+          orchestrator.classList.remove('hidden');
+          orchestrator.classList.add('flex');
+
+          // Cryptographic Decryption Sequence Animation
+          let progress = 0;
+          const cryptoPhrases = [
+            'READING_HYDRO_ACOUSTIC_BUFFER...',
+            'RESOLVING_DIESEL_PRESSURE_MATRIX...',
+            'VERIFYING_LOCAL_NONCE_8A4F...',
+            'CLOSING_CIRCUIT_CU-SCI-MAQ...',
+            'MINTING_COPPER_INSIGNIA_PROOF...'
+          ];
+
+          const interval = setInterval(() => {
+            progress += 5;
+            decryptPercentage.textContent = progress + '%';
+            
+            const phraseIndex = Math.min(Math.floor(progress / 20), cryptoPhrases.length - 1);
+            cryptoStream.textContent = cryptoPhrases[phraseIndex];
+
+            if (progress >= 100) {
+              clearInterval(interval);
+              setTimeout(() => {
+                // Reveal Reward & Credential Screen
+                orchestrator.classList.add('hidden');
+                orchestrator.classList.remove('flex');
+                rewardView.classList.remove('hidden');
+                rewardView.classList.add('flex');
+                
+                // Play celebratory micro-bounce on the coin
+                const coin = document.getElementById('coin-interactive-wrap');
+                if (coin) {
+                  coin.classList.add('animate-bounce');
+                  setTimeout(() => coin.classList.remove('animate-bounce'), 1000);
+                }
+              }, 400);
+            }
+          }, 60);
+
+        }, 400);
+      });
+
+      // Action Handlers
+      nextMissionBtn.addEventListener('click', () => {
+        const msg = currentLang === 'ES' 
+          ? 'Navegando a la celda CU-TEC-MAQ (Sistemas Auxiliares)...' 
+          : 'Navigating to mission cell CU-TEC-MAQ (Auxiliary Systems)...';
+        alert(msg);
+      });
+
+      registryBtn.addEventListener('click', () => {
+        const msg = currentLang === 'ES' 
+          ? 'Abriendo Matriz Táctica 5x5 de Insignias...' 
+          : 'Opening 5x5 Tactical Insignia Registry...';
+        alert(msg);
+      });
+
+      shareBtn.addEventListener('click', () => {
+        shareModal.classList.remove('hidden');
+        shareModal.classList.add('flex');
+      });
+
+      closeShareBtn.addEventListener('click', () => {
+        shareModal.classList.add('hidden');
+        shareModal.classList.remove('flex');
+      });
+
+      copyLinkBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText('isa://verify/badge/8A4F-CU-SCI-MAQ-2025');
+        const originalText = copyLinkBtn.innerHTML;
+        copyLinkBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span> <span>COPIADO / COPIED</span>';
+        setTimeout(() => {
+          copyLinkBtn.innerHTML = originalText;
+          shareModal.classList.add('hidden');
+          shareModal.classList.remove('flex');
+        }, 1200);
+      });
+
+    })();
+  </script>
+</div></main>
+
+</body></html>

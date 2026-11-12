@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#bacabf", "surface-bright": "#2e3b45", "secondary": "#ffb784", "on-secondary-fixed-variant": "#713700", "on-tertiary-fixed-variant": "#633f00", "surface-container": "#14212a", "on-error-container": "#ffdad6", "secondary-fixed": "#ffdcc6", "on-secondary-container": "#ffc095", "on-primary": "#003824", "on-primary-fixed": "#002113", "tertiary-fixed": "#ffddb3", "outline": "#85948a", "inverse-on-surface": "#25323c", "primary-fixed-dim": "#2be19f", "secondary-fixed-dim": "#ffb784", "on-secondary-fixed": "#301400", "surface-dim": "#08151e", "on-surface": "#d7e4f1", "tertiary": "#ffe6c9", "on-tertiary": "#452b00", "on-primary-fixed-variant": "#005236", "surface-tint": "#2be19f", "error": "#ffb4ab", "error-container": "#93000a", "on-background": "#d7e4f1", "on-tertiary-fixed": "#291800", "primary-fixed": "#56feba", "surface-container-high": "#1f2b35", "primary": "#92ffca", "surface-container-lowest": "#040f18", "inverse-primary": "#006c49", "secondary-container": "#8a4400", "surface-container-highest": "#2a3640", "primary-container": "#38e8a6", "surface-container-low": "#101d26", "on-primary-container": "#006444", "on-error": "#690005", "surface": "#08151e", "tertiary-container": "#ffc36f", "outline-variant": "#3c4a41", "on-tertiary-container": "#794e00", "surface-variant": "#2a3640", "inverse-surface": "#d7e4f1", "on-secondary": "#4f2500", "tertiary-fixed-dim": "#ffb952", "background": "#08151e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-xl": "2.5rem", "margin": "3rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-mobile": "1.25rem", "space-xs": "0.25rem", "gutter": "1.5rem", "gutter-mobile": "1rem" }, "fontFamily": { "label-caps": ["Space Mono"], "body-md": ["Chivo"], "display-hero-mobile": ["Space Grotesk"], "body-sm": ["Chivo"], "display-hero": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "telemetry-sm": ["Space Mono"], "headline-lg": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "body-lg": ["Chivo"], "telemetry-lg": ["Space Mono"] }, "fontSize": { "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-hero": ["4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "telemetry-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" }], "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "telemetry-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="ISA Insignia Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrD4Tu4tJ-mEG21Mx7u-R5kxTigAGIQzDY7uKANz1Tp9_w_dPPLPQJlzbdvPnFC28xHGeQ3ZzcTJGdjLQcH_j4WbJxjkzKva3_b-TIBdj1yeQJSQnP0BrC9FGWZwizDrnkZsgaKeTjuH8pTwEHMXFhnrJzxgaw4TOxgBdLbResERzOQNqJrsozEdf-xLHMwLxgSkkkL91ZEIvMVAV1vZA_WciL1wgcuVcoy7Fi68aFY"/><div class="flex flex-col min-w-0"><span class="font-label-caps text-label-caps text-primary tracking-widest leading-none">ISA COMMAND</span><div class="flex items-center gap-1.5 mt-0.5"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Tactical Radar Home</h1></div></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="hidden sm:flex flex-col items-end"><span class="font-telemetry-sm text-telemetry-sm text-secondary">STATUS</span><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">DEPTH: ARCHIVAL DEEP</span></div><div class="flex items-center bg-surface-container-high/60 px-2 py-1 rounded-sm gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span><span class="font-telemetry-sm text-telemetry-sm text-primary tracking-wider">SYS:LOCKED</span></div><div class="relative flex items-center justify-center p-0.5 rounded-full bg-surface-container-highest"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUeOe9zZyvUADlVNHfdrtXPzIwhSdnaGPVMPTzax1tVY-6_Ti-DEP0Fwr6QtrpgHgY0TuEasHmP6yKhWhaxeM2FKrBLLbGYe6fMytch6x0JGEV5bjw06UvhVYfr17PyE3aWjRAh65W5qCLJ54i0yzrOfGpgTi0RS-wIiqZb1wYFYUlMlOWZQM0zvIU67FNaYYeNtQT8FuKAWRFdQ23ulT8NnRNrHHt5vOH2qSHf8Q"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></div></div></div><div class="h-0.5 w-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/30 via-outline-variant/20 to-transparent flex items-center justify-center"><div class="flex items-center gap-1 text-[8px] font-telemetry-sm text-outline tracking-widest opacity-60 px-4"><span class="w-3 h-px bg-outline/40"></span><span>· · ·   — — —   · · ·</span><span class="w-3 h-px bg-outline/40"></span></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Foundational Archival Warning Banner -->
+<section class="px-gutter-mobile pt-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col min-w-0">
+<p class="font-telemetry-sm text-telemetry-sm text-secondary tracking-wider font-bold uppercase">
+            Axiom // Archival Canon
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5 italic">
+            “Everything you see is fiction. But there is much to discover.”
+          </p>
+<div class="h-0.5 w-full bg-surface-container-highest my-space-xs rounded-full"></div>
+<p class="font-telemetry-sm text-[0.625rem] leading-tight text-on-surface-variant uppercase tracking-wider">
+            Notice: The ISA narrative is fictional. Real-world museum telemetry and curriculum analytics are authentic.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Administrative Overwatch Header -->
+<section class="px-gutter-mobile pt-space-md">
+<div class="bg-surface-container p-space-md rounded-xl shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 bg-error-container text-on-error-container rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest">Admin Overwatch // L5 Omni</span>
+</div>
+<div class="flex items-center gap-1 text-primary-container font-telemetry-sm text-telemetry-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span>99.98% SYNC</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Commanding Officer</span>
+<h2 class="font-headline-sm text-headline-sm text-primary tracking-tight mt-0.5">
+          Adm. Reckmann
+        </h2>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Academy Chief Curator &amp; Director</span>
+</div>
+<div class="p-space-xs bg-surface-container-lowest rounded flex items-center justify-between px-2.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">lan</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Baltic &amp; Pacific Hubs Connected</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Active</span>
+</div>
+<!-- Station Filter Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto pt-1 pb-0.5 scrollbar-none" id="station-filter">
+<button class="px-3 py-1.5 rounded bg-primary-container text-on-primary-container font-telemetry-sm text-telemetry-sm uppercase tracking-wider flex-shrink-0 shadow-sm font-bold">
+          All Stations
+        </button>
+<button class="px-3 py-1.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface font-telemetry-sm text-telemetry-sm uppercase tracking-wider flex-shrink-0">
+          U-995 Laboe
+        </button>
+<button class="px-3 py-1.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface font-telemetry-sm text-telemetry-sm uppercase tracking-wider flex-shrink-0">
+          USS Bowfin
+        </button>
+<button class="px-3 py-1.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface font-telemetry-sm text-telemetry-sm uppercase tracking-wider flex-shrink-0">
+          HMS Alliance
+        </button>
+</div>
+</div>
+</section>
+<!-- Core Tactical KPIs (2x2 Grid) -->
+<section class="px-gutter-mobile pt-space-md">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-outline tracking-widest uppercase">Telemetry Matrix // Real-Time</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary">FEED_01.8</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- KPI 1 -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps uppercase">Active Cadets</span>
+<span class="material-symbols-outlined text-[18px] text-primary">groups</span>
+</div>
+<div class="my-space-xs">
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">
+            14,820
+          </div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-primary text-[14px]">arrow_upward</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary">+12.4% cycle</span>
+</div>
+</div>
+<span class="font-telemetry-sm text-[0.625rem] text-on-surface-variant">Global terminal access</span>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps uppercase">Curricular Rate</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+</div>
+<div class="my-space-xs">
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">
+            94.2%
+          </div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold">TIMSS / GSA</span>
+</div>
+</div>
+<span class="font-telemetry-sm text-[0.625rem] text-on-surface-variant">Grade 8-12 benchmarks</span>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps uppercase">Museum Visits</span>
+<span class="material-symbols-outlined text-[18px] text-primary">pin_drop</span>
+</div>
+<div class="my-space-xs">
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">
+            3,418
+          </div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface">Authenticated</span>
+</div>
+</div>
+<span class="font-telemetry-sm text-[0.625rem] text-on-surface-variant">NFC &amp; GPS verification</span>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps uppercase">Specimen Ledger</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary-container">token</span>
+</div>
+<div class="my-space-xs">
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">
+            3,030
+          </div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary-container">2.1k Cu · 840 Ag</span>
+</div>
+</div>
+<span class="font-telemetry-sm text-[0.625rem] text-on-surface-variant">Cryptographic tokens minted</span>
+</div>
+</div>
+</section>
+<!-- Transmedia Content & Episode Management -->
+<section class="px-gutter-mobile pt-space-md">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">video_library</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Curricular Modules</h3>
+</div>
+<span class="font-label-caps text-label-caps text-outline uppercase">4 Staged</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Module 1: Steel 04 -->
+<div class="bg-surface-container p-space-md rounded-xl shadow-md">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-primary font-telemetry-sm font-bold">
+              04
+            </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">STEEL 04 // ACTIVE</span>
+</div>
+<h4 class="font-headline-sm text-body-lg text-on-surface font-semibold leading-tight">
+                Periscope Optics &amp; Angles
+              </h4>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Station: U-995 Laboe (Baltic)</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps">98.2%</span>
+</div>
+<div class="mt-space-sm pt-space-sm bg-surface-container-low p-2 rounded flex items-center justify-between text-outline">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Latency: 18.2s avg</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary">TIMSS P-8.4 Passed</span>
+</div>
+<!-- Module Actions -->
+<div class="grid grid-cols-3 gap-1.5 mt-space-sm">
+<button class="bg-surface-container-high hover:bg-surface-bright text-on-surface p-1.5 rounded flex items-center justify-center gap-1 font-telemetry-sm text-[0.6875rem]">
+<span class="material-symbols-outlined text-[14px]">edit_note</span>
+<span>Script</span>
+</button>
+<button class="bg-surface-container-high hover:bg-surface-bright text-on-surface p-1.5 rounded flex items-center justify-center gap-1 font-telemetry-sm text-[0.6875rem]">
+<span class="material-symbols-outlined text-[14px]">view_in_ar</span>
+<span>3D Model</span>
+</button>
+<button class="bg-surface-container-high hover:bg-surface-bright text-on-surface p-1.5 rounded flex items-center justify-center gap-1 font-telemetry-sm text-[0.6875rem]">
+<span class="material-symbols-outlined text-[14px]">analytics</span>
+<span>Logs</span>
+</button>
+</div>
+</div>
+<!-- Module 2: Copper 01 -->
+<div class="bg-surface-container p-space-md rounded-xl shadow-md">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-secondary font-telemetry-sm font-bold">
+              01
+            </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">COPPER 01 // ACTIVE</span>
+</div>
+<h4 class="font-headline-sm text-body-lg text-on-surface font-semibold leading-tight">
+                Sonar Hydrophone Acoustics
+              </h4>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Station: USS Bowfin (Hawaii)</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps">89.5%</span>
+</div>
+<div class="mt-space-sm pt-space-sm bg-surface-container-low p-2 rounded flex items-center justify-between text-outline">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Spectrogram Audio: Synced</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary">Acoustic Signature Logged</span>
+</div>
+<div class="grid grid-cols-3 gap-1.5 mt-space-sm">
+<button class="bg-surface-container-high hover:bg-surface-bright text-on-surface p-1.5 rounded flex items-center justify-center gap-1 font-telemetry-sm text-[0.6875rem]">
+<span class="material-symbols-outlined text-[14px]">edit_note</span>
+<span>Script</span>
+</button>
+<button class="bg-surface-container-high hover:bg-surface-bright text-on-surface p-1.5 rounded flex items-center justify-center gap-1 font-telemetry-sm text-[0.6875rem]">
+<span class="material-symbols-outlined text-[14px]">view_in_ar</span>
+<span>3D Model</span>
+</button>
+<button class="bg-surface-container-high hover:bg-surface-bright text-on-surface p-1.5 rounded flex items-center justify-center gap-1 font-telemetry-sm text-[0.6875rem]">
+<span class="material-symbols-outlined text-[14px]">analytics</span>
+<span>Logs</span>
+</button>
+</div>
+</div>
+<!-- Module 3: Bronze 03 -->
+<div class="bg-surface-container p-space-md rounded-xl shadow-md">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-tertiary font-telemetry-sm font-bold">
+              03
+            </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim tracking-widest uppercase">BRONZE 03 // IN REVIEW</span>
+</div>
+<h4 class="font-headline-sm text-body-lg text-on-surface font-semibold leading-tight">
+                Engine &amp; Battery Hybrid Drive
+              </h4>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Station: HMS Alliance (Gosport)</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-caps text-label-caps">STAGING</span>
+</div>
+<div class="mt-space-sm pt-space-sm bg-surface-container-low p-2 rounded flex items-center justify-between text-outline">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Peer Review: 2 of 3 signed</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary">Curator Check</span>
+</div>
+<div class="grid grid-cols-3 gap-1.5 mt-space-sm">
+<button class="bg-surface-container-high hover:bg-surface-bright text-on-surface p-1.5 rounded flex items-center justify-center gap-1 font-telemetry-sm text-[0.6875rem]">
+<span class="material-symbols-outlined text-[14px]">edit_note</span>
+<span>Review</span>
+</button>
+<button class="bg-surface-container-high hover:bg-surface-bright text-on-surface p-1.5 rounded flex items-center justify-center gap-1 font-telemetry-sm text-[0.6875rem]">
+<span class="material-symbols-outlined text-[14px]">rule</span>
+<span>Approve</span>
+</button>
+<button class="bg-surface-container-high hover:bg-surface-bright text-on-surface p-1.5 rounded flex items-center justify-center gap-1 font-telemetry-sm text-[0.6875rem]">
+<span class="material-symbols-outlined text-[14px]">analytics</span>
+<span>Logs</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Cadet Assessment & Learning Analytics -->
+<section class="px-gutter-mobile pt-space-md">
+<div class="bg-surface-container p-space-md rounded-xl shadow-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">insights</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">STEM+A Proficiency</h3>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary">Q3 AUDIT</span>
+</div>
+<!-- STEM+A Progress Bars -->
+<div class="space-y-space-sm">
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Science (Optics &amp; Hydrostatics)</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">88%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 88%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Technology (Sonar &amp; GHG Array)</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary-container font-bold">76%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 76%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Engineering (Diesel &amp; Ballast)</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">82%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Mathematics (Triangulation &amp; Bearing)</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold">71%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 71%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Arts &amp; Ethics (Civil Heritage &amp; Memory)</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">95%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 95%;"></div>
+</div>
+</div>
+</div>
+<!-- Flagged Question Alert Box -->
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">report_problem</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-secondary uppercase font-bold">Pedagogical Bottleneck Flag</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+<strong class="text-on-surface">Challenge 02:</strong> Snell's Law Refraction Index requires explanatory hint recalibration. Failure rate spiked to 29% among Cohort Bravo.
+          </p>
+<div class="mt-2 flex items-center gap-2">
+<button class="bg-secondary-container text-on-secondary-container px-2.5 py-1 rounded font-telemetry-sm text-[0.6875rem] uppercase font-bold hover:opacity-90">
+              Recalibrate Hint
+            </button>
+<span class="font-telemetry-sm text-[0.625rem] text-outline">Logged 2h ago</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Museum Memorial Partner Integrations -->
+<section class="px-gutter-mobile pt-space-md">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">museum</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Memorial Terminals</h3>
+</div>
+<span class="font-label-caps text-label-caps text-primary uppercase">3 Active Nodes</span>
+</div>
+<!-- Museum Cards List -->
+<div class="space-y-space-sm">
+<!-- Partner 1 -->
+<div class="bg-surface-container p-space-md rounded-xl shadow-md">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">ONLINE // LABOE DE</span>
+</div>
+<h4 class="font-headline-sm text-body-lg text-on-surface font-semibold mt-0.5">
+              U-995 Naval Memorial
+            </h4>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Baltic Sea Coast · Laboe, Germany</span>
+</div>
+<span class="bg-surface-container-high px-2 py-1 rounded font-telemetry-sm text-telemetry-sm text-primary">
+            412 Today
+          </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-space-sm p-2 bg-surface-container-low rounded font-telemetry-sm text-telemetry-sm">
+<div class="text-on-surface-variant">12 NFC Kiosks Synced</div>
+<div class="text-primary text-right">Field Cal: Normal</div>
+</div>
+</div>
+<!-- Partner 2 -->
+<div class="bg-surface-container p-space-md rounded-xl shadow-md">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">ONLINE // PEARL HARBOR US</span>
+</div>
+<h4 class="font-headline-sm text-body-lg text-on-surface font-semibold mt-0.5">
+              USS Bowfin Submarine Museum
+            </h4>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Oahu, Hawaii · Fleet Pacific HQ</span>
+</div>
+<span class="bg-surface-container-high px-2 py-1 rounded font-telemetry-sm text-telemetry-sm text-primary">
+            289 Today
+          </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-space-sm p-2 bg-surface-container-low rounded font-telemetry-sm text-telemetry-sm">
+<div class="text-on-surface-variant">8 Acoustic Beacons</div>
+<div class="text-primary text-right">Field Cal: Normal</div>
+</div>
+</div>
+<!-- Partner 3 -->
+<div class="bg-surface-container p-space-md rounded-xl shadow-md">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">ONLINE // GOSPORT UK</span>
+</div>
+<h4 class="font-headline-sm text-body-lg text-on-surface font-semibold mt-0.5">
+              Royal Navy Submarine Museum (HMS Alliance)
+            </h4>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Haslar Jetty Road · Gosport, UK</span>
+</div>
+<span class="bg-surface-container-high px-2 py-1 rounded font-telemetry-sm text-telemetry-sm text-primary">
+            195 Today
+          </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-space-sm p-2 bg-surface-container-low rounded font-telemetry-sm text-telemetry-sm">
+<div class="text-on-surface-variant">6 AR Holo-Nodes</div>
+<div class="text-primary text-right">Field Cal: Normal</div>
+</div>
+</div>
+</div>
+<!-- Provision New Terminal Button -->
+<button class="w-full mt-space-sm py-2.5 px-space-md bg-surface-container-high hover:bg-surface-bright text-primary rounded-lg flex items-center justify-center gap-2 font-telemetry-sm text-telemetry-sm tracking-wider uppercase transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Provision New Museum Installation Terminal</span>
+</button>
+</section>
+<!-- Administrative Control Deck & System Triggers -->
+<section class="px-gutter-mobile pt-space-md pb-space-lg">
+<div class="bg-surface-container p-space-md rounded-xl shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Curatorial Control Deck</h3>
+</div>
+<!-- Primary Action: TIMSS Export -->
+<button class="w-full py-3 px-space-md bg-primary-container hover:bg-primary text-on-primary-container rounded-lg flex items-center justify-between font-telemetry-lg text-telemetry-lg tracking-wider uppercase font-bold shadow-md transition-all">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Export TIMSS Compliance</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-primary-container bg-primary-fixed px-1.5 py-0.5 rounded">PDF/CSV</span>
+</button>
+<!-- Grid of Secondary Technical Triggers -->
+<div class="grid grid-cols-1 gap-2 pt-1">
+<button class="w-full py-2.5 px-space-sm bg-surface-container-high hover:bg-surface-bright text-on-surface rounded-lg flex items-center justify-between font-telemetry-sm text-telemetry-sm tracking-wide">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">cell_tower</span>
+<span>Broadcast Fleet Dispatch / Cadet Alert</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_forward</span>
+</button>
+<button class="w-full py-2.5 px-space-sm bg-surface-container-high hover:bg-surface-bright text-on-surface rounded-lg flex items-center justify-between font-telemetry-sm text-telemetry-sm tracking-wide">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">shield</span>
+<span>Cryptographic Ledger &amp; Credential Audit</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_forward</span>
+</button>
+<button class="w-full py-2.5 px-space-sm bg-surface-container-high hover:bg-surface-bright text-on-surface rounded-lg flex items-center justify-between font-telemetry-sm text-telemetry-sm tracking-wide">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[18px]">admin_panel_settings</span>
+<span>Security &amp; Curatorial Access Override</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_forward</span>
+</button>
+</div>
+<!-- System Diagnostic Footer Strip -->
+<div class="mt-2 pt-2 border-t-0 flex items-center justify-between font-telemetry-sm text-[0.625rem] text-outline">
+<span>SECURITY PROTOCOL: SHA-256 / ADM-AUTH</span>
+<span class="text-primary font-bold">ISA_NODE_K-48</span>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple micro-interaction for station pills toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterContainer = document.getElementById('station-filter');
+    if (filterContainer) {
+      const buttons = filterContainer.querySelectorAll('button');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => {
+            b.className = 'px-3 py-1.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface font-telemetry-sm text-telemetry-sm uppercase tracking-wider flex-shrink-0';
+          });
+          btn.className = 'px-3 py-1.5 rounded bg-primary-container text-on-primary-container font-telemetry-sm text-telemetry-sm uppercase tracking-wider flex-shrink-0 shadow-sm font-bold';
+        });
+      });
+    }
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(4,18,31,0.8)]" data-active-classes="text-primary-container font-headline-sm relative after:content-[''] after:absolute after:bottom-1 after:w-5 after:h-0.5 after:bg-primary-container after:shadow-[0_0_8px_rgba(56,232,166,0.6)]"><div class="h-16 px-space-sm grid grid-cols-4 items-center"><a class="flex flex-col items-center justify-center h-full min-h-[44px] min-w-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="tactical-radar-home" href="#"><span class="material-symbols-outlined text-[24px]">radar</span><span class="font-label-caps text-label-caps uppercase mt-1 tracking-wider">Radar</span></a><a class="flex flex-col items-center justify-center h-full min-h-[44px] min-w-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="expedition-missions" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-caps text-label-caps uppercase mt-1 tracking-wider">Missions</span></a><a class="flex flex-col items-center justify-center h-full min-h-[44px] min-w-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="museum-telemetry" href="#"><span class="material-symbols-outlined text-[24px]">anchor</span><span class="font-label-caps text-label-caps uppercase mt-1 tracking-wider">Museums</span></a><a class="flex flex-col items-center justify-center h-full min-h-[44px] min-w-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="cadet-dossier-profile" href="#"><span class="material-symbols-outlined text-[24px]">badge</span><span class="font-label-caps text-label-caps uppercase mt-1 tracking-wider">Profile</span></a></div></nav></body></html>

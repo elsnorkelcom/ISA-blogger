@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#006c49", "secondary": "#ffb784", "error": "#ffb4ab", "surface-container-high": "#1f2b35", "on-primary-container": "#006444", "tertiary-container": "#ffc36f", "primary-container": "#38e8a6", "on-tertiary": "#452b00", "tertiary-fixed-dim": "#ffb952", "on-surface-variant": "#bacabf", "secondary-container": "#8a4400", "tertiary": "#ffe6c9", "surface-bright": "#2e3b45", "on-primary-fixed": "#002113", "on-error-container": "#ffdad6", "on-primary-fixed-variant": "#005236", "on-tertiary-fixed-variant": "#633f00", "on-background": "#d7e4f1", "surface": "#08151e", "surface-tint": "#2be19f", "outline-variant": "#3c4a41", "on-secondary-fixed-variant": "#713700", "surface-container-highest": "#2a3640", "on-error": "#690005", "secondary-fixed": "#ffdcc6", "surface-container-low": "#101d26", "primary-fixed-dim": "#2be19f", "on-primary": "#003824", "primary-fixed": "#56feba", "surface-dim": "#08151e", "outline": "#85948a", "secondary-fixed-dim": "#ffb784", "on-tertiary-container": "#794e00", "tertiary-fixed": "#ffddb3", "on-secondary-container": "#ffc095", "on-surface": "#d7e4f1", "surface-container-lowest": "#040f18", "on-tertiary-fixed": "#291800", "error-container": "#93000a", "surface-container": "#14212a", "on-secondary": "#4f2500", "surface-variant": "#2a3640", "background": "#08151e", "primary": "#92ffca", "inverse-on-surface": "#25323c", "on-secondary-fixed": "#301400", "inverse-surface": "#d7e4f1" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "3rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-md": "1rem", "space-xl": "2.5rem" }, "fontFamily": { "telemetry-lg": [ "Space Mono" ], "telemetry-sm": [ "Space Mono" ], "headline-sm": [ "Space Grotesk" ], "body-md": [ "Chivo" ], "display-hero-mobile": [ "Space Grotesk" ], "headline-lg": [ "Space Grotesk" ], "label-caps": [ "Space Mono" ], "display-hero": [ "Space Grotesk" ], "body-sm": [ "Chivo" ], "body-lg": [ "Chivo" ], "headline-md": [ "Space Grotesk" ], "headline-lg-mobile": [ "Space Grotesk" ] }, "fontSize": { "telemetry-lg": [ "1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" } ], "telemetry-sm": [ "0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" } ], "headline-sm": [ "1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" } ], "body-md": [ "1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" } ], "display-hero-mobile": [ "2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-lg": [ "2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-caps": [ "0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" } ], "display-hero": [ "4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" } ], "body-sm": [ "0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" } ], "body-lg": [ "1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" } ], "headline-md": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" } ], "headline-lg-mobile": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" } ] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}body.ops-night{--ops-hue:0deg;filter:sepia(0.85) hue-rotate(310deg) saturate(3.5) contrast(1.15);}</style></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="AcademyLogo220x220 .png" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrAAiCSCIeJo1-9g3X6xI4zLcUhSPjCfDfC4Tv6Bu7qzDN8ZY_01Zxh7zGiCqJ4c3a5zNcoy2CTcA6O2N05_3SjCkPonVBRrTwbSdlM24-l-ySciAAwZgx0N8Ezdn8aFeD456xizmL5-eYv9mW3eDSAlx2qwoxKwHOtr1bzkqjK8CQqVJxERHgfh6ZtnQ2fob3CRJlT8JmlwR-yhXGsxBnNA_hMO2aGSbNAVFFgqdaHGmsE1VQrFK0uMEoQ"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface truncate">ISA</span><div class="flex items-center gap-1 bg-surface-container-high px-1.5 py-0.5 rounded"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span><span class="font-telemetry-sm text-[0.625rem] text-primary uppercase">SUB-OPS</span></div></div><span class="font-telemetry-sm text-[0.6875rem] text-on-surface-variant tracking-widest truncate">Tactical Helm</span></div></div><div class="flex items-center gap-1 shrink-0"><button class="w-11 h-11 flex items-center justify-center rounded text-secondary hover:text-on-surface bg-surface-container/60 hover:bg-surface-container-high transition-colors" onclick="document.body.classList.toggle('ops-night')" title="Toggle Night Ops Battle Lantern"><span class="material-symbols-outlined text-[20px]">e911_emergency</span></button><button class="w-11 h-11 flex items-center justify-center rounded text-on-surface-variant hover:text-primary font-telemetry-sm text-telemetry-sm bg-surface-container/60 hover:bg-surface-container-high transition-colors" data-lang="EN" onclick="this.dataset.lang=this.dataset.lang==='ES'?'EN':'ES';this.querySelector('span').innerText=this.dataset.lang;" title="Toggle Language EN / ES"><span class="font-bold">EN</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full px-gutter-mobile pt-16 pb-24 bg-surface flex-1"><div class="flex flex-col w-full transition-colors duration-500 text-on-surface" id="isa-root" style="--isa-bg-day: #08151e; --isa-panel-day: #101d26; --isa-card-day: #14212a; --isa-accent-day: #38e8a6; --isa-glow-day: rgba(56, 232, 166, 0.35); --isa-text-day: #d7e4f1; --isa-sub-day: #bacabf; --isa-bg-night: #050a0d; --isa-panel-night: #14080a; --isa-card-night: #200c0f; --isa-accent-night: #ff3b30; --isa-glow-night: rgba(255, 59, 48, 0.45); --isa-text-night: #ffdcd9; --isa-sub-night: #f0a8a3; --bg-current: var(--isa-bg-day); --panel-current: var(--isa-panel-day); --card-current: var(--isa-card-day); --accent-current: var(--isa-accent-day); --glow-current: var(--isa-glow-day); --text-current: var(--isa-text-day); --sub-current: var(--isa-sub-day);">
+<!-- Sub-Header / Command Banner with Official Circular ISA Academy Logo & Quick Ops Switchers -->
+<header class="w-full rounded-xl p-space-md mb-space-md shadow-lg flex flex-col gap-space-sm" style="background-color: var(--panel-current); color: var(--text-current);">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="relative w-12 h-12 rounded-full p-0.5 shrink-0 shadow-md flex items-center justify-center overflow-hidden" style="background: linear-gradient(135deg, var(--accent-current), transparent);">
+<img alt="Official ISA Academy Crest Logo" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvRNl4oZJfSJRbbJxe0vvzlIh1mdmvPatVR8dJ4LyHjHdzga6CXrWQ0gwa5knGSaSI0Rtgkx-VhFIrUdFEKfouQllukia8JzUr-pXt4NGO2gB9JFVLHwNjAq-M64-DwTuLVTgObmu6hXd6QxVrazqVbU5G5uyt5AL_c0bAAyUo7N_L94wTXcqm9vXjvAD6CRWpuf2ZwrQEdmq4jqfd5pA_oPrR-DvnX-_CjKEOkGZ9jVuwNQpgZ3Za"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md uppercase font-bold tracking-tight truncate" style="color: var(--accent-current);">
+            ISA // EL SNORKEL
+          </span>
+<span class="font-label-caps text-label-caps tracking-widest truncate" data-i18n-en="INTERNATIONAL SUBMARINE ACADEMY" data-i18n-es="ACADEMIA SUBMARINA INTERNACIONAL" style="color: var(--sub-current);">
+            INTERNATIONAL SUBMARINE ACADEMY
+          </span>
+</div>
+</div>
+<!-- Quick Toggles with accessible touch targets >=48px -->
+<div class="flex items-center gap-1.5 shrink-0">
+<button aria-label="Toggle Battle Lantern Ops Mode" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300" id="toggle-ops-mode" style="background-color: var(--card-current); color: var(--accent-current);" type="button">
+<span class="material-symbols-outlined text-[24px]" id="ops-icon">nightlight</span>
+</button>
+<button aria-label="Switch language between English and Spanish" class="w-12 h-12 rounded-lg flex items-center justify-center font-telemetry-sm text-telemetry-sm font-bold transition-all duration-300" data-lang="EN" id="toggle-lang-stream" style="background-color: var(--card-current); color: var(--text-current);" type="button">
+<span id="lang-indicator">EN</span>
+</button>
+</div>
+</div>
+<!-- Telemetry status ticker -->
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/30 font-telemetry-sm text-[0.6875rem]">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full animate-ping" style="background-color: var(--accent-current);"></span>
+<span data-i18n-en="STREAM FEED // LIVE ACOUSTIC SYNC" data-i18n-es="FLUJO EN VIVO // SINCRONÍA ACÚSTICA" style="color: var(--sub-current);">STREAM FEED // LIVE ACOUSTIC SYNC</span>
+</div>
+<span class="font-mono tracking-wider font-bold" style="color: var(--accent-current);">SEC-LIMA // DEPTH: 140M</span>
+</div>
+</header>
+<!-- Active Expedition Hero -->
+<section class="relative w-full rounded-xl overflow-hidden mb-space-md shadow-xl flex flex-col justify-end p-space-lg" style="background-color: var(--card-current); min-height: 240px;">
+<!-- Technical Scanline Backdrop Effect -->
+<div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/30 via-transparent to-transparent"></div>
+<div class="absolute inset-0 opacity-15 pointer-events-none" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.4) 2px, rgba(0,0,0,0.4) 4px);"></div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded font-label-caps text-label-caps uppercase tracking-wider font-bold" style="background-color: var(--panel-current); color: var(--accent-current);">
+          SEASON 02: COPPER
+        </span>
+<span class="font-telemetry-sm text-[0.6875rem]" style="color: var(--sub-current);">OP-STATUS: UNDERWAY</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tight text-on-surface" data-i18n-en="Propulsion &amp; Closed-Circuit Systems" data-i18n-es="Propulsión y Sistemas de Circuito Cerrado">
+        Propulsion &amp; Closed-Circuit Systems
+      </h1>
+<p class="font-body-md text-body-md" data-i18n-en="Operational patrols active across Sector Lima. Monitor fluid dynamics, secondary thermal loops, and mechanical torque limits in real-time." data-i18n-es="Patrullas operativas activas en Sector Lima. Monitorea dinámica de fluidos, lazos térmicos secundarios y límites de torque mecánico." style="color: var(--sub-current);">
+        Operational patrols active across Sector Lima. Monitor fluid dynamics, secondary thermal loops, and mechanical torque limits in real-time.
+      </p>
+<div class="flex items-center gap-3 mt-space-sm pt-2">
+<button class="min-h-[48px] px-space-md rounded-lg font-telemetry-lg text-telemetry-sm font-bold flex items-center justify-center gap-2 shadow-md transition-all active:scale-95" style="background-color: var(--accent-current); color: #040f18;" type="button">
+<span class="material-symbols-outlined text-[20px]">explore</span>
+<span data-i18n-en="ENGAGE SECTOR PATROL" data-i18n-es="INICIAR PATRULLA DE SECTOR">ENGAGE SECTOR PATROL</span>
+</button>
+<span class="font-telemetry-sm text-[0.75rem]" style="color: var(--sub-current);">ETA-DIVE: 04M 12S</span>
+</div>
+</div>
+</section>
+<!-- Quick-Launch Missions (Bento Dual Layout) -->
+<section class="flex flex-col gap-space-sm mb-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" style="color: var(--accent-current);">bolt</span>
+<h2 class="font-headline-sm text-headline-sm font-bold uppercase tracking-wide text-on-surface" data-i18n-en="Quick-Launch Missions" data-i18n-es="Misiones de Despliegue Rápido">
+          Quick-Launch Missions
+        </h2>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm" style="color: var(--sub-current);">TAC-DISPATCH</span>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Mission 1: CU-SCI-MAQ -->
+<article class="p-space-md rounded-xl transition-all shadow-md flex flex-col justify-between" style="background-color: var(--panel-current);">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps font-bold" style="color: var(--accent-current);">
+              CU-SCI-MAQ // CODE: 981-L
+            </span>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface" data-i18n-en="Machinist Science: High-Pressure Valves" data-i18n-es="Ciencia Maquinista: Válvulas de Alta Presión">
+              Machinist Science: High-Pressure Valves
+            </h3>
+</div>
+<span class="material-symbols-outlined text-[22px] shrink-0" style="color: var(--accent-current);">precision_manufacturing</span>
+</div>
+<p class="font-body-md text-body-sm mb-space-md" data-i18n-en="Analyze metallurgy degradation under 35 atm pressure cycles. Reconfigure packing seals before main ballast activation." data-i18n-es="Analiza la degradación metalúrgica bajo ciclos de 35 atm. Reconfigura sellos antes del soplado del lastre principal." style="color: var(--sub-current);">
+          Analyze metallurgy degradation under 35 atm pressure cycles. Reconfigure packing seals before main ballast activation.
+        </p>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5 font-telemetry-sm text-[0.6875rem]" style="color: var(--sub-current);">
+<span class="w-1.5 h-1.5 rounded-full" style="background-color: var(--accent-current);"></span>
+<span>SIMULATION READY</span>
+</div>
+<button aria-label="Launch Machinist Science Mission" class="min-h-[48px] px-space-md rounded font-telemetry-lg text-telemetry-sm font-bold flex items-center gap-1 shadow-sm transition-transform active:scale-95" style="background-color: var(--card-current); color: var(--accent-current);" type="button">
+<span>[ INITIATE ]</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Mission 2: AC-01 -->
+<article class="p-space-md rounded-xl transition-all shadow-md flex flex-col justify-between" style="background-color: var(--panel-current);">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps font-bold" style="color: var(--accent-current);">
+              AC-01 // TACTICAL QUARTERS
+            </span>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface" data-i18n-en="Forward Torpedo Room Clearance" data-i18n-es="Despeje de Sala de Torpedos de Proa">
+              Forward Torpedo Room Clearance
+            </h3>
+</div>
+<span class="material-symbols-outlined text-[22px] shrink-0" style="color: var(--accent-current);">military_tech</span>
+</div>
+<p class="font-body-md text-body-sm mb-space-md" data-i18n-en="Review loading hatch interlocks, mechanical pneumatic impulse vents, and safety dogpins for deep water deployment." data-i18n-es="Revisa los enclavamientos de escotilla, conductos neumáticos y pasadores de seguridad para inmersión profunda." style="color: var(--sub-current);">
+          Review loading hatch interlocks, mechanical pneumatic impulse vents, and safety dogpins for deep water deployment.
+        </p>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5 font-telemetry-sm text-[0.6875rem]" style="color: var(--sub-current);">
+<span class="w-1.5 h-1.5 rounded-full" style="background-color: var(--accent-current);"></span>
+<span>CADET LOG SYNCED</span>
+</div>
+<button aria-label="Launch Torpedo Room Mission" class="min-h-[48px] px-space-md rounded font-telemetry-lg text-telemetry-sm font-bold flex items-center gap-1 shadow-sm transition-transform active:scale-95" style="background-color: var(--card-current); color: var(--accent-current);" type="button">
+<span>[ INITIATE ]</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Featured Submarine Museum Spotlight: BAP Abtao (SS-42) -->
+<section class="p-space-md rounded-xl mb-space-md shadow-lg flex flex-col gap-space-sm" style="background-color: var(--panel-current);">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]" style="color: var(--accent-current);">museum</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider font-bold" data-i18n-en="HERITAGE MUSEUM SPOTLIGHT" data-i18n-es="MUSEO HISTÓRICO DESTACADO" style="color: var(--accent-current);">
+          HERITAGE MUSEUM SPOTLIGHT
+        </span>
+</div>
+<span class="font-telemetry-sm text-[0.6875rem] px-1.5 py-0.5 rounded font-bold" style="background-color: var(--card-current); color: var(--text-current);">
+        MUSEO NAVAL
+      </span>
+</div>
+<!-- Abtao Visual Media Placeholder -->
+<div class="relative w-full h-44 rounded-lg overflow-hidden shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Historic Peruvian submarine BAP Abtao SS-42 moored at Callao port Peru under dramatic overcast oceanic sky, authentic weathered steel hull, naval antennas and deck guns, cinematic documentary naval photography styling in dark moody teal oceanic tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9KbDGFp_u9UzUMB3y-esN_VvlmaiTREUpQFn23ukac3UAiKHz_nK_Du4tk5oRg2Gn6G5tY1n9bkSSVpT9MNzJ0YxQXIUtf-Jd6HwfTbHAXLMPA2HSu4ivwjNwBWTlf2HLAOBnGoRaDbX4-iJC13ZwHho_lF1WaneDbqbYMaUYkEDofO9DA6sV5_Tq2MZq2NDqrXQG6g5xcLvGj3dicQ3FQHmjgXVD6eawwTYbi3Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+<div class="absolute bottom-2 left-2 right-2 flex justify-between items-end">
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">BAP Abtao (SS-42)</span>
+<p class="font-telemetry-sm text-[0.6875rem] text-secondary">CALLAO, PERU // LAUNCH: 1953</p>
+</div>
+<div class="px-2 py-1 rounded bg-surface-container-lowest/80 text-[0.625rem] font-telemetry-sm font-bold" style="color: var(--accent-current);">
+          TIBURÓN-CLASS
+        </div>
+</div>
+</div>
+<!-- Museum Details & Coordinates -->
+<div class="flex flex-col gap-space-xs font-body-md text-body-sm" style="color: var(--sub-current);">
+<p data-i18n-en="A legendary survivor of the Cold War South Pacific deterrent patrols. Preserved as a floating museum with preserved engine compartments and analog navigation instruments." data-i18n-es="Legendario sobreviviente de patrullas disuasivas en el Pacífico Sur durante la Guerra Fría. Preservado como buque museo flotante con salas de máquinas e instrumentos analógicos.">
+        A legendary survivor of the Cold War South Pacific deterrent patrols. Preserved as a floating museum with preserved engine compartments and analog navigation instruments.
+      </p>
+<!-- Geolocation telemetry badge -->
+<div class="flex items-center justify-between p-2 rounded text-[0.75rem] font-telemetry-sm" style="background-color: var(--card-current);">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" style="color: var(--accent-current);">pin_drop</span>
+<span class="font-bold" style="color: var(--text-current);">12.0601° S, 77.1510° W</span>
+</div>
+<span class="text-secondary font-bold">PORT CALLAO BASE</span>
+</div>
+<!-- Action Anchor to Museum Profile with min 48px target -->
+<a class="min-h-[48px] mt-1 w-full rounded font-telemetry-lg text-telemetry-sm font-bold flex items-center justify-center gap-2 shadow-sm transition-colors" href="#museum-profile-abtao" style="background-color: var(--card-current); color: var(--accent-current);">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span data-i18n-en="OPEN FULL MUSEUM PROFILE" data-i18n-es="VER PERFIL COMPLETO DEL MUSEO">OPEN FULL MUSEUM PROFILE</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Audio Docu-Log Snippet: Hot Bunk -->
+<section class="p-space-md rounded-xl mb-space-md shadow-lg flex flex-col gap-space-sm" style="background-color: var(--panel-current);">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]" style="color: var(--accent-current);">graphic_eq</span>
+<span class="font-label-caps text-label-caps uppercase font-bold tracking-wider" data-i18n-en="HYDROPHONE AUDIO ARCHIVE" data-i18n-es="ARCHIVO DE AUDIO HIDRÓFONO" style="color: var(--accent-current);">
+          HYDROPHONE AUDIO ARCHIVE
+        </span>
+</div>
+<span class="font-telemetry-sm text-[0.6875rem] px-1.5 py-0.5 rounded font-bold" style="background-color: var(--card-current); color: var(--accent-current);">
+        48 kHz LOSSLESS
+      </span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm" style="color: var(--sub-current);">LOG ENTRY: FH-01 // ORAL TRADITION</span>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface" data-i18n-en="Hot Bunk: Sleeping in Shifts Under Hull Pressure" data-i18n-es="Cama Caliente: Durmiendo por Turnos Bajo Presión de Casco">
+        Hot Bunk: Sleeping in Shifts Under Hull Pressure
+      </h3>
+</div>
+<!-- Hydrophone Waveform Visualizer SVG -->
+<div class="w-full h-14 rounded-lg p-2 flex items-center justify-center shadow-inner" style="background-color: var(--card-current);">
+<svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="0 0 320 40">
+<path d="M 0 20 Q 8 20 12 18 T 24 22 T 36 12 T 48 28 T 60 8 T 72 32 T 84 15 T 96 25 T 108 5 T 120 35 T 132 10 T 144 30 T 156 16 T 168 24 T 180 4 T 192 36 T 204 18 T 216 22 T 228 14 T 240 26 T 252 8 T 264 32 T 276 19 T 288 21 T 300 16 T 312 20 L 320 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="color: var(--accent-current);"></path>
+</svg>
+</div>
+<!-- Audio Player Controls -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<button aria-label="Play hydrophone recording" class="w-12 h-12 rounded-full flex items-center justify-center shadow-md active:scale-95 transition-all" id="btn-play-audio" style="background-color: var(--accent-current); color: #040f18;" type="button">
+<span class="material-symbols-outlined text-[24px]" id="audio-play-icon">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-[0.75rem] font-bold" style="color: var(--text-current);">01:42 / 03:58</span>
+<span class="font-telemetry-sm text-[0.625rem]" style="color: var(--sub-current);">ENC-TYPE: HYDRO-AMB-48</span>
+</div>
+</div>
+<div class="flex items-center gap-1 font-telemetry-sm text-label-caps" style="color: var(--sub-current);">
+<span class="material-symbols-outlined text-[16px]">volume_up</span>
+<span>REC_VOL: +3dB</span>
+</div>
+</div>
+</section>
+<!-- 5x5 Matrix Quick Preview Widget (7/43 Unlocked) -->
+<section class="p-space-md rounded-xl mb-space-md shadow-lg flex flex-col gap-space-sm" style="background-color: var(--panel-current);">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]" style="color: var(--accent-current);">grid_view</span>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface" data-i18n-en="Academy Qualification Matrix" data-i18n-es="Matriz de Calificación de la Academia">
+          Academy Qualification Matrix
+        </h3>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm font-bold" style="color: var(--accent-current);">
+        7 / 43 UNLOCKED
+      </span>
+</div>
+<p class="font-body-md text-body-sm" data-i18n-en="Interactive map of core operational disciplines: Hydrodynamics, Acoustic Signatures, Navigation, Sub-surface Warfare, and Deep-Diving Safety." data-i18n-es="Mapa interactivo de disciplinas operativas clave: Hidrodinámica, Firmas Acústicas, Navegación, Guerra Submarina y Seguridad de Inmersión." style="color: var(--sub-current);">
+      Interactive map of core operational disciplines: Hydrodynamics, Acoustic Signatures, Navigation, Sub-surface Warfare, and Deep-Diving Safety.
+    </p>
+<!-- 5x5 Grid representation -->
+<div class="grid grid-cols-5 gap-1.5 p-space-sm rounded-lg shadow-inner" style="background-color: var(--card-current);">
+<!-- Row 1: 5 items (All 5 unlocked) -->
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] font-bold text-[#040f18]" style="background-color: var(--accent-current);">01</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] font-bold text-[#040f18]" style="background-color: var(--accent-current);">02</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] font-bold text-[#040f18]" style="background-color: var(--accent-current);">03</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] font-bold text-[#040f18]" style="background-color: var(--accent-current);">04</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] font-bold text-[#040f18]" style="background-color: var(--accent-current);">05</div>
+<!-- Row 2: 2 unlocked, 3 locked -->
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] font-bold text-[#040f18]" style="background-color: var(--accent-current);">06</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] font-bold text-[#040f18]" style="background-color: var(--accent-current);">07</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">08</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">09</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">10</div>
+<!-- Row 3: locked -->
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">11</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">12</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">13</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">14</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">15</div>
+<!-- Row 4: locked -->
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">16</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">17</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">18</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">19</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">20</div>
+<!-- Row 5: locked -->
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">21</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">22</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">23</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">24</div>
+<div class="h-8 rounded flex items-center justify-center font-telemetry-sm text-[0.6875rem] text-outline opacity-40 bg-surface-container-highest">25</div>
+</div>
+<!-- Progress percentage telemetry readout -->
+<div class="flex items-center justify-between text-[0.75rem] font-telemetry-sm pt-1">
+<span data-i18n-en="CADET COMPLETION: 16.2%" data-i18n-es="COMPLECIÓN DEL CADETE: 16.2%" style="color: var(--sub-current);">CADET COMPLETION: 16.2%</span>
+<button class="min-h-[48px] px-3 rounded flex items-center gap-1 font-bold" style="color: var(--accent-current);" type="button">
+<span data-i18n-en="VIEW MATRIX ARCHIVE" data-i18n-es="VER ARCHIVO DE MATRIZ">VIEW MATRIX ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Legal & Privacy Disclaimers (Strict Compliance) -->
+<footer class="mt-space-sm p-space-md rounded-xl flex flex-col gap-space-sm shadow-md" style="background-color: var(--panel-current); color: var(--sub-current);">
+<!-- Mandatory Non-Academic Recognition Disclaimer -->
+<div class="flex items-start gap-2.5 p-2 rounded" style="background-color: var(--card-current);">
+<span class="material-symbols-outlined text-[20px] shrink-0 text-secondary">verified_user</span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-[0.6875rem] uppercase font-bold tracking-wider text-secondary" data-i18n-en="DISCLAIMER NOTICE" data-i18n-es="AVISO LEGAL">
+          DISCLAIMER NOTICE
+        </span>
+<p class="font-body-md text-body-sm font-bold tracking-tight text-on-surface" data-i18n-en="SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION" data-i18n-es="RECONOCIMIENTO SIMBÓLICO — NO ES UNA CERTIFICACIÓN ACADÉMICA">
+          SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION
+        </p>
+</div>
+</div>
+<!-- Mandatory Privacy Notice -->
+<div class="flex flex-col gap-1 text-[0.8125rem] font-body-sm">
+<div class="flex items-center gap-1.5" style="color: var(--accent-current);">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-telemetry-sm text-[0.6875rem] font-bold uppercase" data-i18n-en="CADET DATA GUARANTEE" data-i18n-es="GARANTÍA DE DATOS DE CADETE">
+          CADET DATA GUARANTEE
+        </span>
+</div>
+<p class="leading-relaxed" data-i18n-en="Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required." data-i18n-es="Privacidad por diseño. Datos seudónimos mínimos. Sin correo almacenado en texto plano. Registro de credenciales local prioritario. No se requiere cuenta.">
+        Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required.
+      </p>
+</div>
+<!-- Academy Motto Footer line -->
+<div class="pt-space-xs border-t border-outline-variant/30 flex items-center justify-between text-[0.6875rem] font-telemetry-sm">
+<span>ISA // EL SNORKEL ARCHIVE</span>
+<span class="tracking-widest opacity-60">··· --- ···</span>
+</div>
+</footer>
+</div>
+<script>
+  (function initISADiscoveryStream() {
+    const root = document.getElementById('isa-root');
+    const opsBtn = document.getElementById('toggle-ops-mode');
+    const opsIcon = document.getElementById('ops-icon');
+    const langBtn = document.getElementById('toggle-lang-stream');
+    const langIndicator = document.getElementById('lang-indicator');
+    const playBtn = document.getElementById('btn-play-audio');
+    const playIcon = document.getElementById('audio-play-icon');
+
+    let isNightOps = false;
+    let currentLang = 'EN';
+    let isPlayingAudio = false;
+
+    // Day / Night Ops Theme Switcher
+    if (opsBtn && root) {
+      opsBtn.addEventListener('click', () => {
+        isNightOps = !isNightOps;
+        if (isNightOps) {
+          root.style.setProperty('--bg-current', 'var(--isa-bg-night)');
+          root.style.setProperty('--panel-current', 'var(--isa-panel-night)');
+          root.style.setProperty('--card-current', 'var(--isa-card-night)');
+          root.style.setProperty('--accent-current', 'var(--isa-accent-night)');
+          root.style.setProperty('--glow-current', 'var(--isa-glow-night)');
+          root.style.setProperty('--text-current', 'var(--isa-text-night)');
+          root.style.setProperty('--sub-current', 'var(--isa-sub-night)');
+          if (opsIcon) opsIcon.innerText = 'light_mode';
+        } else {
+          root.style.setProperty('--bg-current', 'var(--isa-bg-day)');
+          root.style.setProperty('--panel-current', 'var(--isa-panel-day)');
+          root.style.setProperty('--card-current', 'var(--isa-card-day)');
+          root.style.setProperty('--accent-current', 'var(--isa-accent-day)');
+          root.style.setProperty('--glow-current', 'var(--isa-glow-day)');
+          root.style.setProperty('--text-current', 'var(--isa-text-day)');
+          root.style.setProperty('--sub-current', 'var(--isa-sub-day)');
+          if (opsIcon) opsIcon.innerText = 'nightlight';
+        }
+      });
+    }
+
+    // Bilingual ES / EN Translation Logic
+    if (langBtn) {
+      langBtn.addEventListener('click', () => {
+        currentLang = currentLang === 'EN' ? 'ES' : 'EN';
+        if (langIndicator) langIndicator.innerText = currentLang;
+
+        const translatableElements = root.querySelectorAll('[data-i18n-en]');
+        translatableElements.forEach(el => {
+          const text = currentLang === 'ES' ? el.getAttribute('data-i18n-es') : el.getAttribute('data-i18n-en');
+          if (text) {
+            el.innerHTML = text;
+          }
+        });
+      });
+    }
+
+    // Audio Player Toggle
+    if (playBtn && playIcon) {
+      playBtn.addEventListener('click', () => {
+        isPlayingAudio = !isPlayingAudio;
+        playIcon.innerText = isPlayingAudio ? 'pause' : 'play_arrow';
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.35)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 transition-colors text-primary font-bold" data-path="tactical-helm" href="#"><span class="material-symbols-outlined text-[22px]">radar</span><span class="font-telemetry-sm text-[0.625rem] tracking-wider uppercase mt-0.5">HELM</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 text-on-surface-variant hover:text-on-surface transition-colors" data-path="sonar-acoustic" href="#"><span class="material-symbols-outlined text-[22px]">graphic_eq</span><span class="font-telemetry-sm text-[0.625rem] tracking-wider uppercase mt-0.5">SONAR</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 text-on-surface-variant hover:text-on-surface transition-colors" data-path="academy-archives" href="#"><span class="material-symbols-outlined text-[22px]">folder_supervised</span><span class="font-telemetry-sm text-[0.625rem] tracking-wider uppercase mt-0.5">ARCHIVES</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 text-on-surface-variant hover:text-on-surface transition-colors" data-path="cadet-logs" href="#"><span class="material-symbols-outlined text-[22px]">assignment</span><span class="font-telemetry-sm text-[0.625rem] tracking-wider uppercase mt-0.5">CADET</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 text-on-surface-variant hover:text-on-surface transition-colors" data-path="station-terminal" href="#"><span class="material-symbols-outlined text-[22px]">terminal</span><span class="font-telemetry-sm text-[0.625rem] tracking-wider uppercase mt-0.5">TERMINAL</span></a></div></nav></body></html>

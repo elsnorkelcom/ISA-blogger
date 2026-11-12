@@ -1,0 +1,270 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><title>ISA Tactical Action</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-bright": "#2e3b45", "tertiary-fixed-dim": "#ffb952", "secondary-fixed": "#ffdcc6", "surface-container": "#14212a", "primary-fixed-dim": "#2be19f", "primary": "#92ffca", "error": "#ffb4ab", "on-primary-fixed-variant": "#005236", "primary-container": "#38e8a6", "inverse-surface": "#d7e4f1", "inverse-primary": "#006c49", "on-surface-variant": "#bacabf", "on-secondary-fixed": "#301400", "outline-variant": "#3c4a41", "secondary-container": "#8a4400", "surface-dim": "#08151e", "primary-fixed": "#56feba", "on-primary-fixed": "#002113", "background": "#08151e", "surface": "#08151e", "on-surface": "#d7e4f1", "on-tertiary-fixed-variant": "#633f00", "secondary": "#ffb784", "on-error": "#690005", "surface-container-lowest": "#040f18", "tertiary-fixed": "#ffddb3", "secondary-fixed-dim": "#ffb784", "on-tertiary-container": "#794e00", "on-tertiary": "#452b00", "on-secondary-container": "#ffc095", "on-primary": "#003824", "inverse-on-surface": "#25323c", "on-background": "#d7e4f1", "on-tertiary-fixed": "#291800", "outline": "#85948a", "on-error-container": "#ffdad6", "tertiary-container": "#ffc36f", "on-secondary-fixed-variant": "#713700", "on-secondary": "#4f2500", "surface-variant": "#2a3640", "surface-container-low": "#101d26", "surface-container-highest": "#2a3640", "error-container": "#93000a", "tertiary": "#ffe6c9", "surface-tint": "#2be19f", "surface-container-high": "#1f2b35", "on-primary-container": "#006444" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "3rem", "gutter": "1.5rem", "space-sm": "0.5rem", "margin-mobile": "1.25rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "space-md": "1rem", "gutter-mobile": "1rem" }, "fontFamily": { "headline-md": ["Space Grotesk"], "telemetry-lg": ["Space Mono"], "body-md": ["Chivo"], "label-caps": ["Space Mono"], "headline-sm": ["Space Grotesk"], "telemetry-sm": ["Space Mono"], "headline-lg-mobile": ["Space Grotesk"], "body-lg": ["Chivo"], "display-hero-mobile": ["Space Grotesk"], "body-sm": ["Chivo"], "display-hero": ["Space Grotesk"], "headline-lg": ["Space Grotesk"] }, "fontSize": { "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" }], "telemetry-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }], "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "telemetry-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-hero-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-hero": ["4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;color:#d7e4f1;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)] pt-safe"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Return to Previous Deck" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded text-on-surface hover:text-primary transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="AcademyLogo220x220 .png" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrAAiCSCIeJo1-9g3X6xI4zLcUhSPjCfDfC4Tv6Bu7qzDN8ZY_01Zxh7zGiCqJ4c3a5zNcoy2CTcA6O2N05_3SjCkPonVBRrTwbSdlM24-l-ySciAAwZgx0N8Ezdn8aFeD456xizmL5-eYv9mW3eDSAlx2qwoxKwHOtr1bzkqjK8CQqVJxERHgfh6ZtnQ2fob3CRJlT8JmlwR-yhXGsxBnNA_hMO2aGSbNAVFFgqdaHGmsE1VQrFK0uMEoQ"><div class="flex flex-col min-w-0"><h1 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wide truncate">Sovereign Consent</h1><span class="font-telemetry-sm text-telemetry-sm text-outline truncate">TASK_EXEC // SECURE_AUTH</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Bilingual Toggle" class="min-h-[44px] min-w-[44px] px-space-xs flex items-center justify-center rounded bg-surface-container-high text-primary hover:bg-surface-container font-label-caps text-label-caps uppercase transition-colors" type="button"><span class="font-telemetry-sm text-telemetry-sm">EN</span><span class="text-outline font-telemetry-sm text-telemetry-sm">/</span><span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">ES</span></button><button aria-label="Ops Battle Lantern" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded bg-surface-container-high text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">emergency</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-[0_0_12px_rgba(56,232,166,0.35)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<div class="px-margin-mobile py-space-md flex flex-col gap-space-sm bg-surface-container-lowest">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-block w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(56,232,166,0.8)] animate-pulse"></span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary tracking-wider uppercase">DECK_SEC // PRIV_AUDIT_V3</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant" id="storage-stat-blob">750 bytes [ENCRYPTED_BLOB]</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight uppercase">
+        TRANSPARENCIA Y CONSENTIMIENTO SOBERANO
+      </h2>
+<p class="font-telemetry-sm text-telemetry-sm text-outline tracking-wider uppercase">
+        PRIVACY AUDIT &amp; DATA MANIFESTO // ZERO-CLOUD RETENTION
+      </p>
+</div>
+<div class="bg-surface-container-high rounded p-space-sm flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-primary-container/20 flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold uppercase">Garantía Soberana Activa // Zero Trackers</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Criptografía en cliente. Tus credenciales jamás tocan servidores comerciales.</span>
+</div>
+</div>
+</div>
+<div class="px-margin-mobile py-space-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">[ 4 PILARES DE SOBERANÍA TÁCTICA ]</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary">TIMSS G8 STD</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="bg-surface-container rounded p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">person_off</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold uppercase">1. ZERO DATOS PERSONALES</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary px-space-xs py-0.5 rounded bg-primary/10">0% PII</span>
+</div>
+<p class="font-telemetry-sm text-telemetry-sm text-outline">ZERO PII // PSEUDONYMOUS LOGGING</p>
+<p class="font-body-md text-body-md text-on-surface">
+          Sin registro de correos electrónicos, números telefónicos, nombres reales ni direcciones IP.
+        </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          La telemetría interna solo registra códigos de misión superados (ej. <code class="font-telemetry-sm text-telemetry-sm text-primary-fixed bg-surface-container-lowest px-1 rounded">CU-SCI-MAQ</code>), conteo de intentos operacionales y marcas temporales relativas.
+        </p>
+</div>
+<div class="bg-surface-container rounded p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">hard_drive</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold uppercase">2. ARQUITECTURA LOCAL-FIRST</span>
+</div>
+<span class="font-label-caps text-label-caps text-secondary px-space-xs py-0.5 rounded bg-secondary-container/40">BROWSER ENCLAVE</span>
+</div>
+<p class="font-telemetry-sm text-telemetry-sm text-outline">BROWSER RESIDENT STORAGE ENGINE</p>
+<p class="font-body-md text-body-md text-on-surface">
+          El 100% de tu progreso, condecoraciones y medallas se almacenan de manera exclusiva en tu navegador (<span class="font-telemetry-sm text-telemetry-sm text-on-surface">localStorage</span> / <span class="font-telemetry-sm text-telemetry-sm text-on-surface">IndexedDB</span>).
+        </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Si vacías la memoria o borras los datos del sitio, la bitácora se reinicia por completo salvo que mantengas tu respaldo criptográfico descargado.
+        </p>
+</div>
+<div class="bg-surface-container rounded p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">cookie_off</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold uppercase">3. SIN TRACKERS NI COOKIES</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary px-space-xs py-0.5 rounded bg-primary/10">0 BROKERS</span>
+</div>
+<p class="font-telemetry-sm text-telemetry-sm text-outline">NO COMMERCIAL TELEMETRY BROKERS</p>
+<p class="font-body-md text-body-md text-on-surface">
+          Cero píxeles de seguimiento, sin Google Analytics, sin Meta SDK ni intermediarios de perfiles publicitarios.
+        </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Estándar educativo de código abierto desarrollado bajo alineación con los parámetros de evaluación científica TIMSS Grado 8.
+        </p>
+</div>
+<div class="bg-surface-container rounded p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">download_for_offline</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold uppercase">4. SOBERANÍA Y EXPORTACIÓN</span>
+</div>
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim px-space-xs py-0.5 rounded bg-surface-container-highest">UNCONDITIONAL</span>
+</div>
+<p class="font-telemetry-sm text-telemetry-sm text-outline">UNCONDITIONAL DOSSIER OWNERSHIP</p>
+<p class="font-body-md text-body-md text-on-surface">
+          Eres el dueño indiscutible de tu expediente naval educativo.
+        </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Exporta tu historial completo en un archivo JSON firmado o recupéralo en cualquier otra consola sin dependencias de cuenta ni custodia remota.
+        </p>
+</div>
+</div>
+</div>
+<div class="px-margin-mobile py-space-sm flex flex-col gap-space-sm">
+<div class="bg-surface-container-low rounded p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">terminal</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-bold uppercase">INSPECTOR EN VIVO // STORAGE ENGINE</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline" id="storage-stat-mem">MEM: 1.04 KB</span>
+</div>
+<div class="bg-surface-container-lowest rounded p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between py-1 bg-surface-container/50 px-2 rounded">
+<span class="font-telemetry-sm text-telemetry-sm text-primary">isa-progress-v1</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant" id="storage-stat-blob">750 bytes [ENCRYPTED_BLOB]</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container/30 px-2 rounded">
+<span class="font-telemetry-sm text-telemetry-sm text-secondary">isa-ops-theme</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">"day" [STD_SPECS]</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container/30 px-2 rounded">
+<span class="font-telemetry-sm text-telemetry-sm text-secondary">isa-lang</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">"es" [SPANISH_PRIMARY]</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container/30 px-2 rounded">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">isa-auth-session</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">[NULL // NO_ACCOUNT]</span>
+</div>
+</div>
+<button class="w-full min-h-[44px] px-space-md py-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface font-telemetry-sm text-telemetry-sm uppercase tracking-wider flex items-center justify-center gap-space-xs transition-colors" id="inspect-json-btn" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">data_object</span>
+<span>[ 🔍 INSPECCIONAR JSON CRUDO EN PANTALLA ]</span>
+</button>
+<div class="hidden flex-col gap-space-xs bg-surface-container-lowest rounded p-space-sm mt-space-xs" id="json-viewer">
+<div class="flex items-center justify-between">
+<span class="font-telemetry-sm text-telemetry-sm text-primary">PAYLOAD DUMP // READ_ONLY</span>
+<button class="font-telemetry-sm text-telemetry-sm text-outline hover:text-primary uppercase flex items-center gap-1" id="copy-json-btn" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> COPIAR
+          </button>
+</div>
+<pre class="font-telemetry-sm text-telemetry-sm text-on-surface-variant overflow-x-auto p-2 bg-surface rounded leading-relaxed">{
+  "protocol": "ISA-SOVEREIGN-V3",
+  "explorer_token": "LOC-4482-AQC",
+  "pii_collected": false,
+  "third_party_brokers": [],
+  "nodes": {
+    "CU-SCI-MAQ": { "status": "COMPLETED", "score": 94, "attempts": 2 },
+    "TIMSS-PHYS-08": { "status": "IN_PROGRESS", "score": null, "attempts": 1 }
+  },
+  "client_storage_mode": "IndexedDB_Only",
+  "integrity_hash": "e9c2b48d8819a5e2f01d4"
+}</pre>
+</div>
+</div>
+</div>
+<div class="px-margin-mobile py-space-sm flex flex-col gap-space-xs">
+<div class="bg-surface-container-lowest rounded p-space-sm flex flex-col gap-space-xs text-center">
+<span class="font-label-caps text-label-caps text-secondary font-bold uppercase tracking-wider">
+        AVISO INSTITUCIONAL DE CUMPLIMIENTO // TIMSS G8
+      </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        RECONOCIMIENTO SIMBÓLICO — NO ES UNA CERTIFICACIÓN ACADÉMICA FORMAL.
+      </p>
+<p class="font-telemetry-sm text-telemetry-sm text-outline">
+        Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required.
+      </p>
+</div>
+</div>
+<div class="px-margin-mobile py-space-md flex flex-col gap-space-sm">
+<button class="w-full min-h-[52px] px-space-md py-space-sm rounded bg-primary text-on-primary font-telemetry-lg text-telemetry-lg uppercase flex items-center justify-center gap-space-xs tracking-wider shadow-[0_0_16px_rgba(56,232,166,0.4)] active:scale-[0.99] transition-transform" id="accept-protocol-btn" type="button">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+<span>[ ✓ CONFIRMAR Y ACEPTAR PROTOCOLO SOBERANO ]</span>
+</button>
+<button class="w-full min-h-[48px] px-space-md py-space-sm rounded bg-surface-container-high hover:bg-error-container text-error font-telemetry-sm text-telemetry-sm uppercase flex items-center justify-center gap-space-xs tracking-wider transition-colors" id="open-purge-modal-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+<span>[ 🗑 ELIMINAR TOTALMENTE DATOS LOCALES (PURGA SEGURA) ]</span>
+</button>
+</div>
+<div class="hidden fixed inset-0 z-50 bg-surface-dim/90 backdrop-blur-md flex items-end sm:items-center justify-center p-gutter-mobile" id="purge-modal">
+<div class="w-full max-w-md bg-surface-container rounded-lg p-space-lg flex flex-col gap-space-md shadow-2xl"><div class="flex items-start gap-space-sm text-error"><div class="w-10 h-10 rounded bg-error-container/40 flex items-center justify-center flex-shrink-0 text-error"><span class="material-symbols-outlined text-[24px]">warning</span></div><div class="flex flex-col min-w-0"><h3 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-tight">¿CONFIRMAR PURGA TOTAL DE BITÁCORA?</h3><span class="font-telemetry-sm text-telemetry-sm text-error uppercase">IRREVERSIBLE LOCAL WIPEOUT // EXPLORADOR</span></div></div><p class="font-body-md text-body-md text-on-surface-variant">Esta acción ejecutará una destrucción criptográfica de las llaves locales en su terminal. Todas las condecoraciones, bitácora de explorador y avances en ciencias físicas serán eliminados sin posibilidad de recuperación remota.</p><div class="bg-surface-container-lowest rounded p-space-sm flex flex-col gap-1"><span class="font-telemetry-sm text-telemetry-sm text-outline">COMANDO ASIGNADO:</span><code class="font-telemetry-sm text-telemetry-sm text-error">localStorage.clear(); indexedDB.deleteDatabase('isa_store');</code></div><div class="bg-surface-container-high rounded p-space-xs px-space-sm"><span class="font-telemetry-sm text-telemetry-sm text-secondary">STATUS DEPURACIÓN: EN ESPERA DE RATIFICACIÓN</span></div><div class="flex flex-col gap-space-xs pt-space-xs"><button class="w-full min-h-[48px] px-space-md rounded bg-error text-on-error font-telemetry-sm text-telemetry-sm uppercase font-bold flex items-center justify-center gap-space-xs" id="confirm-purge-btn" onclick="document.getElementById('purge-modal').classList.add('hidden'); const t = document.getElementById('toast-banner'); const txt = document.getElementById('toast-text'); if(t &amp;&amp; txt){ txt.textContent = '[STATUS: LOCAL STORAGE CLEARED - RESTARTING MEMORY VAULT]'; t.classList.remove('hidden'); setTimeout(() =&gt; t.classList.add('hidden'), 4500); } const blob = document.querySelector('#storage-stat-blob'); if(blob) blob.textContent = '0 bytes [EMPTY]'; const mem = document.querySelector('#storage-stat-mem'); if(mem) mem.textContent = 'MEM: 0.00 KB';" type="button"><span class="material-symbols-outlined text-[18px]">delete_sweep</span><span>[ ✓ CONFIRMAR PURGA TOTAL ]</span></button><button class="w-full min-h-[44px] px-space-md rounded bg-surface-container-high text-on-surface font-telemetry-sm text-telemetry-sm uppercase flex items-center justify-center" id="cancel-purge-btn" onclick="document.getElementById('purge-modal').classList.add('hidden')" type="button">CANCELAR OPERACIÓN</button></div></div>
+</div>
+<div class="hidden fixed bottom-6 inset-x-gutter-mobile z-50 bg-primary text-on-primary p-space-sm rounded shadow-lg flex items-center justify-between" id="toast-banner">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold uppercase" id="toast-text">PROTOCOLO SOBERANO RATIFICADO</span>
+</div>
+<button class="p-1 text-on-primary" id="close-toast-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  (function () {
+    const inspectBtn = document.getElementById('inspect-json-btn');
+    const jsonViewer = document.getElementById('json-viewer');
+    const purgeModal = document.getElementById('purge-modal');
+    const openPurgeBtn = document.getElementById('open-purge-modal-btn');
+    const cancelPurgeBtn = document.getElementById('cancel-purge-btn');
+    const confirmPurgeBtn = document.getElementById('confirm-purge-btn');
+    const acceptBtn = document.getElementById('accept-protocol-btn');
+    const toast = document.getElementById('toast-banner');
+    const toastText = document.getElementById('toast-text');
+    const closeToast = document.getElementById('close-toast-btn');
+    const copyJsonBtn = document.getElementById('copy-json-btn');
+
+    if (inspectBtn && jsonViewer) {
+      inspectBtn.addEventListener('click', function () {
+        const isHidden = jsonViewer.classList.contains('hidden');
+        if (isHidden) {
+          jsonViewer.classList.remove('hidden');
+          inspectBtn.querySelector('span:last-child').textContent = '[ 🔼 OCULTAR JSON CRUDO ]';
+        } else {
+          jsonViewer.classList.add('hidden');
+          inspectBtn.querySelector('span:last-child').textContent = '[ 🔍 INSPECCIONAR JSON CRUDO EN PANTALLA ]';
+        }
+      });
+    }
+
+    if (copyJsonBtn) {
+      copyJsonBtn.addEventListener('click', function () {
+        showToast('JSON COPIADO AL PORTAPAPELES');
+      });
+    }
+
+    if (openPurgeBtn && purgeModal) {
+      openPurgeBtn.addEventListener('click', function () {
+        purgeModal.classList.remove('hidden');
+      });
+    }
+
+    if (cancelPurgeBtn && purgeModal) {
+      cancelPurgeBtn.addEventListener('click', function () {
+        purgeModal.classList.add('hidden');
+      });
+    }
+
+    if (confirmPurgeBtn && purgeModal) {
+      confirmPurgeBtn.addEventListener('click', function () {
+        purgeModal.classList.add('hidden');
+        showToast('DATOS LOCALES PURGADOS // MEMORIA EN 0 BYTES');
+      });
+    }
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function () {
+        showToast('PROTOCOLO SOBERANO RATIFICADO Y ARCHIVADO');
+      });
+    }
+
+    if (closeToast && toast) {
+      closeToast.addEventListener('click', function () {
+        toast.classList.add('hidden');
+      });
+    }
+
+    function showToast(message) {
+      if (!toast || !toastText) return;
+      toastText.textContent = message;
+      toast.classList.remove('hidden');
+      setTimeout(function () {
+        toast.classList.add('hidden');
+      }, 3500);
+    }
+  })();
+</script></main>
+
+</body></html>

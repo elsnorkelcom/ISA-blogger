@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Chivo:wght@400;500&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary": "#003824", "on-tertiary-fixed": "#291800", "surface-bright": "#2e3b45", "primary-container": "#38e8a6", "secondary-fixed": "#ffdcc6", "outline-variant": "#3c4a41", "secondary-container": "#8a4400", "surface-container": "#14212a", "secondary-fixed-dim": "#ffb784", "on-primary-fixed-variant": "#005236", "on-secondary": "#4f2500", "on-primary-container": "#006444", "on-primary-fixed": "#002113", "inverse-on-surface": "#25323c", "inverse-primary": "#006c49", "secondary": "#ffb784", "on-surface-variant": "#bacabf", "background": "#08151e", "on-secondary-container": "#ffc095", "primary-fixed": "#56feba", "primary-fixed-dim": "#2be19f", "surface-dim": "#08151e", "primary": "#92ffca", "surface-variant": "#2a3640", "surface-container-high": "#1f2b35", "on-tertiary-container": "#794e00", "on-tertiary-fixed-variant": "#633f00", "tertiary-fixed": "#ffddb3", "on-secondary-fixed-variant": "#713700", "surface": "#08151e", "surface-container-lowest": "#040f18", "on-secondary-fixed": "#301400", "error-container": "#93000a", "on-surface": "#d7e4f1", "tertiary": "#ffe6c9", "tertiary-fixed-dim": "#ffb952", "surface-container-low": "#101d26", "on-tertiary": "#452b00", "outline": "#85948a", "surface-tint": "#2be19f", "surface-container-highest": "#2a3640", "on-background": "#d7e4f1", "error": "#ffb4ab", "on-error-container": "#ffdad6", "inverse-surface": "#d7e4f1", "on-error": "#690005", "tertiary-container": "#ffc36f" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "margin": "3rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter-mobile": "1rem", "margin-mobile": "1.25rem", "space-sm": "0.5rem" }, "fontFamily": { "display-hero-mobile": [ "Space Grotesk" ], "headline-sm": [ "Space Grotesk" ], "body-lg": [ "Chivo" ], "telemetry-lg": [ "Space Mono" ], "headline-lg-mobile": [ "Space Grotesk" ], "body-sm": [ "Chivo" ], "headline-lg": [ "Space Grotesk" ], "label-caps": [ "Space Mono" ], "headline-md": [ "Space Grotesk" ], "body-md": [ "Chivo" ], "telemetry-sm": [ "Space Mono" ], "display-hero": [ "Space Grotesk" ] }, "fontSize": { "display-hero-mobile": [ "2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-sm": [ "1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" } ], "body-lg": [ "1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" } ], "telemetry-lg": [ "1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" } ], "headline-lg-mobile": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-sm": [ "0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" } ], "headline-lg": [ "2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-caps": [ "0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" } ], "headline-md": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" } ], "body-md": [ "1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" } ], "telemetry-sm": [ "0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" } ], "display-hero": [ "4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" } ] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.scanline-overlay{background:linear-gradient(rgba(18,28,38,0) 50%,rgba(4,15,24,0.3) 50%),linear-gradient(90deg,rgba(255,0,0,0.02),rgba(0,255,0,0.01),rgba(0,0,255,0.02));background-size:100% 3px,4px 100%;pointer-events:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased flex flex-col min-h-screen relative selection:bg-primary selection:text-on-primary"><div class="fixed inset-0 scanline-overlay z-40"></div><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_12px_rgba(0,0,0,0.4)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="relative flex items-center justify-center w-9 h-9 rounded bg-surface-container-high"><span class="material-symbols-outlined text-primary text-[20px]">radar</span><span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-label-caps text-label-caps text-secondary tracking-widest">ISA // BLOGGER ARCHIVE</span><span class="font-telemetry-sm text-telemetry-sm text-primary">•--•</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate tracking-tight">Museums</h1></div></div><div class="flex items-center gap-space-xs"><button aria-label="Quick Terminal Dispatcher" class="w-11 h-11 flex items-center justify-center rounded text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">terminal</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-10">
+<!-- Tactical Header Strip & Bilingual Controller -->
+<section class="px-gutter-mobile pt-3 pb-2 flex flex-col gap-space-sm bg-surface-container-lowest">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase">REG_ID // CAT_EXP_V2</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">
+<span data-lang-en="">Ribbon Catalog</span>
+<span class="hidden" data-lang-es="">Catálogo de Cintas</span>
+</h2>
+</div>
+<!-- Quick Language Switcher & Cadet Marker -->
+<div class="flex items-center gap-space-xs">
+<button aria-label="Switch language ES / EN" class="h-12 px-3 rounded bg-surface-container-high hover:bg-surface-container-highest text-primary flex items-center justify-center gap-1 font-telemetry-sm text-telemetry-sm tracking-wider transition-colors active:scale-95" id="langToggleBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">translate</span>
+<span id="langDisplayState">EN / ES</span>
+</button>
+</div>
+</div>
+<!-- Segmented Navigation (5x5 Matrix vs Expanded Catalog) -->
+<div aria-label="Registry Navigation View" class="grid grid-cols-2 gap-1 p-1 bg-surface-container-high rounded" role="tablist">
+<a class="h-11 flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-on-surface text-center rounded transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+<span class="font-telemetry-sm text-telemetry-sm tracking-widest font-semibold" data-lang-en="">[ ▦ 5X5 MATRIX ]</span>
+<span class="font-telemetry-sm text-telemetry-sm tracking-widest font-semibold hidden" data-lang-es="">[ ▦ MATRIZ 5X5 ]</span>
+</a>
+<div class="h-11 flex items-center justify-center gap-1.5 bg-primary-container text-on-primary-container text-center rounded shadow-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">folder_special</span>
+<span class="font-telemetry-sm text-telemetry-sm tracking-widest" data-lang-en="">[ 🗂 EXPANDED ]</span>
+<span class="font-telemetry-sm text-telemetry-sm tracking-widest hidden" data-lang-es="">[ 🗂 EXPANDIDO ]</span>
+</div>
+</div>
+</section>
+<!-- High-Contrast Symbolic Disclaimer Banner -->
+<section class="mx-gutter-mobile my-3 p-3.5 bg-secondary-container text-on-secondary-container rounded flex items-start gap-3 shadow-md">
+<span class="material-symbols-outlined text-secondary text-[24px] shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col min-w-0">
+<p class="font-telemetry-sm text-telemetry-sm text-secondary font-bold uppercase tracking-wider leading-snug" data-lang-en="">SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION</p>
+<p class="font-telemetry-sm text-telemetry-sm text-secondary font-bold uppercase tracking-wider leading-snug hidden" data-lang-es="">RECONOCIMIENTO SIMBÓLICO — NO CONSTITUYE GRADO ACADÉMICO</p>
+<p class="font-body-sm text-body-sm text-on-secondary-container/90 mt-1" data-lang-en="">ISA telemetry badging validates STEM and naval heritage field tasks recorded on museum submersibles.</p>
+<p class="font-body-sm text-body-sm text-on-secondary-container/90 mt-1 hidden" data-lang-es="">La telemetría ISA valida misiones STEM y de patrimonio naval ejecutadas en sumergibles históricos.</p>
+</div>
+</section>
+<!-- Horizontal Filter Array -->
+<section class="py-2 flex flex-col gap-2">
+<!-- Category Filter Row -->
+<div aria-label="Status filters" class="flex items-center gap-2 overflow-x-auto px-gutter-mobile pb-1 scrollbar-none" id="statusFilterBar" role="radiogroup">
+<button class="filter-chip h-10 px-3.5 rounded bg-primary text-on-primary font-telemetry-sm text-telemetry-sm font-bold tracking-wider shrink-0 flex items-center gap-1.5 shadow-sm" data-filter="all" type="button">
+<span data-lang-en="">ALL (43)</span>
+<span class="hidden" data-lang-es="">TODOS (43)</span>
+</button>
+<button class="filter-chip h-10 px-3.5 rounded bg-surface-container-high text-on-surface hover:text-primary font-telemetry-sm text-telemetry-sm tracking-wider shrink-0 flex items-center gap-1.5" data-filter="unlocked" type="button">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span data-lang-en="">UNLOCKED (7)</span>
+<span class="hidden" data-lang-es="">DESBLOQUEADO (7)</span>
+</button>
+<button class="filter-chip h-10 px-3.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface font-telemetry-sm text-telemetry-sm tracking-wider shrink-0 flex items-center gap-1.5" data-filter="locked" type="button">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span data-lang-en="">LOCKED (36)</span>
+<span class="hidden" data-lang-es="">BLOQUEADO (36)</span>
+</button>
+<button class="filter-chip h-10 px-3.5 rounded bg-surface-container-high text-secondary hover:text-on-surface font-telemetry-sm text-telemetry-sm tracking-wider shrink-0 flex items-center gap-1" data-filter="copper" type="button">
+<span data-lang-en="">CU: COPPER (20)</span>
+<span class="hidden" data-lang-es="">CU: COBRE (20)</span>
+</button>
+<button class="filter-chip h-10 px-3.5 rounded bg-surface-container-high text-on-surface hover:text-primary font-telemetry-sm text-telemetry-sm tracking-wider shrink-0 flex items-center gap-1" data-filter="steel" type="button">
+<span data-lang-en="">AC: STEEL (8)</span>
+<span class="hidden" data-lang-es="">AC: ACERO (8)</span>
+</button>
+<button class="filter-chip h-10 px-3.5 rounded bg-surface-container-high text-on-surface hover:text-primary font-telemetry-sm text-telemetry-sm tracking-wider shrink-0 flex items-center gap-1" data-filter="human-factor" type="button">
+<span data-lang-en="">FH: HUMAN FACTOR (15)</span>
+<span class="hidden" data-lang-es="">FH: FACTOR HUMANO (15)</span>
+</button>
+</div>
+<!-- Discipline Filter Row -->
+<div class="flex items-center gap-1.5 overflow-x-auto px-gutter-mobile pb-1 scrollbar-none" id="disciplineFilterBar">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase shrink-0 pr-1">DISC:</span>
+<button class="h-8 px-2.5 rounded bg-surface-container-highest text-primary font-telemetry-sm text-telemetry-sm shrink-0 font-bold" data-discipline="all" type="button">ALL</button>
+<button class="h-8 px-2.5 rounded bg-surface-container-low text-[#14b4f0] font-telemetry-sm text-telemetry-sm shrink-0 flex items-center gap-1" data-discipline="sci" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-[#14b4f0]"></span>
+        SCI
+      </button>
+<button class="h-8 px-2.5 rounded bg-surface-container-low text-[#22a34a] font-telemetry-sm text-telemetry-sm shrink-0 flex items-center gap-1" data-discipline="tec" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-[#22a34a]"></span>
+        TEC
+      </button>
+<button class="h-8 px-2.5 rounded bg-surface-container-low text-[#d6339a] font-telemetry-sm text-telemetry-sm shrink-0 flex items-center gap-1" data-discipline="ing" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-[#d6339a]"></span>
+        ING
+      </button>
+<button class="h-8 px-2.5 rounded bg-surface-container-low text-[#e2d23c] font-telemetry-sm text-telemetry-sm shrink-0 flex items-center gap-1" data-discipline="mat" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-[#e2d23c]"></span>
+        MAT
+      </button>
+<button class="h-8 px-2.5 rounded bg-surface-container-low text-[#d9942f] font-telemetry-sm text-telemetry-sm shrink-0 flex items-center gap-1" data-discipline="hum" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-[#d9942f]"></span>
+        HUM
+      </button>
+</div>
+</section>
+<!-- Live Record Counter Indicator -->
+<div class="px-gutter-mobile py-1 flex items-center justify-between text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<span class="uppercase tracking-widest text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">database</span>
+<span id="activeCountLabel">SHOWING 8 RECORD ENTRIES</span>
+</span>
+<span class="font-label-caps text-label-caps text-secondary">ARCHIVE SEC // SS-557</span>
+</div>
+<!-- Primary Expanded Cards List -->
+<div class="flex flex-col gap-3.5 px-gutter-mobile mt-2" id="catalogCardContainer">
+<!-- Card 1: CU-SCI-MAQ -->
+<article class="ribbon-card rounded-xl bg-surface-container p-4 flex flex-col gap-3 shadow-md" data-category="copper unlocked" data-discipline="sci">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-lg bg-[#14b4f0]/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#14b4f0] text-[24px]">science</span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-[#14b4f0] tracking-wider">CU-SCI-MAQ</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">SEASON COPPER // SPECIALTY: MACHINIST</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary/20 text-primary font-telemetry-sm text-telemetry-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span data-lang-en="">UNLOCKED</span>
+<span class="hidden" data-lang-es="">OBTENIDO</span>
+</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang-en="">Ribbon Science · Machinist</span>
+<span class="hidden" data-lang-es="" data-langes="">Cinta Ciencia · Maquinista</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" data-lang-en="">Thermal expansion dynamics, fuel flash points, and combustion gas thermodynamics under closed atmospheric conditions.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 hidden" data-lang-es="">Dinámica de expansión térmica, punto de inflamación y termodinámica de gases en atmósfera estanca.</p>
+</div>
+<!-- Telemetry Sub-panel -->
+<div class="grid grid-cols-2 gap-2 p-2.5 rounded bg-surface-container-low font-telemetry-sm text-telemetry-sm">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-caps text-label-caps" data-lang-en="">BENCHMARK SCORE</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps hidden" data-lang-es="">PUNTAJE OBTENIDO</span>
+<span class="text-primary font-bold">100 / 100 [MAX]</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-caps text-label-caps" data-lang-en="">TIMSS VALIDATION</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps hidden" data-lang-es="">VALIDACIÓN TIMSS</span>
+<span class="text-on-surface">3 VARIANTS CLEARED</span>
+</div>
+</div>
+<!-- Anchor Location & Action Trigger -->
+<div class="flex items-center justify-between pt-1 gap-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-telemetry-sm text-telemetry-sm min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0">anchor</span>
+<span class="truncate">BAP Abtao · Engine Room</span>
+</div>
+<button aria-label="Inspect Dossier for CU-SCI-MAQ" class="h-12 px-4 rounded bg-primary-container text-on-primary-container font-telemetry-sm text-telemetry-sm font-bold flex items-center justify-center gap-1.5 shrink-0 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span data-lang-en="">[ INSPECT DOSSIER ]</span>
+<span class="hidden" data-lang-es="">[ VER EXPEDIENTE ]</span>
+</button>
+</div>
+</article>
+<!-- Card 2: CU-TEC-MAQ -->
+<article class="ribbon-card rounded-xl bg-surface-container p-4 flex flex-col gap-3 shadow-md" data-category="copper unlocked" data-discipline="tec">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-lg bg-[#22a34a]/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#22a34a] text-[24px]">precision_manufacturing</span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-[#22a34a] tracking-wider">CU-TEC-MAQ</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">SEASON COPPER // SPECIALTY: MACHINIST</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary/20 text-primary font-telemetry-sm text-telemetry-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span data-lang-en="">UNLOCKED</span>
+<span class="hidden" data-lang-es="">OBTENIDO</span>
+</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang-en="">Ribbon Technology · Machinist</span>
+<span class="hidden" data-lang-es="">Cinta Tecnología · Maquinista</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" data-lang-en="">Hydraulic circuit pressure regulation (p = F/A), servo-valve timing, and high-pressure manifold balancing.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 hidden" data-lang-es="">Regulación de presión en circuitos hidráulicos (p = F/A), sincronización de servoválvulas y colectores de alta presión.</p>
+</div>
+<div class="grid grid-cols-2 gap-2 p-2.5 rounded bg-surface-container-low font-telemetry-sm text-telemetry-sm">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-caps text-label-caps" data-lang-en="">TELEMETRY LOG</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps hidden" data-lang-es="">REGISTRO TELEMÉTRICO</span>
+<span class="text-primary font-bold">CALIBRATION 96.4%</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-caps text-label-caps" data-lang-en="">SEAL STATUS</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps hidden" data-lang-es="">ESTADO DE SELLO</span>
+<span class="text-on-surface">CRYPT_SIG_VERIFIED</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-telemetry-sm text-telemetry-sm min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0">anchor</span>
+<span class="truncate">BAP Abtao · Hydraulic Station</span>
+</div>
+<button aria-label="Inspect Dossier for CU-TEC-MAQ" class="h-12 px-4 rounded bg-primary-container text-on-primary-container font-telemetry-sm text-telemetry-sm font-bold flex items-center justify-center gap-1.5 shrink-0 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span data-lang-en="">[ INSPECT DOSSIER ]</span>
+<span class="hidden" data-lang-es="">[ VER EXPEDIENTE ]</span>
+</button>
+</div>
+</article>
+<!-- Card 3: CU-ING-MAQ -->
+<article class="ribbon-card rounded-xl bg-surface-container p-4 flex flex-col gap-3 shadow-md opacity-85" data-category="copper locked" data-discipline="ing">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-lg bg-[#d6339a]/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#d6339a] text-[24px]">construction</span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-[#d6339a] tracking-wider">CU-ING-MAQ</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">SEASON COPPER // SPECIALTY: MACHINIST</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-telemetry-sm text-telemetry-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span data-lang-en="">LOCKED</span>
+<span class="hidden" data-lang-es="">BLOQUEADO</span>
+</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang-en="">Ribbon Engineering · Machinist</span>
+<span class="hidden" data-lang-es="">Cinta Ingeniería · Maquinista</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" data-lang-en="">Bilge pump flow rate calculations, fluid viscosity at 12 bar depth, and auxiliary air condensation purging.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 hidden" data-lang-es="">Cálculo de caudal de bombas de achique, viscosidad de fluidos a 12 bar y purga de condensación de aire auxiliar.</p>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-center gap-2 font-telemetry-sm text-telemetry-sm text-secondary">
+<span class="material-symbols-outlined text-[18px]">key</span>
+<div>
+<span class="font-bold" data-lang-en="">PREREQUISITE:</span>
+<span class="font-bold hidden" data-lang-es="">PRERREQUISITO:</span>
+<span class="text-on-surface ml-1">Complete &amp; validate CU-TEC-MAQ</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-telemetry-sm text-telemetry-sm min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0">anchor</span>
+<span class="truncate">BAP Abtao · Bilge Manifold</span>
+</div>
+<button class="h-12 px-4 rounded bg-surface-container-high text-on-surface-variant font-telemetry-sm text-telemetry-sm flex items-center justify-center gap-1.5 shrink-0" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+<span data-lang-en="">[ LOCKED ]</span>
+<span class="hidden" data-lang-es="">[ BLOQUEADO ]</span>
+</button>
+</div>
+</article>
+<!-- Card 4: CU-MAT-MAQ -->
+<article class="ribbon-card rounded-xl bg-surface-container p-4 flex flex-col gap-3 shadow-md opacity-85" data-category="copper locked" data-discipline="mat">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-lg bg-[#e2d23c]/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#e2d23c] text-[24px]">calculate</span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-[#e2d23c] tracking-wider">CU-MAT-MAQ</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">SEASON COPPER // SPECIALTY: MACHINIST</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-telemetry-sm text-telemetry-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span data-lang-en="">LOCKED</span>
+<span class="hidden" data-lang-es="">BLOQUEADO</span>
+</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang-en="">Ribbon Mathematics · Machinist</span>
+<span class="hidden" data-lang-es="">Cinta Matemáticas · Maquinista</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" data-lang-en="">Lubricant particulate contamination mean distributions and micrometer tolerance place-value analysis.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 hidden" data-lang-es="">Distribución de medias de contaminación por partículas y análisis de tolerancias con micrómetro de precisión.</p>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-center gap-2 font-telemetry-sm text-telemetry-sm text-secondary">
+<span class="material-symbols-outlined text-[18px]">key</span>
+<div>
+<span class="font-bold" data-lang-en="">PREREQUISITE:</span>
+<span class="font-bold hidden" data-lang-es="">PRERREQUISITO:</span>
+<span class="text-on-surface ml-1">Stage 02 Machining Protocol Exam</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-telemetry-sm text-telemetry-sm min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0">anchor</span>
+<span class="truncate">BAP Abtao · Machine Workshop</span>
+</div>
+<button class="h-12 px-4 rounded bg-surface-container-high text-on-surface-variant font-telemetry-sm text-telemetry-sm flex items-center justify-center gap-1.5 shrink-0" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+<span data-lang-en="">[ LOCKED ]</span>
+<span class="hidden" data-lang-es="">[ BLOQUEADO ]</span>
+</button>
+</div>
+</article>
+<!-- Card 5: CU-SCI-ELE -->
+<article class="ribbon-card rounded-xl bg-surface-container p-4 flex flex-col gap-3 shadow-md" data-category="copper unlocked" data-discipline="sci">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-lg bg-[#14b4f0]/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#14b4f0] text-[24px]">electric_bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-[#14b4f0] tracking-wider">CU-SCI-ELE</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">SEASON COPPER // SPECIALTY: ELECTRICIAN</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary/20 text-primary font-telemetry-sm text-telemetry-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span data-lang-en="">UNLOCKED</span>
+<span class="hidden" data-lang-es="">OBTENIDO</span>
+</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang-en="">Ribbon Science · Electrician</span>
+<span class="hidden" data-lang-es="">Cinta Ciencia · Electricista</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" data-lang-en="">Lead-acid battery bank electrochemical equilibria (PbO2 + Pb + 2H2SO4 ⇌ 2PbSO4 + 2H2O) and hydrogen gas scrubbing.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 hidden" data-lang-es="">Equilibrio electroquímico en bancos de plomo-ácido y control de desprendimiento de hidrógeno en inmersión.</p>
+</div>
+<div class="grid grid-cols-2 gap-2 p-2.5 rounded bg-surface-container-low font-telemetry-sm text-telemetry-sm">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-caps text-label-caps" data-lang-en="">CELL VOLTAGE</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps hidden" data-lang-es="">VOLTAJE DE CELDA</span>
+<span class="text-primary font-bold">2.18 V NOMINAL</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-caps text-label-caps" data-lang-en="">GAS DETECTOR</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps hidden" data-lang-es="">SENSOR DE GAS</span>
+<span class="text-on-surface">&lt; 0.4% H2 (SAFE)</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-telemetry-sm text-telemetry-sm min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0">anchor</span>
+<span class="truncate">BAP Abtao · Battery Well No. 2</span>
+</div>
+<button aria-label="Inspect Dossier for CU-SCI-ELE" class="h-12 px-4 rounded bg-primary-container text-on-primary-container font-telemetry-sm text-telemetry-sm font-bold flex items-center justify-center gap-1.5 shrink-0 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span data-lang-en="">[ INSPECT DOSSIER ]</span>
+<span class="hidden" data-lang-es="">[ VER EXPEDIENTE ]</span>
+</button>
+</div>
+</article>
+<!-- Card 6: FH-01 -->
+<article class="ribbon-card rounded-xl bg-surface-container p-4 flex flex-col gap-3 shadow-md" data-category="human-factor unlocked" data-discipline="hum">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-lg bg-[#d9942f]/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#d9942f] text-[24px]">bedtime</span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-[#d9942f] tracking-wider">FH-01</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">HUMAN FACTOR // HUMANITIES</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary/20 text-primary font-telemetry-sm text-telemetry-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span data-lang-en="">UNLOCKED</span>
+<span class="hidden" data-lang-es="">OBTENIDO</span>
+</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang-en="">Hot Bunk: Sleeping in Shifts</span>
+<span class="hidden" data-lang-es="">Cama Caliente: Sueño en Guardias</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" data-lang-en="">Psychological adaptation to rotation watches, sensory deprivation, and acoustic discipline inside confined titanium-framed bulkheads.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 hidden" data-lang-es="">Adaptación psicológica al relevo de guardias, privación sensorial y estricta disciplina acústica en habitáculos reducidos.</p>
+</div>
+<!-- Historical Oral Note Component -->
+<div class="p-3 rounded bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-secondary font-telemetry-sm text-telemetry-sm">
+<span class="material-symbols-outlined text-[16px]">graphic_eq</span>
+<span data-lang-en="">VETERAN AUDIO LOG // 02:44 MIN</span>
+<span class="hidden" data-lang-es="">REGISTRO DE VOZ VETERANO // 02:44 MIN</span>
+</div>
+<!-- Simplified Sound Wave Indicator -->
+<div class="flex items-center gap-1 h-4">
+<span class="w-1 h-2 rounded bg-primary/60"></span>
+<span class="w-1 h-4 rounded bg-primary"></span>
+<span class="w-1 h-3 rounded bg-primary/80"></span>
+<span class="w-1 h-1 rounded bg-primary/40"></span>
+<span class="w-1 h-3.5 rounded bg-primary"></span>
+<span class="w-1 h-2 rounded bg-primary/70"></span>
+<span class="w-1 h-4 rounded bg-primary"></span>
+<span class="w-1 h-1.5 rounded bg-primary/50"></span>
+<span class="w-1 h-2.5 rounded bg-primary/80"></span>
+<span class="w-1 h-4 rounded bg-primary"></span>
+<span class="w-1 h-2 rounded bg-primary/60"></span>
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm ml-2">48 kHz // HYDRO-MIC</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-telemetry-sm text-telemetry-sm min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0">anchor</span>
+<span class="truncate">BAP Abtao · Crew Berthing</span>
+</div>
+<button aria-label="Inspect Dossier for FH-01" class="h-12 px-4 rounded bg-primary-container text-on-primary-container font-telemetry-sm text-telemetry-sm font-bold flex items-center justify-center gap-1.5 shrink-0 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span data-lang-en="">[ INSPECT DOSSIER ]</span>
+<span class="hidden" data-lang-es="">[ VER EXPEDIENTE ]</span>
+</button>
+</div>
+</article>
+<!-- Card 7: AC-01 -->
+<article class="ribbon-card rounded-xl bg-surface-container p-4 flex flex-col gap-3 shadow-md" data-category="steel unlocked" data-discipline="ing">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-lg bg-[#8fa3b0]/25 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#8fa3b0] text-[24px]">shield</span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-[#8fa3b0] tracking-wider">AC-01 · STEEL PIECE</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">HULL SECTION // HISTORIC HARDWARE</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary/20 text-primary font-telemetry-sm text-telemetry-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span data-lang-en="">UNLOCKED</span>
+<span class="hidden" data-lang-es="">OBTENIDO</span>
+</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang-en="">Forward Torpedo Room</span>
+<span class="hidden" data-lang-es="">Sala de Torpedos de Proa</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" data-lang-en="">Pneumatic launch interlocks, hydrostatic water slug equalizing mechanisms, and buoyancy compensation balances.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 hidden" data-lang-es="">Enclavamientos neumáticos de eyección, ecualización por pistón de agua y balance de flotabilidad compensada.</p>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-center justify-between font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant" data-lang-en="">MUSEUM STATION:</span>
+<span class="text-on-surface-variant hidden" data-lang-es="">ESTACIÓN MUSEO:</span>
+<span class="text-primary font-bold">STATION 01 · BAP ABTAO &amp; U-995</span>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-telemetry-sm text-telemetry-sm min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0">place</span>
+<span class="truncate">Callao Naval Base Pier</span>
+</div>
+<button aria-label="Inspect Dossier for AC-01" class="h-12 px-4 rounded bg-primary-container text-on-primary-container font-telemetry-sm text-telemetry-sm font-bold flex items-center justify-center gap-1.5 shrink-0 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span data-lang-en="">[ INSPECT DOSSIER ]</span>
+<span class="hidden" data-lang-es="">[ VER EXPEDIENTE ]</span>
+</button>
+</div>
+</article>
+<!-- Card 8: AC-03 -->
+<article class="ribbon-card rounded-xl bg-surface-container p-4 flex flex-col gap-3 shadow-md" data-category="steel unlocked" data-discipline="tec">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-lg bg-[#8fa3b0]/25 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#8fa3b0] text-[24px]">view_in_ar</span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-[#8fa3b0] tracking-wider">AC-03 · STEEL PIECE</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">COMMAND COMPARTMENT // OPTICAL CORE</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary/20 text-primary font-telemetry-sm text-telemetry-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span data-lang-en="">UNLOCKED</span>
+<span class="hidden" data-lang-es="">OBTENIDO</span>
+</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang-en="">Central Station &amp; Command</span>
+<span class="hidden" data-lang-es="">Puesto Central y Comando</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" data-lang-en="">Attack periscope optical collimation prisms, trim manifold master valves, and analog dead-reckoning plotting board.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 hidden" data-lang-es="">Colimación de prismas ópticos en periscopio de ataque, válvulas maestras de trimado y mesa de derrota analógica.</p>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-center justify-between font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant" data-lang-en="">MUSEUM STATION:</span>
+<span class="text-on-surface-variant hidden" data-lang-es="">ESTACIÓN MUSEO:</span>
+<span class="text-primary font-bold">STATION 03 · BAP ABTAO</span>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-telemetry-sm text-telemetry-sm min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0">place</span>
+<span class="truncate">Deck 01 · Command Center</span>
+</div>
+<button aria-label="Inspect Dossier for AC-03" class="h-12 px-4 rounded bg-primary-container text-on-primary-container font-telemetry-sm text-telemetry-sm font-bold flex items-center justify-center gap-1.5 shrink-0 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span data-lang-en="">[ INSPECT DOSSIER ]</span>
+<span class="hidden" data-lang-es="">[ VER EXPEDIENTE ]</span>
+</button>
+</div>
+</article>
+</div>
+<!-- End of Catalog State Banner -->
+<div class="mx-gutter-mobile my-6 p-4 rounded-xl bg-surface-container-low flex items-center justify-between gap-3 text-on-surface-variant">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
+<div class="flex flex-col min-w-0">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface truncate" data-lang-en="">ARCHIVE BATCH COMPLETE</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface truncate hidden" data-lang-es="">LOTE DE ARCHIVO COMPLETO</span>
+<span class="font-label-caps text-label-caps truncate" data-lang-en="">35 ADDITIONAL CARDS INDEXED IN REPOSITORY</span>
+<span class="font-label-caps text-label-caps truncate hidden" data-lang-es="">35 REGISTROS ADICIONALES INDEXADOS EN ARCHIVO</span>
+</div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold shrink-0">43 / 43</span>
+</div>
+<!-- Classified Privacy by Design Statement Footer -->
+<footer class="mt-4 mx-gutter-mobile p-4 rounded-xl bg-surface-container-lowest text-on-surface-variant flex flex-col gap-2.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">lock_person</span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase" data-lang-en="">ISA CRYPTO INTEGRITY &amp; PRIVACY</span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase hidden" data-lang-es="">INTEGRIDAD CRIPTOGRÁFICA Y PRIVACIDAD ISA</span>
+</div>
+<p class="font-telemetry-sm text-telemetry-sm leading-relaxed" data-lang-en="">
+      Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required.
+    </p>
+<p class="font-telemetry-sm text-telemetry-sm leading-relaxed hidden" data-lang-es="">
+      Privacidad desde el diseño. Datos seudónimos mínimos. Sin almacenamiento de correos en texto plano. Registro de credenciales en dispositivo local. No requiere cuenta.
+    </p>
+<div class="flex items-center justify-between pt-1 font-label-caps text-label-caps text-secondary/80">
+<span>HASH: SHA256-CADET-LOCAL-STORE</span>
+<span>V2.4 // MARITIME REPOSITORY</span>
+</div>
+</footer>
+</div>
+<script>
+  (function initISACatalogInteractivity() {
+    // 1. Language Toggle System (Bilingual ES / EN with localStorage persistence)
+    const LANG_KEY = 'isa_lang';
+    let currentLang = localStorage.getItem(LANG_KEY) || 'en';
+
+    const langToggleBtn = document.getElementById('langToggleBtn');
+    const langDisplay = document.getElementById('langDisplayState');
+
+    function updateLanguageDOM(lang) {
+      currentLang = lang;
+      localStorage.setItem(LANG_KEY, lang);
+
+      const enElements = document.querySelectorAll('[data-lang-en]');
+      const esElements = document.querySelectorAll('[data-lang-es]');
+
+      if (lang === 'es') {
+        enElements.forEach(el => el.classList.add('hidden'));
+        esElements.forEach(el => el.classList.remove('hidden'));
+        if (langDisplay) langDisplay.textContent = 'ES [ACTIVO]';
+      } else {
+        esElements.forEach(el => el.classList.add('hidden'));
+        enElements.forEach(el => el.classList.remove('hidden'));
+        if (langDisplay) langDisplay.textContent = 'EN / ES';
+      }
+    }
+
+    if (langToggleBtn) {
+      langToggleBtn.addEventListener('click', () => {
+        const nextLang = currentLang === 'en' ? 'es' : 'en';
+        updateLanguageDOM(nextLang);
+      });
+    }
+
+    // Initialize saved language preference
+    updateLanguageDOM(currentLang);
+
+    // 2. Interactive Filtering Logic for Category and Disciplines
+    const categoryChips = document.querySelectorAll('#statusFilterBar .filter-chip');
+    const disciplineChips = document.querySelectorAll('#disciplineFilterBar button');
+    const cards = document.querySelectorAll('.ribbon-card');
+    const counterLabel = document.getElementById('activeCountLabel');
+
+    let activeCategory = 'all';
+    let activeDiscipline = 'all';
+
+    function runFilters() {
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cardCategories = (card.getAttribute('data-category') || '').toLowerCase();
+        const cardDiscipline = (card.getAttribute('data-discipline') || '').toLowerCase();
+
+        let categoryMatch = false;
+        if (activeCategory === 'all') {
+          categoryMatch = true;
+        } else if (activeCategory === 'unlocked' && cardCategories.includes('unlocked')) {
+          categoryMatch = true;
+        } else if (activeCategory === 'locked' && cardCategories.includes('locked')) {
+          categoryMatch = true;
+        } else if (activeCategory === 'copper' && cardCategories.includes('copper')) {
+          categoryMatch = true;
+        } else if (activeCategory === 'steel' && cardCategories.includes('steel')) {
+          categoryMatch = true;
+        } else if (activeCategory === 'human-factor' && cardCategories.includes('human-factor')) {
+          categoryMatch = true;
+        }
+
+        let disciplineMatch = (activeDiscipline === 'all') || (cardDiscipline === activeDiscipline);
+
+        if (categoryMatch && disciplineMatch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (counterLabel) {
+        counterLabel.textContent = `SHOWING ${visibleCount} RECORD ENTRIES`;
+      }
+    }
+
+    categoryChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        categoryChips.forEach(c => {
+          c.classList.remove('bg-primary', 'text-on-primary', 'font-bold');
+          c.classList.add('bg-surface-container-high', 'text-on-surface');
+        });
+        chip.classList.add('bg-primary', 'text-on-primary', 'font-bold');
+        chip.classList.remove('bg-surface-container-high', 'text-on-surface');
+        activeCategory = chip.getAttribute('data-filter') || 'all';
+        runFilters();
+      });
+    });
+
+    disciplineChips.forEach(dChip => {
+      dChip.addEventListener('click', () => {
+        disciplineChips.forEach(dc => dc.classList.remove('ring-1', 'ring-primary', 'bg-surface-container-highest'));
+        dChip.classList.add('bg-surface-container-highest');
+        activeDiscipline = dChip.getAttribute('data-discipline') || 'all';
+        runFilters();
+      });
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.4)]" data-active-classes="text-primary font-bold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="home-stream" href="#"><span class="material-symbols-outlined text-[20px]">waves</span><span class="font-label-caps text-label-caps mt-1 scale-95">STREAM</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="mission-map" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span class="font-label-caps text-label-caps mt-1 scale-95">MAP</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="5x5-grid" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-caps text-label-caps mt-1 scale-95">5X5 GRID</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="museums" href="#"><span class="material-symbols-outlined text-[20px]">museum</span><span class="font-label-caps text-label-caps mt-1 scale-95">MUSEUMS</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="cadet-dossier" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span class="font-label-caps text-label-caps mt-1 scale-95">DOSSIER</span></a></div></nav></body></html>

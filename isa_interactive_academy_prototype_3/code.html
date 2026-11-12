@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+  <meta name="shell-type" content="mobile_blank"/>
+  <title>ISA — International Submarine Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html, body { width: 100vw; margin: 0; padding: 0; background-color: #08151e; }
+      body { overscroll-behavior: none; }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    }
+    ::-webkit-scrollbar { display: none; }
+    @keyframes sonar-sweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .animate-radar { animation: sonar-sweep 4s linear infinite; }
+    @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 8px rgba(56, 232, 166, 0.4); } 50% { box-shadow: 0 0 20px rgba(56, 232, 166, 0.85); } }
+    .glow-active { animation: pulse-glow 2s ease-in-out infinite; }
+    @keyframes coin-sheen { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    .sheen-effect {
+      background: linear-gradient(110deg, #ffb784 0%, #ffe6c9 25%, #ffb784 50%, #8a4400 75%, #ffb784 100%);
+      background-size: 200% 100%;
+      animation: coin-sheen 5s infinite linear;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#08151e",
+            "surface-dim": "#08151e",
+            "surface-bright": "#2e3b45",
+            "surface-container-lowest": "#040f18",
+            "surface-container-low": "#101d26",
+            "surface-container": "#14212a",
+            "surface-container-high": "#1f2b35",
+            "surface-container-highest": "#2a3640",
+            "primary": "#92ffca",
+            "primary-container": "#38e8a6",
+            "on-primary": "#003824",
+            "on-primary-container": "#006444",
+            "secondary": "#ffb784",
+            "secondary-container": "#8a4400",
+            "on-secondary": "#4f2500",
+            "on-secondary-container": "#ffc095",
+            "tertiary": "#ffe6c9",
+            "tertiary-container": "#ffc36f",
+            "outline": "#85948a",
+            "outline-variant": "#3c4a41",
+            "on-surface": "#d7e4f1",
+            "on-surface-variant": "#bacabf",
+            "error": "#ffb4ab",
+            "error-container": "#93000a",
+            "on-error": "#690005"
+          },
+          fontFamily: {
+            "display": ["Space Grotesk"],
+            "body": ["Chivo"],
+            "mono": ["Space Mono"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+  <!-- Ambient Scanline HUD Overlay -->
+  <div class="fixed inset-0 pointer-events-none opacity-25 bg-[linear-gradient(rgba(18,32,43,0)_50%,rgba(4,15,24,0.75)_50%)] bg-[length:100%_4px] z-50"></div>
+
+  <!-- PERSISTENT TOP TACTICAL HUD HEADER -->
+  <header id="app-top-header" class="hidden sticky top-0 z-40 bg-surface-container-lowest/95 border-b border-outline-variant/40 backdrop-blur-md px-3.5 py-2 pt-safe flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <button onclick="app.showDebugMenu()" class="p-1 rounded bg-surface-container-high text-primary hover:bg-surface-container active:scale-95" title="Telemetry Menu">
+        <span class="material-symbols-outlined text-[18px]">terminal</span>
+      </button>
+      <div class="flex flex-col">
+        <div class="flex items-center space-x-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          <span id="hdr-callsign" class="font-mono text-[10px] tracking-wider text-primary font-bold uppercase">LUNAR FISH</span>
+        </div>
+        <span id="hdr-institution" class="font-mono text-[8px] text-on-surface-variant truncate max-w-[110px]">U-995 Memorial</span>
+      </div>
+    </div>
+    <div class="flex items-center space-x-1.5">
+      <div class="flex items-center bg-surface-container-low px-2 py-0.5 rounded border border-outline-variant/30 space-x-1">
+        <span class="material-symbols-outlined text-[12px] text-tertiary-container">stars</span>
+        <span id="hdr-points" class="font-mono text-[10px] text-tertiary font-bold">1,450 XP</span>
+      </div>
+      <button onclick="app.promptResetConfirmation()" class="flex items-center space-x-1 px-2 py-1 rounded bg-error-container/20 border border-error/50 text-error hover:bg-error-container/40 active:scale-95 transition-all text-[9px] font-mono font-bold uppercase" title="Erase progress">
+        <span class="material-symbols-outlined text-[12px]">restart_alt</span>
+        <span>RESET</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- RESET CONFIRMATION MODAL -->
+  <div id="reset-confirm-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface-dim/85 backdrop-blur-sm">
+    <div class="bg-surface-container-high border-2 border-error/70 rounded-2xl p-5 max-w-sm w-full shadow-2xl space-y-4">
+      <div class="flex items-center space-x-2 text-error">
+        <span class="material-symbols-outlined text-[24px]">warning</span>
+        <span class="font-mono text-xs tracking-wider uppercase font-bold">SYSTEM PURGE WARNING</span>
+      </div>
+      <p class="font-mono text-xs text-on-surface leading-relaxed uppercase">
+        THIS WILL ERASE YOUR LOCAL PROGRESS.<br/>
+        DO YOU WANT TO CONTINUE?
+      </p>
+      <div class="pt-2 flex items-center space-x-2">
+        <button onclick="app.closeResetModal()" class="flex-1 py-2 px-3 rounded-lg bg-surface-container border border-outline-variant/40 text-on-surface hover:text-white font-mono text-[10px] uppercase font-bold">
+          [CANCEL]
+        </button>
+        <button onclick="app.confirmResetProgress()" class="flex-1 py-2 px-3 rounded-lg bg-error text-on-error hover:brightness-110 font-mono text-[10px] uppercase font-bold shadow-[0_0_12px_rgba(255,180,171,0.5)]">
+          [CONFIRM RESET]
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CELL TELEMETRY MODAL -->
+  <div id="cell-detail-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface-dim/85 backdrop-blur-sm">
+    <div id="cell-detail-content" class="bg-surface-container rounded-2xl border border-primary/40 max-w-sm w-full p-4 space-y-3 shadow-2xl">
+      <!-- Dynamic content injected -->
+    </div>
+  </div>
+
+  <!-- MAIN SCROLLABLE VIEW CONTAINER -->
+  <main class="flex flex-col relative w-full pb-20 bg-surface min-h-screen">
+    
+    <!-- 1. ACCESS VIEW -->
+    <section id="view-access" class="hidden flex flex-col w-full text-on-surface pt-safe pb-8">
+      <div class="relative z-20 flex items-center justify-between px-5 py-2.5 bg-surface-container-lowest/90 backdrop-blur-sm shadow-sm">
+        <div class="flex items-center space-x-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#38e8a6] animate-pulse"></span>
+          <span class="font-mono text-[11px] text-primary tracking-widest uppercase">SYS_SEC // LEVEL 4</span>
+        </div>
+        <div class="flex items-center space-x-2 text-outline font-mono text-[11px]">
+          <span id="access-clock">00:00:00 UTC</span>
+          <span class="material-symbols-outlined text-[16px] text-primary">satellite_alt</span>
+        </div>
+      </div>
+
+      <div class="relative z-20 flex flex-col items-center justify-center pt-5 pb-3 px-4 overflow-hidden">
+        <div class="relative w-44 h-44 flex items-center justify-center">
+          <div class="absolute inset-0 rounded-full bg-surface-container-low/40 shadow-inner flex items-center justify-center">
+            <div class="w-36 h-36 rounded-full bg-surface-container/30 flex items-center justify-center">
+              <div class="w-24 h-24 rounded-full bg-surface-container-high/40 flex items-center justify-center">
+                <div class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center">
+                  <div class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_12px_#38e8a6]"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-x-4 h-[1px] bg-primary/20 pointer-events-none"></div>
+          <div class="absolute inset-y-4 w-[1px] bg-primary/20 pointer-events-none"></div>
+          <div class="absolute inset-0 rounded-full pointer-events-none animate-radar" style="background: conic-gradient(from 0deg, rgba(56, 232, 166, 0.28) 0deg, rgba(56, 232, 166, 0.05) 55deg, transparent 90deg);"></div>
+          <div class="relative z-10 w-16 h-16 rounded-full bg-surface-container-lowest border border-primary/50 flex flex-col items-center justify-center text-primary shadow-lg p-1 text-center">
+            <span class="material-symbols-outlined text-[22px]">scuba_diving</span>
+            <span class="font-mono text-[7px] tracking-tighter uppercase font-bold">ISA NODE</span>
+          </div>
+        </div>
+        <div class="mt-2 px-3 py-1 bg-surface-container-high rounded flex items-center space-x-2 border border-outline-variant/30">
+          <span class="material-symbols-outlined text-[12px] text-primary">lock</span>
+          <span class="font-mono text-[9px] text-primary tracking-widest">CLASSIFIED // ARCHIVAL ACCESS</span>
+        </div>
+        <div class="text-center mt-3 px-2">
+          <h1 class="font-display text-xl leading-tight font-bold uppercase text-on-surface">International Submarine Academy</h1>
+          <p class="font-mono text-[10px] text-on-surface-variant uppercase mt-0.5 tracking-wider">Transmedia Archival & Educational Telemetry</p>
+        </div>
+        <div class="mt-3 mx-2 px-3 py-2 rounded-lg bg-surface-container-low border border-outline-variant/20 flex items-center space-x-2">
+          <span class="material-symbols-outlined text-[16px] text-secondary shrink-0">explore</span>
+          <p class="font-body text-[11px] text-on-surface italic text-left">
+            “Everything you see is fiction. <span class="text-secondary font-medium not-italic">But there is much to discover.</span>”
+          </p>
+        </div>
+      </div>
+
+      <!-- Access Form -->
+      <div class="relative z-20 px-4 mt-2">
+        <div class="bg-surface-container rounded-xl p-4 shadow-lg space-y-3.5 border border-outline-variant/30">
+          <div class="flex items-center justify-between">
+            <label class="font-mono text-[10px] text-on-surface-variant tracking-wider uppercase flex items-center space-x-1.5" for="access-input-token">
+              <span class="material-symbols-outlined text-[13px] text-primary">pin</span>
+              <span>Enter Access Key / Token</span>
+            </label>
+            <span class="font-mono text-[9px] text-outline">SEC_ENCR_256</span>
+          </div>
+          <div class="w-full bg-surface-container-lowest rounded-lg py-2.5 px-3 flex items-center justify-between border border-outline-variant/30 focus-within:border-primary">
+            <div class="flex items-center space-x-1.5 w-full">
+              <span class="font-mono text-primary font-bold">[</span>
+              <input type="text" id="access-input-token" value="ISA-U995-2026" placeholder="ENTER ACCESS KEY" spellcheck="false" autocomplete="off" class="w-full bg-transparent font-mono text-xs text-primary tracking-wider uppercase outline-none placeholder:text-outline/40"/>
+              <span class="font-mono text-primary font-bold">]</span>
+            </div>
+            <span class="w-1.5 h-3 bg-primary inline-block animate-pulse ml-1"></span>
+          </div>
+
+          <!-- Presets -->
+          <div class="space-y-1">
+            <span class="font-mono text-[9px] text-outline uppercase tracking-wider">Fast Presets / Authorized Keys:</span>
+            <div class="grid grid-cols-3 gap-1.5">
+              <button onclick="app.setAccessKey('ISA-U995-2026')" class="py-1 px-1.5 bg-surface-container-high rounded text-[9px] font-mono text-on-surface-variant hover:text-primary hover:border-primary/50 border border-outline-variant/20 truncate">U-995 Memorial</button>
+              <button onclick="app.setAccessKey('ISA-ASOC-2026')" class="py-1 px-1.5 bg-surface-container-high rounded text-[9px] font-mono text-on-surface-variant hover:text-primary hover:border-primary/50 border border-outline-variant/20 truncate">Submariners</button>
+              <button onclick="app.setAccessKey('INVALID-KEY-123')" class="py-1 px-1.5 bg-surface-container-high rounded text-[9px] font-mono text-on-surface-variant hover:text-primary hover:border-primary/50 border border-outline-variant/20 truncate">Test Invalid</button>
+            </div>
+          </div>
+
+          <button id="btn-access-submit" onclick="app.handleAuthSubmit()" type="button" class="w-full bg-primary-container text-on-primary-container font-mono text-xs py-3 px-4 rounded-lg tracking-widest uppercase font-bold shadow-[0_0_14px_rgba(56,232,166,0.35)] active:scale-[0.98] transition-transform flex items-center justify-center space-x-2">
+            <span class="material-symbols-outlined text-[16px]">terminal</span>
+            <span>ENTER TERMINAL</span>
+          </button>
+
+          <!-- ERROR BOX -->
+          <div id="access-error-box" class="hidden bg-secondary-container/40 rounded-lg p-3 flex items-start space-x-2.5 text-secondary-fixed border border-secondary/40">
+            <span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">warning</span>
+            <div class="flex flex-col space-y-0.5">
+              <span class="font-mono text-[10px] tracking-widest uppercase text-secondary font-bold">ACCESS DENIED</span>
+              <p class="font-body text-[11px] text-on-secondary-container leading-relaxed">
+                This platform is strictly reserved for invited submariner community members. Access clearance could not be authenticated on this node.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-2 bg-surface-container-low rounded-lg flex items-start space-x-2 border border-outline-variant/10 text-outline text-[10px]">
+            <span class="material-symbols-outlined text-[14px] shrink-0 mt-0.5">verified_user</span>
+            <p>Access is reserved for accredited submarine museums, submariners' associations, veterans, and naval strategic partners.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. HOME / MISSION MAP VIEW -->
+    <section id="view-home" class="hidden flex flex-col w-full text-on-surface p-4 space-y-4">
+      <div class="bg-surface-container rounded-xl p-3.5 border border-outline-variant/30 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-full bg-surface-container-lowest border border-primary/40 flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-[22px]">radar</span>
+          </div>
+          <div>
+            <div class="flex items-center space-x-1.5">
+              <span class="font-mono text-[9px] text-primary font-bold uppercase tracking-wider">CADET PROFILE</span>
+              <span id="home-cadet-level" class="px-1 py-0.2 bg-primary/20 text-primary font-mono text-[8px] rounded">LVL 2</span>
+            </div>
+            <h2 id="home-cadet-name" class="font-display text-sm text-on-surface font-semibold">Lunar Fish</h2>
+            <p id="home-institution-name" class="font-mono text-[9px] text-on-surface-variant truncate">U-995 Naval Memorial</p>
+          </div>
+        </div>
+        <div class="text-right">
+          <span class="font-mono text-[8px] text-outline block uppercase tracking-wider">ACTIVE SEASON</span>
+          <span id="home-season-badge" class="font-display text-xs font-bold text-secondary">STEEL</span>
+        </div>
+      </div>
+
+      <!-- Quick Nav Chips -->
+      <div class="grid grid-cols-4 gap-2">
+        <button onclick="app.navigate('grid')" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low border border-outline-variant/30 active:scale-95 transition-transform">
+          <span class="material-symbols-outlined text-[18px] text-primary mb-0.5">grid_view</span>
+          <span class="font-mono text-[8px] uppercase tracking-wider text-on-surface">5x5 Grid</span>
+        </button>
+        <button onclick="app.navigate('season_map')" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low border border-outline-variant/30 active:scale-95 transition-transform">
+          <span class="material-symbols-outlined text-[18px] text-secondary mb-0.5">route</span>
+          <span class="font-mono text-[8px] uppercase tracking-wider text-on-surface">Bathymetry</span>
+        </button>
+        <button onclick="app.navigate('museum')" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low border border-outline-variant/30 active:scale-95 transition-transform">
+          <span class="material-symbols-outlined text-[18px] text-tertiary mb-0.5">museum</span>
+          <span class="font-mono text-[8px] uppercase tracking-wider text-on-surface">U-995 Info</span>
+        </button>
+        <button onclick="app.navigate('profile')" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low border border-outline-variant/30 active:scale-95 transition-transform">
+          <span class="material-symbols-outlined text-[18px] text-primary mb-0.5">badge</span>
+          <span class="font-mono text-[8px] uppercase tracking-wider text-on-surface">Dossier</span>
+        </button>
+      </div>
+
+      <!-- Featured Operation -->
+      <div id="home-featured-card" class="relative overflow-hidden rounded-xl border border-primary/40 bg-gradient-to-b from-surface-container-high to-surface-container p-4 shadow-xl">
+        <div class="flex items-center justify-between text-primary mb-1.5">
+          <span class="font-mono text-[8px] uppercase tracking-widest bg-primary/10 px-2 py-0.5 rounded border border-primary/30">FEATURED OPERATION</span>
+          <span class="font-mono text-[9px] text-primary flex items-center space-x-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+            <span>READY TO ENGAGE</span>
+          </span>
+        </div>
+        <h3 class="font-display text-base uppercase font-bold text-on-surface leading-tight">Steel 04 — Submarine Command</h3>
+        <p class="font-body text-[11px] text-on-surface-variant mt-1 leading-normal">
+          U-995 Zentrale · Periscope optics, target alignment, and command compartment physics.
+        </p>
+        <div class="mt-3 flex items-center justify-between pt-2.5 border-t border-outline-variant/30">
+          <div class="flex items-center space-x-1 text-outline font-mono text-[9px]">
+            <span>+1,000 XP</span>
+            <span>•</span>
+            <span>CREDENTIAL</span>
+          </div>
+          <button onclick="app.navigate('episode_steel')" class="bg-primary-container text-on-primary-container px-3 py-1 rounded font-mono text-[10px] uppercase font-bold tracking-wider hover:brightness-110 active:scale-95 transition-all flex items-center space-x-1">
+            <span>ENGAGE</span>
+            <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mission List -->
+      <div class="space-y-2">
+        <div class="flex items-center justify-between">
+          <h4 class="font-mono text-[10px] text-on-surface tracking-wider uppercase font-bold">TACTICAL CAMPAIGN QUEUE</h4>
+          <span class="font-mono text-[9px] text-outline">SEASON 01 - 02</span>
+        </div>
+
+        <!-- Steel 01 (Completed) -->
+        <div class="bg-surface-container-low rounded-lg p-2.5 border border-outline-variant/20 flex items-center justify-between opacity-85">
+          <div class="flex items-center space-x-2.5">
+            <div class="w-7 h-7 rounded bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[15px]">check_circle</span>
+            </div>
+            <div>
+              <div class="font-display text-xs font-semibold text-on-surface">Steel 01: Dive Physics</div>
+              <span class="font-mono text-[8px] text-outline">Hydrostatic Ballast Calculations</span>
+            </div>
+          </div>
+          <span class="font-mono text-[8px] text-primary px-2 py-0.5 rounded bg-primary/10 border border-primary/20">LOGGED</span>
+        </div>
+
+        <!-- Steel 04 -->
+        <div id="home-steel-card" onclick="app.navigate('episode_steel')" class="cursor-pointer bg-surface-container rounded-lg p-2.5 border border-primary/50 flex items-center justify-between hover:bg-surface-container-high transition-colors">
+          <div class="flex items-center space-x-2.5">
+            <div id="home-steel-icon-wrap" class="w-7 h-7 rounded bg-primary/20 border border-primary flex items-center justify-center text-primary">
+              <span id="home-steel-icon" class="material-symbols-outlined text-[16px]">play_arrow</span>
+            </div>
+            <div>
+              <div id="home-steel-title" class="font-display text-xs font-semibold text-primary">Steel 04: Submarine Command</div>
+              <span class="font-mono text-[8px] text-on-surface-variant">Optic Periscope Collimation</span>
+            </div>
+          </div>
+          <span id="home-steel-badge" class="font-mono text-[8px] text-primary-fixed bg-primary-container/20 px-2 py-0.5 rounded border border-primary/30 flex items-center space-x-1">
+            <span id="home-steel-dot" class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            <span id="home-steel-badge-txt">LAUNCH</span>
+          </span>
+        </div>
+
+        <!-- Copper 01 -->
+        <div id="home-copper-card" onclick="app.handleCopperClick()" class="cursor-pointer bg-surface-container-low rounded-lg p-2.5 border border-outline-variant/20 flex items-center justify-between transition-all">
+          <div class="flex items-center space-x-2.5">
+            <div id="home-copper-icon-wrap" class="w-7 h-7 rounded bg-surface-container-high border border-outline/30 flex items-center justify-center text-outline">
+              <span id="home-copper-icon" class="material-symbols-outlined text-[15px]">lock</span>
+            </div>
+            <div>
+              <div id="home-copper-title" class="font-display text-xs font-semibold text-outline">Copper: Sonar & Astro</div>
+              <span id="home-copper-subtitle" class="font-mono text-[8px] text-outline">Periscope & Astronomical Observation</span>
+            </div>
+          </div>
+          <span id="home-copper-badge" class="font-mono text-[8px] text-outline px-2 py-0.5 rounded bg-surface-container-high">LOCKED</span>
+        </div>
+
+        <!-- Bronze 03 -->
+        <div class="bg-surface-container-lowest rounded-lg p-2.5 border border-outline-variant/10 flex items-center justify-between opacity-50">
+          <div class="flex items-center space-x-2.5">
+            <div class="w-7 h-7 rounded bg-surface-container-high flex items-center justify-center text-outline">
+              <span class="material-symbols-outlined text-[15px]">lock</span>
+            </div>
+            <div>
+              <div class="font-display text-xs font-semibold text-outline">Bronze 03: Diesel Electric</div>
+              <span class="font-mono text-[8px] text-outline/70">Submerged Battery Array</span>
+            </div>
+          </div>
+          <span class="font-mono text-[8px] text-outline px-2 py-0.5 rounded bg-surface-container-high">REQUIRES COPPER</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. EPISODE STEEL 04 -->
+    <section id="view-episode_steel" class="hidden flex flex-col w-full text-on-surface p-4 space-y-4">
+      <div class="flex items-center justify-between">
+        <button onclick="app.navigate('home')" class="flex items-center space-x-1 text-outline hover:text-primary font-mono text-[10px] uppercase">
+          <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+          <span>Back</span>
+        </button>
+        <span class="font-mono text-[8px] text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">STEEL 04 // HUD</span>
+      </div>
+      <div>
+        <h2 class="font-display text-lg uppercase font-bold text-on-surface">Steel 04 — Submarine Command</h2>
+        <div class="flex flex-wrap gap-1.5 mt-1 font-mono text-[8px] text-on-surface-variant">
+          <span class="px-1.5 py-0.5 bg-surface-container-high rounded">U-995 · Laboe, Germany</span>
+          <span class="px-1.5 py-0.5 bg-surface-container-high rounded">Control room</span>
+          <span class="px-1.5 py-0.5 bg-surface-container-high rounded">Periscope</span>
+        </div>
+      </div>
+
+      <!-- Player HUD -->
+      <div class="relative w-full aspect-video bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/40 shadow-2xl flex flex-col justify-between p-3">
+        <div class="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
+          <div class="w-40 h-40 rounded-full border border-primary border-dashed animate-spin" style="animation-duration: 20s;"></div>
+          <div class="absolute w-full h-[1px] bg-primary/40"></div>
+          <div class="absolute h-full w-[1px] bg-primary/40"></div>
+        </div>
+        <div class="relative z-10 flex items-center justify-between font-mono text-[8px] text-primary">
+          <div class="flex items-center space-x-1 bg-surface-dim/80 px-1.5 py-0.5 rounded">
+            <span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+            <span>REC // FEED U-995</span>
+          </div>
+          <div class="bg-surface-dim/80 px-1.5 py-0.5 rounded">
+            DEPTH: <span class="font-bold">24.5M</span> | HDG: <span class="font-bold">312° NW</span>
+          </div>
+        </div>
+        <div class="relative z-10 flex flex-col items-center justify-center space-y-1">
+          <div class="w-10 h-10 rounded-full border border-primary/70 flex items-center justify-center">
+            <span class="material-symbols-outlined text-[24px] text-primary">visibility</span>
+          </div>
+          <span class="font-mono text-[8px] tracking-widest text-primary/80 uppercase">PERISCOPE OPTICAL FEED</span>
+        </div>
+        <div class="relative z-10 flex items-center justify-between bg-surface-dim/80 px-2 py-1 rounded border border-outline-variant/30 text-primary">
+          <button onclick="app.toggleSimulationAudio()" class="flex items-center space-x-1 font-mono text-[8px]">
+            <span id="sim-play-icon" class="material-symbols-outlined text-[16px]">pause_circle</span>
+            <span id="sim-play-text">PLAYING</span>
+          </button>
+          <div class="flex items-center space-x-1">
+            <span class="w-1 h-2.5 bg-primary animate-pulse"></span>
+            <span class="w-1 h-4 bg-primary animate-pulse" style="animation-delay: 0.1s"></span>
+            <span class="w-1 h-2 bg-primary animate-pulse" style="animation-delay: 0.2s"></span>
+            <span class="w-1 h-3.5 bg-primary animate-pulse" style="animation-delay: 0.3s"></span>
+          </div>
+          <span class="font-mono text-[8px] text-outline">01:42 / 03:00</span>
+        </div>
+      </div>
+
+      <div class="bg-surface-container rounded-xl p-3 border border-outline-variant/30 space-y-1.5">
+        <span class="text-secondary font-mono text-[9px] font-bold uppercase flex items-center space-x-1">
+          <span class="material-symbols-outlined text-[13px]">headphones</span>
+          <span>Hydrophone Transcript // Cdr. Reckmann</span>
+        </span>
+        <p class="font-body text-[11px] text-on-surface leading-relaxed italic bg-surface-container-lowest/60 p-2 rounded border border-outline-variant/20">
+          “Observe carefully through the optics tube. Without breaking surface concealment, the series of angled mirrors reflects light straight down into our conning compartment. Your observation allows survival.”
+        </p>
+      </div>
+
+      <button onclick="app.navigate('question_steel')" class="w-full bg-primary-container text-on-primary-container font-mono text-xs py-3 px-4 rounded-xl tracking-widest uppercase font-bold shadow-[0_0_14px_rgba(56,232,166,0.35)] active:scale-[0.98] transition-transform flex items-center justify-center space-x-2">
+        <span>CONTINUE TO CHALLENGE</span>
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </button>
+    </section>
+
+    <!-- 4. QUESTION STEEL -->
+    <section id="view-question_steel" class="hidden flex flex-col w-full text-on-surface p-4 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="font-mono text-[8px] text-primary uppercase tracking-widest">PHASE // STEEL 04</span>
+          <h3 class="font-display text-sm uppercase font-bold text-on-surface">Tactical Challenge 01</h3>
+        </div>
+        <div class="relative w-10 h-10 flex items-center justify-center">
+          <svg class="w-10 h-10 transform -rotate-90">
+            <circle cx="20" cy="20" r="16" stroke="#1f2b35" stroke-width="3" fill="transparent"></circle>
+            <circle id="steel-timer-circle" cx="20" cy="20" r="16" stroke="#38e8a6" stroke-width="3" fill="transparent" stroke-dasharray="100" stroke-dashoffset="0" class="transition-all duration-1000"></circle>
+          </svg>
+          <span id="steel-timer-text" class="absolute font-mono text-[9px] font-bold text-primary">20s</span>
+        </div>
+      </div>
+
+      <div class="bg-surface-container rounded-xl p-3.5 border border-outline-variant/30 space-y-1.5">
+        <span class="font-mono text-[8px] text-secondary tracking-widest uppercase font-bold">TACTICAL QUESTION</span>
+        <p class="font-display text-xs font-semibold text-on-surface leading-snug">
+          What is the main function of a periscope in a submarine?
+        </p>
+      </div>
+
+      <div id="steel-options-container" class="space-y-2">
+        <button onclick="app.checkAnswerSteel('A', this)" class="w-full text-left p-3 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-outline transition-all flex items-start space-x-2.5 active:scale-[0.99]">
+          <span class="font-mono font-bold text-outline text-xs mt-0.5">A</span>
+          <span class="font-body text-xs text-on-surface">Measure the submarine’s depth.</span>
+        </button>
+        <button onclick="app.checkAnswerSteel('B', this)" class="w-full text-left p-3 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-outline transition-all flex items-start space-x-2.5 active:scale-[0.99]">
+          <span class="font-mono font-bold text-outline text-xs mt-0.5">B</span>
+          <span class="font-body text-xs text-on-surface">Allow observation from a protected position.</span>
+        </button>
+        <button onclick="app.checkAnswerSteel('C', this)" class="w-full text-left p-3 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-outline transition-all flex items-start space-x-2.5 active:scale-[0.99]">
+          <span class="font-mono font-bold text-outline text-xs mt-0.5">C</span>
+          <span class="font-body text-xs text-on-surface">Generate electrical power for the engines.</span>
+        </button>
+        <button onclick="app.checkAnswerSteel('D', this)" class="w-full text-left p-3 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-outline transition-all flex items-start space-x-2.5 active:scale-[0.99]">
+          <span class="font-mono font-bold text-outline text-xs mt-0.5">D</span>
+          <span class="font-body text-xs text-on-surface">Filter the submarine’s internal air.</span>
+        </button>
+      </div>
+
+      <!-- Feedback banners -->
+      <div id="steel-question-alert" class="hidden rounded-xl p-3 bg-secondary-container/40 border border-secondary text-secondary flex items-start space-x-2">
+        <span class="material-symbols-outlined text-[18px]">error</span>
+        <div class="text-[11px]">
+          <span class="font-mono font-bold block uppercase">CALIBRATION ERROR // RETRY VECTOR</span>
+          <span>Depth meters and filters serve secondary roles. Reconsider optical observation principles.</span>
+        </div>
+      </div>
+      <div id="steel-question-success" class="hidden rounded-xl p-3 bg-primary-container/20 border border-primary text-primary flex items-start space-x-2">
+        <span class="material-symbols-outlined text-[18px]">check_circle</span>
+        <div class="text-[11px]">
+          <span class="font-mono font-bold block uppercase">TARGET ACQUIRED // LOCK CONFIRMED</span>
+          <span>Advancing to tactical analysis...</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FEEDBACK STEEL -->
+    <section id="view-feedback_steel" class="hidden flex flex-col w-full text-on-surface p-4 space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="font-mono text-[8px] text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/30">ANALYSIS COMPLETE</span>
+        <span class="font-mono text-[9px] text-primary font-bold">+1,000 XP EARNED</span>
+      </div>
+      <div class="bg-surface-container rounded-xl p-3.5 border border-primary/40 space-y-1.5">
+        <div class="flex items-center space-x-2 text-primary">
+          <span class="material-symbols-outlined text-[18px]">verified</span>
+          <h2 class="font-display text-sm uppercase font-bold">Target Acquired · Tactical Lock</h2>
+        </div>
+        <div class="p-2 rounded bg-surface-container-lowest border border-outline-variant/30 text-xs text-on-surface font-mono">
+          <span class="text-primary font-bold">CORRECT: </span>Allow observation from a protected position using mirrors or prisms.
+        </div>
+      </div>
+      <div class="bg-surface-container rounded-xl p-3.5 border border-outline-variant/30 space-y-1">
+        <span class="font-mono text-[8px] text-secondary tracking-widest uppercase font-bold">CIVIL APPLICATION</span>
+        <p class="font-body text-[11px] text-on-surface-variant leading-relaxed">
+          The same principle is used in inspection cameras, endoscopes and systems for seeing around corners.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-1 font-mono text-[8px] text-outline">
+        <span class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/30">TIMSS: KNOWING</span>
+        <span class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/30">GSA: CRITICAL THINKING</span>
+        <span class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/30">COMPARTMENT: CONTROL ROOM</span>
+        <span class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/30">EQUIPMENT: PERISCOPE</span>
+        <span class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/30">MUSEUM: U-995</span>
+      </div>
+      <button onclick="app.claimSteelCredential()" class="w-full bg-primary-container text-on-primary-container font-mono text-xs py-3 px-4 rounded-xl tracking-widest uppercase font-bold shadow-[0_0_14px_rgba(56,232,166,0.4)] active:scale-[0.98] transition-transform flex items-center justify-center space-x-2">
+        <span>CLAIM CREDENTIAL</span>
+        <span class="material-symbols-outlined text-[16px]">military_tech</span>
+      </button>
+    </section>
+
+    <!-- 6. REWARD STEEL -->
+    <section id="view-reward_steel" class="hidden flex flex-col w-full text-on-surface p-4 space-y-4">
+      <div class="text-center pt-2">
+        <span class="font-mono text-[8px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-0.5 rounded border border-primary/30">LEVEL 01 COMMENDATION</span>
+        <h2 class="font-display text-lg uppercase font-bold text-on-surface mt-1">Credential Activated</h2>
+        <p class="font-mono text-[9px] text-on-surface-variant">Cadet Lunar Fish · #ISA-995-77X</p>
+      </div>
+      <div class="relative rounded-2xl bg-gradient-to-br from-surface-container-high via-surface-container to-surface-container-lowest p-4 border-2 border-primary/50 shadow-[0_0_20px_rgba(56,232,166,0.25)] space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <span class="material-symbols-outlined text-primary text-[26px]">military_tech</span>
+            <div>
+              <span class="font-mono text-[7px] text-primary tracking-widest block uppercase font-bold">ISA OFFICIAL ACCREDITATION</span>
+              <span class="font-display text-xs font-bold text-on-surface">Submarine Expedition Credential</span>
+            </div>
+          </div>
+          <span class="font-mono text-[8px] text-outline">GRADE I</span>
+        </div>
+        <p class="font-body text-[11px] text-on-surface-variant leading-relaxed">
+          “You have recognized the periscope. Your journey has just begun.”
+        </p>
+      </div>
+
+      <div class="bg-surface-container rounded-xl p-3.5 border border-secondary/40 space-y-2">
+        <div class="flex items-center space-x-1.5 text-secondary">
+          <span class="material-symbols-outlined text-[16px]">lock_open</span>
+          <span class="font-mono text-[9px] uppercase font-bold">NEXT CAMPAIGN UNLOCKED</span>
+        </div>
+        <h4 class="font-display text-xs font-bold text-on-surface">Season 02: Copper — Sonar & Periscope</h4>
+        <button onclick="app.navigate('episode_copper')" class="w-full mt-1 bg-secondary text-on-secondary font-mono text-xs py-2.5 px-3 rounded-lg font-bold tracking-wider uppercase hover:brightness-110 active:scale-95 transition-all flex items-center justify-center space-x-1.5">
+          <span>ADVANCE TO SEASON 02</span>
+          <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="app.navigate('museum')" class="p-2.5 rounded-lg bg-surface-container-low border border-outline-variant/30 text-left hover:border-primary/40">
+          <span class="font-mono text-[7px] text-outline uppercase block">HISTORICAL ARCHIVE</span>
+          <span class="font-display text-xs text-on-surface font-semibold">U-995 Memorial ↗</span>
+        </button>
+        <button onclick="app.navigate('profile')" class="p-2.5 rounded-lg bg-surface-container-low border border-outline-variant/30 text-left hover:border-primary/40">
+          <span class="font-mono text-[7px] text-outline uppercase block">RECORD DOSSIER</span>
+          <span class="font-display text-xs text-on-surface font-semibold">Cadet Dossier ↗</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 7. EPISODE COPPER -->
+    <section id="view-episode_copper" class="hidden flex flex-col w-full text-on-surface p-4 space-y-4">
+      <div class="flex items-center justify-between">
+        <button onclick="app.navigate('home')" class="flex items-center space-x-1 text-outline hover:text-primary font-mono text-[10px] uppercase">
+          <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+          <span>Back</span>
+        </button>
+        <span class="font-mono text-[8px] text-secondary bg-secondary/10 px-2 py-0.5 rounded border border-secondary/30">SEASON 02 // COPPER</span>
+      </div>
+      <div>
+        <h2 class="font-display text-lg uppercase font-bold text-on-surface">Copper — Periscope & Astronomical Observation</h2>
+        <div class="flex flex-wrap gap-1 mt-1 font-mono text-[8px] text-on-surface-variant">
+          <span class="px-1.5 py-0.5 bg-surface-container-high rounded">Array Pacific Archive</span>
+          <span class="px-1.5 py-0.5 bg-surface-container-high rounded">Conning Tower (Turm)</span>
+        </div>
+      </div>
+      <div class="relative w-full aspect-video bg-surface-container-lowest rounded-xl overflow-hidden border border-secondary/40 shadow-2xl flex flex-col justify-between p-3">
+        <div class="absolute inset-0 flex items-center justify-center opacity-40 pointer-events-none">
+          <div class="w-36 h-36 rounded-full border border-secondary border-dashed"></div>
+          <div class="absolute w-2 h-2 rounded-full bg-secondary animate-ping"></div>
+        </div>
+        <div class="relative z-10 flex items-center justify-between font-mono text-[8px] text-secondary">
+          <span class="bg-surface-dim/80 px-1.5 py-0.5 rounded">CELESTIAL ALIGNMENT</span>
+          <span class="bg-surface-dim/80 px-1.5 py-0.5 rounded">ELEV: +42° | LOCK</span>
+        </div>
+        <div class="relative z-10 flex flex-col items-center justify-center space-y-1">
+          <span class="material-symbols-outlined text-[28px] text-secondary">flare</span>
+          <span class="font-mono text-[8px] text-secondary tracking-widest uppercase">PRISM REFLECTION MATRIX</span>
+        </div>
+        <div class="relative z-10 flex items-center justify-between bg-surface-dim/80 px-2 py-1 rounded text-outline font-mono text-[8px]">
+          <span>HYDROPHONE: PASSIVE</span>
+          <span>COPPER // 02:18</span>
+        </div>
+      </div>
+      <button onclick="app.navigate('question_copper')" class="w-full bg-secondary text-on-secondary font-mono text-xs py-3 px-4 rounded-xl tracking-widest uppercase font-bold shadow-[0_0_14px_rgba(255,183,132,0.35)] active:scale-[0.98] transition-transform flex items-center justify-center space-x-2">
+        <span>CONTINUE TO CHALLENGE</span>
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </button>
+    </section>
+
+    <!-- 8. QUESTION COPPER -->
+    <section id="view-question_copper" class="hidden flex flex-col w-full text-on-surface p-4 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="font-mono text-[8px] text-secondary uppercase tracking-widest">PHASE // COPPER 01</span>
+          <h3 class="font-display text-sm uppercase font-bold text-on-surface">Tactical Challenge 02</h3>
+        </div>
+        <div class="relative w-10 h-10 flex items-center justify-center">
+          <svg class="w-10 h-10 transform -rotate-90">
+            <circle cx="20" cy="20" r="16" stroke="#1f2b35" stroke-width="3" fill="transparent"></circle>
+            <circle id="copper-timer-circle" cx="20" cy="20" r="16" stroke="#ffb784" stroke-width="3" fill="transparent" stroke-dasharray="100" stroke-dashoffset="0" class="transition-all duration-1000"></circle>
+          </svg>
+          <span id="copper-timer-text" class="absolute font-mono text-[9px] font-bold text-secondary">20s</span>
+        </div>
+      </div>
+
+      <div class="bg-surface-container rounded-xl p-3.5 border border-outline-variant/30 space-y-1.5">
+        <span class="font-mono text-[8px] text-secondary tracking-widest uppercase font-bold">TACTICAL QUESTION</span>
+        <p class="font-display text-xs font-semibold text-on-surface leading-snug">
+          What principle allows a periscope to observe objects that are not directly visible?
+        </p>
+      </div>
+
+      <div class="space-y-2">
+        <button onclick="app.checkAnswerCopper('A', this)" class="w-full text-left p-3 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-secondary transition-all flex items-start space-x-2.5 active:scale-[0.99]">
+          <span class="font-mono font-bold text-outline text-xs mt-0.5">A</span>
+          <span class="font-body text-xs text-on-surface">Reflection of light through mirrors or prisms.</span>
+        </button>
+        <button onclick="app.checkAnswerCopper('B', this)" class="w-full text-left p-3 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-secondary transition-all flex items-start space-x-2.5 active:scale-[0.99]">
+          <span class="font-mono font-bold text-outline text-xs mt-0.5">B</span>
+          <span class="font-body text-xs text-on-surface">Conversion of light into electricity.</span>
+        </button>
+        <button onclick="app.checkAnswerCopper('C', this)" class="w-full text-left p-3 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-secondary transition-all flex items-start space-x-2.5 active:scale-[0.99]">
+          <span class="font-mono font-bold text-outline text-xs mt-0.5">C</span>
+          <span class="font-body text-xs text-on-surface">Increase in air pressure.</span>
+        </button>
+        <button onclick="app.checkAnswerCopper('D', this)" class="w-full text-left p-3 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-secondary transition-all flex items-start space-x-2.5 active:scale-[0.99]">
+          <span class="font-mono font-bold text-outline text-xs mt-0.5">D</span>
+          <span class="font-body text-xs text-on-surface">Water filtration.</span>
+        </button>
+      </div>
+
+      <div id="copper-question-alert" class="hidden rounded-xl p-3 bg-secondary-container/40 border border-secondary text-secondary flex items-start space-x-2">
+        <span class="material-symbols-outlined text-[18px]">error</span>
+        <div class="text-[11px]">
+          <span class="font-mono font-bold block uppercase">MISALIGNMENT DETECTED</span>
+          <span>Review how optics navigate visual corners via reflective surfaces.</span>
+        </div>
+      </div>
+      <div id="copper-question-success" class="hidden rounded-xl p-3 bg-secondary/20 border border-secondary text-secondary flex items-start space-x-2">
+        <span class="material-symbols-outlined text-[18px]">check_circle</span>
+        <div class="text-[11px]">
+          <span class="font-mono font-bold block uppercase">LOCK CONFIRMED</span>
+          <span>Transmitting telemetry to feedback review...</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FEEDBACK COPPER -->
+    <section id="view-feedback_copper" class="hidden flex flex-col w-full text-on-surface p-4 space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="font-mono text-[8px] text-secondary bg-secondary/10 px-2 py-0.5 rounded border border-secondary/30">COPPER MATRIX VERIFIED</span>
+        <span class="font-mono text-[9px] text-secondary font-bold">+1,000 XP</span>
+      </div>
+      <div class="bg-surface-container rounded-xl p-3.5 border border-secondary/40 space-y-1.5">
+        <div class="flex items-center space-x-2 text-secondary">
+          <span class="material-symbols-outlined text-[18px]">verified</span>
+          <h2 class="font-display text-sm uppercase font-bold">CORRECT · Acoustic & Optic Lock</h2>
+        </div>
+        <p class="font-body text-[11px] text-on-surface leading-relaxed">
+          A periscope uses mirrors or prisms to reflect light and allow observation from a protected position.
+        </p>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-3.5 border border-outline-variant/30 space-y-1">
+        <span class="font-mono text-[8px] text-secondary tracking-widest uppercase font-bold">CIVIL APPLICATION</span>
+        <p class="font-body text-[11px] text-on-surface-variant leading-relaxed">
+          The periscope principle is also used in inspection cameras, endoscopes, and systems for seeing around corners.
+        </p>
+      </div>
+      <button onclick="app.claimCopperCoin()" class="w-full bg-secondary text-on-secondary font-mono text-xs py-3 px-4 rounded-xl tracking-widest uppercase font-bold shadow-[0_0_14px_rgba(255,183,132,0.4)] active:scale-[0.98] transition-transform flex items-center justify-center space-x-2">
+        <span>CLAIM COPPER COIN</span>
+        <span class="material-symbols-outlined text-[16px]">monetization_on</span>
+      </button>
+    </section>
+
+    <!-- 10. REWARD COPPER -->
+    <section id="view-reward_copper" class="hidden flex flex-col w-full text-on-surface p-4 space-y-4">
+      <div class="text-center pt-2">
+        <span class="font-mono text-[8px] text-secondary uppercase tracking-widest bg-secondary/10 px-2 py-0.5 rounded border border-secondary/30">KNOWLEDGE VALIDATED</span>
+        <h2 class="font-display text-lg uppercase font-bold text-on-surface mt-1">Copper Coin Obtained</h2>
+        <p class="font-mono text-[9px] text-on-surface-variant">Minted Block #140,208 · GHG Triangulation</p>
+      </div>
+      <div class="flex items-center justify-center py-3">
+        <div class="w-36 h-36 rounded-full border-4 border-[#ffb784] shadow-[0_0_30px_rgba(255,183,132,0.5)] sheen-effect flex flex-col items-center justify-center p-3 text-center text-[#4f2500]">
+          <span class="material-symbols-outlined text-[32px]">radar</span>
+          <span class="font-display text-xs font-black tracking-widest uppercase mt-1">COPPER COIN</span>
+          <span class="font-mono text-[7px] tracking-tight">PACIFIC ARRAY // 2026</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="app.navigate('profile')" class="p-2.5 rounded-lg bg-surface-container border border-outline-variant/30 text-center hover:border-secondary transition-all">
+          <span class="material-symbols-outlined text-[18px] text-secondary">badge</span>
+          <span class="font-mono text-[9px] block uppercase mt-0.5 text-on-surface">View Dossier</span>
+        </button>
+        <button onclick="app.navigate('grid')" class="p-2.5 rounded-lg bg-surface-container border border-outline-variant/30 text-center hover:border-secondary transition-all">
+          <span class="material-symbols-outlined text-[18px] text-primary">grid_view</span>
+          <span class="font-mono text-[9px] block uppercase mt-0.5 text-on-surface">5x5 Grid</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 11. CADET DOSSIER (PROFILE) -->
+    <section id="view-profile" class="hidden flex flex-col w-full text-on-surface p-4 space-y-3.5">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="font-display text-lg uppercase font-bold text-on-surface tracking-wide">CADET DOSSIER</h2>
+          <span class="font-mono text-[9px] text-on-surface-variant uppercase tracking-wider">Tactical Service Record & Commendations</span>
+        </div>
+        <button onclick="app.promptResetConfirmation()" class="px-2 py-1 rounded bg-error-container/20 border border-error/50 text-error text-[9px] font-mono uppercase hover:bg-error-container/40 flex items-center space-x-1">
+          <span class="material-symbols-outlined text-[12px]">restart_alt</span>
+          <span>RESET PROGRESS</span>
+        </button>
+      </div>
+
+      <!-- MANDATORY LEGAL / ETHICAL DISCLAIMER BANNER -->
+      <div class="rounded-xl p-3 bg-surface-container-lowest border-2 border-secondary/50 text-secondary shadow-md space-y-1">
+        <div class="flex items-center space-x-1.5">
+          <span class="material-symbols-outlined text-[16px]">verified_user</span>
+          <span class="font-mono text-[9px] tracking-wider uppercase font-bold">RECOGNITION NOTICE</span>
+        </div>
+        <p class="font-mono text-[9px] leading-relaxed font-bold tracking-tight text-on-surface">
+          BADGES, COINS AND CREDENTIALS ARE SYMBOLIC RECOGNITIONS. THEY ARE NOT ACADEMIC CERTIFICATIONS OR PROFESSIONAL QUALIFICATIONS.
+        </p>
+      </div>
+
+      <!-- Identity Card -->
+      <div class="bg-surface-container rounded-xl p-3.5 border border-outline-variant/30 flex items-center space-x-3.5">
+        <div class="w-14 h-14 rounded-full bg-surface-container-lowest border-2 border-primary flex items-center justify-center text-primary shadow-lg">
+          <span class="material-symbols-outlined text-[28px]">scuba_diving</span>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center space-x-1.5">
+            <span id="profile-cadet-name" class="font-display text-sm font-bold text-on-surface">LUNAR FISH</span>
+            <span id="profile-cadet-id" class="px-1.5 py-0.5 rounded bg-primary/20 text-primary font-mono text-[8px]">ID: 995-77X</span>
+          </div>
+          <span id="profile-institution" class="font-mono text-[10px] text-on-surface-variant block mt-0.5">U-995 Naval Memorial</span>
+          <div class="mt-1 flex items-center space-x-2 text-[9px] font-mono text-outline">
+            <span>SEASON: <strong id="profile-season" class="text-secondary">Steel</strong></span>
+            <span>•</span>
+            <span>XP: <strong id="profile-xp" class="text-primary font-bold">1,450 XP</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Season Progress Bar -->
+      <div class="bg-surface-container rounded-xl p-3 border border-outline-variant/30 space-y-1.5">
+        <div class="flex items-center justify-between text-[9px] font-mono">
+          <span id="profile-progress-label" class="text-on-surface uppercase font-bold">Steel Season Progress</span>
+          <span id="profile-progress-val" class="text-primary font-bold">25% CLEARED</span>
+        </div>
+        <div class="w-full h-1.5 rounded-full bg-surface-container-lowest overflow-hidden border border-outline-variant/30">
+          <div id="profile-progress-bar" style="width: 25%;" class="h-full bg-gradient-to-r from-primary-container to-secondary transition-all duration-500 rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- Missions Completed -->
+      <div class="bg-surface-container rounded-xl p-3.5 border border-outline-variant/30 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[9px] text-on-surface uppercase font-bold">MISSIONS COMPLETED</span>
+          <span id="profile-mission-count" class="font-mono text-[8px] text-outline">1 COMPLETED</span>
+        </div>
+        <div id="profile-completed-missions-list" class="space-y-1.5">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Minted Specimens, Credentials & Badges -->
+      <div class="bg-surface-container rounded-xl p-3.5 border border-outline-variant/30 space-y-2.5">
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[9px] text-on-surface uppercase font-bold">MINTED SPECIMENS & COMMENDATIONS</span>
+          <span id="profile-specimen-count" class="font-mono text-[8px] text-outline">2 ASSETS</span>
+        </div>
+        <div id="profile-badges-shelf" class="grid grid-cols-2 gap-2">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Recent Activity Timeline -->
+      <div class="bg-surface-container rounded-xl p-3.5 border border-outline-variant/30 space-y-2.5">
+        <div class="flex items-center justify-between border-b border-outline-variant/20 pb-1">
+          <span class="font-mono text-[9px] text-on-surface uppercase font-bold">RECENT ACTIVITY TIMELINE</span>
+          <span class="font-mono text-[8px] text-outline">SECURE LOG</span>
+        </div>
+        <div id="profile-activity-timeline" class="relative pl-3.5 space-y-2.5 font-mono text-[9px] before:absolute before:left-1.5 before:top-2 before:bottom-2 before:w-[1px] before:bg-outline-variant/30">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. 5x5 MISSION GRID -->
+    <section id="view-grid" class="hidden flex flex-col w-full text-on-surface p-4 space-y-3">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="font-display text-base uppercase font-bold text-on-surface">5x5 Mission Grid</h2>
+          <span class="font-mono text-[9px] text-on-surface-variant">5 Roles × 5 STEM+A Disciplines</span>
+        </div>
+        <button onclick="app.navigate('home')" class="text-outline hover:text-primary font-mono text-[10px] uppercase">
+          Close
+        </button>
+      </div>
+
+      <!-- MANDATORY GUIDING PRINCIPLE BANNER -->
+      <div class="p-2.5 rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-start space-x-2">
+        <span class="material-symbols-outlined text-[15px] text-primary shrink-0 mt-0.5">explore</span>
+        <p class="font-mono text-[9px] uppercase tracking-wider text-on-surface font-semibold leading-relaxed">
+          EVERY CELL IS AN INDEPENDENT ENTRY POINT.<br/>
+          COMPLETE THE JOURNEY AT YOUR OWN PACE.
+        </p>
+      </div>
+
+      <!-- FILTERS -->
+      <div class="space-y-1.5">
+        <!-- Season Filter -->
+        <div class="flex items-center space-x-1 overflow-x-auto pb-0.5 text-[8px] font-mono">
+          <span class="text-outline uppercase shrink-0 mr-1">SEASON:</span>
+          <button onclick="app.setGridSeasonFilter('all')" data-filter="all" class="filter-chip-season px-1.5 py-0.5 rounded bg-primary text-on-primary font-bold shrink-0">ALL SEASONS</button>
+          <button onclick="app.setGridSeasonFilter('Steel')" data-filter="Steel" class="filter-chip-season px-1.5 py-0.5 rounded bg-surface-container-high text-outline shrink-0">Steel</button>
+          <button onclick="app.setGridSeasonFilter('Copper')" data-filter="Copper" class="filter-chip-season px-1.5 py-0.5 rounded bg-surface-container-high text-outline shrink-0">Copper</button>
+          <button onclick="app.setGridSeasonFilter('Bronze')" data-filter="Bronze" class="filter-chip-season px-1.5 py-0.5 rounded bg-surface-container-high text-outline shrink-0">Bronze</button>
+          <button onclick="app.setGridSeasonFilter('Silver')" data-filter="Silver" class="filter-chip-season px-1.5 py-0.5 rounded bg-surface-container-high text-outline shrink-0">Silver</button>
+          <button onclick="app.setGridSeasonFilter('Gold')" data-filter="Gold" class="filter-chip-season px-1.5 py-0.5 rounded bg-surface-container-high text-outline shrink-0">Gold</button>
+        </div>
+        <!-- Status Filter -->
+        <div class="flex items-center space-x-1 overflow-x-auto pb-0.5 text-[8px] font-mono">
+          <span class="text-outline uppercase shrink-0 mr-1">STATUS:</span>
+          <button onclick="app.setGridStatusFilter('all')" data-status="all" class="filter-chip-status px-1.5 py-0.5 rounded bg-primary text-on-primary font-bold shrink-0">ALL STATUS</button>
+          <button onclick="app.setGridStatusFilter('available')" data-status="available" class="filter-chip-status px-1.5 py-0.5 rounded bg-surface-container-high text-outline shrink-0">Available</button>
+          <button onclick="app.setGridStatusFilter('inprogress')" data-status="inprogress" class="filter-chip-status px-1.5 py-0.5 rounded bg-surface-container-high text-outline shrink-0">In progress</button>
+          <button onclick="app.setGridStatusFilter('completed')" data-status="completed" class="filter-chip-status px-1.5 py-0.5 rounded bg-surface-container-high text-outline shrink-0">Completed</button>
+          <button onclick="app.setGridStatusFilter('locked')" data-status="locked" class="filter-chip-status px-1.5 py-0.5 rounded bg-surface-container-high text-outline shrink-0">Locked</button>
+          <button onclick="app.setGridStatusFilter('comingsoon')" data-status="comingsoon" class="filter-chip-status px-1.5 py-0.5 rounded bg-surface-container-high text-outline shrink-0">Coming soon</button>
+        </div>
+      </div>
+
+      <!-- LEGEND -->
+      <div class="bg-surface-container-low rounded-xl p-2 border border-outline-variant/30 space-y-1">
+        <div class="font-mono text-[7px] uppercase text-outline tracking-wider font-bold">MATRIX STATUS LEGEND</div>
+        <div class="grid grid-cols-5 gap-1 text-[7px] font-mono text-center">
+          <div class="p-1 rounded border border-primary bg-primary/10 text-primary flex flex-col items-center">
+            <span class="material-symbols-outlined text-[10px]">radar</span>
+            <span>Available</span>
+          </div>
+          <div class="p-1 rounded border border-secondary bg-secondary/10 text-secondary animate-pulse flex flex-col items-center">
+            <span class="material-symbols-outlined text-[10px]">change_circle</span>
+            <span>In progress</span>
+          </div>
+          <div class="p-1 rounded border border-primary/60 bg-primary-container/20 text-primary font-bold flex flex-col items-center shadow-[0_0_6px_rgba(56,232,166,0.2)]">
+            <span class="material-symbols-outlined text-[10px]">check_circle</span>
+            <span>Completed</span>
+          </div>
+          <div class="p-1 rounded border border-outline-variant/30 bg-surface-container-lowest text-outline flex flex-col items-center opacity-70">
+            <span class="material-symbols-outlined text-[10px]">lock</span>
+            <span>Locked</span>
+          </div>
+          <div class="p-1 rounded border border-dashed border-outline text-outline/80 flex flex-col items-center">
+            <span class="material-symbols-outlined text-[10px]">schedule</span>
+            <span class="truncate">Coming soon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Matrix Dynamic Table -->
+      <div class="overflow-x-auto bg-surface-container rounded-xl p-2.5 border border-outline-variant/30 shadow-inner">
+        <div id="mission-matrix-cells" class="min-w-[310px] grid grid-cols-6 gap-1 text-center font-mono text-[8px]">
+          <!-- Injected dynamically via app.renderGrid() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. MUSEUM U-995 -->
+    <section id="view-museum" class="hidden flex flex-col w-full text-on-surface p-4 space-y-4">
+      <div class="bg-surface-container-lowest rounded-xl p-3 border border-primary/30 flex items-start space-x-2">
+        <span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">info</span>
+        <div>
+          <span class="font-mono text-[8px] text-primary uppercase font-bold block">HISTORICAL FACTUAL GROUNDING</span>
+          <p class="font-body text-[11px] text-on-surface-variant leading-snug">
+            “The ISA narrative is fictional. The museum and its historical context are real. Everything you see is fiction. But there is much to discover.”
+          </p>
+        </div>
+      </div>
+      <div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/30 p-4 space-y-3">
+        <div>
+          <span class="font-mono text-[8px] text-secondary uppercase font-bold">GERMAN NAVAL MEMORIAL FOUNDATION</span>
+          <h2 class="font-display text-base uppercase font-bold text-on-surface">U-995 Technical Museum</h2>
+          <p class="font-mono text-[9px] text-outline">Laboe Beach Promenade, Baltic Coast, Germany</p>
+        </div>
+        <div class="grid grid-cols-3 gap-1.5 bg-surface-container-low p-2 rounded-lg text-center font-mono text-[9px]">
+          <div><span class="text-outline text-[7px] block">TYPE</span><span class="font-bold">VIIC/41</span></div>
+          <div><span class="text-outline text-[7px] block">LENGTH</span><span class="font-bold">67.10 m</span></div>
+          <div><span class="text-outline text-[7px] block">DISPL.</span><span class="font-bold">769 t</span></div>
+        </div>
+        <div class="flex space-x-2 pt-1">
+          <a href="https://deutscher-marinebund.de/u-boot-u-995" target="_blank" rel="noopener noreferrer" class="flex-1 bg-surface-container-high border border-outline-variant/40 rounded-lg py-2 text-center font-mono text-[9px] text-on-surface uppercase flex items-center justify-center space-x-1">
+            <span>Visit Real Museum</span>
+            <span class="material-symbols-outlined text-[12px]">open_in_new</span>
+          </a>
+          <button onclick="app.navigate('episode_steel')" class="flex-1 bg-primary-container text-on-primary-container rounded-lg py-2 font-mono text-[9px] uppercase font-bold flex items-center justify-center space-x-1">
+            <span>Launch Sim</span>
+            <span class="material-symbols-outlined text-[12px]">play_arrow</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. BATHYMETRIC SEASON MAP -->
+    <section id="view-season_map" class="hidden flex flex-col w-full text-on-surface p-4 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="font-display text-base uppercase font-bold text-on-surface">Bathymetric Season Map</h2>
+          <span class="font-mono text-[9px] text-on-surface-variant">Descent Tiers by Tactical Depth</span>
+        </div>
+        <button onclick="app.navigate('home')" class="text-outline hover:text-primary font-mono text-[10px] uppercase">Back</button>
+      </div>
+      <div class="relative bg-surface-container rounded-xl p-4 border border-outline-variant/30 space-y-4">
+        <!-- Vertical Depth Depth Gauge line -->
+        <div class="absolute left-7 top-6 bottom-6 w-0.5 bg-outline-variant/40"></div>
+        <!-- Tier 1: STEEL -->
+        <div onclick="app.navigate('episode_steel')" class="relative flex items-center space-x-3.5 pl-1 cursor-pointer">
+          <div class="w-9 h-9 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center font-mono text-[10px] shadow-[0_0_10px_#38e8a6] z-10">-50M</div>
+          <div class="flex-1 p-2 rounded-lg bg-surface-container-high border border-primary/40">
+            <span class="font-display text-xs font-bold text-primary block">TIER 01: STEEL</span>
+            <p class="font-body text-[9px] text-on-surface-variant">Dive physics, periscope optics & command.</p>
+          </div>
+        </div>
+        <!-- Tier 2: COPPER -->
+        <div onclick="app.handleCopperClick()" class="relative flex items-center space-x-3.5 pl-1 cursor-pointer">
+          <div id="map-copper-node" class="w-9 h-9 rounded-full bg-surface-container-lowest border border-outline/40 text-outline font-bold flex items-center justify-center font-mono text-[10px] z-10 transition-colors">-120M</div>
+          <div id="map-copper-card" class="flex-1 p-2 rounded-lg bg-surface-container-low border border-outline-variant/20 transition-all">
+            <span id="map-copper-title" class="font-display text-xs font-bold text-outline block">TIER 02: COPPER</span>
+            <p id="map-copper-desc" class="font-body text-[9px] text-outline">Acoustic hydrophones, prisms & astro-navigation.</p>
+          </div>
+        </div>
+        <!-- Tier 3: BRONZE -->
+        <div class="relative flex items-center space-x-3.5 pl-1 opacity-50">
+          <div class="w-9 h-9 rounded-full bg-surface-container-lowest border border-outline/20 text-outline font-bold flex items-center justify-center font-mono text-[10px] z-10">-210M</div>
+          <div class="flex-1 p-2 rounded-lg bg-surface-container-lowest border border-outline-variant/10">
+            <span class="font-display text-xs font-bold text-outline block">TIER 03: BRONZE</span>
+            <p class="font-body text-[9px] text-outline/60">Diesel arrays & ballast equilibrium.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PERSISTENT MOBILE BOTTOM NAVIGATION BAR -->
+  <nav id="app-bottom-nav" class="hidden fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/95 border-t border-outline-variant/40 backdrop-blur-md pb-safe">
+    <div class="grid grid-cols-4 h-13">
+      <button id="nav-btn-home" onclick="app.navigate('home')" class="flex flex-col items-center justify-center text-primary">
+        <span class="material-symbols-outlined text-[18px]">radar</span>
+        <span class="font-mono text-[8px] uppercase tracking-wider">Radar</span>
+      </button>
+      <button id="nav-btn-grid" onclick="app.navigate('grid')" class="flex flex-col items-center justify-center text-outline hover:text-on-surface">
+        <span class="material-symbols-outlined text-[18px]">grid_view</span>
+        <span class="font-mono text-[8px] uppercase tracking-wider">Missions</span>
+      </button>
+      <button id="nav-btn-museum" onclick="app.navigate('museum')" class="flex flex-col items-center justify-center text-outline hover:text-on-surface">
+        <span class="material-symbols-outlined text-[18px]">museum</span>
+        <span class="font-mono text-[8px] uppercase tracking-wider">Museum</span>
+      </button>
+      <button id="nav-btn-profile" onclick="app.navigate('profile')" class="flex flex-col items-center justify-center text-outline hover:text-on-surface">
+        <span class="material-symbols-outlined text-[18px]">badge</span>
+        <span class="font-mono text-[8px] uppercase tracking-wider">Dossier</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- QUICK NAVIGATION / TELEMETRY DRAWER -->
+  <div id="debug-drawer" class="hidden fixed inset-x-3 bottom-16 z-50 bg-surface-container-high/95 backdrop-blur-md rounded-xl p-3 border border-primary/40 shadow-2xl space-y-2">
+    <div class="flex items-center justify-between border-b border-outline-variant/40 pb-1">
+      <span class="font-mono text-[9px] text-primary uppercase font-bold">Quick Navigator Matrix</span>
+      <button onclick="app.toggleDebugMenu()" class="text-outline hover:text-white">
+        <span class="material-symbols-outlined text-[15px]">close</span>
+      </button>
+    </div>
+    <div class="grid grid-cols-3 gap-1 font-mono text-[8px]">
+      <button onclick="app.navigate('access'); app.toggleDebugMenu();" class="p-1 rounded bg-surface-container hover:text-primary">1. Access</button>
+      <button onclick="app.navigate('home'); app.toggleDebugMenu();" class="p-1 rounded bg-surface-container hover:text-primary">2. Home</button>
+      <button onclick="app.navigate('episode_steel'); app.toggleDebugMenu();" class="p-1 rounded bg-surface-container hover:text-primary">3. Ep Steel</button>
+      <button onclick="app.navigate('question_steel'); app.toggleDebugMenu();" class="p-1 rounded bg-surface-container hover:text-primary">4. Q Steel</button>
+      <button onclick="app.navigate('feedback_steel'); app.toggleDebugMenu();" class="p-1 rounded bg-surface-container hover:text-primary">5. Feed Steel</button>
+      <button onclick="app.navigate('reward_steel'); app.toggleDebugMenu();" class="p-1 rounded bg-surface-container hover:text-primary">6. Rew Steel</button>
+      <button onclick="app.navigate('episode_copper'); app.toggleDebugMenu();" class="p-1 rounded bg-surface-container hover:text-primary">7. Ep Copper</button>
+      <button onclick="app.navigate('question_copper'); app.toggleDebugMenu();" class="p-1 rounded bg-surface-container hover:text-primary">8. Q Copper</button>
+      <button onclick="app.navigate('reward_copper'); app.toggleDebugMenu();" class="p-1 rounded bg-surface-container hover:text-primary">9. Rew Copper</button>
+      <button onclick="app.navigate('profile'); app.toggleDebugMenu();" class="p-1 rounded bg-surface-container hover:text-primary">10. Dossier</button>
+      <button onclick="app.navigate('grid'); app.toggleDebugMenu();" class="p-1 rounded bg-surface-container hover:text-primary">11. Grid 5x5</button>
+      <button onclick="app.promptResetConfirmation(); app.toggleDebugMenu();" class="p-1 rounded bg-error-container/30 text-error font-bold">12. Reset</button>
+    </div>
+  </div>
+
+  <!-- APPLICATION JAVASCRIPT ENGINE -->
+  <script>
+    const APP_STORAGE_KEY = 'ISA_MOBILE_STATE_V3';
+
+    const defaultState = {
+      activeKey: 'ISA-U995-2026',
+      cadetNickname: 'LUNAR FISH',
+      institution: 'U-995 Naval Memorial',
+      isAuthenticated: true,
+      completedMissions: [], // ['steel_04', 'copper_01']
+      earnedCredentials: [],
+      earnedCoins: [],
+      earnedBadges: ['Sonar Scout Insignia', 'Tactical Optics Ribbon'],
+      points: 1450,
+      currentSeason: 'Steel',
+      activeView: 'home',
+      gridSeasonFilter: 'all',
+      gridStatusFilter: 'all'
+    };
+
+    class IsaApp {
+      constructor() {
+        this.state = this.loadState();
+        this.steelTimer = null;
+        this.copperTimer = null;
+        this.init();
+      }
+
+      loadState() {
+        try {
+          const raw = localStorage.getItem(APP_STORAGE_KEY);
+          if (raw) return Object.assign({}, defaultState, JSON.parse(raw));
+        } catch (e) {
+          console.error("Storage error", e);
+        }
+        return Object.assign({}, defaultState);
+      }
+
+      saveState() {
+        try {
+          localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(this.state));
+        } catch (e) {
+          console.error("Save error", e);
+        }
+        this.renderStateDependentUI();
+      }
+
+      init() {
+        this.initClock();
+        if (!this.state.isAuthenticated) {
+          this.navigate('access');
+        } else {
+          this.navigate(this.state.activeView || 'home');
+        }
+        this.renderStateDependentUI();
+      }
+
+      initClock() {
+        const update = () => {
+          const now = new Date();
+          const el = document.getElementById('access-clock');
+          if (el) {
+            el.textContent = `${String(now.getUTCHours()).padStart(2, '0')}:${String(now.getUTCMinutes()).padStart(2, '0')}:${String(now.getUTCSeconds()).padStart(2, '0')} UTC`;
+          }
+        };
+        setInterval(update, 1000);
+        update();
+      }
+
+      navigate(viewName) {
+        const views = [
+          'access', 'home', 'episode_steel', 'question_steel',
+          'feedback_steel', 'reward_steel', 'episode_copper',
+          'question_copper', 'feedback_copper', 'reward_copper',
+          'profile', 'museum', 'grid', 'season_map'
+        ];
+        views.forEach(v => {
+          const el = document.getElementById(`view-${v}`);
+          if (el) el.classList.add('hidden');
+        });
+
+        const target = document.getElementById(`view-${viewName}`);
+        if (target) {
+          target.classList.remove('hidden');
+          window.scrollTo(0, 0);
+        }
+
+        this.state.activeView = viewName;
+        this.saveState();
+
+        const topHdr = document.getElementById('app-top-header');
+        const botNav = document.getElementById('app-bottom-nav');
+
+        if (viewName === 'access') {
+          if (topHdr) topHdr.classList.add('hidden');
+          if (botNav) botNav.classList.add('hidden');
+        } else {
+          if (topHdr) topHdr.classList.remove('hidden');
+          if (botNav) botNav.classList.remove('hidden');
+        }
+
+        // Highlight active bottom nav item
+        ['home', 'grid', 'museum', 'profile'].forEach(id => {
+          const btn = document.getElementById(`nav-btn-${id}`);
+          if (btn) {
+            if (id === viewName) {
+              btn.className = "flex flex-col items-center justify-center text-primary";
+            } else {
+              btn.className = "flex flex-col items-center justify-center text-outline hover:text-on-surface";
+            }
+          }
+        });
+
+        if (viewName === 'question_steel') {
+          this.startSteelTimer();
+        } else {
+          clearInterval(this.steelTimer);
+        }
+
+        if (viewName === 'question_copper') {
+          this.startCopperTimer();
+        } else {
+          clearInterval(this.copperTimer);
+        }
+
+        if (viewName === 'grid') {
+          this.renderGrid();
+        }
+      }
+
+      promptResetConfirmation() {
+        const modal = document.getElementById('reset-confirm-modal');
+        if (modal) modal.classList.remove('hidden');
+      }
+
+      closeResetModal() {
+        const modal = document.getElementById('reset-confirm-modal');
+        if (modal) modal.classList.add('hidden');
+      }
+
+      confirmResetProgress() {
+        // Complete erase of progress and return to Access screen
+        localStorage.removeItem(APP_STORAGE_KEY);
+        this.state = {
+          activeKey: '',
+          cadetNickname: '',
+          institution: '',
+          isAuthenticated: false,
+          completedMissions: [],
+          earnedCredentials: [],
+          earnedCoins: [],
+          earnedBadges: [],
+          points: 0,
+          currentSeason: 'Steel',
+          activeView: 'access',
+          gridSeasonFilter: 'all',
+          gridStatusFilter: 'all'
+        };
+        this.closeResetModal();
+        this.saveState();
+        const inp = document.getElementById('access-input-token');
+        if (inp) inp.value = '';
+        const errBox = document.getElementById('access-error-box');
+        if (errBox) errBox.classList.add('hidden');
+        this.navigate('access');
+      }
+
+      handleAuthSubmit() {
+        const inp = document.getElementById('access-input-token');
+        const token = (inp ? inp.value.trim().toUpperCase() : '');
+        const errBox = document.getElementById('access-error-box');
+
+        const validMap = {
+          'ISA-U995-2026': 'U-995 Naval Memorial',
+          'ISA-ASOC-2026': 'Submariners’ Association',
+          'ISA-ALIADO-2026': 'Strategic Partner'
+        };
+
+        if (validMap[token]) {
+          if (errBox) errBox.classList.add('hidden');
+          this.state.isAuthenticated = true;
+          this.state.activeKey = token;
+          this.state.cadetNickname = 'LUNAR FISH';
+          this.state.institution = validMap[token];
+          if (this.state.points === 0) this.state.points = 1450;
+          if (this.state.earnedBadges.length === 0) {
+            this.state.earnedBadges = ['Sonar Scout Insignia', 'Tactical Optics Ribbon'];
+          }
+          this.saveState();
+          this.navigate('home');
+        } else {
+          // Invalid key triggers immediate warning and refuses navigation
+          if (errBox) {
+            errBox.classList.remove('hidden');
+            errBox.classList.add('animate-bounce');
+            setTimeout(() => errBox.classList.remove('animate-bounce'), 600);
+          }
+          // Do not store invalid key
+          this.state.isAuthenticated = false;
+        }
+      }
+
+      setAccessKey(key) {
+        const inp = document.getElementById('access-input-token');
+        if (inp) inp.value = key;
+      }
+
+      toggleDebugMenu() {
+        const d = document.getElementById('debug-drawer');
+        if (d) d.classList.toggle('hidden');
+      }
+
+      showDebugMenu() {
+        this.toggleDebugMenu();
+      }
+
+      toggleSimulationAudio() {
+        const icon = document.getElementById('sim-play-icon');
+        const text = document.getElementById('sim-play-text');
+        if (icon && text) {
+          if (icon.textContent === 'pause_circle') {
+            icon.textContent = 'play_circle';
+            text.textContent = 'PAUSED';
+          } else {
+            icon.textContent = 'pause_circle';
+            text.textContent = 'PLAYING';
+          }
+        }
+      }
+
+      startSteelTimer() {
+        clearInterval(this.steelTimer);
+        let seconds = 20;
+        const text = document.getElementById('steel-timer-text');
+        const circle = document.getElementById('steel-timer-circle');
+        if (text) text.textContent = '20s';
+        if (circle) circle.setAttribute('stroke-dashoffset', '0');
+
+        this.steelTimer = setInterval(() => {
+          seconds--;
+          if (text) text.textContent = `${seconds}s`;
+          if (circle) {
+            const offset = 100 - (seconds / 20) * 100;
+            circle.setAttribute('stroke-dashoffset', offset);
+          }
+          if (seconds <= 0) {
+            clearInterval(this.steelTimer);
+          }
+        }, 1000);
+      }
+
+      checkAnswerSteel(option, btnElement) {
+        const alertEl = document.getElementById('steel-question-alert');
+        const successEl = document.getElementById('steel-question-success');
+
+        if (option === 'B') {
+          clearInterval(this.steelTimer);
+          btnElement.className = "w-full text-left p-3 rounded-xl bg-primary-container/20 border-2 border-primary text-primary transition-all flex items-start space-x-2.5 glow-active";
+          if (alertEl) alertEl.classList.add('hidden');
+          if (successEl) successEl.classList.remove('hidden');
+          setTimeout(() => {
+            this.navigate('feedback_steel');
+          }, 800);
+        } else {
+          btnElement.className = "w-full text-left p-3 rounded-xl bg-secondary-container/30 border border-secondary text-secondary transition-all flex items-start space-x-2.5 animate-pulse";
+          if (alertEl) alertEl.classList.remove('hidden');
+        }
+      }
+
+      claimSteelCredential() {
+        if (!this.state.completedMissions.includes('steel_04')) {
+          this.state.completedMissions.push('steel_04');
+        }
+        if (!this.state.earnedCredentials.includes('Submarine Expedition Credential')) {
+          this.state.earnedCredentials.push('Submarine Expedition Credential');
+          this.state.points += 1000;
+        }
+        this.state.currentSeason = 'Copper';
+        this.saveState();
+        this.navigate('reward_steel');
+      }
+
+      handleCopperClick() {
+        if (this.state.completedMissions.includes('steel_04')) {
+          this.navigate('episode_copper');
+        } else {
+          alert('ACCESS RESTRICTED: Complete Steel 04 to unlock Season 02: Copper.');
+        }
+      }
+
+      startCopperTimer() {
+        clearInterval(this.copperTimer);
+        let seconds = 20;
+        const text = document.getElementById('copper-timer-text');
+        const circle = document.getElementById('copper-timer-circle');
+        if (text) text.textContent = '20s';
+        if (circle) circle.setAttribute('stroke-dashoffset', '0');
+
+        this.copperTimer = setInterval(() => {
+          seconds--;
+          if (text) text.textContent = `${seconds}s`;
+          if (circle) {
+            const offset = 100 - (seconds / 20) * 100;
+            circle.setAttribute('stroke-dashoffset', offset);
+          }
+          if (seconds <= 0) {
+            clearInterval(this.copperTimer);
+          }
+        }, 1000);
+      }
+
+      checkAnswerCopper(option, btnElement) {
+        const alertEl = document.getElementById('copper-question-alert');
+        const successEl = document.getElementById('copper-question-success');
+
+        if (option === 'A') {
+          clearInterval(this.copperTimer);
+          btnElement.className = "w-full text-left p-3 rounded-xl bg-secondary/20 border-2 border-secondary text-secondary transition-all flex items-start space-x-2.5 glow-active";
+          if (alertEl) alertEl.classList.add('hidden');
+          if (successEl) successEl.classList.remove('hidden');
+          setTimeout(() => {
+            this.navigate('feedback_copper');
+          }, 800);
+        } else {
+          btnElement.className = "w-full text-left p-3 rounded-xl bg-secondary-container/30 border border-secondary text-secondary transition-all flex items-start space-x-2.5 animate-pulse";
+          if (alertEl) alertEl.classList.remove('hidden');
+        }
+      }
+
+      claimCopperCoin() {
+        if (!this.state.completedMissions.includes('copper_01')) {
+          this.state.completedMissions.push('copper_01');
+        }
+        if (!this.state.earnedCoins.includes('Copper Coin')) {
+          this.state.earnedCoins.push('Copper Coin');
+          this.state.points += 1000;
+        }
+        this.saveState();
+        this.navigate('reward_copper');
+      }
+
+      renderStateDependentUI() {
+        const isSteelDone = this.state.completedMissions.includes('steel_04');
+        const isCopperDone = this.state.completedMissions.includes('copper_01');
+
+        // Header
+        const hdrPoints = document.getElementById('hdr-points');
+        if (hdrPoints) hdrPoints.textContent = `${this.state.points.toLocaleString()} XP`;
+
+        const hdrInst = document.getElementById('hdr-institution');
+        if (hdrInst) hdrInst.textContent = this.state.institution || 'Submarine Academy';
+
+        const hdrCallsign = document.getElementById('hdr-callsign');
+        if (hdrCallsign) hdrCallsign.textContent = this.state.cadetNickname || 'UNASSIGNED';
+
+        // Home
+        const homeCadet = document.getElementById('home-cadet-name');
+        if (homeCadet) homeCadet.textContent = this.state.cadetNickname || 'Cadet';
+
+        const homeInst = document.getElementById('home-institution-name');
+        if (homeInst) homeInst.textContent = this.state.institution || 'Naval Memorial';
+
+        const homeSeason = document.getElementById('home-season-badge');
+        if (homeSeason) homeSeason.textContent = this.state.currentSeason.toUpperCase();
+
+        // Cadet Dossier (Profile)
+        const profCadetName = document.getElementById('profile-cadet-name');
+        if (profCadetName) profCadetName.textContent = this.state.cadetNickname || 'LUNAR FISH';
+
+        const profInst = document.getElementById('profile-institution');
+        if (profInst) profInst.textContent = this.state.institution || 'U-995 Naval Memorial';
+
+        const profXp = document.getElementById('profile-xp');
+        if (profXp) profXp.textContent = `${this.state.points.toLocaleString()} XP`;
+
+        const profSeason = document.getElementById('profile-season');
+        if (profSeason) profSeason.textContent = this.state.currentSeason;
+
+        // Progress bar in Cadet Dossier
+        const profProgBar = document.getElementById('profile-progress-bar');
+        const profProgVal = document.getElementById('profile-progress-val');
+        const profProgLbl = document.getElementById('profile-progress-label');
+        if (profProgBar && profProgVal && profProgLbl) {
+          if (isCopperDone) {
+            profProgBar.style.width = '65%';
+            profProgVal.textContent = '65% CLEARED';
+            profProgLbl.textContent = 'Copper Season Progress';
+          } else if (isSteelDone) {
+            profProgBar.style.width = '45%';
+            profProgVal.textContent = '45% CLEARED';
+            profProgLbl.textContent = 'Copper Season Progress';
+          } else {
+            profProgBar.style.width = '20%';
+            profProgVal.textContent = '20% CLEARED';
+            profProgLbl.textContent = 'Steel Season Progress';
+          }
+        }
+
+        // Steel 04 card states on Home
+        const steelIcon = document.getElementById('home-steel-icon');
+        const steelBadge = document.getElementById('home-steel-badge');
+        const steelBadgeTxt = document.getElementById('home-steel-badge-txt');
+        const steelDot = document.getElementById('home-steel-dot');
+        if (isSteelDone) {
+          if (steelIcon) steelIcon.textContent = 'check_circle';
+          if (steelBadge) steelBadge.className = 'font-mono text-[8px] text-primary bg-primary/15 px-2 py-0.5 rounded border border-primary/30';
+          if (steelBadgeTxt) steelBadgeTxt.textContent = 'LOGGED';
+          if (steelDot) steelDot.classList.add('hidden');
+        } else {
+          if (steelIcon) steelIcon.textContent = 'play_arrow';
+          if (steelBadge) steelBadge.className = 'font-mono text-[8px] text-primary-fixed bg-primary-container/20 px-2 py-0.5 rounded border border-primary/30 flex items-center space-x-1';
+          if (steelBadgeTxt) steelBadgeTxt.textContent = 'LAUNCH';
+          if (steelDot) steelDot.classList.remove('hidden');
+        }
+
+        // Copper card states on Home & Season map
+        const copperIcon = document.getElementById('home-copper-icon');
+        const copperIconWrap = document.getElementById('home-copper-icon-wrap');
+        const copperTitle = document.getElementById('home-copper-title');
+        const copperSubtitle = document.getElementById('home-copper-subtitle');
+        const copperBadge = document.getElementById('home-copper-badge');
+
+        const mapCopperNode = document.getElementById('map-copper-node');
+        const mapCopperCard = document.getElementById('map-copper-card');
+        const mapCopperTitle = document.getElementById('map-copper-title');
+        const mapCopperDesc = document.getElementById('map-copper-desc');
+
+        if (isSteelDone) {
+          if (copperBadge) {
+            copperBadge.textContent = isCopperDone ? 'LOGGED' : 'AVAILABLE';
+            copperBadge.className = isCopperDone 
+              ? 'font-mono text-[8px] text-primary px-2 py-0.5 rounded bg-primary/10 border border-primary/20' 
+              : 'font-mono text-[8px] text-secondary px-2 py-0.5 rounded bg-secondary/20 border border-secondary/40 animate-pulse';
+          }
+          if (copperTitle) {
+            copperTitle.className = isCopperDone ? 'font-display text-xs font-semibold text-on-surface' : 'font-display text-xs font-semibold text-secondary';
+          }
+          if (copperSubtitle) copperSubtitle.className = 'font-mono text-[8px] text-on-surface-variant';
+          if (copperIconWrap) {
+            copperIconWrap.className = isCopperDone
+              ? 'w-7 h-7 rounded bg-primary/10 border border-primary/30 flex items-center justify-center text-primary'
+              : 'w-7 h-7 rounded bg-secondary/20 border border-secondary flex items-center justify-center text-secondary';
+          }
+          if (copperIcon) copperIcon.textContent = isCopperDone ? 'check_circle' : 'play_arrow';
+
+          if (mapCopperNode) mapCopperNode.className = 'w-9 h-9 rounded-full bg-secondary text-on-secondary font-bold flex items-center justify-center font-mono text-[10px] shadow-[0_0_10px_#ffb784] z-10';
+          if (mapCopperCard) mapCopperCard.className = 'flex-1 p-2 rounded-lg bg-surface-container-high border border-secondary/40';
+          if (mapCopperTitle) mapCopperTitle.className = 'font-display text-xs font-bold text-secondary';
+          if (mapCopperDesc) mapCopperDesc.className = 'font-body text-[9px] text-on-surface-variant';
+        } else {
+          if (copperBadge) {
+            copperBadge.textContent = 'LOCKED';
+            copperBadge.className = 'font-mono text-[8px] text-outline px-2 py-0.5 rounded bg-surface-container-high';
+          }
+          if (copperTitle) copperTitle.className = 'font-display text-xs font-semibold text-outline';
+          if (copperIconWrap) copperIconWrap.className = 'w-7 h-7 rounded bg-surface-container-high border border-outline/30 flex items-center justify-center text-outline';
+          if (copperIcon) copperIcon.textContent = 'lock';
+
+          if (mapCopperNode) mapCopperNode.className = 'w-9 h-9 rounded-full bg-surface-container-lowest border border-outline/40 text-outline font-bold flex items-center justify-center font-mono text-[10px] z-10';
+          if (mapCopperCard) mapCopperCard.className = 'flex-1 p-2 rounded-lg bg-surface-container-low border border-outline-variant/20';
+          if (mapCopperTitle) mapCopperTitle.className = 'font-display text-xs font-bold text-outline';
+        }
+
+        // Render completed missions in Dossier
+        const missionsContainer = document.getElementById('profile-completed-missions-list');
+        const missionCount = document.getElementById('profile-mission-count');
+        if (missionsContainer) {
+          let listHtml = '';
+          const completedCount = (isSteelDone ? 1 : 0) + (isCopperDone ? 1 : 0);
+          if (missionCount) missionCount.textContent = `${completedCount} VERIFIED COMPLETED`;
+
+          if (isSteelDone) {
+            listHtml += `
+              <div class="p-2 rounded-lg bg-surface-container-low border border-primary/30 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <span class="material-symbols-outlined text-primary text-[16px]">verified</span>
+                  <div>
+                    <span class="font-display text-xs text-on-surface font-semibold block">Steel 04 — Submarine Command</span>
+                    <span class="font-mono text-[8px] text-on-surface-variant">U-995 Zentrale · Periscope optics</span>
+                  </div>
+                </div>
+                <span class="font-mono text-[8px] text-primary font-bold">+1,000 XP</span>
+              </div>
+            `;
+          }
+          if (isCopperDone) {
+            listHtml += `
+              <div class="p-2 rounded-lg bg-surface-container-low border border-secondary/40 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+                  <div>
+                    <span class="font-display text-xs text-on-surface font-semibold block">Copper — Periscope & Astronomical Observation</span>
+                    <span class="font-mono text-[8px] text-on-surface-variant">Turm · Reflection prisms & angles</span>
+                  </div>
+                </div>
+                <span class="font-mono text-[8px] text-secondary font-bold">+1,000 XP</span>
+              </div>
+            `;
+          }
+          if (!isSteelDone && !isCopperDone) {
+            listHtml = `<p class="font-mono text-[9px] text-outline italic p-2">No operations logged yet. Complete tactical missions to record accomplishments.</p>`;
+          }
+          missionsContainer.innerHTML = listHtml;
+        }
+
+        // Render Badges, Coins & Credentials Shelf
+        const shelf = document.getElementById('profile-badges-shelf');
+        if (shelf) {
+          let shelfHtml = `
+            <div class="p-2 rounded-lg bg-surface-container-low border border-primary/30 flex items-center space-x-2">
+              <span class="material-symbols-outlined text-primary text-[18px]">military_tech</span>
+              <div class="truncate">
+                <span class="font-body text-[10px] text-on-surface font-semibold block truncate">Sonar Scout Insignia</span>
+                <span class="font-mono text-[7px] text-outline">INITIAL COMMENDATION</span>
+              </div>
+            </div>
+            <div class="p-2 rounded-lg bg-surface-container-low border border-secondary/30 flex items-center space-x-2">
+              <span class="material-symbols-outlined text-secondary text-[18px]">award_star</span>
+              <div class="truncate">
+                <span class="font-body text-[10px] text-on-surface font-semibold block truncate">Tactical Optics Ribbon</span>
+                <span class="font-mono text-[7px] text-outline">COMPARTMENT DEPLOYMENT</span>
+              </div>
+            </div>
+          `;
+
+          if (this.state.earnedCredentials.includes('Submarine Expedition Credential')) {
+            shelfHtml += `
+              <div class="p-2 rounded-lg bg-primary/10 border border-primary/50 flex items-center space-x-2 col-span-2">
+                <span class="material-symbols-outlined text-primary text-[20px]">workspace_premium</span>
+                <div class="truncate">
+                  <span class="font-body text-[10px] text-primary font-bold block truncate">Submarine Expedition Credential</span>
+                  <span class="font-mono text-[7px] text-on-surface-variant">GRADE I · U-995 ZENTRALE VALIDATION</span>
+                </div>
+              </div>
+            `;
+          }
+
+          if (this.state.earnedCoins.includes('Copper Coin')) {
+            shelfHtml += `
+              <div class="p-2 rounded-lg bg-secondary/15 border border-secondary/50 flex items-center space-x-2 col-span-2">
+                <span class="material-symbols-outlined text-secondary text-[20px]">monetization_on</span>
+                <div class="truncate">
+                  <span class="font-body text-[10px] text-secondary font-bold block truncate">Copper Coin</span>
+                  <span class="font-mono text-[7px] text-on-surface-variant">MINTED BLOCK #140,208 · CELESTIAL ALIGNMENT</span>
+                </div>
+              </div>
+            `;
+          }
+
+          shelf.innerHTML = shelfHtml;
+        }
+
+        const countEl = document.getElementById('profile-specimen-count');
+        if (countEl) {
+          const total = 2 + this.state.earnedCredentials.length + this.state.earnedCoins.length;
+          countEl.textContent = `${total} ASSETS LOGGED`;
+        }
+
+        // Render Recent Activity Timeline
+        const timeline = document.getElementById('profile-activity-timeline');
+        if (timeline) {
+          let tHtml = `
+            <div class="relative">
+              <span class="absolute -left-[18px] top-1 w-2 h-2 rounded-full bg-primary border border-surface"></span>
+              <span class="text-primary font-bold">10:00 UTC</span> — <span class="text-on-surface">Terminal access authenticated</span>
+            </div>
+          `;
+          if (isSteelDone) {
+            tHtml += `
+              <div class="relative">
+                <span class="absolute -left-[18px] top-1 w-2 h-2 rounded-full bg-primary-container border border-surface"></span>
+                <span class="text-primary font-bold">10:18 UTC</span> — <span class="text-on-surface font-semibold">Submarine Expedition Credential</span> earned in Steel 04.
+              </div>
+            `;
+          }
+          if (isCopperDone) {
+            tHtml += `
+              <div class="relative">
+                <span class="absolute -left-[18px] top-1 w-2 h-2 rounded-full bg-secondary border border-surface"></span>
+                <span class="text-secondary font-bold">10:35 UTC</span> — <span class="text-on-surface font-semibold">Copper Coin minted</span> (Block #140,208).
+              </div>
+            `;
+          }
+          timeline.innerHTML = tHtml;
+        }
+      }
+
+      setGridSeasonFilter(season) {
+        this.state.gridSeasonFilter = season;
+        document.querySelectorAll('.filter-chip-season').forEach(btn => {
+          if (btn.getAttribute('data-filter') === season) {
+            btn.className = "filter-chip-season px-1.5 py-0.5 rounded bg-primary text-on-primary font-bold shrink-0";
+          } else {
+            btn.className = "filter-chip-season px-1.5 py-0.5 rounded bg-surface-container-high text-outline shrink-0";
+          }
+        });
+        this.renderGrid();
+      }
+
+      setGridStatusFilter(status) {
+        this.state.gridStatusFilter = status;
+        document.querySelectorAll('.filter-chip-status').forEach(btn => {
+          if (btn.getAttribute('data-status') === status) {
+            btn.className = "filter-chip-status px-1.5 py-0.5 rounded bg-primary text-on-primary font-bold shrink-0";
+          } else {
+            btn.className = "filter-chip-status px-1.5 py-0.5 rounded bg-surface-container-high text-outline shrink-0";
+          }
+        });
+        this.renderGrid();
+      }
+
+      renderGrid() {
+        const container = document.getElementById('mission-matrix-cells');
+        if (!container) return;
+
+        const isSteelDone = this.state.completedMissions.includes('steel_04');
+        const isCopperDone = this.state.completedMissions.includes('copper_01');
+
+        const roles = ['Helm', 'Periscope', 'Diesel', 'Acoustic', 'Trim'];
+        const cols = ['SCI', 'TECH', 'ENG', 'MATH', 'ARTS'];
+
+        // Define cells with distinct states
+        // Per user request:
+        // When Copper is completed, mark the intersection PERISCOPE x SCIENCE as Completed with code "CU-A1".
+        // Steel 04 is ST-04 (Role: Periscope, Col: TECH)
+        const cellData = {
+          '0-0': { code: 'ST-01', season: 'Steel', status: 'completed', title: 'Ballast Buoyancy' },
+          '0-1': { code: 'ST-02', season: 'Steel', status: 'available', title: 'Rudder Gyroscope', action: 'episode_steel' },
+          '0-2': { code: 'BR-01', season: 'Bronze', status: 'locked', title: 'Hydrodynamic Drag' },
+          '0-3': { code: 'SI-01', season: 'Silver', status: 'locked', title: 'Compass Variation' },
+          '0-4': { code: 'GD-01', season: 'Gold', status: 'comingsoon', title: 'Archival Nav Logs' },
+
+          // Row 1: Periscope Watch
+          '1-0': { 
+            code: 'CU-A1', 
+            season: 'Copper', 
+            status: isCopperDone ? 'completed' : (isSteelDone ? 'available' : 'locked'), 
+            title: 'Periscope x Science: Celestial Reflection',
+            action: isCopperDone ? null : (isSteelDone ? 'episode_copper' : null)
+          },
+          '1-1': { 
+            code: 'ST-04', 
+            season: 'Steel', 
+            status: isSteelDone ? 'completed' : 'available', 
+            title: 'Steel 04: Periscope Optics',
+            action: isSteelDone ? null : 'episode_steel'
+          },
+          '1-2': { code: 'CU-03', season: 'Copper', status: isCopperDone ? 'inprogress' : 'locked', title: 'Reticle Collimation' },
+          '1-3': { code: 'BR-04', season: 'Bronze', status: 'locked', title: 'Angle of Attack' },
+          '1-4': { code: 'GD-02', season: 'Gold', status: 'comingsoon', title: 'Periscope Etiquette' },
+
+          // Row 2: Diesel Engine
+          '2-0': { code: 'ST-05', season: 'Steel', status: 'available', title: 'Thermal Expansion' },
+          '2-1': { code: 'BR-02', season: 'Bronze', status: 'inprogress', title: 'Fuel Injection Ratio' },
+          '2-2': { code: 'BR-03', season: 'Bronze', status: 'locked', title: 'Diesel Submerged Array' },
+          '2-3': { code: 'SI-02', season: 'Silver', status: 'locked', title: 'Torque Conversion' },
+          '2-4': { code: 'GD-03', season: 'Gold', status: 'comingsoon', title: 'Engine Room Ethos' },
+
+          // Row 3: Acoustic / Sonar
+          '3-0': { code: 'CU-02', season: 'Copper', status: isSteelDone ? 'available' : 'locked', title: 'Sound Velocity Profile' },
+          '3-1': { code: 'CU-04', season: 'Copper', status: 'locked', title: 'Doppler Frequency' },
+          '3-2': { code: 'BR-05', season: 'Bronze', status: 'locked', title: 'Hydrophone Array Assembly' },
+          '3-3': { code: 'SI-03', season: 'Silver', status: 'locked', title: 'Sonar Geometry Triangulation' },
+          '3-4': { code: 'GD-04', season: 'Gold', status: 'comingsoon', title: 'Silent Service Memory' },
+
+          // Row 4: Trim / Ballast
+          '4-0': { code: 'ST-03', season: 'Steel', status: 'completed', title: 'Hydrostatic Pressure' },
+          '4-1': { code: 'ST-06', season: 'Steel', status: 'available', title: 'Compressed Air Regulators' },
+          '4-2': { code: 'BR-06', season: 'Bronze', status: 'locked', title: 'Kingston Valve Mechanics' },
+          '4-3': { code: 'SI-04', season: 'Silver', status: 'locked', title: 'Center of Buoyancy Calc' },
+          '4-4': { code: 'GD-05', season: 'Gold', status: 'comingsoon', title: 'Memorial Heritage Preservation' }
+        };
+
+        let html = '';
+        // Header row
+        html += '<div class="p-1 font-bold text-outline text-[7px]">ROLE</div>';
+        cols.forEach(col => {
+          html += `<div class="p-1 font-bold text-primary text-[8px] bg-surface-container-high rounded">${col}</div>`;
+        });
+
+        // Rows
+        for (let r = 0; r < 5; r++) {
+          html += `<div class="p-1 font-bold text-outline text-[7px] truncate flex items-center justify-center bg-surface-container-low rounded">${roles[r]}</div>`;
+          for (let c = 0; c < 5; c++) {
+            const cell = cellData[`${r}-${c}`];
+            const seasonMatch = (this.state.gridSeasonFilter === 'all' || this.state.gridSeasonFilter === cell.season);
+            const statusMatch = (this.state.gridStatusFilter === 'all' || this.state.gridStatusFilter === cell.status);
+
+            const isDimmed = !(seasonMatch && statusMatch);
+
+            let styleClass = '';
+            let icon = '';
+
+            if (cell.status === 'completed') {
+              // Completed: Copper coin or checkmark with muted glow
+              styleClass = 'border border-primary/60 bg-primary-container/20 text-primary shadow-[0_0_6px_rgba(56,232,166,0.3)] font-bold';
+              icon = '<span class="material-symbols-outlined text-[10px]">check_circle</span>';
+            } else if (cell.status === 'available') {
+              // Available: radar-green border, subtle glow, clickable
+              styleClass = 'border border-primary bg-primary/10 text-primary glow-active cursor-pointer hover:brightness-125';
+              icon = '<span class="material-symbols-outlined text-[10px]">radar</span>';
+            } else if (cell.status === 'inprogress') {
+              // In progress: partial progress ring or animated pulse
+              styleClass = 'border border-secondary bg-secondary/15 text-secondary animate-pulse cursor-pointer';
+              icon = '<span class="material-symbols-outlined text-[10px]">change_circle</span>';
+            } else if (cell.status === 'locked') {
+              // Locked: dark, muted, non-clickable, lock icon
+              styleClass = 'border border-outline-variant/30 bg-surface-container-lowest text-outline/50 opacity-60 cursor-not-allowed';
+              icon = '<span class="material-symbols-outlined text-[10px]">lock</span>';
+            } else if (cell.status === 'comingsoon') {
+              // Coming soon: dashed border and label
+              styleClass = 'border border-dashed border-outline/50 bg-surface-container-lowest text-outline/70';
+              icon = '<span class="material-symbols-outlined text-[9px]">schedule</span>';
+            }
+
+            if (isDimmed) {
+              styleClass += ' opacity-20 filter grayscale';
+            }
+
+            html += `
+              <div onclick="app.handleCellClick('${r}-${c}', '${cell.code}', '${cell.title}', '${cell.status}', '${cell.action || ''}')" 
+                   class="h-10 p-0.5 rounded flex flex-col items-center justify-center transition-all ${styleClass}">
+                <div class="flex items-center space-x-0.5">
+                  ${icon}
+                  <span class="font-bold text-[8px]">${cell.code}</span>
+                </div>
+                <span class="text-[6px] uppercase tracking-tighter truncate max-w-[42px]">${cell.status === 'comingsoon' ? 'SOON' : cell.season}</span>
+              </div>
+            `;
+          }
+        }
+
+        container.innerHTML = html;
+      }
+
+      handleCellClick(id, code, title, status, action) {
+        if (action) {
+          this.navigate(action);
+          return;
+        }
+
+        const modal = document.getElementById('cell-detail-modal');
+        const content = document.getElementById('cell-detail-content');
+        if (!modal || !content) return;
+
+        let statusBadge = '';
+        if (status === 'completed') statusBadge = '<span class="px-2 py-0.5 rounded bg-primary/20 text-primary border border-primary/40 font-mono text-[9px] font-bold">COMPLETED</span>';
+        else if (status === 'available') statusBadge = '<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-mono text-[9px] font-bold">AVAILABLE</span>';
+        else if (status === 'inprogress') statusBadge = '<span class="px-2 py-0.5 rounded bg-secondary/20 text-secondary border border-secondary/40 font-mono text-[9px] font-bold">IN PROGRESS</span>';
+        else if (status === 'locked') statusBadge = '<span class="px-2 py-0.5 rounded bg-surface-container-high text-outline font-mono text-[9px]">LOCKED</span>';
+        else statusBadge = '<span class="px-2 py-0.5 rounded border border-dashed border-outline text-outline font-mono text-[9px]">COMING SOON</span>';
+
+        content.innerHTML = `
+          <div class="flex items-center justify-between border-b border-outline-variant/30 pb-2">
+            <span class="font-mono text-xs font-bold text-primary">${code} // CELL TELEMETRY</span>
+            ${statusBadge}
+          </div>
+          <div>
+            <h3 class="font-display text-sm font-bold text-on-surface">${title}</h3>
+            <p class="font-body text-xs text-on-surface-variant mt-1 leading-relaxed">
+              Every cell is an independent entry point into naval engineering, physics, and historical museum archives.
+            </p>
+          </div>
+          <div class="pt-2 flex justify-end">
+            <button onclick="document.getElementById('cell-detail-modal').classList.add('hidden')" class="px-3 py-1.5 bg-surface-container-high border border-outline-variant/40 rounded-lg text-xs font-mono uppercase text-on-surface">
+              Close
+            </button>
+          </div>
+        `;
+        modal.classList.remove('hidden');
+      }
+    }
+
+    // Launch single application engine instance
+    const app = new IsaApp();
+  </script>
+</body>
+</html>

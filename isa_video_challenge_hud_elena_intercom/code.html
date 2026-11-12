@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;color:#d7e4f1;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary": "#ffb784", "surface-container": "#14212a", "on-secondary-fixed": "#301400", "on-error-container": "#ffdad6", "primary-container": "#38e8a6", "inverse-surface": "#d7e4f1", "on-secondary-fixed-variant": "#713700", "on-secondary-container": "#ffc095", "surface-container-highest": "#2a3640", "tertiary-fixed": "#ffddb3", "background": "#08151e", "on-tertiary-fixed": "#291800", "error-container": "#93000a", "on-primary": "#003824", "secondary-fixed": "#ffdcc6", "outline": "#85948a", "tertiary": "#ffe6c9", "secondary-container": "#8a4400", "on-primary-fixed": "#002113", "on-primary-fixed-variant": "#005236", "surface-container-high": "#1f2b35", "on-tertiary-container": "#794e00", "on-surface": "#d7e4f1", "tertiary-container": "#ffc36f", "primary": "#92ffca", "primary-fixed-dim": "#2be19f", "tertiary-fixed-dim": "#ffb952", "primary-fixed": "#56feba", "surface-container-lowest": "#040f18", "surface": "#08151e", "on-tertiary": "#452b00", "on-surface-variant": "#bacabf", "surface-dim": "#08151e", "error": "#ffb4ab", "on-error": "#690005", "on-tertiary-fixed-variant": "#633f00", "inverse-on-surface": "#25323c", "outline-variant": "#3c4a41", "on-primary-container": "#006444", "on-secondary": "#4f2500", "surface-bright": "#2e3b45", "surface-tint": "#2be19f", "inverse-primary": "#006c49", "surface-container-low": "#101d26", "on-background": "#d7e4f1", "surface-variant": "#2a3640", "secondary-fixed-dim": "#ffb784" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-lg": "1.5rem", "margin": "3rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem", "space-md": "1rem", "space-xl": "2.5rem" }, "fontFamily": { "headline-lg": ["Space Grotesk"], "body-lg": ["Chivo"], "headline-md": ["Space Grotesk"], "telemetry-sm": ["Space Mono"], "body-md": ["Chivo"], "headline-sm": ["Space Grotesk"], "body-sm": ["Chivo"], "headline-lg-mobile": ["Space Grotesk"], "display-hero-mobile": ["Space Grotesk"], "telemetry-lg": ["Space Mono"], "label-caps": ["Space Mono"], "display-hero": ["Space Grotesk"] }, "fontSize": { "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" }], "telemetry-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-sm": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-hero-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "telemetry-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" }], "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" }], "display-hero": ["4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-background font-body-md text-on-surface flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.45)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Return to Archive Console" class="w-12 h-12 flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col"><span class="font-label-caps text-label-caps text-secondary uppercase">SUB_OP // DETAIL</span><h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight uppercase truncate max-w-[180px] sm:max-w-none">Episode Viewer</h1></div></div><div class="flex items-center gap-space-xs"><button aria-label="Operational Status" class="w-12 h-12 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">tune</span></button><div class="w-12 h-12 flex items-center justify-center"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen pb-safe"><div class="flex flex-col w-full text-on-surface transition-colors duration-300 select-none pb-8" id="tactical-console-root" style="--isa-accent: #38e8a6; --isa-bg-overlay: rgba(8, 21, 30, 0.94); --isa-alert: #ffb4ab; --isa-gold: #ffb784;">
+<!-- Tactical Navigation & Status Toolbar -->
+<section class="w-full px-gutter-mobile py-space-sm flex flex-col gap-space-xs bg-surface-container-low shadow-md border-b-0">
+<div class="flex items-center justify-between gap-space-sm">
+<!-- Back Link & Insignia Badge -->
+<div class="flex items-center gap-space-xs min-w-0">
+<img alt="ISA Academy Crest" class="w-9 h-9 object-contain rounded-full bg-surface-container-highest p-0.5 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEnqAleHqborMocgeMcjLLEbEBOBQyDcYG4BXeQpp7bEUZ6xUPJ7hAg8OKUoPr7r3n3KaDW-6WDivGSaUTBGCe4vJV6Nr6I6hq1Q4JhdfJ8MJ3A8RpjcocvAR7fD12PTYAaoph-dP-PzuxMbxu0rAuKlAdnYo_oOfyDW2pxEx97-hqy7NeYZ26g4YpE5Aw5h86uRaSc88OwGcQyM26M2Inm-pMgG1rgwYgE7Kcm1SR_Ve9a40ty5Yw"/>
+<button class="flex items-center gap-1 text-on-surface hover:text-primary transition-colors py-2 px-1 rounded-DEFAULT active:bg-surface-container-high" id="btn-back-nav" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span class="font-label-caps text-label-caps tracking-wider uppercase truncate" data-i18n="nav-back">VOLVER AL MAPA</span>
+</button>
+</div>
+<!-- Quick Tactical Mode Controls -->
+<div class="flex items-center gap-space-xs shrink-0">
+<!-- Language Switcher -->
+<button aria-label="Toggle language between Spanish and English" class="h-10 px-2.5 rounded-DEFAULT bg-surface-container-high hover:bg-surface-bright text-on-surface font-telemetry-sm text-telemetry-sm flex items-center gap-1 active:scale-95 transition-all shadow-sm" id="lang-toggle-btn" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">translate</span>
+<span class="font-bold" id="lang-indicator">ES</span>
+</button>
+<!-- Day / Night Ops Lantern Mode -->
+<button aria-label="Toggle Night Ops Red Lantern Mode" class="h-10 px-2.5 rounded-DEFAULT bg-surface-container-high hover:bg-surface-bright text-on-surface font-telemetry-sm text-telemetry-sm flex items-center gap-1 active:scale-95 transition-all shadow-sm" id="ops-toggle-btn" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary" id="ops-icon">mode_night</span>
+<span class="hidden sm:inline font-bold" id="ops-label">OPS</span>
+</button>
+</div>
+</div>
+<!-- Active Transmit Telemetry Ribbon -->
+<div class="flex items-center justify-between px-space-xs py-1 rounded-DEFAULT bg-surface-container-lowest text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" id="live-pulse"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary" id="live-dot"></span>
+</span>
+<span class="tracking-widest uppercase font-semibold text-primary" data-i18n="stream-channel">V-LINK // CANAL MAQ-01</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">graphic_eq</span>
+<span class="text-[11px] font-mono">SONAR: LOCK-NORM</span>
+</div>
+</div>
+</section>
+<!-- Video Stage + In-Place Challenge HUD Stack -->
+<section class="w-full px-gutter-mobile pt-space-sm pb-space-xs">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-surface-container-lowest shadow-xl flex items-center justify-center">
+<!-- Video Frame Backdrop (Simulated Tactical Stream) -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700" id="video-canvas" style="background-image: linear-gradient(180deg, rgba(4,18,31,0.6) 0%, rgba(8,21,30,0.85) 100%), radial-gradient(circle at 50% 40%, rgba(56,232,166,0.15) 0%, transparent 65%);">
+<!-- Submarine Reticle & Sweep Visualizer -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
+<svg class="w-48 h-48 sm:w-60 sm:h-60" fill="none" viewbox="0 0 200 200">
+<circle class="text-primary" cx="100" cy="100" r="90" stroke="currentColor" stroke-dasharray="2 4" stroke-width="0.8"></circle>
+<circle class="text-secondary" cx="100" cy="100" r="60" stroke="currentColor" stroke-width="0.8"></circle>
+<circle class="text-primary" cx="100" cy="100" r="30" stroke="currentColor" stroke-width="0.8"></circle>
+<line class="text-primary" stroke="currentColor" stroke-width="0.5" x1="100" x2="100" y1="0" y2="200"></line>
+<line class="text-primary" stroke="currentColor" stroke-width="0.5" x1="0" x2="200" y1="100" y2="100"></line>
+<path class="text-primary opacity-80" d="M100 100 L170 30" stroke="currentColor" stroke-width="1.5"></path>
+</svg>
+</div>
+<!-- Waveform HUD Trackers inside Player -->
+<div class="absolute top-3 left-3 flex items-center gap-2 bg-surface-container/90 px-2.5 py-1 rounded text-on-surface font-telemetry-sm text-telemetry-sm">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="tracking-widest">ARCHIVE: ENG-1943-SNORKEL</span>
+</div>
+<div class="absolute top-3 right-3 bg-surface-container/90 px-2 py-1 rounded font-telemetry-sm text-[11px] text-secondary">
+<span>COMPRESSION // DIESEL</span>
+</div>
+<!-- Video Player Playhead Controls (Simulated Active or Finished) -->
+<div class="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent flex flex-col gap-1 transition-opacity duration-300" id="video-default-controls">
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-full rounded-full" id="video-progress-bar"></div>
+</div>
+<div class="flex items-center justify-between font-telemetry-sm text-[11px] text-on-surface-variant pt-1">
+<div class="flex items-center gap-2">
+<button class="p-1 hover:text-primary transition-colors" id="btn-replay-preview" title="Rewind 10s" type="button">
+<span class="material-symbols-outlined text-[16px]">replay_10</span>
+</button>
+<span class="text-primary font-bold" id="video-timestamp">03:42 / 03:42</span>
+<span class="px-1.5 py-0.2 bg-primary/20 text-primary rounded text-[9px] uppercase tracking-wider" data-i18n="video-status-ended">[ FINALIZADO ]</span>
+</div>
+<button class="text-secondary hover:underline flex items-center gap-0.5" id="btn-force-hud" type="button">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span data-i18n="btn-trigger-hud">FORZAR DESAFÍO</span>
+</button>
+</div>
+</div>
+</div>
+<!-- IN-PLACE CHALLENGE HUD OVERLAY: Directly over video container -->
+<div class="absolute inset-0 z-20 flex flex-col justify-between p-3 sm:p-4 bg-surface-container-lowest/95 backdrop-blur-md transition-all duration-300 overflow-y-auto" id="challenge-hud-overlay">
+<!-- HUD Header -->
+<div class="flex items-center justify-between pb-1 bg-surface-container-low px-2.5 py-1.5 rounded-DEFAULT">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0">military_tech</span>
+<span class="font-telemetry-sm text-[11px] sm:text-telemetry-sm text-secondary truncate tracking-wider">TIMSS G8 // CELDA CU-SCI-MAQ · VAR-01</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded-full bg-primary/10 text-primary font-telemetry-sm text-[10px] tracking-widest font-bold" data-i18n="eval-status">ESTADO: EN CURSO</span>
+</div>
+<!-- Question Prompt Area -->
+<div class="py-2">
+<p class="font-headline-sm text-[1.05rem] sm:text-headline-sm leading-snug text-on-surface font-semibold" data-en="Which two conditions are essential for the fuel oil to burn inside the diesel engine cylinder?" data-es="¿Qué par de condiciones son imprescindibles para que el combustible se queme dentro del cilindro del motor diésel?" data-i18n="question-prompt" id="challenge-prompt">
+            ¿Qué par de condiciones son imprescindibles para que el combustible se queme dentro del cilindro del motor diésel?
+          </p>
+</div>
+<!-- Options Container (4 Tactical Buttons) -->
+<div class="grid grid-cols-1 gap-2 my-auto" id="options-group">
+<!-- Option A (Correct) -->
+<button class="tactical-opt-btn group w-full min-h-[48px] p-2.5 rounded-DEFAULT bg-surface-container text-left flex items-start gap-2.5 transition-all active:scale-[0.99] hover:bg-surface-bright" data-option="A" type="button">
+<span class="opt-badge px-2 py-0.5 rounded font-telemetry-sm text-telemetry-sm bg-surface-container-highest text-primary font-bold shrink-0">A</span>
+<span class="opt-label font-body-sm text-body-sm text-on-surface leading-tight pt-0.5" data-en="Oxygen available and enough heat to reach ignition." data-es="Oxígeno disponible y calor suficiente para la ignición." data-i18n="opt-a">
+              Oxígeno disponible y calor suficiente para la ignición.
+            </span>
+</button>
+<!-- Option B (Incorrect) -->
+<button class="tactical-opt-btn group w-full min-h-[48px] p-2.5 rounded-DEFAULT bg-surface-container text-left flex items-start gap-2.5 transition-all active:scale-[0.99] hover:bg-surface-bright" data-option="B" type="button">
+<span class="opt-badge px-2 py-0.5 rounded font-telemetry-sm text-telemetry-sm bg-surface-container-highest text-on-surface-variant font-bold shrink-0">B</span>
+<span class="opt-label font-body-sm text-body-sm text-on-surface leading-tight pt-0.5" data-en="Cold air in the cylinder and low injection pressure." data-es="Aire frío en el cilindro y baja presión de inyección." data-i18n="opt-b">
+              Aire frío en el cilindro y baja presión de inyección.
+            </span>
+</button>
+<!-- Option C (Incorrect) -->
+<button class="tactical-opt-btn group w-full min-h-[48px] p-2.5 rounded-DEFAULT bg-surface-container text-left flex items-start gap-2.5 transition-all active:scale-[0.99] hover:bg-surface-bright" data-option="C" type="button">
+<span class="opt-badge px-2 py-0.5 rounded font-telemetry-sm text-telemetry-sm bg-surface-container-highest text-on-surface-variant font-bold shrink-0">C</span>
+<span class="opt-label font-body-sm text-body-sm text-on-surface leading-tight pt-0.5" data-en="Water vapour in the mixture and no oxygen present." data-es="Vapor de agua en la mezcla y ausencia de oxígeno." data-i18n="opt-c">
+              Vapor de agua en la mezcla y ausencia de oxígeno.
+            </span>
+</button>
+<!-- Option D (Incorrect) -->
+<button class="tactical-opt-btn group w-full min-h-[48px] p-2.5 rounded-DEFAULT bg-surface-container text-left flex items-start gap-2.5 transition-all active:scale-[0.99] hover:bg-surface-bright" data-option="D" type="button">
+<span class="opt-badge px-2 py-0.5 rounded font-telemetry-sm text-telemetry-sm bg-surface-container-highest text-on-surface-variant font-bold shrink-0">D</span>
+<span class="opt-label font-body-sm text-body-sm text-on-surface leading-tight pt-0.5" data-en="Cold fuel oil and pressure reduced to almost vacuum." data-es="Gasóleo frío y presión reducida casi al vacío." data-i18n="opt-d">
+              Gasóleo frío y presión reducida casi al vacío.
+            </span>
+</button>
+</div>
+<!-- Success Reveal Bar (Revealed when Option A is selected) -->
+<div class="hidden flex-col gap-2 pt-2 bg-surface-container-low p-2.5 rounded-DEFAULT mt-1" id="hud-success-banner">
+<div class="flex items-center gap-2 text-primary font-telemetry-sm text-telemetry-sm">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-bold tracking-wide" data-i18n="success-title">RESPUESTA CORRECTA // VALIDADO +100 PTS</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface leading-relaxed" data-en="Exact: diesel engines don't use spark plugs; they heat air via extreme compression and rely on the oxidizer (oxygen from the snorkel) for auto-ignition." data-es="Exacto: el motor diésel no usa bujías; calienta el aire mediante compresión extrema y requiere el comburente (oxígeno suministrado por el esmórquel) para la autoignición." data-i18n="success-rationale">
+            Exacto: el motor diésel no usa bujías; calienta el aire mediante compresión extrema y requiere el comburente (oxígeno suministrado por el esmórquel) para la autoignición.
+          </p>
+<div class="flex items-center gap-2 pt-1">
+<button class="min-h-[48px] flex-1 px-4 py-2 bg-primary text-on-primary font-telemetry-lg text-[0.875rem] font-bold rounded-DEFAULT flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all" id="btn-next-badge" type="button">
+<span data-i18n="btn-claim-badge">CONTINUAR A LA INSIGNIA</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="min-h-[48px] px-3 py-2 bg-surface-container-highest text-on-surface hover:text-primary font-telemetry-sm text-telemetry-sm rounded-DEFAULT flex items-center justify-center gap-1 active:scale-95 transition-all" id="btn-hud-replay" type="button">
+<span class="material-symbols-outlined text-[16px]">replay</span>
+<span class="hidden sm:inline" data-i18n="btn-replay">REPLAY</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Auxiliary Telemetry & Scientific Brief Panel -->
+<section class="w-full px-gutter-mobile py-space-xs flex flex-col gap-space-sm">
+<div class="p-3.5 rounded-lg bg-surface-container flex flex-col gap-2 shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<span class="tracking-widest uppercase flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+<span data-i18n="pedagogy-title">TIMSS G8 · DOMINIO CIENCIAS FÍSICAS</span>
+</span>
+<span class="font-mono text-on-surface">CU-SCI-MAQ-01</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-normal" data-en="This cell assesses compression combustion principles and thermodynamics applied to submerged diesel-electric propulsion in historic naval submarines." data-es="Esta celda evalúa el principio de combustión por compresión y la termodinámica aplicada a la propulsión diésel-eléctrica sumergida en submarinos históricos de la Armada." data-i18n="pedagogy-desc">
+        Esta celda evalúa el principio de combustión por compresión y la termodinámica aplicada a la propulsión diésel-eléctrica sumergida en submarinos históricos de la Armada.
+      </p>
+</div>
+<!-- Direct Manual Help Trigger Card (Always accessible forCadets) -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="relative w-8 h-8 rounded-full overflow-hidden shrink-0 bg-surface-container-highest">
+<img alt="Elena Avatar Icon" class="w-full h-full object-cover grayscale contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh1XnZ8aGefGOwrv2aEsWLVIU1FGLtZ1UxxJQn_EVQrExejGuNz48WGEx141k1ZaIeSRLkrGC-TCJKOPbzGWDwoHOSJWXaUHwDtUYJgq3-50knYCuZZzuWEfVwRs3aICXJ-hYIpkf9mmoCyllnLpiZeuZqAWXwe_BQINnisE_rjHKFUV6MrYto0R-Tp66fDMiHKgq3MHMITb99qZl_RB_zFiajt9FK9cktm3fu-ag"/>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-primary ring-2 ring-surface"></span>
+</div>
+<div class="flex flex-col truncate">
+<span class="font-label-caps text-label-caps text-secondary uppercase" data-i18n="intercom-standby">INTERCOM EN ESPERA</span>
+<span class="font-body-sm text-[12px] text-on-surface font-medium truncate" data-i18n="mentor-name">Chief Engineer Elena (Máquinas)</span>
+</div>
+</div>
+<button class="min-h-[44px] px-3 py-1.5 bg-surface-container-highest hover:bg-surface-bright text-primary font-telemetry-sm text-telemetry-sm rounded-DEFAULT flex items-center gap-1 active:scale-95 transition-all" id="btn-call-elena" type="button">
+<span class="material-symbols-outlined text-[16px]">cell_tower</span>
+<span data-i18n="btn-open-intercom">SOLICITAR APOYO</span>
+</button>
+</div>
+</section>
+<!-- ELENA INTERCOM HELP POPUP TRANSMISSION MODAL -->
+<!-- "ELENA habla desde otro compartimento. Hoy es imagen. Mañana será video." -->
+<div class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-background/80 backdrop-blur-md hidden transition-opacity duration-300" id="elena-intercom-modal">
+<div class="w-full max-w-lg bg-surface-container-high rounded-t-xl sm:rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+<!-- Intercom Stream Header -->
+<div class="px-4 py-3 bg-surface-container-highest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-[11px] text-primary font-bold uppercase tracking-wider" data-i18n="intercom-badge">COMUNICACIÓN INTERCOM // MAMPARO 03</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase" data-i18n="intercom-target">CHIEF ENGINEER ELENA · VETERANA SUBMARINISTA</span>
+</div>
+</div>
+<button aria-label="Close Elena Intercom" class="p-2 text-on-surface-variant hover:text-on-surface rounded-full active:bg-surface-container" id="btn-close-elena-x" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Scrollable Intercom Content Body -->
+<div class="p-4 overflow-y-auto flex flex-col gap-4">
+<!-- Responsive Media Container: Future-ready for <video> or <iframe> -->
+<div class="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+<!-- Tactical Viewfinder / Elena's Transmission Stream -->
+<!-- ARCHITECT NOTE: This container is styled for a drop-in replacement with <video autoplay loop> or <iframe> -->
+<div class="relative w-36 h-36 sm:w-40 sm:h-40 shrink-0 rounded-lg overflow-hidden bg-surface-container-lowest shadow-md">
+<!-- Elena's Portrait placeholder representing current live image transmission -->
+<img alt="Elena Chief Engineer naval mentor portrait in submarine compartment" class="w-full h-full object-cover object-top contrast-110 saturate-90" id="elena-media-frame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh1XnZ8aGefGOwrv2aEsWLVIU1FGLtZ1UxxJQn_EVQrExejGuNz48WGEx141k1ZaIeSRLkrGC-TCJKOPbzGWDwoHOSJWXaUHwDtUYJgq3-50knYCuZZzuWEfVwRs3aICXJ-hYIpkf9mmoCyllnLpiZeuZqAWXwe_BQINnisE_rjHKFUV6MrYto0R-Tp66fDMiHKgq3MHMITb99qZl_RB_zFiajt9FK9cktm3fu-ag"/>
+<!-- Scanline Texture Simulation Overlay -->
+<div class="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-primary/5 to-transparent bg-[length:100%_4px] opacity-70"></div>
+<!-- Crosshairs and Status Reticle -->
+<div class="absolute inset-0 pointer-events-none flex flex-col justify-between p-1.5 font-telemetry-sm text-[9px] text-primary/80">
+<div class="flex justify-between items-center">
+<span>RX: V-LINK</span>
+<span class="text-secondary">CH-03</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+                  LIVE
+                </span>
+<span>MAQ_STAT: OK</span>
+</div>
+</div>
+</div>
+<!-- Elena's Mentor Dialogue & Guidance -->
+<div class="flex flex-col gap-2 text-left">
+<div class="flex items-center gap-1.5 text-secondary font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[15px]">record_voice_over</span>
+<span data-i18n="mentor-intro-tag">CANAL DE TRANSMISIÓN DE VOZ</span>
+</div>
+<p class="font-headline-sm text-[1.05rem] text-on-surface font-semibold italic leading-snug" data-en="“Listen to me, cadet. Down in the engine room, fire doesn't negotiate with wishes. It strictly obeys the laws of physics.”" data-es="«Escucha, cadete. En la cámara de máquinas, el fuego no negocia con los deseos. Cumple a rajatabla las leyes de la física.»" data-i18n="elena-quote">
+              «Escucha, cadete. En la cámara de máquinas, el fuego no negocia con los deseos. Cumple a rajatabla las leyes de la física.»
+            </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" data-en="A diesel engine relies on compression-ignition. There are no spark plugs: the piston compresses air so violently that its temperature spikes past the auto-ignition point. But without fresh oxidizer, no fire can burn." data-es="El motor diésel es un motor de encendido por compresión. No tiene bujías eléctricas: el pistón comprime el aire tan bruscamente que eleva su temperatura sobre el punto de autoignición. Pero sin comburente renovado, no hay llama." data-i18n="elena-explanation">
+              El motor diésel es un motor de encendido por compresión. No tiene bujías eléctricas: el pistón comprime el aire tan bruscamente que eleva su temperatura sobre el punto de autoignición. Pero sin comburente renovado, no hay llama.
+            </p>
+</div>
+</div>
+<!-- Pedagogical Hint Compartment (No direct answer letter revealed) -->
+<div class="p-3 rounded-DEFAULT bg-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">lightbulb</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-secondary uppercase" data-i18n="tactical-hint-title">PISTA TÁCTICA DEL INGENIERO:</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-normal" data-en="Think about why we raise the snorkel mast at periscope depth and why the intake air needs heavy compression before injecting fuel oil." data-es="Recuerda para qué izamos el mástil del esmórquel a cota periscópica y por qué el aire aspirado necesita ser fuertemente comprimido antes de atomizar el gasóleo." data-i18n="tactical-hint-text">
+              Recuerda para qué izamos el mástil del esmórquel a cota periscópica y por qué el aire aspirado necesita ser fuertemente comprimido antes de atomizar el gasóleo.
+            </p>
+</div>
+</div>
+</div>
+<!-- Action Footer with minimum 48px touch targets -->
+<div class="p-4 bg-surface-container-lowest flex flex-col sm:flex-row gap-2">
+<button class="min-h-[48px] flex-1 px-4 py-3 bg-primary text-on-primary font-telemetry-lg text-telemetry-lg rounded-DEFAULT font-bold flex items-center justify-center gap-2 shadow-md active:scale-95 transition-all" id="btn-dismiss-retry" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+<span data-i18n="btn-retry-question">REINTENTAR PREGUNTA</span>
+</button>
+<button class="min-h-[48px] px-4 py-3 bg-surface-container-high hover:bg-surface-bright text-secondary font-telemetry-sm text-telemetry-sm rounded-DEFAULT flex items-center justify-center gap-1.5 active:scale-95 transition-all" id="btn-open-capsule" type="button">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span data-i18n="btn-view-capsule">CÁPSULA (ESMÓRQUEL)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Mandatory Compliance, Disclaimers & Local-First Privacy Guarantee -->
+<footer class="w-full px-gutter-mobile pt-space-md pb-space-sm flex flex-col gap-2 text-center text-on-surface-variant font-telemetry-sm text-[11px] leading-relaxed">
+<div class="flex items-center justify-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span class="font-bold tracking-wider" data-i18n="disclaimer-badge">SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION</span>
+</div>
+<p class="max-w-md mx-auto text-on-surface-variant/80 text-[10px]" data-i18n="privacy-statement">
+      Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required.
+    </p>
+</footer>
+</div>
+<script>
+  (function initTacticalConsole() {
+    // State management
+    let currentLang = 'ES';
+    let isNightOps = false;
+    let selectedOption = null;
+
+    // DOM Elements
+    const root = document.getElementById('tactical-console-root');
+    const langBtn = document.getElementById('lang-toggle-btn');
+    const langIndicator = document.getElementById('lang-indicator');
+    const opsBtn = document.getElementById('ops-toggle-btn');
+    const opsIcon = document.getElementById('ops-icon');
+    const opsLabel = document.getElementById('ops-label');
+    const livePulse = document.getElementById('live-pulse');
+    const liveDot = document.getElementById('live-dot');
+
+    const challengeOverlay = document.getElementById('challenge-hud-overlay');
+    const optionsGroup = document.getElementById('options-group');
+    const optButtons = document.querySelectorAll('.tactical-opt-btn');
+    const successBanner = document.getElementById('hud-success-banner');
+    const forceHudBtn = document.getElementById('btn-force-hud');
+    const replayPreviewBtn = document.getElementById('btn-replay-preview');
+    const hudReplayBtn = document.getElementById('btn-hud-replay');
+
+    const elenaModal = document.getElementById('elena-intercom-modal');
+    const btnCallElena = document.getElementById('btn-call-elena');
+    const btnCloseElenaX = document.getElementById('btn-close-elena-x');
+    const btnDismissRetry = document.getElementById('btn-dismiss-retry');
+    const btnOpenCapsule = document.getElementById('btn-open-capsule');
+    const btnNextBadge = document.getElementById('btn-next-badge');
+
+    // Localization dictionary
+    const i18nDict = {
+      ES: {
+        'nav-back': 'VOLVER AL MAPA',
+        'stream-channel': 'V-LINK // CANAL MAQ-01',
+        'video-status-ended': '[ FINALIZADO ]',
+        'btn-trigger-hud': 'FORZAR DESAFÍO',
+        'eval-status': 'ESTADO: EN CURSO',
+        'success-title': 'RESPUESTA CORRECTA // VALIDADO +100 PTS',
+        'btn-claim-badge': 'CONTINUAR A LA INSIGNIA',
+        'btn-replay': 'REPLAY',
+        'pedagogy-title': 'TIMSS G8 · DOMINIO CIENCIAS FÍSICAS',
+        'pedagogy-desc': 'Esta celda evalúa el principio de combustión por compresión y la termodinámica aplicada a la propulsión diésel-eléctrica sumergida en submarinos históricos de la Armada.',
+        'intercom-standby': 'INTERCOM EN ESPERA',
+        'mentor-name': 'Chief Engineer Elena (Máquinas)',
+        'btn-open-intercom': 'SOLICITAR APOYO',
+        'intercom-badge': 'COMUNICACIÓN INTERCOM // MAMPARO 03',
+        'intercom-target': 'CHIEF ENGINEER ELENA · VETERANA SUBMARINISTA',
+        'mentor-intro-tag': 'CANAL DE TRANSMISIÓN DE VOZ',
+        'tactical-hint-title': 'PISTA TÁCTICA DEL INGENIERO:',
+        'btn-retry-question': 'REINTENTAR PREGUNTA',
+        'btn-view-capsule': 'CÁPSULA (ESMÓRQUEL)',
+        'disclaimer-badge': 'SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION',
+        'privacy-statement': 'Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required.'
+      },
+      EN: {
+        'nav-back': 'BACK TO MAP',
+        'stream-channel': 'V-LINK // CH-MAQ-01',
+        'video-status-ended': '[ COMPLETED ]',
+        'btn-trigger-hud': 'TRIGGER HUD',
+        'eval-status': 'STATUS: IN PROGRESS',
+        'success-title': 'CORRECT ANSWER // VALIDATED +100 PTS',
+        'btn-claim-badge': 'PROCEED TO BADGE',
+        'btn-replay': 'REPLAY',
+        'pedagogy-title': 'TIMSS G8 · PHYSICAL SCIENCE DOMAIN',
+        'pedagogy-desc': 'This cell assesses compression combustion principles and thermodynamics applied to submerged diesel-electric propulsion in historic naval submarines.',
+        'intercom-standby': 'INTERCOM ON STANDBY',
+        'mentor-name': 'Chief Engineer Elena (Engine Rm)',
+        'btn-open-intercom': 'REQUEST INTEL',
+        'intercom-badge': 'INTERCOM TRANSMISSION // BULKHEAD 03',
+        'intercom-target': 'CHIEF ENGINEER ELENA · SUBMARINE VETERAN',
+        'mentor-intro-tag': 'VOICE LINK ACTIVE',
+        'tactical-hint-title': 'ENGINEER TACTICAL INTEL:',
+        'btn-retry-question': 'RETRY QUESTION',
+        'btn-view-capsule': 'CAPSULE (SNORKEL)',
+        'disclaimer-badge': 'SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION',
+        'privacy-statement': 'Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required.'
+      }
+    };
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      langIndicator.textContent = lang;
+
+      // Update static dictionary keys
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (i18nDict[lang] && i18nDict[lang][key]) {
+          el.textContent = i18nDict[lang][key];
+        }
+      });
+
+      // Update bilingual rich text nodes
+      document.querySelectorAll('[data-es][data-en]').forEach((el) => {
+        el.textContent = lang === 'ES' ? el.getAttribute('data-es') : el.getAttribute('data-en');
+      });
+    }
+
+    function toggleOpsMode() {
+      isNightOps = !isNightOps;
+      if (isNightOps) {
+        root.style.setProperty('--isa-accent', '#FF3B30');
+        root.style.setProperty('--isa-alert', '#FF453A');
+        root.style.setProperty('--isa-gold', '#FF857A');
+        liveDot.classList.replace('bg-primary', 'bg-error');
+        livePulse.classList.replace('bg-primary', 'bg-error');
+        opsIcon.textContent = 'light_mode';
+        opsIcon.classList.replace('text-secondary', 'text-error');
+        root.classList.add('night-ops-active');
+      } else {
+        root.style.setProperty('--isa-accent', '#38e8a6');
+        root.style.setProperty('--isa-alert', '#ffb4ab');
+        root.style.setProperty('--isa-gold', '#ffb784');
+        liveDot.classList.replace('bg-error', 'bg-primary');
+        livePulse.classList.replace('bg-error', 'bg-primary');
+        opsIcon.textContent = 'mode_night';
+        opsIcon.classList.replace('text-error', 'text-secondary');
+        root.classList.remove('night-ops-active');
+      }
+    }
+
+    function resetQuestionState() {
+      optButtons.forEach((btn) => {
+        btn.disabled = false;
+        btn.classList.remove(
+          'bg-primary-container',
+          'text-on-primary-container',
+          'bg-error-container',
+          'text-on-error-container',
+          'ring-2',
+          'ring-primary',
+          'ring-error',
+          'opacity-50'
+        );
+        btn.classList.add('bg-surface-container', 'text-on-surface');
+        const badge = btn.querySelector('.opt-badge');
+        badge.classList.remove('bg-primary', 'text-on-primary', 'bg-error', 'text-on-error');
+        badge.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+      });
+      successBanner.classList.add('hidden');
+      successBanner.classList.remove('flex');
+    }
+
+    function handleOptionSelect(e) {
+      const btn = e.currentTarget;
+      const opt = btn.getAttribute('data-option');
+      selectedOption = opt;
+
+      if (opt === 'A') {
+        // Correct Answer
+        btn.classList.remove('bg-surface-container');
+        btn.classList.add('bg-primary-container', 'text-on-primary-container', 'shadow-lg');
+        const badge = btn.querySelector('.opt-badge');
+        badge.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+        badge.classList.add('bg-on-primary-container', 'text-primary-container');
+
+        // Disable other options cleanly
+        optButtons.forEach((other) => {
+          if (other !== btn) {
+            other.disabled = true;
+            other.classList.add('opacity-40');
+          }
+        });
+
+        // Show success rationale
+        successBanner.classList.remove('hidden');
+        successBanner.classList.add('flex');
+      } else {
+        // Incorrect Answer -> Highlight error & trigger Elena transmission
+        btn.classList.remove('bg-surface-container');
+        btn.classList.add('bg-error-container', 'text-on-error-container');
+        const badge = btn.querySelector('.opt-badge');
+        badge.classList.add('bg-error', 'text-on-error');
+
+        // Slight delay for feedback before opening intercom
+        setTimeout(() => {
+          openElenaModal();
+        }, 320);
+      }
+    }
+
+    function openElenaModal() {
+      elenaModal.classList.remove('hidden');
+      elenaModal.classList.add('flex');
+    }
+
+    function closeElenaModal() {
+      elenaModal.classList.add('hidden');
+      elenaModal.classList.remove('flex');
+    }
+
+    // Event Listeners
+    langBtn.addEventListener('click', () => {
+      applyLanguage(currentLang === 'ES' ? 'EN' : 'ES');
+    });
+
+    opsBtn.addEventListener('click', toggleOpsMode);
+
+    optButtons.forEach((btn) => {
+      btn.addEventListener('click', handleOptionSelect);
+    });
+
+    btnCallElena.addEventListener('click', openElenaModal);
+    btnCloseElenaX.addEventListener('click', closeElenaModal);
+
+    btnDismissRetry.addEventListener('click', () => {
+      closeElenaModal();
+      resetQuestionState();
+    });
+
+    btnOpenCapsule.addEventListener('click', () => {
+      alert(currentLang === 'ES' 
+        ? 'Accediendo a la cápsula técnica: «Esmórquel y toma de aire en inmersión»...' 
+        : 'Accessing technical capsule: “Snorkel and Submerged Air Intake”...');
+    });
+
+    btnNextBadge.addEventListener('click', () => {
+      alert(currentLang === 'ES' 
+        ? '¡Desafío superado! Acreditando celda CU-SCI-MAQ en la libreta del cadete...' 
+        : 'Challenge completed! Crediting cell CU-SCI-MAQ to Cadet Log...');
+    });
+
+    forceHudBtn.addEventListener('click', () => {
+      challengeOverlay.classList.toggle('hidden');
+    });
+
+    hudReplayBtn.addEventListener('click', () => {
+      resetQuestionState();
+      alert(currentLang === 'ES' ? 'Reiniciando segmento de video...' : 'Replaying video segment...');
+    });
+
+    replayPreviewBtn.addEventListener('click', () => {
+      alert(currentLang === 'ES' ? 'Retrocediendo 10 segundos...' : 'Rewinding 10 seconds...');
+    });
+
+    // Initialize with default state
+    applyLanguage('ES');
+  })();
+</script></main></body></html>

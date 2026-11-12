@@ -1,0 +1,410 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-container": "#794e00", "secondary-container": "#8a4400", "on-primary-fixed-variant": "#005236", "on-primary-container": "#006444", "surface-tint": "#2be19f", "outline": "#85948a", "on-background": "#d7e4f1", "primary-fixed": "#56feba", "error": "#ffb4ab", "inverse-primary": "#006c49", "on-primary": "#003824", "outline-variant": "#3c4a41", "surface-container-low": "#101d26", "on-tertiary-fixed": "#291800", "surface-container-highest": "#2a3640", "tertiary-container": "#ffc36f", "on-surface": "#d7e4f1", "surface-container-high": "#1f2b35", "inverse-surface": "#d7e4f1", "on-error": "#690005", "surface-dim": "#08151e", "on-tertiary": "#452b00", "primary-container": "#38e8a6", "tertiary-fixed-dim": "#ffb952", "surface-variant": "#2a3640", "surface-bright": "#2e3b45", "on-surface-variant": "#bacabf", "surface": "#08151e", "on-secondary-fixed-variant": "#713700", "on-secondary": "#4f2500", "primary-fixed-dim": "#2be19f", "on-error-container": "#ffdad6", "secondary-fixed": "#ffdcc6", "secondary-fixed-dim": "#ffb784", "tertiary": "#ffe6c9", "tertiary-fixed": "#ffddb3", "primary": "#92ffca", "surface-container": "#14212a", "inverse-on-surface": "#25323c", "on-secondary-container": "#ffc095", "on-primary-fixed": "#002113", "secondary": "#ffb784", "surface-container-lowest": "#040f18", "on-secondary-fixed": "#301400", "error-container": "#93000a", "on-tertiary-fixed-variant": "#633f00", "background": "#08151e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-mobile": "1rem", "space-xs": "0.25rem", "gutter": "1.5rem", "margin-mobile": "1.25rem", "space-md": "1rem", "space-lg": "1.5rem", "margin": "3rem", "space-xl": "2.5rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-sm": ["Space Grotesk"], "telemetry-lg": ["Space Mono"], "body-lg": ["Chivo"], "label-caps": ["Space Mono"], "telemetry-sm": ["Space Mono"], "headline-md": ["Space Grotesk"], "display-hero-mobile": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "display-hero": ["Space Grotesk"], "body-sm": ["Chivo"], "headline-lg": ["Space Grotesk"], "body-md": ["Chivo"] }, "fontSize": { "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "telemetry-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" }], "telemetry-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" }], "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" }], "display-hero-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-hero": ["4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_12px_rgba(4,18,31,0.6)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex flex-col justify-center gap-0.5"><div class="flex items-center gap-space-xs"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_rgba(56,232,166,0.8)]"></span><span class="font-label-caps text-label-caps tracking-widest text-primary-container uppercase">ISA // SYS.LOG-084</span></div><div class="flex items-center gap-space-xs"><span class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold tracking-tight uppercase" data-i18n="profile_title" data-en="VISITOR PROFILE" data-es="PERFIL DE VISITANTE">VISITOR PROFILE</span><span class="font-telemetry-sm text-telemetry-sm text-outline tracking-wider">[#47-NX]</span></div></div><div class="flex items-center gap-2"><button id="lang-toggle-btn" type="button" aria-label="Switch language" class="flex items-center justify-center min-w-[48px] min-h-[48px] px-2 py-1.5 rounded-lg bg-surface-container hover:bg-surface-bright text-primary border border-outline-variant transition-colors gap-1.5"><span class="material-symbols-outlined text-[18px]">translate</span><span id="lang-indicator" class="font-telemetry-sm text-telemetry-sm font-bold tracking-wider">ES</span></button><div class="hidden sm:flex flex-col items-end"><span class="font-label-caps text-label-caps text-outline uppercase" data-i18n="visitor_status" data-en="VISITOR STATUS" data-es="ESTADO VISITANTE">VISITOR STATUS</span><span class="font-telemetry-sm text-telemetry-sm text-primary tracking-wide">ONLINE // SUB-400M</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-8 space-y-4 px-margin-mobile">
+<!-- 1. IDENTIDAD DEL CADETE & CREDENCIAL LOCAL -->
+<div class="flex flex-col gap-3 pt-2"><!-- Status Badge -->
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg w-fit shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase" data-i18n="cred_record" data-en="LOCAL-FIRST CREDENTIAL RECORD // NO ACCOUNT REQUIRED" data-es="REGISTRO CREDENCIAL LOCAL // SIN CUENTA REQUERIDA">
+  LOCAL-FIRST CREDENTIAL RECORD // NO ACCOUNT REQUIRED
+</span>
+</div>
+<!-- Callsign & Spec Card -->
+<div class="relative overflow-hidden bg-surface-container rounded-xl p-4 shadow-md">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/5 via-transparent to-secondary-container/10 pointer-events-none"></div>
+<div class="relative flex flex-col gap-3.5">
+<div class="flex items-start gap-4">
+<!-- Sonar Compass Avatar -->
+<div class="relative flex-shrink-0 w-16 h-16 rounded-xl bg-surface-container-highest flex items-center justify-center shadow-inner">
+<svg class="w-12 h-12 text-primary-container" fill="none" stroke="currentColor" viewBox="0 0 100 100">
+<circle class="opacity-40" cx="50" cy="50" r="42" stroke-dasharray="4 2" stroke-width="2"></circle>
+<circle class="opacity-60" cx="50" cy="50" r="28" stroke-width="1.5"></circle>
+<circle class="opacity-80" cx="50" cy="50" r="14" stroke-width="1"></circle>
+<line class="opacity-70" stroke-width="1.5" x1="50" x2="50" y1="8" y2="92"></line>
+<line class="opacity-70" stroke-width="1.5" x1="8" x2="92" y1="50" y2="50"></line>
+<path d="M50 20 L56 44 L80 50 L56 56 L50 80 L44 56 L20 50 L44 44 Z" fill="#38e8a6" fill-opacity="0.35" stroke="#38e8a6" stroke-width="2"></path>
+<circle cx="50" cy="50" fill="#38e8a6" r="3"></circle>
+</svg>
+<span class="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-surface-container-lowest text-[9px] font-telemetry-sm text-primary font-bold">✓</span>
+</div>
+<!-- Private record metadata label -->
+<div class="flex flex-col justify-center min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider" data-i18n="priv_reg" data-en="PRIVATE REGISTRATION" data-es="REGISTRO PRIVADO">PRIVATE REGISTRATION</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary tracking-widest font-bold">#ISA-VIS-0492</span>
+</div>
+<span class="font-telemetry-sm text-[0.7rem] text-primary tracking-wide uppercase mt-1" data-i18n="explorer_status" data-en="VERIFIED EXPLORER // T-01 &amp; T-02" data-es="EXPLORADOR VERIFICADO // T-01 &amp; T-02">VERIFIED EXPLORER // T-01 &amp; T-02</span>
+</div>
+</div>
+<!-- Nickname full-width un-truncated on its own line -->
+<div class="w-full pt-1 border-t border-outline-variant/30">
+<h1 class="font-headline-md text-headline-md text-on-surface uppercase font-bold tracking-tight leading-tight" data-i18n="visitor_name" data-en="VISITOR: LUNAR FISH" data-es="VISITANTE: LUNAR FISH">
+  VISITOR: LUNAR FISH
+</h1>
+<div class="flex flex-wrap items-center gap-2 mt-2">
+<div class="flex items-center gap-1.5 bg-surface-container-high px-2.5 py-1 rounded">
+<span class="material-symbols-outlined text-secondary text-[16px]">engineering</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary-fixed tracking-wide uppercase" data-i18n="specialty" data-en="#ISA-VIS-0492 · MAQUINISTA &amp; ELECTRÓNICA" data-es="#ISA-VIS-0492 · MAQUINISTA &amp; ELECTRÓNICA">#ISA-VIS-0492 · MAQUINISTA &amp; ELECTRÓNICA</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Warning / Official Disclaimer Banner -->
+<div class="mt-4 bg-surface-container-lowest rounded-lg p-3 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary-container text-[20px] flex-shrink-0 mt-0.5">shield</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-[0.625rem] text-secondary tracking-widest uppercase font-bold" data-i18n="disclaimer_title" data-en="OFFICIAL NOTICE // SYMBOLIC RECOGNITION" data-es="AVISO OFICIAL // RECONOCIMIENTO SIMBÓLICO">
+  OFFICIAL NOTICE // SYMBOLIC RECOGNITION
+</span>
+<p class="font-telemetry-sm text-[0.7rem] leading-tight text-on-surface-variant uppercase mt-0.5">
+  SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION
+</p>
+</div>
+</div>
+</div></div>
+<!-- 2. MÉTRICAS DE TELEMETRÍA (isa-progress-v1 schema) -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">query_stats</span>
+<span class="font-telemetry-lg text-telemetry-sm text-on-surface font-bold uppercase tracking-wider">
+          Métricas de Telemetría
+        </span>
+</div>
+<span class="font-label-caps text-[0.625rem] text-outline uppercase tracking-widest">SCHEMA: ISA-PROGRESS-V1</span>
+</div>
+<!-- 4-Card Tactical Telemetry Grid -->
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Puntos Totales -->
+<div class="bg-surface-container p-3 rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Puntos Totales</span>
+<span class="material-symbols-outlined text-primary text-[18px]">radar</span>
+</div>
+<div class="mt-2">
+<span class="font-display-hero-mobile text-headline-md text-primary font-bold">750</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-bold ml-1">PTS</span>
+</div>
+<span class="font-telemetry-sm text-[0.65rem] text-outline mt-1 truncate">XP Acumulada ISA</span>
+</div>
+<!-- Racha Activa -->
+<div class="bg-surface-container p-3 rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Racha Activa</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">local_fire_department</span>
+</div>
+<div class="mt-2">
+<span class="font-display-hero-mobile text-headline-md text-secondary font-bold">5</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-bold ml-1">DÍAS</span>
+</div>
+<span class="font-telemetry-sm text-[0.65rem] text-outline mt-1 truncate">MÁXIMA: 8 DÍAS</span>
+</div>
+<!-- Misiones Completadas -->
+<div class="bg-surface-container p-3 rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Misiones</span>
+<span class="material-symbols-outlined text-primary text-[18px]">task_alt</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">7 / 43</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 16%;"></div>
+</div>
+<span class="font-telemetry-sm text-[0.65rem] text-outline mt-1 truncate">16% de cobertura</span>
+</div>
+<!-- Insignias Obtenidas -->
+<div class="bg-surface-container p-3 rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Insignias</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">military_tech</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">7</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-bold ml-1">OBTENIDAS</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="font-telemetry-sm text-[0.65rem] text-outline bg-surface-container-highest px-1.5 py-0.5 rounded">3 Acero</span>
+<span class="font-telemetry-sm text-[0.65rem] text-secondary bg-surface-container-highest px-1.5 py-0.5 rounded">4 Cobre</span>
+</div>
+</div>
+</div>
+<!-- Seasons Explored Progress Bars -->
+<div class="bg-surface-container rounded-xl p-4 flex flex-col gap-3 mt-1 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">PROFUNDIDAD DE ARCHIVO // TEMPORADAS</span>
+<span class="font-telemetry-sm text-[0.65rem] text-primary">ACTIVO: T-01 &amp; T-02</span>
+</div>
+<!-- Temporada 01: Acero -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-bold">T-01: ACERO // -50M</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface">3/8 Estaciones (38%)</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-outline h-full rounded-full transition-all duration-500" style="width: 38%;"></div>
+</div>
+<span class="font-body-sm text-[0.75rem] text-outline">Fase Descubrimiento · Arquitectura &amp; Casco</span>
+</div>
+<!-- Temporada 02: Cobre -->
+<div class="flex flex-col gap-1.5 pt-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold">T-02: COBRE // -120M</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary">4/20 Celdas (20%)</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 20%;"></div>
+</div>
+<span class="font-body-sm text-[0.75rem] text-outline">Fase Comprensión · Propulsión, Red &amp; Vapor</span>
+</div>
+<!-- Temporada 03: Bronce (Locked) -->
+<div class="flex flex-col gap-1.5 pt-2 opacity-60">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[14px]">lock</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-bold">T-03: BRONCE // -210M</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">0/25 (Bloqueado)</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-surface-bright h-full rounded-full" style="width: 0%;"></div>
+</div>
+<span class="font-body-sm text-[0.75rem] text-outline">Fase Aplicación · Maniobra Táctica Submarina [Próximamente]</span>
+</div>
+</div>
+</div>
+<!-- Visual Asset: Cadete en Consola Táctica ISA -->
+<div class="relative w-full h-36 rounded-xl overflow-hidden shadow-md">
+<img class="w-full h-full object-cover brightness-75" data-alt="A tactical submarine console interface displaying underwater telemetry, ocean depths sonar rings, deep sea dark navy hue, phosphor green and amber display glow, cinematic archival naval museum atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNjbHXsO7E_zwuBUUjc7kf-Kvqqvyy9ikAJOFx-daK41e4LhY8gFjfhJFGegwDCe1ajtVIF3baAw5gqPVaCynC5O4xW3-G4FJtvqxQ8h035bMh79IybpOmCkjObX3u5S-QHKFDcZxA73Wm94KOQTpLHGv4VrHl2xxeZWLyN8we4uKtx7XcCnCnyXylase421iQX5j_EBx0LQVCQagjxgboo_t2GG3pJOeUnFqMNno">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-caps text-label-caps text-primary tracking-widest uppercase" data-i18n="sensor_title" data-en="ACTIVE VISITOR SENSORIOMETRY RECORD" data-es="REGISTRO SENSORIOMETRÍA DE VISITANTE">ACTIVE VISITOR SENSORIOMETRY RECORD</span></div><span class="font-telemetry-sm text-[0.65rem] text-on-surface-variant">SUB-400M SPEC</span></div>
+</div>
+<!-- 3. RECIENTES INSIGNIAS OBTENIDAS -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">military_tech</span>
+<span class="font-telemetry-lg text-telemetry-sm text-on-surface font-bold uppercase tracking-wider">
+          Insignias Recientes
+        </span>
+</div>
+<span class="font-label-caps text-label-caps text-primary uppercase">7 VALIDADAS</span>
+</div>
+<!-- Lista de Insignias -->
+<div class="flex flex-col gap-2">
+<!-- Ribbon 1 -->
+<div class="bg-surface-container p-3 rounded-xl flex items-center justify-between gap-3 shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-[22px]">science</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-sm text-on-surface font-semibold truncate">
+              Cinta Ciencia · Maquinista
+            </span>
+<span class="font-telemetry-sm text-[0.6875rem] text-outline truncate">
+              ID: CU-SCI-MAQ // FASE COBRE
+            </span>
+<span class="font-label-caps text-[0.55rem] text-outline-variant uppercase tracking-wider mt-0.5 truncate">
+              SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION
+            </span>
+</div>
+</div>
+<span class="font-telemetry-sm text-[0.7rem] font-bold text-primary bg-surface-container-lowest px-2 py-1 rounded flex-shrink-0">
+          VALIDADA
+        </span>
+</div>
+<!-- Ribbon 2 -->
+<div class="bg-surface-container p-3 rounded-xl flex items-center justify-between gap-3 shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary-container text-[22px]">memory</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-sm text-on-surface font-semibold truncate">
+              Cinta Tecnología · Maquinista
+            </span>
+<span class="font-telemetry-sm text-[0.6875rem] text-outline truncate">
+              ID: CU-TEC-MAQ // FASE COBRE
+            </span>
+<span class="font-label-caps text-[0.55rem] text-outline-variant uppercase tracking-wider mt-0.5 truncate">
+              SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION
+            </span>
+</div>
+</div>
+<span class="font-telemetry-sm text-[0.7rem] font-bold text-primary bg-surface-container-lowest px-2 py-1 rounded flex-shrink-0">
+          VALIDADA
+        </span>
+</div>
+<!-- Steel Piece 1 -->
+<div class="bg-surface-container p-3 rounded-xl flex items-center justify-between gap-3 shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-outline text-[22px]">view_in_ar</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-sm text-on-surface font-semibold truncate">
+              Sala de torpedos de proa
+            </span>
+<span class="font-telemetry-sm text-[0.6875rem] text-outline truncate">
+              ID: AC-01 // CASCO DE ACERO
+            </span>
+<span class="font-label-caps text-[0.55rem] text-outline-variant uppercase tracking-wider mt-0.5 truncate">
+              SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION
+            </span>
+</div>
+</div>
+<span class="font-telemetry-sm text-[0.7rem] font-bold text-primary bg-surface-container-lowest px-2 py-1 rounded flex-shrink-0">
+          VALIDADA
+        </span>
+</div>
+<!-- Steel Piece 2 -->
+<div class="bg-surface-container p-3 rounded-xl flex items-center justify-between gap-3 shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-outline text-[22px]">navigation</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-sm text-on-surface font-semibold truncate">
+              Puesto central y mando
+            </span>
+<span class="font-telemetry-sm text-[0.6875rem] text-outline truncate">
+              ID: AC-03 // CASCO DE ACERO
+            </span>
+<span class="font-label-caps text-[0.55rem] text-outline-variant uppercase tracking-wider mt-0.5 truncate">
+              SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION
+            </span>
+</div>
+</div>
+<span class="font-telemetry-sm text-[0.7rem] font-bold text-primary bg-surface-container-lowest px-2 py-1 rounded flex-shrink-0">
+          VALIDADA
+        </span>
+</div>
+</div>
+<!-- Direct Navigation Button (Min 48px Touch Target) -->
+<a class="mt-1 flex items-center justify-center min-h-[48px] px-4 rounded-xl bg-surface-container-high text-primary hover:bg-surface-bright transition-all shadow-sm" data-path="grid" href="#">
+<span class="font-telemetry-lg text-telemetry-sm uppercase font-bold tracking-wider text-center">
+        [ VER REGISTRO COMPLETO DE INSIGNIAS 5X5 → ]
+      </span>
+</a>
+</div>
+<!-- 4. MUSEOS HISTÓRICOS PRESERVADOS (VISITAS FÍSICAS) -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">anchor</span>
+<span class="font-telemetry-lg text-telemetry-sm text-on-surface font-bold uppercase tracking-wider">
+          Museos Históricos Preservados
+        </span>
+</div>
+<span class="font-label-caps text-label-caps text-outline uppercase">IN SITU LOG</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Museo 1: BAP Abtao -->
+<div class="bg-surface-container rounded-xl p-3.5 flex items-start gap-3 shadow-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[24px]">directions_boat</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-body-md text-on-surface font-bold truncate">BAP Abtao (SS-42)</span>
+<span class="font-telemetry-sm text-[0.6875rem] text-primary bg-surface-container-highest px-2 py-0.5 rounded">1 MISIÓN</span>
+</div>
+<span class="font-body-sm text-[0.8rem] text-outline truncate">Callao · Perú (Submarino Museo Histórico)</span>
+<div class="flex items-center gap-1.5 mt-2 text-outline-variant">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+<span class="font-telemetry-sm text-[0.65rem] text-on-surface-variant">12° 03′ 25″ S, 77° 09′ 14″ W</span>
+</div>
+</div>
+</div>
+<!-- Museo 2: U-995 -->
+<div class="bg-surface-container rounded-xl p-3.5 flex items-start gap-3 shadow-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[24px]">sailing</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-body-md text-on-surface font-bold truncate">U-995 (Typ VII C/41)</span>
+<span class="font-telemetry-sm text-[0.6875rem] text-primary bg-surface-container-highest px-2 py-0.5 rounded">2 MISIONES</span>
+</div>
+<span class="font-body-sm text-[0.8rem] text-outline truncate">Laboe · Alemania (Monumento Naval Técnico)</span>
+<div class="flex items-center gap-1.5 mt-2 text-outline-variant">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+<span class="font-telemetry-sm text-[0.65rem] text-on-surface-variant">54° 24′ 45″ N, 10° 13′ 48″ E</span>
+</div>
+</div>
+</div>
+<!-- Validador de Mamparo Físico -->
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-outline text-[18px] flex-shrink-0">qr_code_scanner</span>
+<span class="font-body-sm text-[0.8rem] text-on-surface-variant truncate">
+            Validador de Mamparo Físico:
+          </span>
+</div>
+<span class="font-telemetry-sm text-[0.7rem] text-outline flex-shrink-0 font-bold">
+          0 CÓDIGOS SINCRONIZADOS
+        </span>
+</div>
+</div>
+</div>
+<!-- 5. ESTADO DE SINCRONIZACIÓN LOCAL // SYNC HOOKS -->
+<div class="bg-surface-container rounded-xl p-4 flex flex-col gap-3 shadow-md"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-outline text-[16px]">verified_user</span><span class="font-label-caps text-label-caps text-outline uppercase tracking-widest font-bold" data-i18n="sovereignty_title" data-en="VISITOR DATA SOVEREIGNTY DECLARATION" data-es="DECLARACIÓN DE SOBERANÍA DE DATOS DEL VISITANTE">VISITOR DATA SOVEREIGNTY DECLARATION</span></div><p class="font-body-sm text-[0.8rem] text-on-surface-variant leading-relaxed">Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required.</p><div class="flex items-center justify-between text-outline text-[0.65rem] font-telemetry-sm pt-2"><span>INSTITUTO SUBACUÁTICO ARCHIVÍSTICO</span><span>V1.04-NX</span></div></div>
+<!-- 6. POLÍTICA DE PRIVACIDAD & SOBERANÍA DEL CADETE -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[16px]">verified_user</span>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-widest font-bold">
+        DECLARACIÓN DE SOBERANÍA DE DATOS
+      </span>
+</div>
+<p class="font-body-sm text-[0.8rem] text-on-surface-variant leading-relaxed">
+      Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required.
+    </p>
+<div class="flex items-center justify-between text-outline text-[0.65rem] font-telemetry-sm pt-2">
+<span>INSTITUTO SUBACUÁTICO ARCHIVÍSTICO</span>
+<span>V1.04-NX</span>
+</div>
+</div>
+</div>
+<script>
+  // Tactical micro-interaction for local sync button
+  document.getElementById('btn-sync')?.addEventListener('click', function() {
+    const originalText = this.innerHTML;
+    this.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span class="font-telemetry-lg text-telemetry-sm uppercase tracking-wider font-bold">[ VERIFICANDO DISPOSITIVO... ]</span>';
+    setTimeout(() => {
+      this.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span class="font-telemetry-lg text-telemetry-sm uppercase tracking-wider font-bold">[ REGISTRO VERIFICADO 100% LOCAL ]</span>';
+      setTimeout(() => {
+        this.innerHTML = originalText;
+      }, 2500);
+    }, 900);
+  });
+
+  // Client-side export simulation
+  document.getElementById('btn-export')?.addEventListener('click', function() {
+    const mockData = {
+      cadet_callsign: "LUNAR FISH",
+      cadet_id: "#ISA-CAD-0492",
+      specialization: "MAQUINISTA & ELECTRONICA",
+      points: 750,
+      streak_days: 5,
+      missions_completed: 7,
+      schema: "isa-progress-v1",
+      exported_at: new Date().toISOString()
+    };
+    const blob = new Blob([JSON.stringify(mockData, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "isa-cadet-dossier-0492.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_16px_rgba(0,0,0,0.45)]" data-active-classes="text-primary-container [box-shadow:0_-2px_0_0_#38e8a6]"><div class="flex items-stretch justify-around h-16"><a class="group flex flex-1 flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-primary transition-colors min-w-[44px] min-h-[44px]" data-path="stream" href="#"><span class="material-symbols-outlined text-[20px]">radar</span><span class="font-label-caps text-[0.625rem] tracking-wider uppercase">STREAM</span></a><a class="group flex flex-1 flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-primary transition-colors min-w-[44px] min-h-[44px]" data-path="map" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span class="font-label-caps text-[0.625rem] tracking-wider uppercase">MAP</span></a><a class="group flex flex-1 flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-primary transition-colors min-w-[44px] min-h-[44px]" data-path="grid" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-caps text-[0.625rem] tracking-wider uppercase">5X5 GRID</span></a><a class="group flex flex-1 flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-primary transition-colors min-w-[44px] min-h-[44px]" data-path="museums" href="#"><span class="material-symbols-outlined text-[20px]">account_balance</span><span class="font-label-caps text-[0.625rem] tracking-wider uppercase">MUSEUMS</span></a><a aria-current="page" class="group flex flex-1 flex-col items-center justify-center gap-1 transition-colors min-w-[44px] min-h-[44px] text-primary-container [box-shadow:0_-2px_0_0_#38e8a6]" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">account_circle</span><span class="font-label-caps text-[0.625rem] tracking-wider uppercase" data-i18n="tab_profile" data-en="PROFILE" data-es="PERFIL">PROFILE</span></a></div></nav>
+
+</body></html>

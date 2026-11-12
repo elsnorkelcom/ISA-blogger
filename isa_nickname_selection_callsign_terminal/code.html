@@ -1,0 +1,260 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><title>ISA Tactical System</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-bright": "#2e3b45", "tertiary-fixed-dim": "#ffb952", "secondary-fixed": "#ffdcc6", "surface-container": "#14212a", "primary-fixed-dim": "#2be19f", "primary": "#92ffca", "error": "#ffb4ab", "on-primary-fixed-variant": "#005236", "primary-container": "#38e8a6", "inverse-surface": "#d7e4f1", "inverse-primary": "#006c49", "on-surface-variant": "#bacabf", "on-secondary-fixed": "#301400", "outline-variant": "#3c4a41", "secondary-container": "#8a4400", "surface-dim": "#08151e", "primary-fixed": "#56feba", "on-primary-fixed": "#002113", "background": "#08151e", "surface": "#08151e", "on-surface": "#d7e4f1", "on-tertiary-fixed-variant": "#633f00", "secondary": "#ffb784", "on-error": "#690005", "surface-container-lowest": "#040f18", "tertiary-fixed": "#ffddb3", "secondary-fixed-dim": "#ffb784", "on-tertiary-container": "#794e00", "on-tertiary": "#452b00", "on-secondary-container": "#ffc095", "on-primary": "#003824", "inverse-on-surface": "#25323c", "on-background": "#d7e4f1", "on-tertiary-fixed": "#291800", "outline": "#85948a", "on-error-container": "#ffdad6", "tertiary-container": "#ffc36f", "on-secondary-fixed-variant": "#713700", "on-secondary": "#4f2500", "surface-variant": "#2a3640", "surface-container-low": "#101d26", "surface-container-highest": "#2a3640", "error-container": "#93000a", "tertiary": "#ffe6c9", "surface-tint": "#2be19f", "surface-container-high": "#1f2b35", "on-primary-container": "#006444" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "3rem", "gutter": "1.5rem", "space-sm": "0.5rem", "margin-mobile": "1.25rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "space-md": "1rem", "gutter-mobile": "1rem" }, "fontFamily": { "headline-md": ["Space Grotesk"], "telemetry-lg": ["Space Mono"], "body-md": ["Chivo"], "label-caps": ["Space Mono"], "headline-sm": ["Space Grotesk"], "telemetry-sm": ["Space Mono"], "headline-lg-mobile": ["Space Grotesk"], "body-lg": ["Chivo"], "display-hero-mobile": ["Space Grotesk"], "body-sm": ["Chivo"], "display-hero": ["Space Grotesk"], "headline-lg": ["Space Grotesk"] }, "fontSize": { "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" }], "telemetry-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }], "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "telemetry-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-hero-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-hero": ["4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;color:#d7e4f1;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)] pt-safe"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="AcademyLogo220x220 .png" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrAAiCSCIeJo1-9g3X6xI4zLcUhSPjCfDfC4Tv6Bu7qzDN8ZY_01Zxh7zGiCqJ4c3a5zNcoy2CTcA6O2N05_3SjCkPonVBRrTwbSdlM24-l-ySciAAwZgx0N8Ezdn8aFeD456xizmL5-eYv9mW3eDSAlx2qwoxKwHOtr1bzkqjK8CQqVJxERHgfh6ZtnQ2fob3CRJlT8JmlwR-yhXGsxBnNA_hMO2aGSbNAVFFgqdaHGmsE1VQrFK0uMEoQ"><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-label-caps text-label-caps uppercase text-primary-container tracking-wider">ISA//OPS</span><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant truncate">// Profile</span></div><span class="font-telemetry-sm text-telemetry-sm text-outline truncate">42°18'N 070°58'W • FL-08</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Bilingual Toggle" class="min-h-[44px] min-w-[44px] px-space-xs flex items-center justify-center rounded bg-surface-container-high text-primary hover:bg-surface-container font-label-caps text-label-caps uppercase transition-colors" type="button"><span class="font-telemetry-sm text-telemetry-sm">EN</span><span class="text-outline font-telemetry-sm text-telemetry-sm">/</span><span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">ES</span></button><button aria-label="Ops Battle Lantern" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded bg-surface-container-high text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">emergency</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-[0_0_12px_rgba(56,232,166,0.35)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-gutter-mobile py-space-md gap-space-lg">
+<!-- Telemetry Sub-Header -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(56,232,166,0.8)]"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary">TERMINAL ACTIVA // LOCAL-FIRST</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">NODE::LOC_88</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide">
+      Identidad Táctica
+    </h2>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant uppercase tracking-wider">
+      Pseudonymous Callsign Terminal // v4.2-SEC
+    </span>
+</div>
+<!-- Sonar Identity Archival Visualizer Banner -->
+<div class="relative w-full h-32 rounded-lg bg-surface-container-lowest overflow-hidden flex items-center justify-between px-space-md">
+<img class="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-screen" data-alt="A tactical deep-submergence terminal interface depicting an acoustic sonar display, showing radial green phosphor rings, deep sea telemetry grids, monospaced code overlays, dark navy oceanic tones with mint cyan luminescent readouts, submarine console apparatus aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtznN-qhXzDUYBHD2PjXtjlk_CHwSTbQHnsS3vb3dVa8Fdf4ku5DW9WJAHqtnAMHkMgeXG-GffHqt0b2XPT_bO7mDpI7mmY0Sz2Mpv2VrrdQzcoHPWAVnB5F3h4_9K7CH_xNn0JKPrjtiViLF_e7P1o4ar3PBvU6M6ziEyvn5HEC4Y-OBHUzw9zHG6wMFK5doCqI59XB917t3inog0RMSLoZJjFE5hdV77zIRdavs">
+<div class="relative z-10 flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">ACOUSTIC MASK // LOCAL KEY</span>
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight" id="displayCallsignTop">LUNAR FISH #884</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">ZERO-TELEMETRY BIOMETRIC FREE</span>
+</div>
+<div class="relative z-10 flex items-center justify-center w-14 h-14 rounded-full bg-surface-container-high shadow-[0_0_16px_rgba(56,232,166,0.25)]">
+<span class="material-symbols-outlined text-primary text-[28px] animate-spin" style="animation-duration: 8s;">graphic_eq</span>
+</div>
+</div>
+<!-- Current Callsign Display Card -->
+<div class="flex flex-col rounded-xl bg-surface-container-low p-space-md shadow-md gap-space-md relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">military_tech</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">REGISTRO ASIGNADO</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary bg-surface-container-highest px-space-xs py-0.5 rounded">STATUS::UNLOCKED</span>
+</div>
+<!-- Callsign & Acoustic Badge -->
+<div class="flex flex-col gap-space-xs bg-surface-container-lowest p-space-md rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">CALLSIGN ACTIVO</span>
+<span class="material-symbols-outlined text-primary text-[18px]">sensors</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-wider uppercase font-telemetry-lg" id="targetCallsignBadge">
+          LUNAR FISH #884
+        </span>
+<span class="text-primary animate-pulse text-headline-sm font-telemetry-lg">_</span>
+</div>
+</div>
+<!-- Security Clearance Chip -->
+<div class="flex items-center justify-between bg-surface-container px-space-md py-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim"></span>
+<div class="flex flex-col min-w-0"><span class="font-label-caps text-label-caps text-secondary-fixed uppercase truncate">NIVEL 2: VISITANTE DE COBRE</span><span class="font-telemetry-sm text-telemetry-sm text-outline truncate">// TIER 2: VISITOR CLEARANCE</span></div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
+</div>
+<!-- Hash Fingerprint -->
+<div class="flex flex-col gap-0.5 bg-surface-container-highest/60 p-space-sm rounded">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">CRYPTOGRAPHIC EPHEMERAL DIGEST</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary">SALT::BROWSER_ONLY</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant break-all">
+        SHA256: 7f3a88c01e9d40529bf72ef1904a08bb2c...91bc
+      </span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline mt-0.5">
+        (Local Salt generated in client context. No Central Account link.)
+      </span>
+</div>
+</div>
+<!-- Callsign Generator & Selection Deck -->
+<div class="flex flex-col gap-space-md">
+<!-- Section Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">smart_toy</span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest">
+          GENERADOR ALEATORIO COMBINADO
+        </span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary-container">NAVAL + CELESTIAL</span>
+</div>
+<!-- Quick-Pick Tactical Suggestions -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant uppercase">
+        Sugerencias Tácticas Rápidas // Tap to Mount:
+      </span>
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="min-h-[48px] w-full px-space-sm py-space-xs rounded bg-surface-container-high hover:bg-surface-bright active:scale-95 transition-all text-left flex flex-col justify-center" onclick="selectSuggestion('NAUTILUS ECHO #104')" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">[ NAUTILUS ECHO #104 ]</span>
+<span class="font-label-caps text-[9px] text-outline uppercase">DEEP HYDROPHONE</span>
+</button>
+<button class="min-h-[48px] w-full px-space-sm py-space-xs rounded bg-surface-container-high hover:bg-surface-bright active:scale-95 transition-all text-left flex flex-col justify-center" onclick="selectSuggestion('ABTAO VALIANT #420')" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">[ ABTAO VALIANT #420 ]</span>
+<span class="font-label-caps text-[9px] text-outline uppercase">HISTORIC SUB-HULL</span>
+</button>
+<button class="min-h-[48px] w-full px-space-sm py-space-xs rounded bg-surface-container-high hover:bg-surface-bright active:scale-95 transition-all text-left flex flex-col justify-center" onclick="selectSuggestion('DEEP ORCA #918')" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">[ DEEP ORCA #918 ]</span>
+<span class="font-label-caps text-[9px] text-outline uppercase">APEX ACOUSTIC</span>
+</button>
+<button class="min-h-[48px] w-full px-space-sm py-space-xs rounded bg-surface-container-high hover:bg-surface-bright active:scale-95 transition-all text-left flex flex-col justify-center" onclick="selectSuggestion('SONAR WOLF #772')" type="button">
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">[ SONAR WOLF #772 ]</span>
+<span class="font-label-caps text-[9px] text-outline uppercase">PATROL ARRAY</span>
+</button>
+</div>
+</div>
+<!-- Custom Callsign Field -->
+<div class="flex flex-col gap-space-xs bg-surface-container p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between">
+<label class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider" for="customCallsign">
+          INGRESAR DISTINTIVO TÁCTICO // CUSTOM
+        </label>
+<span class="font-telemetry-sm text-telemetry-sm text-outline" id="charCounter">0 / 16</span>
+</div>
+<div class="relative flex items-center">
+<input class="w-full min-h-[48px] bg-surface-container-lowest text-primary font-telemetry-lg text-telemetry-lg px-space-md py-space-sm rounded outline-none placeholder:text-outline uppercase transition-all shadow-inner" id="customCallsign" maxlength="16" oninput="handleCustomInput(this)" placeholder="E.G. TITANRAY #009" type="text">
+<div class="absolute right-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-[20px]" id="validIcon">shield</span>
+</div>
+</div>
+<!-- Live Validation Disclaimer -->
+<div class="flex items-start gap-space-xs mt-1">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-[16px] flex-shrink-0 mt-0.5">info</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant" id="validationMsg">
+          Sin espacios complejos, sin nombres reales, sin datos privados. Solo caracteres alfanuméricos y guiones.
+        </span>
+</div>
+</div>
+</div>
+<!-- Identity Privacy Audit Card -->
+<div class="flex flex-col gap-space-xs bg-surface-container-high p-space-md rounded-xl">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">lock_clock</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider font-bold">
+        AUDITORÍA DE PRIVACIDAD // LOCAL SANCTUARY
+      </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+      TU IDENTIDAD ES UN DISTINTIVO SIMBÓLICO. No requiere correo, contraseña, número telefónico ni verificación externa. Permanece únicamente almacenado en el almacenamiento local de tu navegador.
+    </p>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">ZERO_DATA_HARVESTING</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">PASS-AUDIT 100%</span>
+</div>
+</div>
+<!-- Primary Action Deck (min 48px touch targets) -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Confirm / Lock Callsign Button -->
+<button class="w-full min-h-[52px] px-space-md bg-primary hover:bg-primary-container text-on-primary font-telemetry-lg text-telemetry-lg font-bold rounded flex items-center justify-center gap-space-sm shadow-[0_0_16px_rgba(56,232,166,0.4)] active:scale-[0.98] transition-all uppercase tracking-wider" id="btnLockCallsign" onclick="lockCallsign()" type="button">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+<span>[ CONFIRMAR DISTINTIVO // LOCK CALLSIGN ]</span>
+</button>
+<!-- Generate Random Callsign Button -->
+<button class="w-full min-h-[48px] px-space-md bg-surface-container-high hover:bg-surface-bright text-secondary font-telemetry-lg text-telemetry-lg rounded flex items-center justify-center gap-space-sm active:scale-[0.98] transition-all uppercase tracking-wider" id="btnShuffleCallsign" onclick="generateRandomCallsign()" type="button">
+<span class="material-symbols-outlined text-[20px] animate-spin-reverse">refresh</span>
+<span>[ ⟳ GENERAR NUEVO DISTINTIVO ALEATORIO ]</span>
+</button><a class="w-full min-h-[48px] px-space-md bg-surface-container hover:bg-surface-bright text-primary font-telemetry-lg text-telemetry-lg rounded flex items-center justify-center gap-space-sm active:scale-[0.98] transition-all uppercase tracking-wider text-center" href="#" data-path="profile"><span class="material-symbols-outlined text-[20px]">badge</span><span>[ VER PERFIL DE VISITANTE // VISITOR PROFILE → ]</span></a>
+</div>
+<!-- Mandatory Disclaimers & Archival Footing -->
+<div class="flex flex-col gap-space-xs pt-space-sm pb-space-lg">
+<div class="flex items-center gap-space-xs text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider font-bold">
+        RECONOCIMIENTO SIMBÓLICO — NO ES UNA CERTIFICACIÓN ACADÉMICA
+      </span>
+</div>
+<p class="font-telemetry-sm text-telemetry-sm text-outline leading-tight">
+      Privacy by design. Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required. All telemetry stays inside sandbox device parameters.
+    </p>
+<div class="flex justify-between items-center pt-space-xs text-outline font-telemetry-sm text-telemetry-sm">
+<span>SEC-PROTOCOL // REF: CLAS-441-A</span>
+<span>EXP: LOCAL-SESSION</span>
+</div>
+</div>
+</div>
+<script>
+  const ADJECTIVES = ['LUNAR', 'DEEP', 'VALIANT', 'SONAR', 'ABYSSAL', 'STEALTH', 'SOLAR', 'ARCTIC', 'MAGNETIC', 'TIDAL'];
+  const NOUNS = ['FISH', 'ORCA', 'NAUTILUS', 'WOLF', 'RAY', 'KRAKEN', 'CORVETTE', 'BEACON', 'BARRACUDA', 'DOLPHIN'];
+
+  function selectSuggestion(val) {
+    updateCallsign(val);
+    document.getElementById('customCallsign').value = '';
+    document.getElementById('charCounter').textContent = '0 / 16';
+    resetValidation();
+  }
+
+  function handleCustomInput(input) {
+    let cleanVal = input.value.toUpperCase().replace(/[^A-Z0-9#\-_ ]/g, '');
+    input.value = cleanVal;
+    
+    const len = cleanVal.length;
+    document.getElementById('charCounter').textContent = len + ' / 16';
+
+    const validIcon = document.getElementById('validIcon');
+    const msg = document.getElementById('validationMsg');
+
+    if (len >= 3) {
+      validIcon.textContent = 'verified';
+      validIcon.className = 'material-symbols-outlined text-primary text-[20px]';
+      msg.textContent = 'Distintivo válido. Sin conflicto de privacidad detectado.';
+      msg.className = 'font-telemetry-sm text-telemetry-sm text-primary';
+      updateCallsign(cleanVal);
+    } else if (len > 0) {
+      validIcon.textContent = 'warning';
+      validIcon.className = 'material-symbols-outlined text-secondary text-[20px]';
+      msg.textContent = 'Mínimo 3 caracteres alfanuméricos requeridos.';
+      msg.className = 'font-telemetry-sm text-telemetry-sm text-secondary';
+    } else {
+      resetValidation();
+    }
+  }
+
+  function resetValidation() {
+    const validIcon = document.getElementById('validIcon');
+    const msg = document.getElementById('validationMsg');
+    validIcon.textContent = 'shield';
+    validIcon.className = 'material-symbols-outlined text-outline text-[20px]';
+    msg.textContent = 'Sin espacios complejos, sin nombres reales, sin datos privados. Solo caracteres alfanuméricos y guiones.';
+    msg.className = 'font-telemetry-sm text-telemetry-sm text-on-surface-variant';
+  }
+
+  function generateRandomCallsign() {
+    const adj = ADJECTIVES[Math.floor(Math.random() * ADJECTIVES.length)];
+    const noun = NOUNS[Math.floor(Math.random() * NOUNS.length)];
+    const num = Math.floor(100 + Math.random() * 900);
+    const newCallsign = adj + ' ' + noun + ' #' + num;
+    updateCallsign(newCallsign);
+    document.getElementById('customCallsign').value = '';
+    document.getElementById('charCounter').textContent = '0 / 16';
+    resetValidation();
+  }
+
+  function updateCallsign(val) {
+    document.getElementById('targetCallsignBadge').textContent = val;
+    document.getElementById('displayCallsignTop').textContent = val;
+  }
+
+  function lockCallsign() {
+    const current = document.getElementById('targetCallsignBadge').textContent.trim();
+    const btn = document.getElementById('btnLockCallsign');
+    btn.innerHTML = '<span class="material-symbols-outlined text-[22px]">check_circle</span><span>[ DISTINTIVO SELLADO LOCALMENTE ]</span>';
+    btn.classList.add('bg-primary-container', 'text-on-primary-container');
+    
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[22px]">lock</span><span>[ CONFIRMAR DISTINTIVO // LOCK CALLSIGN ]</span>';
+      btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+    }, 2500);
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.45)]" data-active-classes="text-primary-container bg-surface-container/60"><div class="flex justify-between items-center h-16 px-space-xs"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-space-xs gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors rounded" data-path="stream" href="#"><span class="material-symbols-outlined text-[22px]">sensors</span><span class="font-label-caps text-label-caps text-[10px] uppercase tracking-wider">STREAM</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-space-xs gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors rounded" data-path="map" href="#"><span class="material-symbols-outlined text-[22px]">radar</span><span class="font-label-caps text-label-caps text-[10px] uppercase tracking-wider">MAP</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-space-xs gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors rounded" data-path="5x5-grid" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-caps text-label-caps text-[10px] uppercase tracking-wider">5X5 GRID</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-space-xs gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors rounded" data-path="sync" href="#"><span class="material-symbols-outlined text-[22px]">sync</span><span class="font-label-caps text-label-caps text-[10px] uppercase tracking-wider">SYNC</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-space-xs gap-0.5 transition-colors rounded text-primary-container bg-surface-container/60" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">badge</span><span class="font-label-caps text-label-caps text-[10px] uppercase tracking-wider">PROFILE</span></a></div></nav>
+
+</body></html>

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>:root{--isa-bg-dark:#08151e;--isa-bg-night:#140505;--isa-accent-day:#38e8a6;--isa-accent-night:#ff5252;}html.night-ops{--isa-bg-dark:var(--isa-bg-night);--isa-accent-day:var(--isa-accent-night);filter:contrast(1.05);}html.night-ops .night-glow{text-shadow:0 0 8px rgba(255,82,82,0.6);}@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary": "#4f2500",
+          "surface-container-low": "#101d26",
+          "on-error-container": "#ffdad6",
+          "surface-container": "#14212a",
+          "on-tertiary": "#452b00",
+          "on-background": "#d7e4f1",
+          "surface-dim": "#08151e",
+          "inverse-primary": "#006c49",
+          "tertiary-fixed": "#ffddb3",
+          "primary-fixed": "#56feba",
+          "primary-fixed-dim": "#2be19f",
+          "on-primary-fixed-variant": "#005236",
+          "on-tertiary-fixed-variant": "#633f00",
+          "on-tertiary-container": "#794e00",
+          "surface": "#08151e",
+          "surface-variant": "#2a3640",
+          "on-primary": "#003824",
+          "surface-container-highest": "#2a3640",
+          "error": "#ffb4ab",
+          "tertiary": "#ffe6c9",
+          "surface-container-lowest": "#040f18",
+          "secondary-fixed": "#ffdcc6",
+          "error-container": "#93000a",
+          "primary-container": "#38e8a6",
+          "surface-bright": "#2e3b45",
+          "inverse-surface": "#d7e4f1",
+          "on-surface-variant": "#bacabf",
+          "secondary-fixed-dim": "#ffb784",
+          "secondary": "#ffb784",
+          "on-tertiary-fixed": "#291800",
+          "on-secondary-fixed-variant": "#713700",
+          "surface-container-high": "#1f2b35",
+          "background": "#08151e",
+          "on-secondary-fixed": "#301400",
+          "on-primary-fixed": "#002113",
+          "on-error": "#690005",
+          "outline": "#85948a",
+          "outline-variant": "#3c4a41",
+          "on-secondary-container": "#ffc095",
+          "on-surface": "#d7e4f1",
+          "on-primary-container": "#006444",
+          "surface-tint": "#2be19f",
+          "inverse-on-surface": "#25323c",
+          "tertiary-fixed-dim": "#ffb952",
+          "secondary-container": "#8a4400",
+          "primary": "#92ffca",
+          "tertiary-container": "#ffc36f"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "gutter": "1.5rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "margin-mobile": "1.25rem",
+          "gutter-mobile": "1rem",
+          "margin": "3rem",
+          "space-xl": "2.5rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "headline-md": ["Space Grotesk"],
+          "display-hero": ["Space Grotesk"],
+          "headline-lg-mobile": ["Space Grotesk"],
+          "telemetry-sm": ["Space Mono"],
+          "label-caps": ["Space Mono"],
+          "body-md": ["Chivo"],
+          "telemetry-lg": ["Space Mono"],
+          "headline-lg": ["Space Grotesk"],
+          "display-hero-mobile": ["Space Grotesk"],
+          "body-lg": ["Chivo"],
+          "headline-sm": ["Space Grotesk"],
+          "body-sm": ["Chivo"]
+        },
+        "fontSize": {
+          "headline-md": ["1.75rem", {"lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600"}],
+          "display-hero": ["4rem", {"lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+          "headline-lg-mobile": ["1.75rem", {"lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "telemetry-sm": ["0.75rem", {"lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400"}],
+          "label-caps": ["0.6875rem", {"lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700"}],
+          "body-md": ["1rem", {"lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400"}],
+          "telemetry-lg": ["1rem", {"lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700"}],
+          "headline-lg": ["2.5rem", {"lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "display-hero-mobile": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "body-lg": ["1.125rem", {"lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400"}],
+          "headline-sm": ["1.25rem", {"lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500"}],
+          "body-sm": ["0.875rem", {"lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col pt-20 pb-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-6 mb-6 flex flex-col gap-space-xs"><div class="flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps"><span>CONSOLE ARRAY</span><span>STN_01 // SEC_NAV</span></div><div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden"><div class="h-full w-2/3 bg-primary-container animate-pulse"></div></div></div><nav class="flex-1 px-4 space-y-1.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="helm" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span class="font-headline-sm text-headline-sm uppercase tracking-wide">Helm</span></a><a aria-current="page" class="flex items-center gap-3 px-4 py-3 rounded transition-all bg-primary-container text-on-primary-container font-headline-sm" data-path="map-and-globe" href="#"><span class="material-symbols-outlined text-[20px]">public</span><span class="font-headline-sm text-headline-sm uppercase tracking-wide">Map &amp; Globe</span></a><a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="museum-directory" href="#"><span class="material-symbols-outlined text-[20px]">account_balance</span><span class="font-headline-sm text-headline-sm uppercase tracking-wide">Museum Directory</span></a><a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="mission-grid" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-headline-sm text-headline-sm uppercase tracking-wide">Mission Grid</span></a><a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="visitor-profile" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span class="font-headline-sm text-headline-sm uppercase tracking-wide">Visitor Profile</span></a><a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="terminal" href="#"><span class="material-symbols-outlined text-[20px]">terminal</span><span class="font-headline-sm text-headline-sm uppercase tracking-wide">Terminal</span></a></nav><div class="px-6 pt-4 mt-auto bg-surface-container-low/60 mx-3 rounded p-3 flex flex-col gap-2"><div class="flex items-center justify-between font-telemetry-sm text-telemetry-sm text-on-surface-variant"><span>DIVING DEPTH</span><span class="text-primary font-bold">482.4 M</span></div><div class="flex items-center justify-between font-telemetry-sm text-telemetry-sm text-on-surface-variant"><span>REACTOR CORE</span><span class="text-primary font-bold">99.8% NOM</span></div><div class="flex items-center justify-between font-telemetry-sm text-telemetry-sm text-on-surface-variant"><span>SONAR FREQ</span><span class="text-secondary font-bold">3.2 kHz LFAI</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-0 right-0 h-20 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50"><div class="h-20 w-full px-6 flex items-center justify-between"><div class="flex items-center gap-4"><img alt="AcademyLogo220x220 .png" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrAAiCSCIeJo1-9g3X6xI4zLcUhSPjCfDfC4Tv6Bu7qzDN8ZY_01Zxh7zGiCqJ4c3a5zNcoy2CTcA6O2N05_3SjCkPonVBRrTwbSdlM24-l-ySciAAwZgx0N8Ezdn8aFeD456xizmL5-eYv9mW3eDSAlx2qwoxKwHOtr1bzkqjK8CQqVJxERHgfh6ZtnQ2fob3CRJlT8JmlwR-yhXGsxBnNA_hMO2aGSbNAVFFgqdaHGmsE1VQrFK0uMEoQ"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-wide uppercase text-on-surface font-bold">ISA // INTERNATIONAL SUBMARINE ACADEMY</span><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant flex items-center gap-2"><span class="inline-block w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>COORDS: 43°04'18"N 070°42'31"W // DEPTH: -482M</span></div></div><div class="flex items-center gap-6"><div class="hidden lg:flex items-center bg-surface-container px-3 py-1.5 rounded gap-3"><span class="font-label-caps text-label-caps text-on-surface-variant">BATTLE READY</span><button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-telemetry-sm text-telemetry-sm flex items-center gap-1.5 transition-colors" onclick="document.documentElement.classList.toggle('night-ops')" type="button"><span class="inline-block w-2 h-2 rounded-full bg-error"></span><span>DAY/NIGHT OPS</span></button></div><div class="flex items-center bg-surface-container p-1 rounded font-telemetry-sm text-telemetry-sm text-on-surface-variant"><button class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-bold" type="button">EN</button><button class="px-2 py-0.5 rounded hover:text-on-surface transition-colors" type="button">ES</button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 flex-1 bg-surface"><div class="flex flex-col w-full text-on-surface">
+<!-- TOP SUB-COMMAND BAR & PROTOCOL ANNOUNCEMENT -->
+<div class="w-full bg-surface-container-lowest px-6 py-3 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant tracking-widest">NAVAL GEOSPATIAL REGISTRY // BATHYMETRIC INDEX 2025</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">GRID SYNC: ACTIVE [MUSEUMS-SNK-2025.JSON // VERIFIED 42 SITES]</span>
+</div>
+</div>
+<!-- ENGINE BREAKPOINT SIMULATOR & OPS CONTROLS -->
+<div class="flex flex-wrap items-center gap-2">
+<div class="flex items-center bg-surface-container-high rounded p-1">
+<button class="px-3 py-1 rounded text-telemetry-sm font-telemetry-sm transition-all bg-primary-container text-on-primary-container font-bold flex items-center gap-1.5 shadow-sm" id="viewBtnDesktop" onclick="setEngineView('desktop')" type="button">
+<span class="material-symbols-outlined text-[16px]">desktop_windows</span>
+<span>DESKTOP 2D LEAFLET (≥768px)</span>
+</button>
+<button class="px-3 py-1 rounded text-telemetry-sm font-telemetry-sm text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5" id="viewBtnMobile" onclick="setEngineView('mobile')" type="button">
+<span class="material-symbols-outlined text-[16px]">smartphone</span>
+<span>MOBILE 3D GLOBE (9:16) (&lt;768px)</span>
+</button>
+</div>
+<div class="hidden xl:flex items-center bg-surface-container px-3 py-1 rounded gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">radar</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">SONAR: 3.2 kHz LFAI</span>
+</div>
+</div>
+</div>
+<!-- MAIN DUAL-WORKSTATION WRAPPER -->
+<div class="w-full p-4 lg:p-6 flex flex-col gap-6">
+<!-- DESKTOP WORKSTATION VIEW (≥768px) -->
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-start" id="desktopWorkstation">
+<!-- LEFT PANE: 2D LEAFLET HYDRO-TACTICAL MAP (7 COLUMNS / ~60%) -->
+<div class="lg:col-span-7 flex flex-col gap-4">
+<!-- MAP COMPARTMENT HEADER & TELEMETRY -->
+<div class="bg-surface-container-low rounded-t-lg p-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">near_me</span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">TACTICAL HYDROPHONE OVERLAY // MERCATOR HYDRO-BATHYMETRY</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">ELEV: <span class="text-primary font-bold">-18.4M MSL</span></span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">PROJ: <span class="text-secondary font-bold">EPSG:3857</span></span>
+</div>
+</div>
+<!-- SIMULATED LEAFLET INTERACTIVE TACTICAL CANVAS -->
+<div class="relative w-full h-[620px] bg-surface-container-lowest rounded-b-lg overflow-hidden flex flex-col select-none group">
+<!-- BATHYMETRIC SCANLINES & ACOUSTIC GRID BACKGROUND -->
+<div class="absolute inset-0 pointer-events-none opacity-20">
+<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="60" id="tacticalGrid" patternunits="userSpaceOnUse" width="60">
+<path class="text-outline-variant" d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" stroke-width="0.75"></path>
+<circle class="text-primary-container" cx="60" cy="60" fill="currentColor" opacity="0.6" r="1.5"></circle>
+</pattern>
+<radialgradient cx="50%" cy="50%" id="depthGradient" r="50%">
+<stop offset="0%" stop-color="#38e8a6" stop-opacity="0.08"></stop>
+<stop offset="60%" stop-color="#08151e" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#040f18" stop-opacity="0.85"></stop>
+</radialgradient>
+</defs>
+<rect fill="url(#tacticalGrid)" height="100%" width="100%"></rect>
+<rect fill="url(#depthGradient)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<!-- RADAR SWEEP ANIMATION RING -->
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full pointer-events-none opacity-40">
+<div class="w-full h-full rounded-full border border-primary/20 relative animate-[spin_16s_linear_infinite]">
+<div class="absolute top-1/2 left-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent to-primary"></div>
+<div class="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent_0deg,rgba(56,232,166,0.12)_45deg,transparent_50deg)]"></div>
+</div>
+<div class="absolute inset-12 rounded-full border border-primary/10"></div>
+<div class="absolute inset-28 rounded-full border border-primary/10"></div>
+<div class="absolute inset-44 rounded-full border border-primary/5"></div>
+</div>
+<!-- MAP CONTROLS ONSCREEN -->
+<div class="absolute top-4 left-4 z-20 flex flex-col gap-2">
+<div class="flex flex-col bg-surface-container-high/90 backdrop-blur rounded p-1 shadow-lg">
+<button class="w-8 h-8 flex items-center justify-center rounded text-on-surface hover:bg-surface-bright transition-colors" title="Zoom In" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<div class="w-full h-[1px] bg-surface-variant my-0.5"></div>
+<button class="w-8 h-8 flex items-center justify-center rounded text-on-surface hover:bg-surface-bright transition-colors" title="Zoom Out" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+</div>
+<button class="flex items-center gap-1.5 px-2.5 py-1.5 bg-surface-container-high/90 backdrop-blur rounded font-telemetry-sm text-telemetry-sm text-primary hover:bg-surface-bright transition-all shadow-md" onclick="centerCallao()" title="Recenter Base (Abtao Callao)" type="button">
+<span class="material-symbols-outlined text-[16px]">my_location</span>
+<span>BASE CALLAO</span>
+</button>
+</div>
+<!-- MAP LAYER BADGE & LEAFLET ENGINE INDICATOR -->
+<div class="absolute top-4 right-4 z-20 flex flex-col items-end gap-1.5">
+<div class="bg-surface-container-lowest/90 backdrop-blur px-3 py-1.5 rounded flex items-center gap-2 shadow-md">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-primary">LEAFLET v1.9.4 // CARTO-DARK</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">TILESET: BATHYMETRIC_CHART_LAYER_4</span>
+</div>
+<!-- CARTOGRAPHIC SHORELINE VECTOR SILHOUETTE (WORLD SIMULATION) -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-25">
+<svg class="w-full h-auto text-surface-variant fill-current" viewbox="0 0 1000 500">
+<!-- Stylized maritime shoreline coordinates -->
+<path d="M150,120 Q180,90 230,110 T300,160 T350,220 L380,290 Q340,360 300,420 L270,440 L230,380 Q210,320 220,240 T170,160 Z"></path>
+<path d="M480,90 Q540,60 620,80 T710,130 T690,190 T590,220 T520,180 Z"></path>
+<path d="M680,240 Q750,210 820,260 T870,350 T790,430 T710,360 Z"></path>
+<path d="M520,260 Q570,240 610,290 T630,370 T570,420 Z"></path>
+</svg>
+</div>
+<!-- INTERACTIVE TACTICAL VESSEL PINS (Positioned by Lat/Long Simulation) -->
+<div class="absolute inset-0 z-10">
+<!-- PIN 1: BAP ABTAO SS-42 (Callao, Peru) - ACTIVE DEFAULT -->
+<button class="absolute top-[64%] left-[28%] -translate-x-1/2 -translate-y-1/2 group/pin focus:outline-none" id="marker-abtao" onclick="selectVessel('abtao')" type="button">
+<div class="relative flex items-center justify-center">
+<!-- Ping waves -->
+<span class="absolute w-10 h-10 rounded-full bg-primary/20 animate-ping"></span>
+<span class="absolute w-7 h-7 rounded-full bg-primary/30"></span>
+<!-- Vessel Icon Pin -->
+<div class="relative w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg transition-transform transform group-hover/pin:scale-125">
+<span class="material-symbols-outlined text-[18px]">directions_boat</span>
+</div>
+<!-- Callout label -->
+<div class="absolute left-9 bg-surface-container-lowest/95 backdrop-blur px-2.5 py-1 rounded shadow-xl whitespace-nowrap flex flex-col items-start">
+<span class="font-headline-sm text-body-sm font-bold text-primary">BAP Abtao (SS-42)</span>
+<span class="font-telemetry-sm text-[10px] text-on-surface-variant">CALLAO, PERU // -12.06°S</span>
+</div>
+</div>
+</button>
+<!-- PIN 2: U-995 (Laboe, Germany) -->
+<button class="absolute top-[26%] left-[54%] -translate-x-1/2 -translate-y-1/2 group/pin focus:outline-none" id="marker-u995" onclick="selectVessel('u995')" type="button">
+<div class="relative flex items-center justify-center">
+<span class="absolute w-6 h-6 rounded-full bg-primary/20"></span>
+<div class="w-6 h-6 rounded-full bg-surface-container-high text-primary hover:bg-primary-container hover:text-on-primary-container flex items-center justify-center shadow-md transition-all">
+<span class="material-symbols-outlined text-[14px]">anchor</span>
+</div>
+<div class="absolute left-7 bg-surface-container-lowest/90 px-2 py-0.5 rounded shadow whitespace-nowrap hidden group-hover/pin:flex flex-col items-start">
+<span class="font-headline-sm text-[11px] font-bold text-on-surface">U-995</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant">LABOE, GERMANY // 54.41°N</span>
+</div>
+</div>
+</button>
+<!-- PIN 3: HMS Ocelot (Chatham, UK) -->
+<button class="absolute top-[30%] left-[49%] -translate-x-1/2 -translate-y-1/2 group/pin focus:outline-none" id="marker-ocelot" onclick="selectVessel('ocelot')" type="button">
+<div class="w-5 h-5 rounded-full bg-surface-container-high text-primary hover:bg-primary-container hover:text-on-primary-container flex items-center justify-center shadow transition-all">
+<span class="material-symbols-outlined text-[12px]">navigation</span>
+</div>
+</button>
+<!-- PIN 4: Brandtaucher (Dresden, Germany) - Historic Hand-crank -->
+<button class="absolute top-[34%] left-[56%] -translate-x-1/2 -translate-y-1/2 group/pin focus:outline-none" id="marker-brandtaucher" onclick="selectVessel('brandtaucher')" type="button">
+<div class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow transition-transform hover:scale-125" title="Brandtaucher (1850) - Hand-crank">
+<span class="material-symbols-outlined text-[12px]">history_edu</span>
+</div>
+</button>
+<!-- PIN 5: USS Nautilus SSN-571 (Groton CT, USA) - Nuclear Cyan -->
+<button class="absolute top-[36%] left-[26%] -translate-x-1/2 -translate-y-1/2 group/pin focus:outline-none" id="marker-nautilus" onclick="selectVessel('nautilus')" type="button">
+<div class="w-6 h-6 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow transition-transform hover:scale-125" title="USS Nautilus SSN-571 (Nuclear)">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+</div>
+</button>
+<!-- PIN 6: ORP Sokol (Gdynia, Poland) -->
+<button class="absolute top-[28%] left-[58%] -translate-x-1/2 -translate-y-1/2 group/pin focus:outline-none" id="marker-sokol" onclick="selectVessel('sokol')" type="button">
+<div class="w-5 h-5 rounded-full bg-surface-container-high text-primary hover:bg-primary-container hover:text-on-primary-container flex items-center justify-center shadow transition-all">
+<span class="material-symbols-outlined text-[12px]">radio_button_checked</span>
+</div>
+</button>
+<!-- PIN 7: Proteus (Salamis, Greece) -->
+<button class="absolute top-[44%] left-[59%] -translate-x-1/2 -translate-y-1/2 group/pin focus:outline-none" id="marker-proteus" onclick="selectVessel('proteus')" type="button">
+<div class="w-5 h-5 rounded-full bg-surface-container-high text-primary hover:bg-primary-container hover:text-on-primary-container flex items-center justify-center shadow transition-all">
+<span class="material-symbols-outlined text-[12px]">radio_button_checked</span>
+</div>
+</button>
+<!-- PIN 8: S-84 Slava (Varna, Bulgaria) -->
+<button class="absolute top-[42%] left-[64%] -translate-x-1/2 -translate-y-1/2 group/pin focus:outline-none" id="marker-slava" onclick="selectVessel('slava')" type="button">
+<div class="w-5 h-5 rounded-full bg-surface-container-high text-primary hover:bg-primary-container hover:text-on-primary-container flex items-center justify-center shadow transition-all">
+<span class="material-symbols-outlined text-[12px]">radio_button_checked</span>
+</div>
+</button>
+</div>
+<!-- BOTTOM COORDINATE & PROPULSION LEGEND BAR -->
+<div class="mt-auto bg-surface-container-low/95 backdrop-blur p-3.5 flex flex-wrap items-center justify-between gap-3 z-20">
+<div class="flex flex-wrap items-center gap-4 text-telemetry-sm font-telemetry-sm">
+<span class="text-on-surface-variant font-label-caps text-label-caps">PROPULSION KEY:</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-primary-container inline-block"></span> Diesel-Electric</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-primary-fixed inline-block"></span> Nuclear (SSN/SSBN)</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-secondary inline-block"></span> Historic Hand-crank / Steam</span>
+</div>
+<div class="flex items-center gap-3 font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span>LAT: <span class="text-on-surface font-bold" id="currentLat">-12.0601° S</span></span>
+<span>LON: <span class="text-on-surface font-bold" id="currentLon">-77.1510° W</span></span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-bold">WGS-84</span>
+</div>
+</div>
+</div>
+<!-- BATHYMETRIC DEPTH SPARKLINE & LIVE ACOUSTIC TELEMETRY -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<div class="bg-surface-container-low p-3.5 rounded flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Subsea Sound Velocity</span>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">1,482.6 <span class="text-body-sm font-normal text-on-surface-variant">m/s</span></span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary">+1.2 ΔT</span>
+</div>
+<!-- Sparkline SVG -->
+<svg class="w-full h-6 text-primary" fill="none" viewbox="0 0 100 24">
+<path d="M0,18 L15,14 L30,19 L45,8 L60,12 L75,4 L90,10 L100,6" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Museum Sites Loaded</span>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">42 <span class="text-body-sm font-normal text-on-surface-variant">VESSELS</span></span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary">100% VERIFIED</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden mt-2">
+<div class="h-full bg-primary-container w-full"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Hydroacoustic Condition</span>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">SEA STATE 2</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">LOW NOISE</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant mt-2">THERMOCLINE DEPTH: 62.4 M</span>
+</div>
+</div>
+</div>
+<!-- RIGHT PANE: UNIFIED MUSEUM REGISTRY & ACTIVE DOSSIER (5 COLUMNS / ~40%) -->
+<div class="lg:col-span-5 flex flex-col gap-4">
+<!-- ACTIVE VESSEL CARD DETAIL (HIGH FIDELITY) -->
+<div class="bg-surface-container-low rounded-lg p-5 flex flex-col gap-4 shadow-md" id="activeVesselCard">
+<!-- DOSSIER TOP ROW -->
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps font-bold" id="vesselPropBadge">DIESEL-ELECTRIC</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant" id="vesselHullBadge">SS-42 // PERU</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mt-1 leading-tight" id="vesselName">BAP Abtao</h2>
+<span class="font-body-md text-body-md text-on-surface-variant" id="museumName">Museo de Sitio Submarino Abtao — Callao</span>
+</div>
+<div class="px-3 py-1.5 bg-surface-container-high rounded flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-on-surface-variant">STATUS</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold" id="vesselSituation">MOORED IN WATER</span>
+</div>
+</div>
+<!-- TECHNICAL SPECIFICATION MATRIX -->
+<div class="grid grid-cols-2 gap-2 bg-surface-container p-3 rounded font-telemetry-sm text-telemetry-sm">
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[11px] font-label-caps">CLASS DESIGNATION</span>
+<span class="text-on-surface font-bold" id="vesselClass">Tiburón-class (Mackerel mod)</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[11px] font-label-caps">LAUNCH YEAR</span>
+<span class="text-on-surface font-bold" id="vesselLaunch">1953 (Electric Boat, Groton)</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[11px] font-label-caps">LATITUDE / LONGITUDE</span>
+<span class="text-on-surface font-bold" id="vesselCoords">-12.0601° S, -77.1510° W</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[11px] font-label-caps">DISPLACEMENT</span>
+<span class="text-on-surface font-bold" id="vesselDisplacement">825 t (surf) / 1,400 t (sub)</span>
+</div>
+</div>
+<!-- ORAL HERITAGE & ARCHIVAL SUMMARY -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Tactical &amp; Historical Summary</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed" id="vesselSummary">
+              BAP Abtao (originally Tiburón) served the Marina de Guerra del Perú from 1954 to 1999. In 1988, she participated in the heroic rescue of survivors from BAP Pacocha after its collision. Preserved as a floating museum ship in the port of Callao since 2004.
+            </p>
+</div>
+<!-- DOSSIER ACTION TRIGGERS -->
+<div class="flex flex-col sm:flex-row items-stretch gap-2 pt-2">
+<button class="flex-1 px-4 py-2.5 rounded bg-primary-container text-on-primary-container font-telemetry-lg text-telemetry-lg font-bold flex items-center justify-center gap-2 hover:opacity-95 shadow-md transition-all" onclick="openMuseumDossier()" type="button">
+<span class="material-symbols-outlined text-[18px]">folder_special</span>
+<span>OPEN MUSEUM DOSSIER</span>
+</button>
+<button class="flex-1 px-4 py-2.5 rounded bg-surface-container-high text-secondary font-telemetry-sm text-telemetry-sm font-bold flex items-center justify-center gap-2 hover:bg-surface-bright transition-all" onclick="showUpcomingNotice()" type="button">
+<span class="material-symbols-outlined text-[18px]">map</span>
+<span>GUÍA DE VISITA — PRÓXIMAMENTE</span>
+</button>
+</div>
+</div>
+<!-- SEARCH, FILTERS & CATALOG EXPLORER -->
+<div class="bg-surface-container-low rounded-lg p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Submarine Registry Index</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary">FILTERED: <span id="filteredCount">7</span> RECORDS</span>
+</div>
+<!-- SEARCH INPUT -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full bg-surface-container-lowest rounded pl-9 pr-3 py-2 text-on-surface font-telemetry-sm text-telemetry-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors" id="vesselSearchInput" onkeyup="filterVessels()" placeholder="SEARCH BY VESSEL, CLASS, PORT..." type="text"/>
+</div>
+<!-- FILTER SELECTORS -->
+<div class="grid grid-cols-2 gap-2 font-telemetry-sm text-telemetry-sm">
+<select class="bg-surface-container-lowest text-on-surface rounded px-3 py-1.5 focus:outline-none" id="countryFilter" onchange="filterVessels()">
+<option value="ALL">ALL NATIONS</option>
+<option value="PERU">Peru</option>
+<option value="GERMANY">Germany</option>
+<option value="UK">United Kingdom</option>
+<option value="USA">United States</option>
+<option value="POLAND">Poland</option>
+<option value="GREECE">Greece</option>
+<option value="BULGARIA">Bulgaria</option>
+</select>
+<select class="bg-surface-container-lowest text-on-surface rounded px-3 py-1.5 focus:outline-none" id="propulsionFilter" onchange="filterVessels()">
+<option value="ALL">ALL PROPULSIONS</option>
+<option value="DIESEL">Diesel-Electric</option>
+<option value="NUCLEAR">Nuclear</option>
+<option value="HISTORIC">Hand-crank / Historic</option>
+</select>
+</div>
+<!-- SCROLLABLE VESSEL LIST -->
+<div class="flex flex-col gap-1.5 max-h-[290px] overflow-y-auto pr-1" id="vesselListContainer">
+<!-- ROW: BAP Abtao -->
+<div class="vessel-list-item flex items-center justify-between p-2.5 rounded bg-surface-container hover:bg-surface-container-high cursor-pointer transition-all border-l-2 border-primary-container" data-country="PERU" data-prop="DIESEL" onclick="selectVessel('abtao')">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-bold text-on-surface">BAP Abtao (SS-42)</span>
+<span class="font-telemetry-sm text-[11px] text-on-surface-variant">Callao, Peru • Tiburón-class</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">WATER</span>
+</div>
+<!-- ROW: U-995 -->
+<div class="vessel-list-item flex items-center justify-between p-2.5 rounded bg-surface-container-lowest hover:bg-surface-container-high cursor-pointer transition-all" data-country="GERMANY" data-prop="DIESEL" onclick="selectVessel('u995')">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-bold text-on-surface">U-995</span>
+<span class="font-telemetry-sm text-[11px] text-on-surface-variant">Laboe, Germany • Type VIIC/41</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold">DRY/LAND</span>
+</div>
+<!-- ROW: Brandtaucher -->
+<div class="vessel-list-item flex items-center justify-between p-2.5 rounded bg-surface-container-lowest hover:bg-surface-container-high cursor-pointer transition-all" data-country="GERMANY" data-prop="HISTORIC" onclick="selectVessel('brandtaucher')">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-bold text-on-surface">Brandtaucher (1850)</span>
+<span class="font-telemetry-sm text-[11px] text-on-surface-variant">Dresden, Germany • W. Bauer design</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold">INDOOR</span>
+</div>
+<!-- ROW: HMS Ocelot -->
+<div class="vessel-list-item flex items-center justify-between p-2.5 rounded bg-surface-container-lowest hover:bg-surface-container-high cursor-pointer transition-all" data-country="UK" data-prop="DIESEL" onclick="selectVessel('ocelot')">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-bold text-on-surface">HMS Ocelot (S17)</span>
+<span class="font-telemetry-sm text-[11px] text-on-surface-variant">Chatham, UK • Oberon-class</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold">DRY DOCK</span>
+</div>
+<!-- ROW: USS Nautilus -->
+<div class="vessel-list-item flex items-center justify-between p-2.5 rounded bg-surface-container-lowest hover:bg-surface-container-high cursor-pointer transition-all" data-country="USA" data-prop="NUCLEAR" onclick="selectVessel('nautilus')">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-bold text-on-surface">USS Nautilus (SSN-571)</span>
+<span class="font-telemetry-sm text-[11px] text-on-surface-variant">Groton CT, USA • Historic 1st Nuclear</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">WATER</span>
+</div>
+<!-- ROW: ORP Sokol -->
+<div class="vessel-list-item flex items-center justify-between p-2.5 rounded bg-surface-container-lowest hover:bg-surface-container-high cursor-pointer transition-all" data-country="POLAND" data-prop="DIESEL" onclick="selectVessel('sokol')">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-bold text-on-surface">ORP Sokół (294)</span>
+<span class="font-telemetry-sm text-[11px] text-on-surface-variant">Gdynia, Poland • Kobben-class</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold">DRY/LAND</span>
+</div>
+<!-- ROW: Proteus -->
+<div class="vessel-list-item flex items-center justify-between p-2.5 rounded bg-surface-container-lowest hover:bg-surface-container-high cursor-pointer transition-all" data-country="GREECE" data-prop="DIESEL" onclick="selectVessel('proteus')">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-bold text-on-surface">Proteus (S-113)</span>
+<span class="font-telemetry-sm text-[11px] text-on-surface-variant">Salamis, Greece • Type 209/1100</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">WATER</span>
+</div>
+<!-- ROW: S-84 Slava -->
+<div class="vessel-list-item flex items-center justify-between p-2.5 rounded bg-surface-container-lowest hover:bg-surface-container-high cursor-pointer transition-all" data-country="BULGARIA" data-prop="DIESEL" onclick="selectVessel('slava')">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-bold text-on-surface">S-84 Slava</span>
+<span class="font-telemetry-sm text-[11px] text-on-surface-variant">Varna, Bulgaria • Romeo-class (Pr. 633)</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">WATER</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- MOBILE BREAKPOINT SIMULATOR VIEW (<768px: 3D GLOBE IN 9:16 ENCLOSURE) -->
+<div class="w-full hidden flex-col items-center justify-center py-4" id="mobileWorkstation">
+<!-- MOBILE BANDWIDTH LAZY-LOAD BANNER -->
+<div class="w-full max-w-md bg-surface-container-low p-3 rounded mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">BANDWIDTH PRESERVATION TRIGGERED (&lt;768px)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Leaflet engine script omitted. 3D WebGL coordinate sphere active.</span>
+</div>
+</div>
+<!-- 9:16 MOBILE VIEWPORT PHONE CHASSIS -->
+<div class="relative w-full max-w-[360px] h-[640px] bg-surface-container-lowest rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+<!-- MOBILE OS STATUS STRIP -->
+<div class="w-full bg-surface-container-low/90 px-4 py-2 flex items-center justify-between text-telemetry-sm font-telemetry-sm text-on-surface-variant">
+<span>ISA TACTICAL // MOB</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary inline-block"></span> 4G LTE-NAV</span>
+</div>
+<!-- 3D GLOBE CANVAS VIEW -->
+<div class="relative flex-1 bg-surface-container-lowest overflow-hidden flex items-center justify-center">
+<!-- ORTHOGRAPHIC SPHERICAL WIREFRAME -->
+<div class="relative w-64 h-64 rounded-full border border-primary/30 flex items-center justify-center animate-[spin_24s_linear_infinite]">
+<div class="absolute inset-2 rounded-full border border-primary/20"></div>
+<div class="absolute w-full h-[1px] bg-primary/30 top-1/2"></div>
+<div class="absolute h-full w-[1px] bg-primary/30 left-1/2"></div>
+<!-- Concentric latitude rings -->
+<div class="absolute w-52 h-28 rounded-full border border-primary/25"></div>
+<div class="absolute w-36 h-48 rounded-full border border-primary/25"></div>
+<!-- GLOWING ORTHOGRAPHIC PIN (BAP ABTAO) -->
+<div class="absolute top-[58%] left-[34%] -translate-x-1/2 -translate-y-1/2">
+<span class="w-3 h-3 rounded-full bg-primary block animate-ping"></span>
+</div>
+<!-- GLOWING PIN (U-995) -->
+<div class="absolute top-[28%] left-[62%] -translate-x-1/2 -translate-y-1/2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary block"></span>
+</div>
+</div>
+<!-- GLOBE ROTATION HUD OVERLAY -->
+<div class="absolute top-3 left-3 bg-surface-container/90 px-2 py-1 rounded">
+<span class="font-telemetry-sm text-[10px] text-primary">ROT: 14.8°/S // ORTHO</span>
+</div>
+<!-- INTERACTIVE TAP INSTRUCTION -->
+<div class="absolute bottom-20 left-1/2 -translate-x-1/2 bg-surface-container-high/90 px-3 py-1 rounded-full text-center">
+<span class="font-telemetry-sm text-[11px] text-on-surface">TAP PIN FOR BOTTOM SHEET</span>
+</div>
+</div>
+<!-- SWIPEABLE BOTTOM SHEET DRAWER (PREVIEW) -->
+<div class="w-full bg-surface-container-high p-4 rounded-t-xl flex flex-col gap-2.5 shadow-xl">
+<div class="w-10 h-1 bg-outline-variant rounded-full mx-auto mb-1"></div>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-body-sm font-bold text-primary">BAP Abtao (SS-42)</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">CALLAO, PE</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2">
+            Mackerel-modified submarine preserved as museum ship. Active 1954-1999.
+          </p>
+<button class="w-full py-2 bg-primary-container text-on-primary-container rounded font-telemetry-sm text-telemetry-sm font-bold text-center" onclick="showUpcomingNotice()" type="button">
+            GUÍA DE VISITA — PRÓXIMAMENTE
+          </button>
+</div>
+</div>
+</div>
+<!-- PROTOCOL & COMPLIANCE STATEMENTS (INSTITUTIONAL INTEGRITY) -->
+<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+<!-- MANDATORY DISCLAIMER -->
+<div class="bg-surface-container-lowest p-4 rounded flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-secondary font-bold tracking-wider">INSTITUTIONAL DESIGNATION</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface">SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION.</strong>
+            The International Submarine Academy issues commemorative, historical, and STEM+A achievements honoring worldwide submariners and naval museum heritage.
+          </p>
+</div>
+</div>
+<!-- PRIVACY MANDATE -->
+<div class="bg-surface-container-lowest p-4 rounded flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">lock</span>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-primary font-bold tracking-wider">CRYPTOGRAPHIC GUARANTEE</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong>Privacy by design.</strong> Minimal pseudonymous data. No email stored in plaintext. Local-first credential record. No account required.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Museum Dataset (museums-snk-2025.json extract)
+  const museumData = {
+    abtao: {
+      name: "BAP Abtao (SS-42)",
+      museum: "Museo de Sitio Submarino Abtao — Callao",
+      classDesc: "Tiburón-class (Mackerel mod)",
+      launch: "1953 (Electric Boat, Groton)",
+      coords: "-12.0601° S, -77.1510° W",
+      lat: "-12.0601° S",
+      lon: "-77.1510° W",
+      prop: "DIESEL-ELECTRIC",
+      propColor: "bg-primary-container text-on-primary-container",
+      hullBadge: "SS-42 // PERU",
+      situation: "MOORED IN WATER",
+      displacement: "825 t (surf) / 1,400 t (sub)",
+      summary: "BAP Abtao (originally Tiburón) served the Marina de Guerra del Perú from 1954 to 1999. In 1988, she participated in the heroic rescue of survivors from BAP Pacocha after its collision. Preserved as a floating museum ship in the historic port of Callao since 2004."
+    },
+    u995: {
+      name: "U-995",
+      museum: "Laboe Naval Memorial & Technical Museum",
+      classDesc: "Type VIIC/41 U-boat",
+      launch: "1943 (Blohm+Voss, Hamburg)",
+      coords: "54.4125° N, 10.2286° E",
+      lat: "54.4125° N",
+      lon: "10.2286° E",
+      prop: "DIESEL-ELECTRIC",
+      propColor: "bg-primary-container text-on-primary-container",
+      hullBadge: "U-995 // GERMANY",
+      situation: "BEACHED ON LAND",
+      displacement: "769 t (surf) / 871 t (sub)",
+      summary: "The world's only surviving Type VIIC/41 submarine. Following post-war Norwegian naval service as KNM Kaura, she was returned to Germany in 1965 and mounted adjacent to the Laboe Naval Memorial as a technical heritage archive."
+    },
+    brandtaucher: {
+      name: "Brandtaucher (1850)",
+      museum: "Militärhistorisches Museum der Bundeswehr — Dresden",
+      classDesc: "Wilhelm Bauer Submersible (Historic)",
+      launch: "1850 (Schweffel & Howaldt, Kiel)",
+      coords: "51.0768° N, 13.7594° E",
+      lat: "51.0768° N",
+      lon: "13.7594° E",
+      prop: "HAND-CRANK TREADMILL",
+      propColor: "bg-secondary text-on-secondary",
+      hullBadge: "HISTORIC // GERMANY",
+      situation: "INDOOR ARTIFACT",
+      displacement: "30.5 t",
+      summary: "Oldest surviving submersible in the world. Built by inventor Wilhelm Bauer during the First Schleswig War. Manually powered by two crew members turning an internal treadwheel mechanism."
+    },
+    ocelot: {
+      name: "HMS Ocelot (S17)",
+      museum: "The Historic Dockyard Chatham — Kent",
+      classDesc: "Oberon-class Patrol Submarine",
+      launch: "1962 (Chatham Dockyard, UK)",
+      coords: "51.3965° N, 0.5284° E",
+      lat: "51.3965° N",
+      lon: "0.5284° E",
+      prop: "DIESEL-ELECTRIC",
+      propColor: "bg-primary-container text-on-primary-container",
+      hullBadge: "S17 // ROYAL NAVY",
+      situation: "DRY DOCK 2",
+      displacement: "2,030 t (surf) / 2,410 t (sub)",
+      summary: "The last Royal Navy submarine built in Chatham Royal Dockyard. Engaged extensively in Cold War clandestine surveillance throughout the Barents Sea and Mediterranean. Restored in authentic 1980s operational livery."
+    },
+    nautilus: {
+      name: "USS Nautilus (SSN-571)",
+      museum: "Submarine Force Library & Museum — Groton CT",
+      classDesc: "Nautilus-class Nuclear Submarine",
+      launch: "1954 (Electric Boat, Groton)",
+      coords: "41.3881° N, 72.0877° W",
+      lat: "41.3881° N",
+      lon: "72.0877° W",
+      prop: "NUCLEAR (S2W REACTOR)",
+      propColor: "bg-primary-fixed text-on-primary-fixed",
+      hullBadge: "SSN-571 // US NAVY",
+      situation: "MOORED ON THAMES RIVER",
+      displacement: "3,533 t (surf) / 4,092 t (sub)",
+      summary: "First nuclear-powered ship in naval history and first vessel to complete a submerged transit of the North Pole (Operation Sunshine, 1958). Designated a US National Historic Landmark in 1982."
+    },
+    sokol: {
+      name: "ORP Sokół (294)",
+      museum: "Muzeum Marynarki Wojennej — Gdynia",
+      classDesc: "Kobben-class (Type 207)",
+      launch: "1966 (Rheinstahl Nordseewerke)",
+      coords: "54.5165° N, 18.5492° E",
+      lat: "54.5165° N",
+      lon: "18.5492° E",
+      prop: "DIESEL-ELECTRIC",
+      propColor: "bg-primary-container text-on-primary-container",
+      hullBadge: "294 // POLAND",
+      situation: "OUTDOOR EXHIBIT",
+      displacement: "459 t (surf) / 520 t (sub)",
+      summary: "Transferred from the Royal Norwegian Navy to Poland in 2002. Following decommissioning in 2018, ORP Sokół was transported across the streets of Gdynia and permanently installed as an open-air museum exhibit in 2023."
+    },
+    proteus: {
+      name: "Proteus (S-113)",
+      museum: "Salamis Naval Base Heritage Depot — Greece",
+      classDesc: "Type 209/1100 (Glavkos-class)",
+      launch: "1971 (HDW, Kiel)",
+      coords: "37.9620° N, 23.5412° E",
+      lat: "37.9620° N",
+      lon: "23.5412° E",
+      prop: "DIESEL-ELECTRIC",
+      propColor: "bg-primary-container text-on-primary-container",
+      hullBadge: "S-113 // HELLENIC NAVY",
+      situation: "HERITAGE BASIN",
+      displacement: "1,105 t (surf) / 1,230 t (sub)",
+      summary: "One of the earliest HDW export Type 209 submarines, which set the standard for modern coastal diesel-electric boat design throughout the late 20th century."
+    },
+    slava: {
+      name: "S-84 Slava",
+      museum: "Beloslav Submarine Museum — Varna",
+      classDesc: "Project 633 (Romeo-class)",
+      launch: "1960 (Krasnoye Sormovo)",
+      coords: "43.1901° N, 27.7011° E",
+      lat: "43.1901° N",
+      lon: "27.7011° E",
+      prop: "DIESEL-ELECTRIC",
+      propColor: "bg-primary-container text-on-primary-container",
+      hullBadge: "84 // BULGARIA",
+      situation: "MOORED IN BELOSLAV",
+      displacement: "1,328 t (surf) / 1,712 t (sub)",
+      summary: "The final operational submarine of the Bulgarian Navy, retired in 2011. Transformed into an educational STEM museum vessel preserving Black Sea undersea operations history."
+    }
+  };
+
+  function selectVessel(id) {
+    const v = museumData[id];
+    if (!v) return;
+
+    // Update active details
+    document.getElementById('vesselName').innerText = v.name;
+    document.getElementById('museumName').innerText = v.museum;
+    document.getElementById('vesselClass').innerText = v.classDesc;
+    document.getElementById('vesselLaunch').innerText = v.launch;
+    document.getElementById('vesselCoords').innerText = v.coords;
+    document.getElementById('vesselDisplacement').innerText = v.displacement;
+    document.getElementById('vesselSummary').innerText = v.summary;
+    document.getElementById('vesselSituation').innerText = v.situation;
+    document.getElementById('currentLat').innerText = v.lat;
+    document.getElementById('currentLon').innerText = v.lon;
+
+    const propBadge = document.getElementById('vesselPropBadge');
+    propBadge.innerText = v.prop;
+    propBadge.className = 'px-2 py-0.5 rounded font-label-caps text-label-caps font-bold ' + v.propColor;
+
+    document.getElementById('vesselHullBadge').innerText = v.hullBadge;
+
+    // Visual pulse on card
+    const card = document.getElementById('activeVesselCard');
+    card.classList.add('ring-1', 'ring-primary/40');
+    setTimeout(() => card.classList.remove('ring-1', 'ring-primary/40'), 800);
+  }
+
+  function centerCallao() {
+    selectVessel('abtao');
+  }
+
+  function filterVessels() {
+    const query = document.getElementById('vesselSearchInput').value.toLowerCase();
+    const country = document.getElementById('countryFilter').value;
+    const prop = document.getElementById('propulsionFilter').value;
+    const items = document.querySelectorAll('.vessel-list-item');
+
+    let visibleCount = 0;
+
+    items.forEach(item => {
+      const text = item.innerText.toLowerCase();
+      const itemCountry = item.getAttribute('data-country');
+      const itemProp = item.getAttribute('data-prop');
+
+      const matchesQuery = !query || text.includes(query);
+      const matchesCountry = country === 'ALL' || itemCountry === country;
+      const matchesProp = prop === 'ALL' || itemProp === prop;
+
+      if (matchesQuery && matchesCountry && matchesProp) {
+        item.style.display = 'flex';
+        visibleCount++;
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    document.getElementById('filteredCount').innerText = visibleCount;
+  }
+
+  function setEngineView(mode) {
+    const desktopView = document.getElementById('desktopWorkstation');
+    const mobileView = document.getElementById('mobileWorkstation');
+    const btnDesk = document.getElementById('viewBtnDesktop');
+    const btnMob = document.getElementById('viewBtnMobile');
+
+    if (mode === 'mobile') {
+      desktopView.classList.add('hidden');
+      mobileView.classList.remove('hidden');
+      mobileView.classList.add('flex');
+      btnMob.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold');
+      btnMob.classList.remove('text-on-surface-variant');
+      btnDesk.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold');
+      btnDesk.classList.add('text-on-surface-variant');
+    } else {
+      mobileView.classList.add('hidden');
+      mobileView.classList.remove('flex');
+      desktopView.classList.remove('hidden');
+      btnDesk.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold');
+      btnDesk.classList.remove('text-on-surface-variant');
+      btnMob.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold');
+      btnMob.classList.add('text-on-surface-variant');
+    }
+  }
+
+  function openMuseumDossier() {
+    alert("ISA CLASSIFIED DOSSIER ARCHIVE // Loading high-resolution blueprints, historical service patrol logs, and hydrophone audio for " + document.getElementById('vesselName').innerText);
+  }
+
+  function showUpcomingNotice() {
+    alert("GUÍA DE VISITA: Próximamente disponible en la siguiente actualización del protocolo cartográfico ISA 2025.");
+  }
+</script></main></div></body></html>

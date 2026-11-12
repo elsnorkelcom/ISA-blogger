@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;color:#d7e4f1;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary": "#ffb784", "surface-container": "#14212a", "on-secondary-fixed": "#301400", "on-error-container": "#ffdad6", "primary-container": "#38e8a6", "inverse-surface": "#d7e4f1", "on-secondary-fixed-variant": "#713700", "on-secondary-container": "#ffc095", "surface-container-highest": "#2a3640", "tertiary-fixed": "#ffddb3", "background": "#08151e", "on-tertiary-fixed": "#291800", "error-container": "#93000a", "on-primary": "#003824", "secondary-fixed": "#ffdcc6", "outline": "#85948a", "tertiary": "#ffe6c9", "secondary-container": "#8a4400", "on-primary-fixed": "#002113", "on-primary-fixed-variant": "#005236", "surface-container-high": "#1f2b35", "on-tertiary-container": "#794e00", "on-surface": "#d7e4f1", "tertiary-container": "#ffc36f", "primary": "#92ffca", "primary-fixed-dim": "#2be19f", "tertiary-fixed-dim": "#ffb952", "primary-fixed": "#56feba", "surface-container-lowest": "#040f18", "surface": "#08151e", "on-tertiary": "#452b00", "on-surface-variant": "#bacabf", "surface-dim": "#08151e", "error": "#ffb4ab", "on-error": "#690005", "on-tertiary-fixed-variant": "#633f00", "inverse-on-surface": "#25323c", "outline-variant": "#3c4a41", "on-primary-container": "#006444", "on-secondary": "#4f2500", "surface-bright": "#2e3b45", "surface-tint": "#2be19f", "inverse-primary": "#006c49", "surface-container-low": "#101d26", "on-background": "#d7e4f1", "surface-variant": "#2a3640", "secondary-fixed-dim": "#ffb784" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-lg": "1.5rem", "margin": "3rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem", "space-md": "1rem", "space-xl": "2.5rem" }, "fontFamily": { "headline-lg": ["Space Grotesk"], "body-lg": ["Chivo"], "headline-md": ["Space Grotesk"], "telemetry-sm": ["Space Mono"], "body-md": ["Chivo"], "headline-sm": ["Space Grotesk"], "body-sm": ["Chivo"], "headline-lg-mobile": ["Space Grotesk"], "display-hero-mobile": ["Space Grotesk"], "telemetry-lg": ["Space Mono"], "label-caps": ["Space Mono"], "display-hero": ["Space Grotesk"] }, "fontSize": { "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" }], "telemetry-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-sm": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-hero-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "telemetry-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" }], "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" }], "display-hero": ["4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-on-surface flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.45)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-12 h-12 flex items-center justify-center"><div class="relative flex items-center justify-center w-8 h-8 rounded-DEFAULT bg-surface-container-high"><span class="material-symbols-outlined text-primary-container text-[20px]">radar</span><span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-primary-container animate-pulse"></span></div></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-label-caps text-label-caps text-secondary uppercase">SIG_REC // 414.8 MHz</span></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight uppercase leading-none">ISA // NAVAL ARCHIVE</span></div></div><div class="flex items-center gap-space-xs"><span class="hidden sm:inline-block font-telemetry-sm text-telemetry-sm text-primary uppercase">5X5 Grid</span><div class="w-12 h-12 flex items-center justify-center"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-gutter-mobile space-y-space-md">
+<!-- Celebratory Status Header -->
+<div class="flex flex-col items-center text-center space-y-space-xs pt-space-xs">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-high shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary uppercase tracking-widest">COMMENDATION ACTIVATED // INSIGNIA UNLOCKED</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface uppercase tracking-tight">
+      BADGE OBTAINED: <span class="text-primary-container">STEEL COMMAND</span>
+</h1>
+<div class="flex items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase">M-ST-04 · U-995 LABOE</span>
+</div>
+</div>
+<!-- Central Badge/Coin Artifact Component (Interactive Flip Medallion) -->
+<div class="flex flex-col items-center justify-center my-space-xs">
+<div class="relative w-64 h-64 cursor-pointer select-none" id="coinPerspectiveArea" style="perspective: 1000px;">
+<!-- Active Sonar Ambient Radar Rings -->
+<div class="absolute -inset-4 rounded-full bg-gradient-to-tr from-primary/10 via-transparent to-secondary/15 animate-spin pointer-events-none" style="animation-duration: 20s;"></div>
+<div class="absolute inset-0 rounded-full bg-surface-container-lowest/80 blur-md pointer-events-none"></div>
+<!-- Rotating Double-Sided Coin Container -->
+<div class="relative w-full h-full rounded-full transition-transform duration-700 ease-out shadow-2xl" id="navalCoin" style="transform-style: preserve-3d;">
+<!-- OBVERSE (Front: Periscope Collimator & Steel Command) -->
+<div class="absolute inset-0 rounded-full bg-surface-container-high flex flex-col items-center justify-center p-4 shadow-[inset_0_2px_12px_rgba(56,232,166,0.35)]" style="backface-visibility: hidden;">
+<!-- Outer Phosphor Rim Glow -->
+<div class="absolute inset-1.5 rounded-full bg-gradient-to-br from-primary-container/30 via-surface-container-highest to-secondary/40 pointer-events-none"></div>
+<div class="absolute inset-3 rounded-full bg-surface-container-lowest flex flex-col items-center justify-center">
+<!-- Concentric Calibrated Reticle -->
+<svg class="absolute inset-0 w-full h-full text-primary-container/30" fill="none" stroke="currentColor" stroke-width="0.75" viewbox="0 0 100 100">
+<circle cx="50" cy="50" r="44" stroke-dasharray="2 3"></circle>
+<circle cx="50" cy="50" r="32"></circle>
+<circle cx="50" cy="50" r="20" stroke-dasharray="1 2"></circle>
+<line stroke-dasharray="4 2" x1="50" x2="50" y1="6" y2="94"></line>
+<line stroke-dasharray="4 2" x1="6" x2="94" y1="50" y2="50"></line>
+<!-- Crosshair Ticks -->
+<circle cx="50" cy="50" fill="currentColor" r="3"></circle>
+</svg>
+<!-- Metallic Copper Centerpiece Seal -->
+<div class="relative z-10 w-24 h-24 rounded-full bg-gradient-to-tr from-secondary-container via-surface-container to-secondary flex flex-col items-center justify-center shadow-lg text-center p-2">
+<span class="material-symbols-outlined text-[32px] text-on-surface" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-bold tracking-widest leading-none mt-1">U-995</span>
+</div>
+<div class="relative z-10 mt-3 text-center px-2">
+<span class="font-label-caps text-label-caps text-primary tracking-widest block">KNOWLEDGE VALIDATED</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold tracking-wider">STEEL 04</span>
+</div>
+</div>
+</div>
+<!-- REVERSE (Back: Naval Archive Inscription) -->
+<div class="absolute inset-0 rounded-full bg-surface-container-high flex flex-col items-center justify-center p-4 shadow-[inset_0_2px_12px_rgba(255,183,132,0.4)]" style="backface-visibility: hidden; transform: rotateY(180deg);">
+<div class="absolute inset-1.5 rounded-full bg-gradient-to-br from-secondary/40 via-surface-container-highest to-primary-container/30 pointer-events-none"></div>
+<div class="absolute inset-3 rounded-full bg-surface-container-lowest flex flex-col items-center justify-center text-center p-4">
+<span class="material-symbols-outlined text-secondary text-[36px] mb-1">anchor</span>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest leading-relaxed">
+              INTERNATIONAL SUBMARINE ACADEMY
+            </div>
+<div class="w-8 h-1 bg-secondary-container my-1.5 rounded-full"></div>
+<div class="font-telemetry-sm text-telemetry-sm text-secondary font-bold uppercase tracking-wider">
+              U-995 HISTORICAL ARCHIVE
+            </div>
+<div class="font-label-caps text-label-caps text-primary/80 mt-2">
+              LABOE BALTIC STATION · GERMANY
+            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interaction Affordance Prompt -->
+<button class="mt-space-sm inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container text-primary hover:bg-surface-container-high transition-colors min-h-[48px]" id="flipButton" type="button">
+<span class="material-symbols-outlined text-[18px]">360</span>
+<span class="font-label-caps text-label-caps tracking-widest">[ TAP OR HOVER TO ROTATE MEDALLION ]</span>
+</button>
+</div>
+<!-- Mandatory Symbolic Disclaimer Box -->
+<div class="rounded-lg bg-surface-container-low p-space-md shadow-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary text-[18px]">info</span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold uppercase tracking-wide">
+          SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION
+        </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Conferred strictly for technical engagement within the naval heritage interactive curriculum.
+        </span>
+</div>
+</div>
+</div>
+<!-- Credential Card Component -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-lg space-y-space-md relative overflow-hidden">
+<!-- Submarine Profile Vignette Thumbnail -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">military_tech</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary uppercase font-bold tracking-wider">
+          SUBMARINE EXPEDITION CREDENTIAL
+        </span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant px-space-xs py-0.5 rounded bg-surface-container-highest">
+        STATUS: LOGGED
+      </span>
+</div>
+<!-- Key Identity Fields Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="rounded-lg bg-surface-container-lowest p-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Callsign / Recipient</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold tracking-wide flex items-center gap-1 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+          CADET LUNAR FISH
+        </span>
+</div>
+<div class="rounded-lg bg-surface-container-lowest p-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Registry Code</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary tracking-widest mt-0.5 block truncate">
+          ISA-2025-U995-04
+        </span>
+</div>
+</div>
+<div class="space-y-space-xs">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Competency Validated</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-0.5">
+          Periscope Optics &amp; Collimation
+        </span>
+</div>
+<div class="flex flex-col pt-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Anchor Museum</span>
+<span class="font-body-md text-body-md text-on-surface font-medium flex items-center gap-space-xs mt-0.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">pin_drop</span>
+          U-995 Naval Memorial · Laboe, Germany
+        </span>
+</div>
+</div>
+<!-- Historical Archive Artifact Image Context -->
+<div class="relative w-full h-32 rounded-lg overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover opacity-80" data-alt="A historic Type VII-C/41 German submarine U-995 resting on the sand beach memorial at Laboe, dramatic low-angle shot under moody dusk oceanic sky with deep navy water tones, subtle copper hull reflections, and archival scientific telemetry lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUDXpWtVIj1TnNx3u-pSFIMSqo5cOkR0Xb5uX-_Zeox8G_W2xsZT2vZooyezJPdY_6BcBDlIv7dj59iVJd07Tm9DdfALgiUSRsFUv00GXg2Jv8mYvBfUDiRvruk0ylyn3VaK4A51AIumryjClQhId-2lRFsnrKcVlMvbH62KtXe1WftjTGidG-sXgNI_-ATuFoCFqp4up2XtxNqmAhQOG5tRYFl4icRPEmF_ytuOQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/30 to-transparent"></div>
+<div class="absolute bottom-2 left-2 flex items-center gap-space-xs">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-bold bg-surface/80 px-space-xs py-0.5 rounded">ARCHIVE TELEMETRY: U-995 HULL RECON</span>
+</div>
+</div>
+<!-- Local-First Privacy Callout inside Card -->
+<div class="rounded-lg bg-surface-container-high p-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[20px] shrink-0">shield_lock</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Local-first credential record.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">No account required. Stored directly within device sandbox.</span>
+</div>
+</div>
+</div>
+<!-- Editorial Route & CTAs -->
+<div class="flex flex-col space-y-space-sm pt-space-xs">
+<!-- Primary CTA 1 -->
+<a class="w-full min-h-[48px] rounded-lg bg-primary-container text-on-primary-container flex items-center justify-between px-space-md font-headline-sm text-headline-sm uppercase tracking-wide hover:brightness-110 active:scale-[0.99] transition-all shadow-lg" href="#">
+<span>PROCEED TO U-995 MUSEUM PROFILE</span>
+<span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+</a>
+<!-- Secondary CTA -->
+<a class="w-full min-h-[48px] rounded-lg bg-secondary text-on-secondary-fixed flex items-center justify-between px-space-md font-headline-sm text-headline-sm uppercase tracking-wide hover:brightness-110 active:scale-[0.99] transition-all shadow-md" href="#">
+<span>CONTINUE TO SEASON 02: COPPER</span>
+<span class="material-symbols-outlined text-[24px]">explore</span>
+</a>
+<!-- Tertiary CTA -->
+<a class="w-full min-h-[48px] rounded-lg bg-surface-container text-on-surface flex items-center justify-center gap-space-sm px-space-md font-headline-sm text-headline-sm uppercase tracking-wide hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary">grid_view</span>
+<span>VIEW IN 5x5 MISSION GRID</span>
+</a>
+</div>
+<!-- Bottom Privacy By Design Safeguard Note -->
+<div class="py-space-sm text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mx-auto">
+      Privacy by design. Minimal pseudonymous data. No email stored in plaintext.
+    </p>
+<div class="mt-space-xs flex items-center justify-center gap-space-sm text-on-surface-variant/60">
+<span class="font-telemetry-sm text-telemetry-sm uppercase">ISA PROTOCOL SEC_04</span>
+<span>•</span>
+<span class="font-telemetry-sm text-telemetry-sm uppercase">AIR-GAP CERTIFIED</span>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const coin = document.getElementById('navalCoin');
+    const area = document.getElementById('coinPerspectiveArea');
+    const btn = document.getElementById('flipButton');
+    let isFlipped = false;
+
+    function toggleFlip() {
+      isFlipped = !isFlipped;
+      if (coin) {
+        coin.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+      }
+    }
+
+    if (area) {
+      area.addEventListener('click', toggleFlip);
+    }
+    if (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        toggleFlip();
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(0,0,0,0.55)]" data-active-classes="text-primary-container font-bold"><div class="flex justify-between items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center w-full h-12 min-w-[48px] min-h-[48px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="stream" href="#"><span class="material-symbols-outlined text-[20px]">sensors</span><span class="font-label-caps text-label-caps uppercase tracking-wider mt-0.5">STREAM</span></a><a class="flex flex-col items-center justify-center w-full h-12 min-w-[48px] min-h-[48px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="map" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span class="font-label-caps text-label-caps uppercase tracking-wider mt-0.5">MAP</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-full h-12 min-w-[48px] min-h-[48px] transition-colors text-primary-container font-bold" data-path="5x5-grid" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-caps text-label-caps uppercase tracking-wider mt-0.5">5X5 GRID</span></a><a class="flex flex-col items-center justify-center w-full h-12 min-w-[48px] min-h-[48px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="museums" href="#"><span class="material-symbols-outlined text-[20px]">account_balance</span><span class="font-label-caps text-label-caps uppercase tracking-wider mt-0.5">MUSEUMS</span></a><a class="flex flex-col items-center justify-center w-full h-12 min-w-[48px] min-h-[48px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="dossier" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span class="font-label-caps text-label-caps uppercase tracking-wider mt-0.5">DOSSIER</span></a></div></nav></body></html>

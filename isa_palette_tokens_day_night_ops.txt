@@ -1,0 +1,59 @@
+/* ==========================================================================
+   ISA — INTERNATIONAL SUBMARINE ACADEMY
+   PARAMETRIZABLE THEME PALETTE ARCHITECTURE (Config Tab Sync Ready)
+   ========================================================================== */
+
+:root {
+  /* Sheet Config Injected CSS Variables */
+  --isa-bg-dark: #08151e;
+  --isa-bg-night: #050a0d;
+  
+  --isa-surface-day: #101d26;
+  --isa-surface-night: #0e0506;
+  
+  --isa-surface-card-day: #162734;
+  --isa-surface-card-night: #18080a;
+
+  --isa-accent-day: #38e8a6;
+  --isa-accent-night: #FF3B30;
+
+  --isa-text-day: #e6edf3;
+  --isa-text-night: #FFB3B3;
+
+  --isa-text-muted-day: #8b9bb4;
+  --isa-text-muted-night: #FF6B6B;
+
+  --isa-border-day: rgba(56, 232, 166, 0.25);
+  --isa-border-night: rgba(255, 59, 48, 0.35);
+
+  --isa-glow-day: rgba(56, 232, 166, 0.15);
+  --isa-glow-night: rgba(255, 59, 48, 0.25);
+
+  /* Active Semantic Token Mappings */
+  --bg-current: var(--isa-bg-dark);
+  --surface-current: var(--isa-surface-day);
+  --surface-card-current: var(--isa-surface-card-day);
+  --accent-current: var(--isa-accent-day);
+  --text-current: var(--isa-text-day);
+  --text-muted-current: var(--isa-text-muted-day);
+  --border-current: var(--isa-border-day);
+  --glow-current: var(--isa-glow-day);
+
+  --transition-theme: background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+                      border-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+                      color 0.35s ease,
+                      box-shadow 0.45s ease;
+}
+
+/* Night Ops Submarine Battle Lantern Mode */
+body[data-theme="night"],
+html[data-theme="night"] {
+  --bg-current: var(--isa-bg-night);
+  --surface-current: var(--isa-surface-night);
+  --surface-card-current: var(--isa-surface-card-night);
+  --accent-current: var(--isa-accent-night);
+  --text-current: var(--isa-text-night);
+  --text-muted-current: var(--isa-text-muted-night);
+  --border-current: var(--isa-border-night);
+  --glow-current: var(--isa-glow-night);
+}

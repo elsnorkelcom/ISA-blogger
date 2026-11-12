@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+.perspective-1000 { perspective: 1000px; }
+.transform-style-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.rotate-y-180 { transform: rotateY(180deg); }
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#bacabf", "surface-bright": "#2e3b45", "secondary": "#ffb784", "on-secondary-fixed-variant": "#713700", "on-tertiary-fixed-variant": "#633f00", "surface-container": "#14212a", "on-error-container": "#ffdad6", "secondary-fixed": "#ffdcc6", "on-secondary-container": "#ffc095", "on-primary": "#003824", "on-primary-fixed": "#002113", "tertiary-fixed": "#ffddb3", "outline": "#85948a", "inverse-on-surface": "#25323c", "primary-fixed-dim": "#2be19f", "secondary-fixed-dim": "#ffb784", "on-secondary-fixed": "#301400", "surface-dim": "#08151e", "on-surface": "#f1f6fb", "tertiary": "#ffe6c9", "on-tertiary": "#452b00", "on-primary-fixed-variant": "#005236", "surface-tint": "#2be19f", "error": "#ffb4ab", "error-container": "#93000a", "on-background": "#f1f6fb", "on-tertiary-fixed": "#291800", "primary-fixed": "#56feba", "surface-container-high": "#1f2b35", "primary": "#92ffca", "surface-container-lowest": "#040f18", "inverse-primary": "#006c49", "secondary-container": "#8a4400", "surface-container-highest": "#2a3640", "primary-container": "#38e8a6", "surface-container-low": "#101d26", "on-primary-container": "#003824", "on-error": "#690005", "surface": "#08151e", "tertiary-container": "#ffc36f", "outline-variant": "#3c4a41", "on-tertiary-container": "#794e00", "surface-variant": "#2a3640", "inverse-surface": "#d7e4f1", "on-secondary": "#4f2500", "tertiary-fixed-dim": "#ffb952", "background": "#08151e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-xl": "2.5rem", "margin": "3rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-mobile": "1.25rem", "space-xs": "0.25rem", "gutter": "1.5rem", "gutter-mobile": "1rem" }, "fontFamily": { "label-caps": ["Space Mono"], "body-md": ["Chivo"], "display-hero-mobile": ["Space Grotesk"], "body-sm": ["Chivo"], "display-hero": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "telemetry-sm": ["Space Mono"], "headline-lg": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "body-lg": ["Chivo"], "telemetry-lg": ["Space Mono"] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface text-on-surface font-body-md text-base antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><main class="flex flex-col relative w-full pt-safe pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface select-none pb-12">
+<!-- TOP ARCHIVAL HEADER -->
+<div class="w-full bg-surface-container-lowest px-4 py-3 flex flex-col gap-2 shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary-container"></span>
+</span>
+<span class="font-telemetry-sm text-[13px] text-on-surface tracking-wider font-semibold">
+          ISA — INT. SUBMARINE ACADEMY
+        </span>
+</div>
+<div class="bg-surface-container-high px-2.5 py-1 rounded text-on-surface-variant font-telemetry-sm text-[13px] tracking-widest">
+        // REF: ST-04-CMD
+      </div>
+</div>
+<!-- Morse Code Divider -->
+<div class="flex items-center justify-between text-outline opacity-60 font-telemetry-sm text-[13px] tracking-widest px-1">
+<span>— · · —</span>
+<span class="h-px bg-surface-variant flex-1 mx-3"></span>
+<span>— · — ·</span>
+<span class="h-px bg-surface-variant flex-1 mx-3"></span>
+<span>· · · —</span>
+<span class="h-px bg-surface-variant flex-1 mx-3"></span>
+<span>— — · —</span>
+</div>
+</div>
+<!-- MAIN POSTER & ATMOSPHERE SECTION -->
+<div class="px-4 pt-4 flex flex-col gap-4">
+<!-- Hero Title Block -->
+<div class="bg-surface-container-low rounded-xl p-5 shadow-lg relative overflow-hidden">
+<!-- Background subtle telemetry marks -->
+<div class="absolute right-3 top-3 text-surface-container-highest select-none pointer-events-none font-telemetry-sm text-[13px] text-right leading-tight">
+<div>SYS_LOC // NORTH SEA</div>
+<div>SYS_GRID // 54.40°N</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-secondary-container text-on-secondary-container font-telemetry-sm text-[13px] tracking-widest uppercase mb-2">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+        SEASON 01 · TIER: STEEL
+      </div>
+<h1 class="font-headline-lg-mobile text-[36px] font-bold leading-tight text-white tracking-tight drop-shadow-[0_0_12px_rgba(56,232,166,0.35)]">
+        STEEL 04
+      </h1>
+<div class="font-telemetry-lg text-[18px] text-secondary uppercase tracking-widest font-bold mt-1">
+        SUBMARINE COMMAND
+      </div>
+<!-- Provenance Meta Chips -->
+<div class="flex flex-wrap gap-2 mt-4">
+<div class="flex items-center gap-1.5 bg-surface-container-high text-on-surface px-3 py-1.5 rounded-lg text-[13px] font-telemetry-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">location_on</span>
+<span>U-995 · LABOE, GERMANY (54°24'N)</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-high text-on-surface px-3 py-1.5 rounded-lg text-[13px] font-telemetry-sm">
+<span class="material-symbols-outlined text-primary-container text-[16px]">filter_center_focus</span>
+<span>PERISCOPE COLLIMATOR</span>
+</div>
+</div>
+</div>
+<!-- Prominent Visual Viewport Card -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-2xl relative flex flex-col">
+<!-- Reticle corner markers -->
+<div class="absolute top-2 left-2 z-20 text-primary-container font-telemetry-sm text-[13px] opacity-80">+ 00.41</div>
+<div class="absolute top-2 right-2 z-20 text-primary-container font-telemetry-sm text-[13px] opacity-80">-24.5M ▾</div>
+<!-- Main Visual Container -->
+<div class="relative w-full aspect-[9/13] overflow-hidden bg-surface-dim flex items-center justify-center">
+<!-- Archival Image via prompt compliant pipeline -->
+<img class="w-full h-full object-cover" data-alt="A dark cinematic archival documentary photo inside the central command compartment Zentrale of submarine U-995 at Laboe. Silhouette of a submarine periscope column with brass fittings, optics eyepiece, and collimator reticle in focus. Subtle circular radar and sonar sweeping rings glowing in phosphor radar green and warm copper amber. Deep navy blue and obsidian dark background with faint grid lines." src="https://lh3.googleusercontent.com/aida/ALJJyrCJ_Oyil9utXS0BRvj_oOXaiaQYEJTftKP0d6uje3SujECR4hXPmqCQhasYKCh8IDNZCMicBjpgkpwFYvNgr-cMVYwtNvEKBZk8TE4TCvgaVQOnaRV1_dA7rXJdhdswvXz0Sd5zsj0wLmCq2b6reTOpmAgPsOwI--wuuk7Anw9W8maCGJ7xCFSoVMzsJRR6mo5Wc38gNhrA62Cqw1AzIbyyN6gySqiaV0E69JPRw6g"/>
+<!-- Sweeping Radar Overlay -->
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+<div class="relative w-64 h-64 rounded-full shadow-[0_0_20px_rgba(56,232,166,0.15)] flex items-center justify-center">
+<!-- Concentric rings -->
+<div class="w-48 h-48 rounded-full shadow-[0_0_10px_rgba(56,232,166,0.1)] flex items-center justify-center">
+<div class="w-28 h-28 rounded-full shadow-[0_0_8px_rgba(56,232,166,0.15)] flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_6px_#38e8a6]"></div>
+</div>
+</div>
+<!-- Sweep Beam Simulation -->
+<div class="absolute inset-0 rounded-full animate-spin [animation-duration:5s] [background:conic-gradient(from_0deg,transparent_75%,rgba(56,232,166,0.22)_100%)]"></div>
+</div>
+</div>
+<!-- Scanline subtle texture -->
+<div class="absolute inset-0 pointer-events-none opacity-20 [background:repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,0,0,0.8)_3px)]"></div>
+<!-- Bottom Viewport Gradient & Caption -->
+<div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent p-4 pt-10 flex flex-col gap-1 z-20">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-telemetry-sm text-[13px] text-primary-container tracking-wider font-bold">
+              OPTICAL LOG 04 // PERISCOPE MAST
+            </span>
+</div>
+<p class="font-body-sm text-[14px] text-on-surface leading-snug">
+            CENTRAL COMMAND COMPARTMENT (ZENTRALE) · TYPE VIIC/41 OPTICAL MAST
+          </p>
+</div>
+</div>
+</div>
+<!-- TERMINAL NOTIFICATION & CTA AREA -->
+<div class="bg-surface-container-high rounded-xl p-4 flex flex-col gap-3 shadow-md">
+<!-- Teletype alert -->
+<div class="flex items-start gap-2 bg-surface-container-lowest p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary-container text-[20px] shrink-0 mt-0.5">terminal</span>
+<div class="flex flex-col">
+<div class="font-telemetry-sm text-[13px] text-primary-container font-bold flex items-center gap-1">
+<span>A CREDENTIAL HAS BEEN ACTIVATED.</span>
+<span class="inline-block w-2 h-4 bg-primary-container animate-pulse"></span>
+</div>
+<p class="font-body-sm text-[14px] text-on-surface-variant mt-1 leading-relaxed">
+            EVERYTHING YOU SEE IS FICTION. BUT THERE IS MUCH TO DISCOVER.
+          </p>
+</div>
+</div>
+<!-- Primary Tactical Action Button -->
+<button class="w-full min-h-[52px] bg-primary-container hover:bg-primary-fixed text-on-primary-container font-telemetry-lg text-[17px] rounded-xl flex items-center justify-center gap-3 px-6 py-3.5 transition-transform active:scale-[0.98] shadow-[0_0_18px_rgba(56,232,166,0.4)] cursor-pointer font-bold tracking-wider" id="engage-btn" type="button">
+<span>BEGIN MISSION</span>
+<span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+</button>
+</div>
+<!-- SEPARATE REWARD CARD: EXPEDITION CREDENTIAL -->
+<div class="bg-surface-container rounded-xl p-5 shadow-xl relative overflow-hidden flex flex-col gap-4">
+<!-- Top foil accent bar -->
+<div class="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-secondary/20 to-transparent pointer-events-none"></div>
+<!-- Card Title & Level -->
+<div class="flex items-start justify-between">
+<div>
+<div class="font-telemetry-sm text-[13px] text-secondary tracking-widest uppercase font-bold">
+            ACADEMY CREDENTIAL
+          </div>
+<h2 class="font-headline-sm text-[20px] text-white font-bold mt-0.5">
+            SUBMARINE EXPEDITION CREDENTIAL
+          </h2>
+</div>
+<div class="bg-surface-container-high px-2.5 py-1 rounded text-primary font-telemetry-sm text-[13px] font-semibold">
+          #ISA-995-77X
+        </div>
+</div>
+<!-- Cadet Profile Subheader -->
+<div class="flex items-center gap-3 bg-surface-container-low p-3.5 rounded-lg">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary-container relative">
+<span class="material-symbols-outlined text-[28px]">explore</span>
+<span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-primary-container animate-ping"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-[13px] text-on-surface-variant">CADET RECIPIENT</span>
+<span class="font-headline-sm text-[18px] text-white font-bold tracking-wide">LUNAR FISH</span>
+<span class="font-telemetry-sm text-[13px] text-secondary">GRADE: STEEL I · PERISCOPE COLLIMATION</span>
+</div>
+</div>
+<!-- Sonar Ping & Verification Strip -->
+<div class="flex items-center justify-between text-on-surface-variant font-telemetry-sm text-[13px] px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span>OPTICAL RETICLE SYNCED</span>
+</div>
+<span class="text-outline">54°24'26"N · 10°13'46"E</span>
+</div>
+<!-- Statutory Disclaimer -->
+<div class="bg-surface-container-lowest px-3 py-2.5 rounded text-center">
+<p class="font-telemetry-sm text-[13px] text-outline font-medium tracking-wide">
+          SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION
+        </p>
+</div>
+</div>
+<!-- SEPARATE COMMENDATION: COPPER COIN COMPONENT (3D FLIP) -->
+<div class="bg-surface-container-low rounded-xl p-5 shadow-xl flex flex-col items-center text-center gap-4 relative overflow-hidden">
+<!-- Header -->
+<div class="w-full flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">military_tech</span>
+<span class="font-headline-sm text-[19px] text-white font-bold tracking-wide">COPPER COIN</span>
+</div>
+<div class="bg-surface-container-highest px-2.5 py-1 rounded text-primary-container font-telemetry-sm text-[13px] font-bold">
+          KNOWLEDGE VALIDATED
+        </div>
+</div>
+<!-- Interactive 3D Coin Flipper Container -->
+<div aria-label="Flip Copper Coin" class="perspective-1000 w-full flex flex-col items-center cursor-pointer select-none py-1" id="coin-flip-container" role="button">
+<div class="relative w-48 h-48 transform-style-3d transition-transform duration-700 ease-out" id="coin-flipper">
+<!-- FRONT FACE -->
+<div class="absolute inset-0 backface-hidden rounded-full p-2 bg-gradient-to-tr from-[#8a4400] via-[#ffb784] to-[#ffc36f] shadow-[0_0_24px_rgba(217,130,43,0.38)] flex items-center justify-center">
+<div class="w-full h-full rounded-full bg-gradient-to-br from-surface-container-lowest via-secondary-container to-surface-container-low flex flex-col items-center justify-center p-3 relative shadow-inner">
+<!-- Reticle Arc -->
+<div class="absolute inset-1 rounded-full pointer-events-none opacity-40 [background:conic-gradient(from_45deg,#ffb784,transparent_30%,#38e8a6_50%,transparent_80%,#ffb784)]"></div>
+<!-- Reticle Details -->
+<div class="relative z-10 flex flex-col items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[48px] text-secondary drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style="font-variation-settings: 'wght' 300;">
+            filter_center_focus
+          </span>
+<span class="font-telemetry-sm text-[13px] text-on-secondary-container font-bold tracking-widest mt-1">
+            OPTICS · REFLECTION
+          </span>
+</div>
+<!-- Glowing Beacon Dot -->
+<div class="absolute -top-1 w-3 h-3 rounded-full bg-primary-container shadow-[0_0_10px_#38e8a6]"></div>
+</div>
+</div>
+<!-- BACK FACE -->
+<div class="absolute inset-0 backface-hidden rotate-y-180 rounded-full p-2 bg-gradient-to-tr from-[#8a4400] via-[#ffb784] to-[#ffc36f] shadow-[0_0_24px_rgba(217,130,43,0.38)] flex items-center justify-center">
+<div class="w-full h-full rounded-full bg-gradient-to-br from-[#101d26] via-[#2a1b10] to-[#040f18] flex flex-col items-center justify-center p-3 relative shadow-inner border border-secondary/30">
+<span class="material-symbols-outlined text-[36px] text-primary-container drop-shadow-[0_0_8px_rgba(56,232,166,0.6)]">verified_user</span>
+<div class="font-headline-sm text-[16px] text-white font-bold tracking-wider mt-1">COPPER COIN</div>
+<div class="font-telemetry-sm text-[13px] text-primary-container font-bold tracking-tight">KNOWLEDGE VALIDATED</div>
+<div class="h-px w-20 bg-secondary/40 my-1"></div>
+<div class="font-telemetry-sm text-[13px] text-on-secondary-container leading-tight text-center px-1">
+          SEASON 02 · OPTICAL PERISCOPE MAST
+        </div>
+<!-- Archive emblem marking -->
+<div class="absolute bottom-2 text-outline font-telemetry-sm text-[13px] opacity-75">ISA // SEC-04 ARCHIVE</div>
+</div>
+</div>
+</div>
+<!-- Flip Hint -->
+<div class="mt-3 font-telemetry-sm text-[13px] text-primary-container tracking-wider flex items-center gap-1.5 opacity-90 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>[ TAP TO FLIP COIN ↻ ]</span>
+</div>
+</div>
+<!-- Specification details readout with Institutional Notation -->
+<div class="w-full bg-surface-container p-3.5 rounded-lg flex items-center justify-between font-telemetry-sm text-[13px]">
+<span class="text-on-surface-variant font-medium">INSTITUTIONAL RECORD:</span>
+<span class="text-primary-container font-bold tracking-wider">ACADEMY ENTRY // SECT-04-OPTICS</span>
+</div>
+<!-- Statutory Disclaimer -->
+<div class="bg-surface-container-lowest w-full px-3 py-2.5 rounded text-center">
+<p class="font-telemetry-sm text-[13px] text-outline font-medium leading-relaxed">
+  SYMBOLIC RECOGNITION — NOT AN ACADEMIC CERTIFICATION
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE PLAYABLE FLOW MODAL -->
+<div class="fixed inset-0 z-50 bg-[#08151e]/90 backdrop-blur-md hidden flex-col items-center justify-end sm:justify-center p-0 sm:p-4" id="playable-modal">
+<div class="w-full max-w-lg bg-surface-container-low border border-surface-container-highest rounded-t-2xl sm:rounded-2xl max-h-[92vh] flex flex-col overflow-hidden shadow-2xl">
+<!-- Modal Navigation Bar -->
+<div class="flex items-center justify-between px-4 py-3 bg-surface-container-lowest border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">videogame_asset</span>
+<span class="font-telemetry-sm text-[13px] text-white font-bold tracking-wider">MISSION SIMULATOR // STEEL 04</span>
+</div>
+<button class="w-9 h-9 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface flex items-center justify-center transition-colors" id="close-modal-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Content Multi-Step Body -->
+<div class="p-5 overflow-y-auto flex-1 flex flex-col gap-4 text-left">
+<!-- STEP 1: EPISODE SEQUENCE BRIEFING -->
+<div class="flex flex-col gap-4" id="flow-step-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary-container font-telemetry-sm text-[13px] font-bold">STAGE 01/03</span>
+<span class="text-on-surface-variant font-telemetry-sm text-[13px]">BRIEFING SEQUENCE</span>
+</div>
+<h3 class="font-headline-sm text-[22px] font-bold text-white">Submarine Command &amp; Periscope Optics</h3>
+<div class="p-4 rounded-xl bg-surface-container border border-surface-variant flex flex-col gap-2">
+<div class="flex items-center gap-2 text-secondary font-telemetry-sm text-[14px] font-bold">
+<span class="material-symbols-outlined text-[18px]">navigation</span>
+<span>U-995 LABOE, GERMANY · CENTRAL CONTROL ROOM</span>
+</div>
+<p class="font-body-md text-[16px] text-on-surface leading-relaxed">
+            Cadet LUNAR FISH, you are stationed at the optical collimator in the Zentrale. Your periscope optics allow surveillance beyond ocean surface level without compromising submarine immersion depth.
+          </p>
+</div>
+<div class="grid grid-cols-2 gap-2 text-on-surface font-telemetry-sm text-[13px]">
+<div class="bg-surface-container-high p-2.5 rounded-lg">
+<span class="text-on-surface-variant block">EQUIPMENT:</span>
+<span class="text-white font-bold">OPTICAL MAST C/41</span>
+</div>
+<div class="bg-surface-container-high p-2.5 rounded-lg">
+<span class="text-on-surface-variant block">DEPTH CALIBRATION:</span>
+<span class="text-primary-container font-bold">PERISCOPE DEPTH (-12M)</span>
+</div>
+</div>
+<button class="mt-2 min-h-[48px] w-full bg-primary-container hover:bg-primary-fixed text-on-primary-container font-telemetry-lg text-[16px] font-bold rounded-xl flex items-center justify-center gap-2 px-4 py-3 transition-transform active:scale-[0.98]" id="step-1-next">
+<span>CONTINUE TO CHALLENGE</span>
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- STEP 2: KAHOOT-STYLE QUESTION -->
+<div class="hidden flex-col gap-4" id="flow-step-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary-container font-telemetry-sm text-[13px] font-bold">QUESTION STAGE</span>
+<div class="flex items-center gap-1 text-secondary font-telemetry-sm text-[14px] font-bold">
+<span class="material-symbols-outlined text-[16px] animate-pulse">timer</span>
+<span id="quiz-timer">20s</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container rounded-xl border border-secondary/30">
+<h4 class="font-headline-sm text-[20px] font-bold text-white leading-snug">
+            What is the main function of a periscope in a submarine?
+          </h4>
+</div>
+<!-- 4 Options -->
+<div class="flex flex-col gap-2.5" id="options-list">
+<button class="quiz-option min-h-[48px] p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-variant text-left flex items-center gap-3 transition-all" data-correct="false">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center font-telemetry-sm text-[14px] font-bold text-primary-container shrink-0">A</span>
+<span class="font-body-md text-[15px] text-on-surface">To generate internal oxygen while submerged deep</span>
+</button>
+<button class="quiz-option min-h-[48px] p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-variant text-left flex items-center gap-3 transition-all" data-correct="true">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center font-telemetry-sm text-[14px] font-bold text-primary-container shrink-0">B</span>
+<span class="font-body-md text-[15px] text-on-surface font-medium">Allow observation from a protected position</span>
+</button>
+<button class="quiz-option min-h-[48px] p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-variant text-left flex items-center gap-3 transition-all" data-correct="false">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center font-telemetry-sm text-[14px] font-bold text-primary-container shrink-0">C</span>
+<span class="font-body-md text-[15px] text-on-surface">To increase underwater hydrodynamic propulsion</span>
+</button>
+<button class="quiz-option min-h-[48px] p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-variant text-left flex items-center gap-3 transition-all" data-correct="false">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center font-telemetry-sm text-[14px] font-bold text-primary-container shrink-0">D</span>
+<span class="font-body-md text-[15px] text-on-surface">To transmit heavy electromagnetic sonar shockwaves</span>
+</button>
+</div>
+</div>
+<!-- STEP 3: FEEDBACK & CIVIL SOCIETY RELEVANCE -->
+<div class="hidden flex-col gap-4" id="flow-step-3">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-telemetry-sm text-[13px] font-bold">CORRECT ANSWER VALIDATED</span>
+</div>
+<div class="p-4 rounded-xl bg-primary-container/10 border border-primary-container/40">
+<div class="flex items-center gap-2 text-primary font-bold text-[18px]">
+<span class="material-symbols-outlined text-[24px]">task_alt</span>
+<span>EXCELLENT OPTICAL CALIBRATION</span>
+</div>
+<p class="font-body-md text-[15px] text-on-surface mt-2 leading-relaxed">
+            Periscopes utilize aligned prisms and mirrors to provide secure line-of-sight visual intelligence without exposing the crew hull.
+          </p>
+</div>
+<!-- Civil Society Connection -->
+<div class="p-4 rounded-xl bg-surface-container border border-secondary/30 flex flex-col gap-1.5">
+<div class="font-telemetry-sm text-[13px] text-secondary font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">public</span>
+<span>CIVIL SOCIETY EXTENSION &amp; APPLICATION</span>
+</div>
+<p class="font-body-md text-[15px] text-on-surface leading-relaxed">
+            This identical mirror and optics reflection principle powers modern non-invasive inspection cameras, surgical endoscopes, and search cameras for seeing around dangerous corners.
+          </p>
+</div>
+<!-- Educational Metadata Chips -->
+<div class="flex flex-wrap gap-1.5 font-telemetry-sm text-[13px]">
+<span class="bg-surface-container-high px-2.5 py-1 rounded text-primary-container font-semibold">TIMSS: KNOWING</span>
+<span class="bg-surface-container-high px-2.5 py-1 rounded text-secondary font-semibold">GSA: CRITICAL THINKING</span>
+<span class="bg-surface-container-high px-2.5 py-1 rounded text-on-surface-variant">COMPARTMENT: CONTROL ROOM</span>
+<span class="bg-surface-container-high px-2.5 py-1 rounded text-on-surface-variant">EQUIPMENT: PERISCOPE</span>
+<span class="bg-surface-container-high px-2.5 py-1 rounded text-on-surface-variant">MUSEUM: U-995</span>
+</div>
+<button class="min-h-[48px] w-full bg-primary-container hover:bg-primary-fixed text-on-primary-container font-telemetry-lg text-[16px] font-bold rounded-xl flex items-center justify-center gap-2 px-4 py-3 transition-transform active:scale-[0.98]" id="step-3-next">
+<span>CLAIM MISSION ACCREDITATION</span>
+<span class="material-symbols-outlined text-[20px]">award_star</span>
+</button>
+</div>
+<!-- STEP 4: CREDENTIAL AWARD & UNLOCK COPPER COIN -->
+<div class="hidden flex-col items-center text-center gap-4 py-2" id="flow-step-4">
+<div class="w-16 h-16 rounded-full bg-secondary-container/60 border border-secondary flex items-center justify-center text-secondary shadow-[0_0_20px_rgba(255,183,132,0.4)]">
+<span class="material-symbols-outlined text-[36px]">workspace_premium</span>
+</div>
+<div>
+<div class="font-telemetry-sm text-[13px] text-secondary font-bold tracking-widest uppercase">HONOR ACQUIRED</div>
+<h3 class="font-headline-sm text-[24px] font-bold text-white mt-1">LUNAR FISH</h3>
+<p class="font-body-md text-[16px] text-primary-container mt-1 font-medium">
+            "You have recognized the periscope. Your journey has just begun."
+          </p>
+</div>
+<div class="w-full bg-surface-container p-4 rounded-xl border border-surface-variant flex flex-col gap-2 text-left">
+<div class="flex items-center justify-between text-on-surface-variant font-telemetry-sm text-[13px]">
+<span>ACADEMY CREDENTIAL STATUS:</span>
+<span class="text-primary-container font-bold">CONFIRMED</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-telemetry-sm text-[13px]">
+<span>NEW BADGE REVEALED:</span>
+<span class="text-secondary font-bold">COPPER COIN (UNLOCKED)</span>
+</div>
+</div>
+<div class="w-full flex flex-col gap-2 pt-2">
+<button class="min-h-[48px] w-full bg-secondary hover:bg-secondary-fixed text-on-secondary-fixed font-telemetry-lg text-[16px] font-bold rounded-xl flex items-center justify-center gap-2 px-4 py-3 shadow-[0_0_16px_rgba(255,183,132,0.35)] transition-transform active:scale-[0.98]" id="unlock-coin-btn">
+<span class="material-symbols-outlined text-[22px]">military_tech</span>
+<span>INSPECT UNLOCKED COPPER COIN</span>
+</button>
+<button class="min-h-[48px] w-full bg-surface-container hover:bg-surface-container-high text-on-surface font-telemetry-sm text-[14px] font-bold rounded-xl flex items-center justify-center gap-2 px-4 py-2.5 border border-outline/30" id="replay-btn">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+<span>REPLAY SIMULATION</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Tactical button & interactive playable flow connection
+  const engageBtn = document.getElementById('engage-btn');
+  const modal = document.getElementById('playable-modal');
+  const closeModalBtn = document.getElementById('close-modal-btn');
+  const step1 = document.getElementById('flow-step-1');
+  const step2 = document.getElementById('flow-step-2');
+  const step3 = document.getElementById('flow-step-3');
+  const step4 = document.getElementById('flow-step-4');
+  const step1Next = document.getElementById('step-1-next');
+  const step3Next = document.getElementById('step-3-next');
+  const unlockCoinBtn = document.getElementById('unlock-coin-btn');
+  const replayBtn = document.getElementById('replay-btn');
+  const timerElem = document.getElementById('quiz-timer');
+  let countdownTimer = null;
+  let secondsRemaining = 20;
+
+  function resetSteps() {
+    step1.classList.remove('hidden');
+    step1.classList.add('flex');
+    step2.classList.add('hidden');
+    step2.classList.remove('flex');
+    step3.classList.add('hidden');
+    step3.classList.remove('flex');
+    step4.classList.add('hidden');
+    step4.classList.remove('flex');
+    if (countdownTimer) clearInterval(countdownTimer);
+    secondsRemaining = 20;
+    if (timerElem) timerElem.textContent = '20s';
+    document.querySelectorAll('.quiz-option').forEach(btn => {
+      btn.classList.remove('bg-primary-container', 'text-on-primary-container', 'bg-error-container', 'opacity-60');
+      btn.classList.add('bg-surface-container');
+      btn.disabled = false;
+    });
+  }
+
+  function startQuizTimer() {
+    secondsRemaining = 20;
+    if (timerElem) timerElem.textContent = '20s';
+    if (countdownTimer) clearInterval(countdownTimer);
+    countdownTimer = setInterval(() => {
+      secondsRemaining--;
+      if (timerElem) timerElem.textContent = secondsRemaining + 's';
+      if (secondsRemaining <= 0) {
+        clearInterval(countdownTimer);
+        // auto-progress or reveal correct answer
+        document.querySelector('.quiz-option[data-correct="true"]').click();
+      }
+    }, 1000);
+  }
+
+  if (engageBtn) {
+    engageBtn.addEventListener('click', () => {
+      engageBtn.classList.add('scale-95');
+      setTimeout(() => {
+        engageBtn.classList.remove('scale-95');
+        resetSteps();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }, 120);
+    });
+  }
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      if (countdownTimer) clearInterval(countdownTimer);
+    });
+  }
+
+  if (step1Next) {
+    step1Next.addEventListener('click', () => {
+      step1.classList.add('hidden');
+      step1.classList.remove('flex');
+      step2.classList.remove('hidden');
+      step2.classList.add('flex');
+      startQuizTimer();
+    });
+  }
+
+  // Handle Quiz Options
+  document.querySelectorAll('.quiz-option').forEach(button => {
+    button.addEventListener('click', () => {
+      if (countdownTimer) clearInterval(countdownTimer);
+      const isCorrect = button.getAttribute('data-correct') === 'true';
+      
+      document.querySelectorAll('.quiz-option').forEach(btn => {
+        btn.disabled = true;
+        if (btn.getAttribute('data-correct') === 'true') {
+          btn.classList.remove('bg-surface-container');
+          btn.classList.add('bg-primary-container', 'text-on-primary-container');
+        } else {
+          btn.classList.add('opacity-40');
+        }
+      });
+
+      if (!isCorrect) {
+        button.classList.add('bg-error-container');
+      }
+
+      setTimeout(() => {
+        step2.classList.add('hidden');
+        step2.classList.remove('flex');
+        step3.classList.remove('hidden');
+        step3.classList.add('flex');
+      }, 700);
+    });
+  });
+
+  if (step3Next) {
+    step3Next.addEventListener('click', () => {
+      step3.classList.add('hidden');
+      step3.classList.remove('flex');
+      step4.classList.remove('hidden');
+      step4.classList.add('flex');
+    });
+  }
+
+  if (replayBtn) {
+    replayBtn.addEventListener('click', () => {
+      resetSteps();
+    });
+  }
+
+  if (unlockCoinBtn) {
+    unlockCoinBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      const coinContainer = document.getElementById('coin-flip-container');
+      if (coinContainer) {
+        coinContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Trigger a nice celebratory coin flip
+        const flipper = document.getElementById('coin-flipper');
+        if (flipper) {
+          setTimeout(() => {
+            flipper.classList.toggle('rotate-y-180');
+          }, 350);
+        }
+      }
+    });
+  }
+
+  // 3D Coin Flip Logic
+  const coinContainer = document.getElementById('coin-flip-container');
+  const coinFlipper = document.getElementById('coin-flipper');
+  let isFlipped = false;
+
+  if (coinContainer && coinFlipper) {
+    coinContainer.addEventListener('click', () => {
+      isFlipped = !isFlipped;
+      if (isFlipped) {
+        coinFlipper.classList.add('rotate-y-180');
+      } else {
+        coinFlipper.classList.remove('rotate-y-180');
+      }
+    });
+  }
+</script></main></body></html>

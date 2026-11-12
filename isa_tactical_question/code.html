@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#08151e;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#bacabf", "surface-bright": "#2e3b45", "secondary": "#ffb784", "on-secondary-fixed-variant": "#713700", "on-tertiary-fixed-variant": "#633f00", "surface-container": "#14212a", "on-error-container": "#ffdad6", "secondary-fixed": "#ffdcc6", "on-secondary-container": "#ffc095", "on-primary": "#003824", "on-primary-fixed": "#002113", "tertiary-fixed": "#ffddb3", "outline": "#85948a", "inverse-on-surface": "#25323c", "primary-fixed-dim": "#2be19f", "secondary-fixed-dim": "#ffb784", "on-secondary-fixed": "#301400", "surface-dim": "#08151e", "on-surface": "#d7e4f1", "tertiary": "#ffe6c9", "on-tertiary": "#452b00", "on-primary-fixed-variant": "#005236", "surface-tint": "#2be19f", "error": "#ffb4ab", "error-container": "#93000a", "on-background": "#d7e4f1", "on-tertiary-fixed": "#291800", "primary-fixed": "#56feba", "surface-container-high": "#1f2b35", "primary": "#92ffca", "surface-container-lowest": "#040f18", "inverse-primary": "#006c49", "secondary-container": "#8a4400", "surface-container-highest": "#2a3640", "primary-container": "#38e8a6", "surface-container-low": "#101d26", "on-primary-container": "#006444", "on-error": "#690005", "surface": "#08151e", "tertiary-container": "#ffc36f", "outline-variant": "#3c4a41", "on-tertiary-container": "#794e00", "surface-variant": "#2a3640", "inverse-surface": "#d7e4f1", "on-secondary": "#4f2500", "tertiary-fixed-dim": "#ffb952", "background": "#08151e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-xl": "2.5rem", "margin": "3rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-mobile": "1.25rem", "space-xs": "0.25rem", "gutter": "1.5rem", "gutter-mobile": "1rem" }, "fontFamily": { "label-caps": ["Space Mono"], "body-md": ["Chivo"], "display-hero-mobile": ["Space Grotesk"], "body-sm": ["Chivo"], "display-hero": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "telemetry-sm": ["Space Mono"], "headline-lg": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "body-lg": ["Chivo"], "telemetry-lg": ["Space Mono"] }, "fontSize": { "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "700" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-hero": ["4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "telemetry-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.12em", "fontWeight": "400" }], "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "telemetry-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.08em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button class="w-11 h-11 flex items-center justify-center rounded-sm bg-surface-container text-on-surface hover:text-primary transition-colors flex-shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="ISA Insignia Logo" class="h-7 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrD4Tu4tJ-mEG21Mx7u-R5kxTigAGIQzDY7uKANz1Tp9_w_dPPLPQJlzbdvPnFC28xHGeQ3ZzcTJGdjLQcH_j4WbJxjkzKva3_b-TIBdj1yeQJSQnP0BrC9FGWZwizDrnkZsgaKeTjuH8pTwEHMXFhnrJzxgaw4TOxgBdLbResERzOQNqJrsozEdf-xLHMwLxgSkkkL91ZEIvMVAV1vZA_WciL1wgcuVcoy7Fi68aFY"/><div class="flex flex-col min-w-0"><span class="font-label-caps text-label-caps text-secondary tracking-widest leading-none">CLASSIFIED ARCHIVE</span><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Hydrophone Audio Log Detail</h1></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="flex items-center bg-surface-container-high/60 px-2 py-1 rounded-sm gap-1.5"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-medium">HUD://</span><span class="font-telemetry-sm text-telemetry-sm text-primary font-bold tracking-widest">REC</span><span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUeOe9zZyvUADlVNHfdrtXPzIwhSdnaGPVMPTzax1tVY-6_Ti-DEP0Fwr6QtrpgHgY0TuEasHmP6yKhWhaxeM2FKrBLLbGYe6fMytch6x0JGEV5bjw06UvhVYfr17PyE3aWjRAh65W5qCLJ54i0yzrOfGpgTi0RS-wIiqZb1wYFYUlMlOWZQM0zvIU67FNaYYeNtQT8FuKAWRFdQ23ulT8NnRNrHHt5vOH2qSHf8Q"/></div></div><div class="h-0.5 w-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary/30 via-outline-variant/20 to-transparent flex items-center justify-center"><div class="flex items-center gap-1 text-[8px] font-telemetry-sm text-outline tracking-widest opacity-60 px-4"><span class="w-3 h-px bg-outline/40"></span><span>— · — ·   · — — ·</span><span class="w-3 h-px bg-outline/40"></span></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full px-gutter-mobile py-space-sm space-y-space-md select-none">
+<!-- Tactical Episode Header & Stepped Progress Bar -->
+<div class="flex flex-col bg-surface-container-low rounded-lg p-space-sm shadow-md">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-secondary tracking-widest">STEEL 04 // CHALLENGE 01</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-medium tracking-wider">PHASE: 01/03</span>
+</div>
+<!-- Stepped Segment Lights -->
+<div class="grid grid-cols-3 gap-1.5 w-full">
+<div class="h-1.5 rounded-full bg-primary-container shadow-[0_0_8px_rgba(56,232,166,0.6)]"></div>
+<div class="h-1.5 rounded-full bg-surface-container-highest"></div>
+<div class="h-1.5 rounded-full bg-surface-container-highest"></div>
+</div>
+</div>
+<!-- Radar HUD Telemetry & Sonar Countdown Display -->
+<div class="relative flex items-center justify-between bg-surface-container rounded-xl p-space-md overflow-hidden shadow-lg">
+<!-- Ambient Sonar Scope Grid Background -->
+<div class="absolute inset-0 pointer-events-none opacity-20 flex items-center justify-center">
+<svg class="w-full h-full text-outline-variant" preserveaspectratio="none" viewbox="0 0 200 120">
+<line stroke="currentColor" stroke-dasharray="3,3" stroke-width="0.75" x1="0" x2="200" y1="60" y2="60"></line>
+<line stroke="currentColor" stroke-dasharray="3,3" stroke-width="0.75" x1="100" x2="100" y1="0" y2="120"></line>
+<circle cx="100" cy="60" fill="none" r="30" stroke="currentColor" stroke-width="0.75"></circle>
+<circle cx="100" cy="60" fill="none" r="55" stroke="currentColor" stroke-dasharray="2,2" stroke-width="0.75"></circle>
+</svg>
+</div>
+<!-- Left Telemetry Readings -->
+<div class="flex flex-col space-y-1 relative z-10 min-w-0">
+<div class="flex items-center gap-1.5 bg-surface-container-highest/80 px-2 py-0.5 rounded w-max">
+<span class="material-symbols-outlined text-[14px] text-primary">sensors</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary tracking-widest font-bold">ACOUSTIC LOCK</span>
+</div>
+<div class="flex flex-col pt-1">
+<span class="font-label-caps text-label-caps text-outline tracking-wider">DEPTH // PRESSURE</span>
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface font-mono tracking-normal">142.8 M <span class="text-on-surface-variant font-normal text-body-sm">· 15.3 ATM</span></span>
+</div>
+</div>
+<!-- Dynamic Countdown Ring Gauge -->
+<div class="relative flex items-center justify-center flex-shrink-0 z-10">
+<svg class="w-20 h-20 -rotate-90 transform" viewbox="0 0 80 80">
+<!-- Base Ring Track -->
+<circle class="text-surface-container-highest" cx="40" cy="40" fill="none" r="34" stroke="currentColor" stroke-width="5"></circle>
+<!-- Calibrated Active Arc -->
+<circle class="transition-all duration-1000 ease-linear shadow-[0_0_12px_rgba(56,232,166,0.5)]" cx="40" cy="40" fill="none" id="countdown-arc" r="34" stroke="#38e8a6" stroke-dasharray="213.6" stroke-dashoffset="48" stroke-linecap="round" stroke-width="5"></circle>
+</svg>
+<!-- Center Monospace Digits -->
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-telemetry-lg text-telemetry-lg text-primary tracking-tighter font-bold" id="countdown-timer">00:20</span>
+<span class="font-label-caps text-[9px] text-on-surface-variant tracking-widest uppercase">SEC</span>
+</div>
+</div>
+</div>
+<!-- Central Tactical Mission Question Card -->
+<div class="flex flex-col bg-surface-container-high rounded-xl p-space-md shadow-md space-y-space-sm relative overflow-hidden">
+<!-- Top Meta Identifier Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 bg-surface-container-lowest px-2.5 py-1 rounded">
+<span class="material-symbols-outlined text-[15px] text-secondary">visibility</span>
+<span class="font-label-caps text-label-caps text-secondary tracking-widest">STEM+A OPTICS // TIMSS: KNOWING</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">PRIORITY:</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">ALPHA</span>
+</div>
+</div>
+<!-- High-Legibility Tactical Headline -->
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface uppercase tracking-tight leading-snug">
+      WHAT IS THE MAIN FUNCTION OF A PERISCOPE IN A SUBMARINE?
+    </h2>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-outline">verified</span> VERIFIED ARCHIVAL SCHEMATIC
+      </span>
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim">POINTS: 1,000 XP</span>
+</div>
+</div>
+<!-- Tactical Response Trigger Matrix (Four Large Tap Targets) -->
+<div class="flex flex-col space-y-2.5 pt-space-xs" id="answers-container">
+<!-- Option A -->
+<button class="group relative flex items-center w-full bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl text-left transition-all active:scale-[0.99] shadow-sm" type="button">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-surface-container-highest text-on-surface font-label-caps text-body-md font-bold flex-shrink-0 group-hover:bg-surface-bright group-hover:text-primary transition-colors">
+        A
+      </div>
+<div class="flex flex-col ml-space-md min-w-0 pr-2">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-on-surface font-medium leading-tight">
+          Measure the submarine’s depth.
+        </span>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline group-hover:text-primary text-[20px] flex-shrink-0">radio_button_unchecked</span>
+</button>
+<!-- Option B: Active / Selected Candidate -->
+<button class="relative flex items-center w-full bg-primary-container/20 p-space-md rounded-xl text-left shadow-[0_0_16px_rgba(56,232,166,0.25)] transition-all active:scale-[0.99]" type="button">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary-container text-on-primary-container font-label-caps text-body-md font-bold flex-shrink-0 shadow-[0_0_10px_rgba(56,232,166,0.5)]">
+        B
+      </div>
+<div class="flex flex-col ml-space-md min-w-0 pr-2">
+<span class="font-body-md text-body-md text-primary font-bold leading-tight">
+          Allow observation from a protected position.
+        </span>
+<span class="font-telemetry-sm text-[10px] text-primary-fixed-dim tracking-wider uppercase mt-0.5">
+          CADET LOCK-IN SELECTION
+        </span>
+</div>
+<div class="ml-auto flex items-center justify-center w-7 h-7 rounded-full bg-primary-container text-on-primary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">my_location</span>
+</div>
+</button>
+<!-- Option C -->
+<button class="group relative flex items-center w-full bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl text-left transition-all active:scale-[0.99] shadow-sm" type="button">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-surface-container-highest text-on-surface font-label-caps text-body-md font-bold flex-shrink-0 group-hover:bg-surface-bright group-hover:text-primary transition-colors">
+        C
+      </div>
+<div class="flex flex-col ml-space-md min-w-0 pr-2">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-on-surface font-medium leading-tight">
+          Generate electrical power for the engines.
+        </span>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline group-hover:text-primary text-[20px] flex-shrink-0">radio_button_unchecked</span>
+</button>
+<!-- Option D -->
+<button class="group relative flex items-center w-full bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl text-left transition-all active:scale-[0.99] shadow-sm" type="button">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-surface-container-highest text-on-surface font-label-caps text-body-md font-bold flex-shrink-0 group-hover:bg-surface-bright group-hover:text-primary transition-colors">
+        D
+      </div>
+<div class="flex flex-col ml-space-md min-w-0 pr-2">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-on-surface font-medium leading-tight">
+          Filter the submarine’s internal air.
+        </span>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline group-hover:text-primary text-[20px] flex-shrink-0">radio_button_unchecked</span>
+</button>
+</div>
+<!-- Operational Telemetry Status & Abort Trigger Panel -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md space-y-space-sm shadow-md mt-space-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[18px] text-primary animate-pulse flex-shrink-0">terminal</span>
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant truncate">
+          TELEMETRY LOCKED · RECORDING CADET RESPONSE
+        </p>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold flex-shrink-0">
+        100% SIG
+      </span>
+</div>
+<!-- Recurring Archive Submarine Philosophy Quote -->
+<div class="p-2.5 bg-surface-container-low/60 rounded-lg">
+<p class="font-body-sm text-body-sm text-outline italic leading-snug">
+        “Everything you see is fiction. But there is much to discover.”
+      </p>
+</div>
+<!-- Action Buttons Row -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<button class="flex items-center justify-center gap-1.5 py-3 px-4 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-bright active:scale-[0.98] transition-transform shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">pause_circle</span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider">TACTICAL PAUSE</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-3 px-4 rounded-lg bg-surface-container text-error hover:bg-error-container/20 active:scale-[0.98] transition-transform shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-error">cancel</span>
+<span class="font-label-caps text-label-caps text-error uppercase tracking-wider">ABORT DIVE</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    let timeLeft = 20;
+    const totalTime = 20;
+    const perimeter = 213.6; // 2 * PI * 34
+    const timerEl = document.getElementById('countdown-timer');
+    const arcEl = document.getElementById('countdown-arc');
+
+    const countdownInterval = setInterval(() => {
+      timeLeft--;
+      if (timeLeft <= 0) {
+        clearInterval(countdownInterval);
+        if (timerEl) timerEl.textContent = '00:00';
+        if (arcEl) {
+          arcEl.style.strokeDashoffset = String(perimeter);
+          arcEl.setAttribute('stroke', '#ffb4ab');
+        }
+        return;
+      }
+
+      if (timerEl) {
+        const formatted = timeLeft < 10 ? '00:0' + timeLeft : '00:' + timeLeft;
+        timerEl.textContent = formatted;
+        
+        // Color transition as time runs critically low
+        if (timeLeft <= 5) {
+          timerEl.classList.remove('text-primary');
+          timerEl.classList.add('text-error');
+          if (arcEl) arcEl.setAttribute('stroke', '#ffb4ab');
+        } else if (timeLeft <= 10) {
+          timerEl.classList.remove('text-primary');
+          timerEl.classList.add('text-secondary');
+          if (arcEl) arcEl.setAttribute('stroke', '#ffb784');
+        }
+      }
+
+      if (arcEl) {
+        const offset = perimeter - (timeLeft / totalTime) * perimeter;
+        arcEl.style.strokeDashoffset = String(offset);
+      }
+    }, 1000);
+  })();
+</script></main></body></html>
